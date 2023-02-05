@@ -1,0 +1,217 @@
+
+- Comentários
+
+	Os comentários JavaScript podem ser usados para explicar o código JavaScript e torná-lo mais legível.
+
+	Os comentários do JavaScript também podem ser usados para impedir a execução, ao testar o código alternativo.
+
+	Os comentários de linha única começam com // , desta forma qualquer texto entre // e no final da linha será ignorado pelo JavaScript (não será executado).
+
+	Exemplo:
+
+	// Este é um comentário
+
+- Variáveis
+
+	As variáveis são contêineres para armazenar dados (armazenar valores de dados).
+
+	Os nomes das variáveis podem conter letras, dígitos, sublinhados e cifrões.
+
+	Temos 3 maneiras de declarar uma variável JavaScript:
+
+	Usando "var"
+	Usando "let"
+	Usando "const"
+
+	Qual utilizar?
+
+		Sempre declare variáveis JavaScript com "var", "let" ou "const".
+
+		A palavra-chave "var" é usada em todo o código JavaScript de 1995 a 2015.
+
+		As palavras-chave "let" e "const" foram adicionadas ao JavaScript em 2015.
+
+		Se você deseja que seu código seja executado em navegadores mais antigos, você deve usar "var".
+
+		Se você quer uma regra geral, sempre declare variáveis com "const".
+
+		Se você acha que o valor da variável pode mudar, use "let".
+
+	Detalhes das formas de declaração
+
+		Declaração com "var":
+
+			Variáveis deste tipo têm escopo global.
+			Variáveis deste tipo podem ter seu valor alterado.
+			Variáveis deste tipo podem ser redeclaradas.
+			Variáveis deste tipo não precisam ser inicializadas ao declarar.
+
+		Declaração com "let":
+
+			Variáveis deste tipo têm escopo de bloco.
+			Variáveis deste tipo podem ter seu valor alterado.
+			Variáveis deste tipo não podem ser redeclaradas.
+			Variáveis deste tipo não precisam ser inicializadas ao declarar.
+
+		Declaração com "const":
+
+			Variáveis deste tipo têm escopo de bloco.
+			Variáveis deste tipo não podem ter seu valor alterado.
+			Variáveis deste tipo não podem ser redeclaradas.
+			Variáveis deste tipo precisam ser inicializadas ao declarar.
+
+- Declarações condicionais
+
+	Muitas vezes, quando você escreve código, deseja executar diferentes ações para diferentes decisões.
+
+	Você pode usar instruções condicionais em seu código para fazer isso.
+
+	Em JavaScript, temos as seguintes declarações condicionais:
+
+	Use "if" para especificar um bloco de código a ser executado, se uma condição especificada for verdadeira, exemplo:
+
+		if (condição) {
+		  // Bloco a ser executado se condição for verdadeira
+		}
+
+	Use "if...else" para especificar um bloco de código a ser executado, se a mesma condição for falsa, exemplo:
+
+		if (condição) {
+		  // Bloco a ser executado se condição for verdadeira
+		} else {
+			// Bloco a ser executado se condição for falsa
+		}
+
+	Use "else...if" para especificar uma nova condição para testar, se a primeira condição for falsa, exemplo:
+
+		if (condição) {
+		  // Bloco a ser executado se condição acima for verdadeira
+		} else if (condição) {
+			// Bloco a ser executado se condição acima for verdadeira
+		} else if (condição) {
+			// Bloco a ser executado se condição acima for verdadeira
+		}
+		...
+		} else {
+			// Bloco a ser executado se todas as condições forem falsas
+		}
+
+	Use "switch" para especificar muitos blocos alternativos de código a serem executados, exemplo:
+
+		switch(variável ou expressão) {
+		  case <valor>:
+		    // Bloco a ser executado se o valor acima corresponder
+		    break;
+		  case <valor>:
+		    // Bloco a ser executado se o valor acima corresponder
+		    break;
+		   ...
+		  default:
+		    // Bloco a ser executado se nenhum valor acima corresponder
+		}
+
+- Operador de atribuição
+
+	O Operador de Atribuição "="" atribui um valor a uma variável, exemplo:
+
+	let x = 10;
+
+- Operadores aritméticos
+
+	+	adição
+	-	subtração
+	*	multiplicação
+	**	exponenciação
+	/	divisão
+	%	resto da divisão
+	++	incremento
+	--	decremento
+
+	Precedência dos operadores
+
+	* / %
+	+ -
+
+- Operadores de atribuição composto
+
+	Usados como forma abreviada de escrever que uma variável recebe o valor dela em uma operação onde ela esta envolvida.
+
+	Operador 		Exemplo de uso
+	+= 				a = a + b;
+	-= 				a = a - b;
+	*= 				a = a * b;
+	**= 			a = a ** b;
+	/= 				a = a / b;
+	%= 				a = a % b;
+
+- Operadores comparativos
+
+	Operador 		Significado
+	>  				maior
+	<  				menor
+	>= 				maior ou igual
+	<= 				menor ou igual
+	== 				valor igual
+	===				valor e tipo igual
+	!= 				valor diferente
+	!== 			valor e tipo diferente
+	?				ternario
+
+- Operadores lógicos
+
+	Operador 		Significado
+
+	&& 				E
+	|| 				OU
+	! 				NÃO
+
+- Funções
+
+	Uma função JavaScript é um bloco de código projetado para executar uma tarefa específica.
+
+	Uma função JavaScript é executada quando "algo" a invoca (a chama).
+
+	Declaração:
+
+	function <nome da função>(<parametros>...) {
+		<código a ser executad pela função>;
+		return <valor a ser retonado pela função caso necessario>;
+	}
+
+	Exemplo:
+
+	// Declaração de uam função para computar a soma de dois valores
+	function soma(p1, p2) {
+	  return p1 + p2;
+	}
+
+	// Execução da função
+	soma(1, 2);
+
+	Detalhes
+
+		Uma função JavaScript é definida com a palavra chave "function", seguida por um nome, seguido por parênteses ().
+
+		Os nomes das funções podem conter letras, dígitos, sublinhados e cifrões (mesmas regras das variáveis).
+
+		Os parênteses podem incluir nomes de parâmetros separados por vírgulas (parâmetro1, parâmetro2, ... ).
+
+		O código a ser executado, pela função, é colocado entre chaves {}.
+
+		Os parâmetros da função são listados entre parênteses () na definição da função.
+
+		Os argumentos da função são os valores recebidos pela função quando ela é invocada.
+
+		Dentro da função, os argumentos (os parâmetros) se comportam como variáveis locais.
+
+		Quando o JavaScript atinge uma instrução de "return", a função para de ser executada.
+
+		Se a função foi invocada a partir de uma instrução, o JavaScript "retornará" para executar o código após a instrução invocada.
+
+		As funções geralmente calculam um valor de retorno. O valor de retorno é "retornado" de volta ao "chamador".
+
+	Por que Funções?
+
+		Você pode reutilizar o código, defina o código uma vez e use-o várias vezes.
+
+		Você pode usar o mesmo código várias vezes com argumentos diferentes para produzir resultados diferentes.

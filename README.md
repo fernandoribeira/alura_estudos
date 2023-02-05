@@ -1,1 +1,1 @@
-# estudos_alura
+# Arquivos relacionados aos cursos da Alura
