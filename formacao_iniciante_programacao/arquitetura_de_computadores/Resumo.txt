@@ -1,0 +1,17 @@
+Memória ROM/RAM
+Memória não volátil 
+Memória volátil
+Memória primária
+Memória secundária
+Processador
+Bit
+Byte
+Linguagem de alto nível
+Linguagem de baixo nível (máquina)
+Código fonte
+Código de máquina
+Tradutor de código fonte para código de máquina
+Linguagem compilada
+Linguagem interpretada
+Linguagemd e abordagem híbrida
+JIT

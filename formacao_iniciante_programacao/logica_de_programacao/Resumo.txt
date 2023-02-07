@@ -60,13 +60,13 @@
 			Variáveis deste tipo não podem ser redeclaradas.
 			Variáveis deste tipo precisam ser inicializadas ao declarar.
 
-- Declarações condicionais
+- Estruturas condicionais
 
 	Muitas vezes, quando você escreve código, deseja executar diferentes ações para diferentes decisões.
 
-	Você pode usar instruções condicionais em seu código para fazer isso.
+	Você pode usar estruturas condicionais em seu código para fazer isso.
 
-	Em JavaScript, temos as seguintes declarações condicionais:
+	Em JavaScript, temos as seguintes estruturas condicionais:
 
 	Use "if" para especificar um bloco de código a ser executado, se uma condição especificada for verdadeira, exemplo:
 
@@ -215,3 +215,52 @@
 		Você pode reutilizar o código, defina o código uma vez e use-o várias vezes.
 
 		Você pode usar o mesmo código várias vezes com argumentos diferentes para produzir resultados diferentes.
+
+- Estruturas de repetição
+
+	Estruturas de repetição oferecem um jeito fácil e rápido de executar uma ação repetidas vezes.
+
+	Use "while" quando não se sabe quantas vezes vai repetir, teste no inicio, pode nunca ser executada, exemplo:
+
+		<declaração da variavel de controle>;
+
+		while (<teste da variável de controle>) {
+			// Código  a ser executado caso a condição seja satisfeita
+			...
+			// Alteração do valor da variável de controle se necessário
+		}
+
+	Use "for" quando se sabe a quantidade de vezes a ser executada, sempre é executada
+
+		for (<declaração da variável de controle>; <teste da variavel de controle>; <incremento ou decremento da variavel de controle>) {
+			// Código a ser executado quando a repetição for executada>
+		}
+
+	Use "do while" quando não se sabe quantas vezes vai repetir, teste no final, é executada ao menos uma vez
+
+		<declaração da variavel de controle>;
+
+		do {
+			// Código  a ser executado caso a condição seja satisfeita
+			...
+			// Alteração do valor da variável de controle se necessário
+		} while (<teste da variável de controle>);
+
+- Listas (array)
+
+	Uma lista, também chamada de Array, é um tipo de dado que nos permite armazenar e ler diversos valores em sequência. Esse é uma estrutura muito útil quando estamos lidando com diversos dados e não sabemos quantos serão ou não seria prático ter uma variável para cada um deles.
+
+	Declaração:
+
+	// Vazio
+	let listaVazia = [];
+
+	// Com itens
+	let listaNumero = [1, 2, 3, 4, 55, 66, 777];
+
+	O acesso dos itens é feito por indice, começando pelo "0", exemplo:
+
+	listaNumero[0];
+	listaNumero[1];
+	listaNumero[2];
+

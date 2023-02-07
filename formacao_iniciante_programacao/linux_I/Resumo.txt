@@ -1,0 +1,61 @@
+- Terminal
+
+	O terminal Linux, que também pode ser chamado de shell, é basicamente uma ferramenta que recebe instruções digitadas por usuários ou usuárias a partir de um periférico como o teclado. Essas instruções são repassadas às partes de baixo nível do sistema operacional.
+
+- Comandos
+
+	*							- Caractere coringa, todos os itens
+	.							- Diretorio atual
+	..							- Diretorio anterior
+	>							- Direcionamento de fluxo com sobreposição
+	>>							- Direcionamento de fluxo sem sobreposição, adicionando ao final
+	?							- Caractere coringa, letra específica
+	cat 						- Mostra conteúdo do arquivo
+	cd 							- Volta ao diretorio home de usuário
+	cd <local> 					- Se movimenta entra os diretorios
+	clear 						- Limpa a tela
+	cp 							- Copia
+	date 						- Mostra a data atual
+	echo						- Exibição de texto
+	head						- Mostra as primeiras linhas de um arquivo
+	less						- Mostra conteudo do arquivo
+	ls 							- Lista arquivos
+	man 						- Manual dos comandos
+	mkdir						- Cria pasta
+	mv 							- Mover pasta ou arquivo
+	pwd							- Mostra pasta atual
+	rm 							- Apaga pasta ou arquivo
+	tail						- Mostra as ultimas linhas de um arquivo
+	tar -czfv 					- Compactação tar.gz
+	tar -xzfv 					- Descompactação tar.gz
+	Tecla "seta para baixo" 	- Movimenta no historico de comandos digitados
+	Tecla "seta para cima" 		- Movimenta no historico de comandos digitados
+	Tecla "TAB" 				- Autocompletar comando
+	touch						- Cria ou atualiza arquivo
+	zip							- Compactação tar.gz
+	unzip						- Descompactação zip
+	whoami						- Mostra usuário atual
+
+- Editor VI
+
+	vi <nome do arquivo>
+	Tecla "ESC" sai do modo de edição e volta ao modo de navegação
+	Para navegação no modo de edição utilizar as setas do teclado
+	Tecla "<numero da linha>G" vai para a linha desejada
+	Tecla "G" vai para a ultima linha
+	tecla "0" vai para o começo da linha
+	Tecla "$" vai para o final da linha
+	Tecla "i" entra no modo de edição na posição atual
+	Tecla "a" entra no modo de edição na posição seguinte
+	Tecla "A" entra no modo de edição no final da linha
+	Tecla "x" apaga o caractere atual
+	Teclas "dd" apaga a linha atual
+	Teclas ":q" fecha o arquivo sem salvar se ele nao foi alterado
+	Teclas ":q!" fecha o arquivo sem salvar se ele foi alterado
+	Teclas ":wq" salva e fecha o arquivo
+	Teclas ":w" salva o arquivo
+	/<palavra a ser buscada>
+	Tecla "n" no modo de busca vai para a proxima palavra
+	Tecla "N" no modo de busca vai para a palavra anterior
+	"yy" copia a linha
+	"p" cola a linha
