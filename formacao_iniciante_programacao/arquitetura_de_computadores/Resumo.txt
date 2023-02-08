@@ -1,17 +1,163 @@
-Memória ROM/RAM
-Memória não volátil 
-Memória volátil
-Memória primária
-Memória secundária
-Processador
-Bit
-Byte
-Linguagem de alto nível
-Linguagem de baixo nível (máquina)
-Código fonte
-Código de máquina
-Tradutor de código fonte para código de máquina
-Linguagem compilada
-Linguagem interpretada
-Linguagemd e abordagem híbrida
-JIT
+- Hardware
+
+	Hardware é a parte física de um sistema computacional, que inclui todos os componentes físicos e eletrônicos necessários para o funcionamento de um computador.
+
+	Isso inclui componentes como processadores, placas-mãe, memória RAM, unidades de armazenamento (como discos rígidos ou unidades de estado sólido), placas de vídeo, placas de rede, dispositivos de entrada (como teclados e mouse), dispositivos de saída (como monitores e impressoras) e outros periféricos.
+
+	O hardware é responsável por realizar as tarefas e instruções dadas pelo software (que é a parte lógica do sistema computacional), como processamento de dados, armazenamento de informações, exibição de imagens, etc.
+
+- Processador
+
+	O processador, também conhecido como CPU (Central Processing Unit), é o "cérebro" do computador. É o componente responsável por executar as instruções de software e realizar cálculos. O processador é o componente mais importante e crítico de um sistema computacional, pois é responsável por controlar todas as atividades do sistema e determinar o desempenho geral do computador.
+
+	O processador é composto por vários transistores e outros componentes eletrônicos que trabalham juntos para realizar instruções. A velocidade com que o processador pode executar essas instruções é medida em GHz (gigahertz). Quanto mais GHz, mais instruções o processador pode executar por segundo, o que significa que o computador será mais rápido e poderá executar mais tarefas simultaneamente.
+
+	Além da velocidade, outras características do processador, como o número de núcleos, a arquitetura e a tecnologia de fabricação, também afetam o desempenho do processador e, consequentemente, do computador como um todo.
+
+- Dispositivos de entrada
+
+	Os dispositivos de entrada de um computador são aqueles que permitem a entrada de dados e informações no sistema. Eles são usados para interagir com o computador e fornecer instruções e informações para ele.
+
+	Por exemplo:
+
+	Teclado: um dispositivo padrão para digitação de texto e comandos.
+	Mouse: um dispositivo usado para selecionar objetos na tela e controlar o cursor.
+	Touchpad: um dispositivo de toque sensível ao toque que é usado para selecionar objetos na tela e controlar o cursor, semelhante ao mouse.
+	Scanner: um dispositivo usado para digitalizar documentos e imagens para o computador.
+	Microfone: um dispositivo usado para gravar áudio e para uso em aplicativos de comunicação, como o Skype.
+	Webcam: uma câmera digital integrada ou conectada ao computador para capturar imagens e vídeos.
+	Joystick: um dispositivo de jogos usado para controlar personagens ou objetos em jogos e simulações.
+
+- Dispositivos de saida
+
+	Os dispositivos de saída de um computador são aqueles que permitem a exibição ou transferência de informações processadas pelo computador. Alguns exemplos incluem:
+
+	Monitor: um dispositivo de exibição de tela que mostra informações gráficas e de texto.
+	Impressora: um dispositivo que imprime informações em papel ou outro material.
+	Alto-falantes: dispositivos usados para reproduzir som.
+	Fones de ouvido: dispositivos que permitem a escuta de áudio em um nível mais alto ou mais privado.
+	Projetor: um dispositivo que projeta imagens em uma tela ou parede.
+	TV: um dispositivo de exibição de tela que pode ser conectado ao computador para mostrar informações gráficas e de texto.
+	Dispositivos de armazenamento: dispositivos externos, como discos rígidos, pendrives ou cartões de memória, usados para armazenar informações processadas pelo computador.
+
+- Memória não volátil 
+
+	A memória não volátil é um tipo de memória que mantém suas informações mesmo após o desligamento do sistema. Em outras palavras, ao contrário da memória RAM (que é volátil e perde suas informações quando o sistema é desligado), a memória não volátil mantém as informações armazenadas mesmo quando a energia é cortada.
+
+	Exemplos de memórias não voláteis incluem unidades de estado sólido (SSD), discos rígidos (HDD), cartões de memória flash e memórias ROM (Read-Only Memory). Estes tipos de memória são comumente utilizados para armazenar dados permanentes, como sistemas operacionais, arquivos de usuários e configurações de hardware.
+
+	Além disso, a memória não volátil também é mais resistente a falhas e danos do que a memória RAM, tornando-a uma opção mais segura e confiável para o armazenamento de dados importantes.
+
+- Memória volátil
+
+	A memória volátil é um tipo de memória que não mantém suas informações quando a energia é interrompida. Em outras palavras, ao contrário da memória não volátil (que mantém as informações mesmo após o desligamento do sistema), a memória volátil perde suas informações assim que a energia é cortada.
+
+	A memória RAM (Random Access Memory) é o exemplo mais comum de memória volátil. A RAM é usada como a memória principal do sistema, onde o sistema operacional, aplicativos e dados em uso são armazenados temporariamente enquanto o computador está ligado. Quando o computador é desligado, tudo armazenado na RAM é perdido.
+
+	A memória volátil é útil porque é muito rápida e acessível, permitindo que o sistema operacional e os aplicativos funcionem sem problemas. No entanto, devido à sua natureza volátil, a memória RAM não é adequada para armazenar dados permanentes. Para isso, é necessário usar outros tipos de memória não voláteis, como discos rígidos, unidades de estado sólido ou cartões de memória flash.
+
+- Memória primária
+
+	A memória principal (ou memória RAM) é a memória que é utilizada pelo sistema operacional, aplicativos e dados em uso para armazenar informações temporariamente. É chamada de memória principal porque é onde o sistema operacional e os aplicativos executam suas tarefas e acessam dados rapidamente.
+
+	A memória RAM é volátil, o que significa que todas as informações armazenadas na memória são perdidas quando o computador é desligado. No entanto, a memória RAM é muito rápida e acessível, o que significa que o sistema operacional e os aplicativos podem ler e escrever dados na memória RAM rapidamente. Isso torna a memória RAM importante para o desempenho geral do computador.
+
+	A quantidade de memória RAM que um computador tem é uma das principais características que influenciam o desempenho. Computadores com mais memória RAM são geralmente mais rápidos e podem executar mais aplicativos simultaneamente sem travar ou lentidão.
+
+- Memória secundária
+
+	A memória secundária de um computador é um tipo de memória não volátil usada para armazenar informações permanentemente, mesmo após o desligamento do sistema. Ela é chamada de "secundária" porque, em comparação com a memória RAM (memória principal), a memória secundária é mais lenta e menos acessível, o que significa que o sistema operacional e os aplicativos precisam gastar mais tempo para ler ou escrever dados na memória secundária.
+
+	Exemplos de memórias secundárias incluem discos rígidos (HDD), unidades de estado sólido (SSD), cartões de memória flash e discos removíveis (como discos ZIP ou discos rígidos externos). Estes dispositivos são usados para armazenar informações permanentes, como sistemas operacionais, arquivos de usuários, música, fotos, vídeos, etc.
+
+	A memória secundária é importante porque permite que os usuários armazenem dados permanentemente e acessem esses dados mesmo após o desligamento do sistema. Além disso, a memória secundária também é mais resistente a falhas e danos do que a memória RAM, o que significa que os dados armazenados na memória secundária são mais seguros e confiáveis.
+
+- Software
+
+	O software é o conjunto de programas, instruções e dados que fazem um computador funcionar. É o "programa" que executa tarefas específicas e processa informações no computador. O software é diferente do hardware, que é o equipamento físico do computador.
+
+	Existem dois tipos principais de software: o software de sistema e o software de aplicativo. O software de sistema fornece a base para o funcionamento do computador e inclui sistemas operacionais, como o Windows ou o macOS, que gerenciam os recursos do computador e permitem que outros programas funcionem. O software de aplicativo é projetado para realizar tarefas específicas, como edição de texto, navegação na web, gerenciamento de finanças e jogos.
+
+- Bit
+
+	O "bit" é a unidade básica de informação em um computador. Ele é representado por um valor binário de "0" ou "1". 
+
+- Byte
+
+	Um byte é a unidade básica de medida de capacidade de armazenamento de dados em um computador. Ele é composto por oito bits, que são os blocos individuais de informação que um computador pode armazenar e processar. Cada bit pode ser um 0 ou 1, e vários bits juntos podem representar números, letras, símbolos e outras informações.
+
+	O tamanho de um byte é geralmente considerado como a unidade padrão para o armazenamento de dados em um computador. A capacidade de armazenamento de um dispositivo é geralmente medida em bytes, kilobytes (Kb), megabytes (Mb), gigabytes (Gb) ou terabytes (Tb). Por exemplo, um dispositivo de armazenamento com uma capacidade de 1 Gb pode armazenar aproximadamente 1 bilhão de bytes de informação.
+
+- Linguagem de alto nível
+
+	A linguagem de alto nível é um tipo de linguagem de programação que é projetada para ser mais próxima do modo como as pessoas pensam e falam, comparada com a linguagem de baixo nível. As linguagens de alto nível fornecem comandos mais abstratos e fáceis de usar, permitindo que os programadores escrevam código mais rapidamente e com menos erros.
+
+	Exemplos de linguagens de alto nível incluem Python, Java, C++, Ruby e JavaScript. Essas linguagens têm sintaxes mais fáceis de entender e permitem que os programadores escrevam código mais legível, o que ajuda a melhorar a manutenibilidade e a eficiência do desenvolvimento de software. Além disso, as linguagens de alto nível permitem aos programadores se concentrar no problema que estão tentando resolver, em vez de se preocupar com os detalhes técnicos do hardware ou do sistema operacional.
+
+- Linguagem de baixo nível
+
+	Linguagem de baixo nível é um tipo de linguagem de programação que é mais próxima da forma como o hardware do computador entende e processa a informação. Elas são geralmente mais difíceis de usar e requerem mais habilidade e conhecimento técnico do programador.
+
+	Exemplos de linguagens de baixo nível incluem Assembly, C e Machine Code. Essas linguagens são geralmente mais rápidas e eficientes do que as linguagens de alto nível, pois permitem aos programadores controlar diretamente a arquitetura do hardware e acessar os recursos do sistema operacional. No entanto, devido à sua complexidade e à falta de abstração, é mais difícil escrever código em linguagem de baixo nível e é mais propenso a erros.
+
+	Atualmente, a maioria dos programadores usa principalmente linguagens de alto nível, que oferecem uma sintaxe mais intuitiva e recursos que facilitam o desenvolvimento de software. No entanto, em algumas situações específicas, como o desenvolvimento de sistemas embarcados ou a otimização de performance, é ainda necessário usar linguagens de baixo nível.
+
+- Código fonte
+
+	O código fonte de um programa é a representação escrita de um software em uma linguagem de programação. É o texto que os programadores escrevem e que é posteriormente compilado ou interpretado para produzir o software executável. O código fonte contém todas as instruções, funções, estruturas de dados e outros elementos que determinam como o software funciona.
+
+	O código fonte é considerado o ativo mais valioso de um software, pois permite aos programadores acessar e modificar o código para corrigir erros, adicionar novas funcionalidades ou melhorar a performance. Além disso, o código fonte é usado por outros programadores como base para o desenvolvimento de novos programas ou para compreender como determinado software funciona.
+
+	O código fonte de muitos programas é disponibilizado publicamente, o que permite aos programadores e usuários contribuírem para o desenvolvimento e aperfeiçoamento do software. Esse modelo de desenvolvimento aberto é comum em muitos projetos de software livre e open source.
+
+- Código de máquina
+
+	Código de máquina é a representação binária do software em um computador. É a forma como o hardware de um computador entende e processa o software. O código de máquina é composto por uma sequência de instruções codificadas em números binários, que são lidos e executados pelo processador do computador.
+
+	O código de máquina é gerado a partir do código fonte de um programa através de uma etapa chamada compilação ou montagem. Durante essa etapa, as instruções escritas na linguagem de programação são traduzidas para uma forma que o processador possa entender e executar.
+
+	O código de máquina é geralmente considerado uma linguagem de baixo nível, pois requer conhecimento técnico e habilidade para ser escrito e compreendido. No entanto, é a forma mais eficiente e rápida de se escrever software, pois permite um acesso direto à arquitetura do hardware e aos recursos do sistema operacional.
+
+	Atualmente, a maioria dos programadores usa principalmente linguagens de alto nível, que são mais fáceis de usar e permitem o desenvolvimento mais rápido e eficiente de software. No entanto, em algumas situações específicas, como o desenvolvimento de sistemas embarcados ou a otimização de performance, ainda é necessário escrever código em código de máquina.
+
+- Tradutor de código fonte para código de máquina
+
+	Um tradutor de código fonte para código de máquina é um programa de software que traduz o código escrito em uma linguagem de programação de alto nível para a forma binária que o processador do computador entende e executa.
+
+	Esses tradutores são chamados de compiladores ou montadores, dependendo da natureza da tradução. O compilador traduz o código fonte inteiro para código de máquina antes de executar o programa. Já o montador traduz o código fonte em pequenas partes, que são então ligadas e executadas como um todo.
+
+	O processo de tradução é realizado para tornar o software executável e permitir que o processador do computador o processo de forma mais eficiente e rápida. Além disso, a tradução para código de máquina permite que o software seja portável para diferentes sistemas operacionais e plataformas hardware, pois a tradução é realizada para a forma binária entendida pelo processador, independentemente do sistema operacional ou hardware utilizado.
+
+	Em geral, as linguagens de programação de alto nível permitem que os programadores escrevam código de forma mais simples e fácil, enquanto que o código de máquina é mais eficiente e rápido, mas mais difícil de ser escrito e compreendido. O uso de tradutores de código fonte para código de máquina permite que os programadores tirem proveito dos benefícios de ambas as linguagens, produzindo software de alta qualidade e eficiência.
+
+- Linguagem compilada
+
+	A linguagem compilada de computador é uma linguagem de programação de alto nível que é traduzida para código de máquina antes de ser executada pelo processador do computador. Isso significa que o código fonte da linguagem é traduzido para uma forma binária entendida pelo processador antes de ser executado.
+
+	As linguagens compiladas são geralmente usadas para aplicativos que precisam de velocidade e desempenho máximos, como jogos e aplicativos gráficos intensivos. Essas linguagens são traduzidas em código de máquina, que é uma forma mais eficiente de representar o programa e que é executada pelo processador mais rapidamente do que o código fonte original.
+
+	No entanto, o processo de tradução para código de máquina adiciona uma camada adicional de complexidade ao processo de desenvolvimento de software, já que os programadores precisam esperar pelo resultado da tradução antes de verificar se o programa está funcionando corretamente. Além disso, as linguagens compiladas tendem a ser menos flexíveis do que as linguagens interpretadas, já que o processo de tradução para código de máquina é mais difícil de modificar.
+
+- Linguagem interpretada
+
+	Uma linguagem interpretada de computador é uma linguagem de programação de alto nível que é executada diretamente pelo computador, sem ser traduzida para código de máquina antes. Ao invés disso, o código fonte é lido e interpretado pelo computador linha por linha, e as instruções são executadas imediatamente.
+
+	Linguagens interpretadas são geralmente mais fáceis de aprender e usar do que linguagens compiladas, já que o programador pode ver os resultados de suas alterações imediatamente, sem precisar esperar pela tradução para código de máquina. Além disso, linguagens interpretadas são mais flexíveis do que linguagens compiladas, já que o processo de interpretação permite a modificação do código em tempo de execução.
+
+	No entanto, a velocidade de execução das linguagens interpretadas pode ser menor do que a de linguagens compiladas, já que o processo de interpretação adiciona uma camada adicional de complexidade ao processo de execução do programa. Além disso, as linguagens interpretadas podem ser menos eficientes em termos de uso de memória do que as linguagens compiladas.
+
+- Linguagem de abordagem híbrida
+
+	Linguagem de abordagem híbrida de computador é uma linguagem de programação que combina características de linguagens compiladas e interpretadas. Por exemplo, Java é uma linguagem de abordagem híbrida, que é compilada para uma forma intermediária chamada bytecode, que é depois interpretada pelo Java Virtual Machine (JVM).
+
+	Assim, o código fonte Java é compilado uma vez, e depois pode ser executado em qualquer plataforma que tenha uma JVM instalada. Isso torna Java uma linguagem altamente portável. Além disso, o uso do bytecode como forma intermediária oferece a vantagem de que o código fonte original não precisa ser distribuído juntamente com o programa, o que aumenta a segurança do código.
+
+	A abordagem híbrida oferece ao programador a melhor das duas mundos, já que o código fonte é compilado, o que aumenta a velocidade de execução, e também pode ser interpretado, o que permite a modificação do código em tempo de execução. Além disso, as linguagens de abordagem híbrida podem ter vantagens adicionais, como a capacidade de oferecer melhorias de segurança e proteção contra vírus e ataques maliciosos.
+
+- JIT
+
+	JIT é a sigla para "Just-In-Time Compiler" ou Compilador Just-In-Time, em português. Em Java, o JIT é uma parte do Java Virtual Machine (JVM) que é responsável por compilar o bytecode em código de máquina na hora da execução, ao invés de compilá-lo antes da execução.
+
+	A compilação Just-In-Time permite que o código Java seja executado mais rapidamente, uma vez que o código compilado é mais rápido do que o código interpretado. Além disso, a compilação JIT também permite que a JVM aproveite melhor as características da plataforma e do hardware, o que pode resultar em ainda mais melhorias de desempenho.
+
+	O uso do compilador JIT é uma das vantagens da abordagem híbrida de linguagem Java, já que ele oferece a velocidade de uma linguagem compilada, combinada com a flexibilidade e portabilidade de uma linguagem interpretada. Em resumo, o JIT é uma característica importante da JVM Java que ajuda a melhorar o desempenho da aplicação Java.
