@@ -1,0 +1,297 @@
+- O qué HTML
+
+    HTML é a sigla para HyperText Markup Language, que é uma linguagem de marcação utilizada para desenvolver páginas da web. É uma das tecnologias básicas da internet e é usada para criar a estrutura e o conteúdo de uma página da web.
+
+    O HTML permite adicionar texto, imagens, vídeos, links e outros elementos à página da web, além de fornecer informações ao navegador sobre como apresentar o conteúdo para o usuário. Cada elemento HTML é marcado com uma tag, que é uma instrução para o navegador sobre como exibir o conteúdo.
+
+    Por exemplo, o elemento <p> é usado para definir um parágrafo de texto, enquanto o elemento <img> é usado para exibir uma imagem. O HTML é facilmente legível pelos humanos, mas também pode ser interpretado pelas máquinas, tornando possível a indexação e a pesquisa do conteúdo da página da web.
+
+- Versões HTML
+
+    Ao longo dos anos, o HTML evoluiu e diversas versões foram lançadas. Aqui estão algumas das versões mais importantes do HTML:
+
+    HTML (1991) - A primeira versão do HTML, que foi desenvolvida por Tim Berners-Lee, o inventor da World Wide Web.
+
+    HTML 2.0 (1995) - Uma versão atualizada que incluía suporte para tabelas e formulários.
+
+    HTML 3.2 (1997) - Uma versão aprimorada que adicionou novos recursos, incluindo suporte para imagens e fontes.
+
+    HTML 4.01 (1999) - Uma versão atualizada que incluía suporte para estilos CSS e scripts JavaScript.
+
+    HTML5 (2014) - A versão mais recente do HTML, que inclui novos recursos para melhorar a interação com a página, como suporte para vídeo e áudio nativos, e também torna o desenvolvimento de aplicativos da web mais fácil.
+
+    O HTML é uma linguagem em constante evolução e novas versões são lançadas periodicamente para atender às necessidades atuais da web. Atualmente, o HTML5 é a versão mais amplamente utilizada e recomendada para o desenvolvimento de páginas da web.
+
+- O que são TAGS HTML
+
+    As tags HTML são marcações utilizadas para definir diferentes elementos em uma página da web. Cada tag tem uma função específica e instrui o navegador sobre como apresentar o conteúdo da página.
+
+    Por exemplo, a tag <p> é usada para definir um parágrafo de texto, enquanto a tag <h1> é usada para definir um cabeçalho de nível 1. As tags são geralmente inseridas em pares, com uma tag de abertura <tagname> e uma tag de fechamento </tagname>, que especificam o início e o fim de um elemento HTML.
+
+    Algumas tags são usadas para estruturar o conteúdo da página, como as tags <html>, <head> e <body>, enquanto outras são usadas para adicionar elementos de conteúdo, como texto, imagens, links e outros.
+
+    O HTML inclui uma ampla variedade de tags, cada uma com uma finalidade específica. Conhecer as tags HTML é fundamental para o desenvolvimento de páginas da web, pois permite a criação de conteúdo estruturado e bem formatado.
+
+- Tipos de TAGS HTML
+
+    Temos dois tipos de TAGS, com "com fechamento" e "somente abertura".
+
+    As tags HTML com fechamento são aquelas que precisam de uma tag de fechamento para indicar o fim do elemento. Essas tags são geralmente inseridas em pares, com uma tag de abertura <tagname> e uma tag de fechamento </tagname>, que especificam o início e o fim do elemento.
+
+    Por exemplo, a tag <p> é usada para definir um parágrafo de texto, e para indicar o fim do parágrafo, é necessário usar a tag de fechamento </p>. De maneira semelhante, a tag <h1> é usada para definir um cabeçalho de nível 1, e para indicar o fim do cabeçalho, é necessário usar a tag de fechamento </h1>.
+
+    As tags HTML com fechamento são usadas para estruturar o conteúdo da página, especificando os diferentes elementos que compõem a página e seus respectivos conteúdos. Além disso, elas permitem a aplicação de estilos e outros recursos para melhorar a aparência e a funcionalidade da página.
+
+    É importante lembrar que, para que uma página HTML seja bem-formada, é necessário fechar todas as tags abertas, e fazer isso corretamente, pois isso pode afetar a aparência e a funcionalidade da página.
+
+    As tags HTML de somente abertura são aquelas que não precisam de uma tag de fechamento para indicar o fim do elemento. Essas tags são usadas para especificar elementos que não possuem conteúdo, mas que precisam ser representados na página.
+
+    Por exemplo, a tag <img> é usada para inserir uma imagem na página, mas ela não precisa de uma tag de fechamento, pois não possui conteúdo. De maneira semelhante, a tag <input> é usada para criar elementos de formulário, como campos de texto ou botões, e também não precisa de uma tag de fechamento.
+
+    As tags HTML de somente abertura são usadas para adicionar elementos que não possuem conteúdo, como imagens, links, elementos de formulário, entre outros. Elas são úteis para aumentar a funcionalidade e a interatividade da página, e para melhorar a aparência da página.
+
+    No entanto, é importante lembrar que as tags HTML de somente abertura precisam ter todos os atributos necessários para seu correto funcionamento, caso contrário, a página pode não funcionar como esperado. Além disso, é importante seguir a sintaxe correta ao usar as tags HTML de somente abertura, pois isso pode afetar a funcionalidade e a aparência da página.
+
+- Propriedades das TAGS HTML
+
+    As propriedades das tags HTML são atributos adicionais que podem ser usados para fornecer informações adicionais sobre um elemento HTML. Essas propriedades são especificadas na tag de abertura do elemento.
+
+    Por exemplo, a propriedade "src" pode ser usada na tag <img> para especificar o endereço URL da imagem a ser exibida. De maneira semelhante, a propriedade "href" pode ser usada na tag <a> para especificar o endereço URL do link.
+
+    As propriedades das tags HTML permitem especificar informações adicionais sobre um elemento, como o endereço de uma imagem, o endereço de um link, o tamanho de uma imagem, entre outros. Elas também podem ser usadas para aplicar estilos aos elementos, como definir a cor de fundo de um parágrafo ou a cor da fonte.
+
+    Além disso, as propriedades das tags HTML são importantes para garantir que a página HTML seja acessível e funcione corretamente em diferentes dispositivos e navegadores. É importante lembrar que as propriedades das tags HTML devem ser usadas de acordo com a especificação HTML e devem seguir a sintaxe correta, para que a página funcione corretamente.
+
+- TAGS HTML semânticas
+
+    As tags semânticas em HTML são elementos que dão significado ao conteúdo da página, ajudando a estruturá-lo e torná-lo mais acessível para usuários e mecanismos de busca. Algumas das principais tags semânticas incluem:
+
+    <header>: representa um container para o cabeçalho do documento ou seção.
+    <nav>: representa uma seção da página que contém links de navegação.
+    <main>: representa o conteúdo principal da página, excluindo cabeçalhos, rodapés e outras seções.
+    <article>: representa uma seção autônoma do documento, como uma postagem de blog ou uma notícia.
+    <section>: representa uma seção genérica de um documento, geralmente com um título relacionado.
+    <aside>: representa uma seção de conteúdo tangencial, como uma barra lateral ou uma citação.
+    <footer>: representa um rodapé para o documento ou seção.
+    <figure> e <figcaption>: representam uma imagem ou outro conteúdo visual, juntamente com uma legenda ou descrição.
+
+    O uso de tags semânticas ajuda a melhorar a acessibilidade da página para usuários com necessidades especiais, além de tornar o conteúdo mais fácil de compreender e rastrear para mecanismos de busca.
+
+- Nome padrão do arquivo principal HTML
+
+    O nome padrão para o arquivo principal HTML é "index.html". Este nome é comumente usado como a página inicial de um site, que é a primeira página que é exibida quando alguém acessa o site.
+
+    Quando um usuário digita o endereço de um site, o navegador procura automaticamente por um arquivo chamado "index.html" na raiz do site. Se esse arquivo for encontrado, ele será exibido como a página inicial do site. Caso contrário, o navegador pode exibir uma lista de arquivos no diretório raiz do site, que não é o comportamento desejado para a maioria dos sites.
+
+    É possível usar outros nomes para o arquivo principal HTML, mas o uso do nome "index.html" é amplamente aceito e é o padrão adotado na indústria. Além disso, alguns servidores web têm configurações específicas que exigem o uso do nome "index.html" para a página inicial.
+
+- Documento básico HTML
+
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+    </body>
+    </html>
+
+- TAGS HTML
+
+    <!DOCTYPE html>
+
+        A tag <!DOCTYPE html> é uma declaração de tipo de documento e é colocada no início de um documento HTML. Ela informa ao navegador qual é a versão do HTML que está sendo usada para escrever o documento.
+
+        A declaração <!DOCTYPE html> especifica que o documento está escrito em HTML5, que é a versão mais recente e atualizada do HTML. Isso ajuda a garantir que o navegador exiba o conteúdo de acordo com as especificações mais recentes do HTML.
+
+        Além disso, a presença da declaração <!DOCTYPE html> também ajuda a garantir que o navegador exiba o documento em modo estrito, o que significa que o navegador segue rigorosamente as regras do HTML e apresenta menos problemas de compatibilidade com diferentes navegadores.
+
+        A tag <!DOCTYPE html> é uma das primeiras coisas que deve ser incluída em um documento HTML e é importante para garantir a compatibilidade e a correta exibição do conteúdo.
+
+    <html lang="pt-BR">
+
+        A tag <html> é a tag raiz de um documento HTML e engloba todo o conteúdo da página. Ela indica ao navegador que o conteúdo dentro dessa tag é escrito em HTML e deve ser exibido como tal. A tag <html> é essencial para qualquer documento HTML e é obrigatória para que o navegador saiba como exibir o conteúdo da página. 
+
+        O atributo "lang" dentro da tag HTML é usado para especificar a linguagem do conteúdo do documento HTML. Isso ajuda a fornecer informações a navegadores, mecanismos de busca e outras ferramentas para exibir o conteúdo corretamente, incluindo fontes, codificação de caracteres, entre outras coisas. Neste exemplo, "pt-BR" é o código de idioma ISO 639-1 que especifica que o conteúdo é em português do Brasil.
+
+    <head> </head>
+
+        A tag <head> em um documento HTML representa a seção de cabeçalho da página. Ela contém informações sobre a página que não são exibidas diretamente ao usuário, mas são importantes para navegadores, mecanismos de busca e outros agentes de processamento. A tag <head> é obrigatória em todo documento HTML e deve ser colocada logo após a declaração <!DOCTYPE html>.
+
+        Algumas das informações incluídas na seção de cabeçalho incluem:
+
+        Título da página
+        Metadados
+        Links para folhas de estilo CSS
+        Scripts  
+
+    <meta charset="UTF-8">
+
+        A tag <meta charset="UTF-8"> em um documento HTML especifica o conjunto de caracteres usado para codificar o conteúdo da página.
+
+        UTF-8 é uma codificação de caracteres que permite representar uma ampla gama de caracteres internacionais. É a codificação de caracteres recomendada para uso na web, pois suporta a maioria dos idiomas e caracteres usados em todo o mundo.
+
+        A tag <meta charset="UTF-8"> deve ser incluída na seção de cabeçalho da página, geralmente logo após a tag <head>.
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        A tag <meta http-equiv="X-UA-Compatible" content="IE=edge"> é uma diretiva de compatibilidade do Internet Explorer. Ela é usada para forçar o Internet Explorer a usar a versão mais recente e compatível do seu motor de renderização, em vez de uma versão antiga e menos compatível.
+
+        A diretiva X-UA-Compatible é específica para o Internet Explorer e não é reconhecida por outros navegadores. Ela deve ser incluída na seção de cabeçalho da página, geralmente logo após a tag <head>.
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        A tag <meta name="viewport" content="width=device-width, initial-scale=1.0"> é usada para configurar a exibição da página em dispositivos móveis, como smartphones e tablets.
+
+        A propriedade width=device-width faz com que a largura da página seja configurada para a largura do dispositivo, garantindo que a página seja exibida corretamente na tela. A propriedade initial-scale=1.0 configura a escala inicial da página para 1.0, o que significa que a página será exibida com o tamanho original, sem zoom.
+
+        A tag <meta name="viewport"> deve ser incluída na seção de cabeçalho da página, geralmente logo após a tag <head>.
+
+    <link rel="stylesheet" href="">
+
+        A tag <link rel="stylesheet" href=""> é usada para incluir folhas de estilo CSS em um documento HTML. Ela deve ser incluída na seção de cabeçalho da página, geralmente logo após a tag <head>.
+
+        A propriedade rel="stylesheet" indica que o link é uma folha de estilo e que o conteúdo da página será formatado de acordo com as regras definidas na folha de estilo. A propriedade href especifica o endereço da folha de estilo a ser incluída.
+
+    <title> </title>
+
+        A tag <title> em um documento HTML é usada para especificar o título da página. O título da página é exibido na guia do navegador e é usado como uma descrição da página quando ela é compartilhada em meios sociais ou pesquisada na internet.
+
+        A tag <title> deve ser incluída na seção de cabeçalho da página, dentro da tag <head>.
+
+    <body> </body>
+
+        A tag <body> em um documento HTML é usada para especificar o corpo do conteúdo da página. É dentro da tag <body> que são incluídos todos os elementos visuais da página, incluindo textos, imagens, links, formulários, tabelas, etc.
+
+        A tag <body> deve ser incluída logo após a tag <head> e deve ser fechada antes da tag de fechamento da tag <html>.
+
+    <header> </header>
+
+        A tag <header> em um documento HTML é usada para especificar a seção de cabeçalho de uma página. A seção de cabeçalho geralmente inclui informações importantes sobre a página, como o logotipo da empresa, o título da página, o menu de navegação e outras informações relevantes.
+
+        A tag <header> é uma das tags de conteúdo semântico do HTML5, o que significa que ela dá aos desenvolvedores uma maneira clara e concisa de indicar o propósito de uma seção em uma página.
+
+    <main> </main>
+
+        A tag <main> em um documento HTML é usada para identificar a seção principal de conteúdo da página. Ela destaca o conteúdo principal que é exclusivo da página e não inclui informações repetidas, como o cabeçalho, o rodapé, a navegação, etc. A tag <main> é uma das tags de conteúdo semântico do HTML5, o que significa que ela dá aos desenvolvedores uma maneira clara e concisa de indicar o propósito de uma seção em uma página.
+
+    <footer> </footer>
+
+        A tag <footer> em um documento HTML é usada para identificar o rodapé da página. O rodapé é a seção que geralmente contém informações complementares, como o nome da empresa, os direitos autorais, links para informações de contato, etc. A tag <footer> é uma das tags de conteúdo semântico do HTML5, o que significa que ela dá aos desenvolvedores uma maneira clara e concisa de identificar a seção de rodapé em uma página.
+
+    <h1> </h1>
+    <h2> </h2>
+    <h3> </h3>
+    <h4> </h4>
+    <h5> </h5>
+    <h6> </h6>
+
+        A tag <h1> até <h6> em HTML representam títulos de diferentes níveis. Eles são usados para dar títulos a seções e subseções do conteúdo em uma página HTML.
+
+        As tags <h1> até <h6> são chamadas de tags de cabeçalho e são usadas para marcar títulos importantes de diferentes níveis de importância. A tag <h1> é usada para o título principal da página e as tags <h2> até <h6> são usadas para títulos secundários. O número no cabeçalho (1-6) indica o nível de hierarquia do título.
+
+    <p> </p>
+
+        A tag <p> em HTML é usada para marcar um parágrafo de texto. Ela indica que o conteúdo entre as tags <p> e </p> representa um único parágrafo de texto.
+
+    <img>
+
+        A tag <img> em HTML é usada para incorporar imagens em um documento HTML. Ela é uma tag de auto-fechamento, o que significa que não tem uma tag de fechamento correspondente (</img>).
+
+        A tag <img> em HTML possui vários atributos que podem ser usados para controlar a exibição da imagem. Aqui estão alguns dos atributos mais comuns da tag <img>:
+
+        src: Especifica a URL da imagem a ser exibida.
+
+        alt: Fornece uma descrição alternativa da imagem. Isso é importante para acessibilidade, pois ajuda os usuários com deficiência visual a entender o que está sendo exibido na imagem.
+
+        title: Fornece uma descrição adicional da imagem que pode ser exibida quando o usuário passa o cursor sobre a imagem.
+
+    <a> </a>
+
+        A tag <a> em HTML é usada para criar links em um documento HTML. Um link permite que os usuários acessem outras páginas da Web, arquivos ou recursos externos, clicando em um elemento de hiperlink na página.
+
+        A tag <a> em HTML possui vários atributos que podem ser usados para criar links para outras páginas web, arquivos, emails, etc. Aqui estão alguns dos atributos mais comuns da tag <a>:
+
+        href: Especifica o destino do link.
+
+        title: Fornece uma descrição adicional do link que pode ser exibida quando o usuário passa o cursor sobre o link.
+
+    <strong> </strong>
+
+        A tag <strong> em HTML é usada para destacar o texto em negrito. Isso indica aos leitores que o texto contido dentro dessas tags é importante ou precisa ser destacado por algum motivo.
+
+- O que é CSS
+
+    CSS (Cascading Style Sheets) é uma linguagem de estilo utilizada para descrever a apresentação de documentos escritos em HTML. É usada para controlar a aparência de páginas da web, incluindo cores, fontes, layout, entre outros aspectos visuais.
+
+    CSS permite que os desenvolvedores separarem o conteúdo de uma página da sua aparência, tornando mais fácil a manutenção e modificação do design de uma página. Além disso, ele permite que você aplique estilos a muitas páginas ao mesmo tempo, economizando tempo e esforço.
+
+    CSS é uma das tecnologias mais importantes na web e é amplamente utilizado por desenvolvedores web para criar sites atraentes e acessíveis. Além disso, ele é constantemente atualizado com novas funcionalidades e melhorias, tornando-se uma ferramenta essencial para desenvolvedores web.
+
+- Propriedades CSS
+
+    As propriedades CSS são atributos que você pode aplicar a elementos HTML para controlar sua aparência. Elas são usadas para especificar características como cor, fonte, margem, largura, altura, posicionamento, entre outros aspectos visuais. Algumas propriedades CSS comuns incluem:
+
+    color: especifica a cor do texto de um elemento.
+    font-size: especifica o tamanho da fonte do texto de um elemento.
+    background-color: especifica a cor de fundo de um elemento.
+    width: especifica a largura de um elemento.
+    height: especifica a altura de um elemento.
+    margin: especifica a margem externa de um elemento.
+    padding: especifica o espaço interno de um elemento.
+    text-align: especifica o alinhamento do texto de um elemento.
+
+    Cada propriedade CSS pode ter vários valores diferentes, e você pode combinar várias propriedades para criar designs complexos. Além disso, você pode usar seletores CSS para aplicar estilos a elementos específicos em sua página, como por exemplo, todos os elementos <h1>, ou todos os elementos com uma determinada classe.
+
+- Nome padrão do arquivo principal CSS
+
+    O nome padrão para o arquivo principal de folha de estilo CSS é "style.css". No entanto, você pode dar a ele qualquer nome que desejar, desde que ele tenha a extensão ".css".
+
+- Uso básico CSS
+
+    Para usar o arquivo CSS em uma página HTML, você precisa incluir uma referência a ele no cabeçalho da página, usando a tag <link>. Por exemplo:
+
+    <link rel="stylesheet" href="css/style.css">
+
+    Esta tag diz ao navegador que o arquivo "style.css" é uma folha de estilo e que ele deve ser aplicado à página. Você pode incluir quantas folhas de estilo quiser em sua página, basta adicionar mais tags <link> com as referências adequadas.
+
+    Em seguida basta criar o arquico .css que será utilizado.
+
+    Dentro deste arquivo temos 
+
+- Seletores CSS
+
+    Um arquivo CSS é construído com regras de estilo, que são compostas por seletores e declarações. Cada regra de estilo define como um elemento HTML deve ser apresentado na página.
+
+    A estrutura básica de uma regra de estilo é a seguinte:
+
+    seletor {
+    propriedade: valor;
+    }
+
+    Para declarar uma propriedade CSS com um seletor de elemento HTML, você precisa utilizar o nome do elemento como seletor. O seletor de classe é aplicado aos elementos HTML deste mesmo tipo. Exemplo:
+
+    p {
+    font-size: 16px;
+    }
+
+    Para declarar uma propriedade CSS com um seletor de classe, você precisa adicionar um ponto (.) antes do nome da classe no seletor. O seletor de classe é aplicado aos elementos HTML que possuem a classe especificada no atributo "class". Exemplo:
+
+    .nome-da-classe {
+    propriedade: valor;
+    }
+
+    Para declarar uma propriedade CSS com um seletor de ID, você precisa adicionar uma hashtag (#) antes do nome do ID no seletor. O seletor de ID é aplicado aos elementos HTML que possuem o mesmo ID especificado no atributo "id". Exemplo:
+
+    #id {
+    propriedade: valor;
+    }
+
+- TAGS CSS
+
+background-color
+color
