@@ -62,6 +62,16 @@
 
     Além disso, as propriedades das tags HTML são importantes para garantir que a página HTML seja acessível e funcione corretamente em diferentes dispositivos e navegadores. É importante lembrar que as propriedades das tags HTML devem ser usadas de acordo com a especificação HTML e devem seguir a sintaxe correta, para que a página funcione corretamente.
 
+- Tipos de TAGS HTML em relação ao espaço
+
+    Em HTML, existem dois tipos principais de elementos: elementos de nível de bloco (block-level elements) e elementos de nível de linha (inline elements).
+
+    Elementos de nível de bloco são aqueles que ocupam toda a largura disponível de seu container pai, ocupando uma nova linha antes e depois de si mesmos. Exemplos de elementos de nível de bloco incluem <div>, <h1>-<h6>, <p>, <form>, <header>, <footer>, entre outros.
+
+    Elementos de nível de linha, por outro lado, são aqueles que só ocupam tanto espaço quanto necessário para exibir seu conteúdo. Eles não começam uma nova linha antes ou depois de si mesmos, e podem ser incluídos dentro de elementos de nível de bloco. Exemplos de elementos de nível de linha incluem <span>, <a>, <strong>, <em>, <img>, entre outros.
+
+    A distinção entre elementos de nível de bloco e inline é importante para o desenho de páginas da web, pois afeta como o conteúdo é exibido e como os estilos CSS são aplicados. Por exemplo, as propriedades de largura e altura só podem ser aplicadas a elementos de nível de bloco, enquanto que as propriedades de cor e tamanho de fonte só podem ser aplicadas a elementos de nível de linha.
+
 - TAGS HTML semânticas
 
     As tags semânticas em HTML são elementos que dão significado ao conteúdo da página, ajudando a estruturá-lo e torná-lo mais acessível para usuários e mecanismos de busca. Algumas das principais tags semânticas incluem:
@@ -101,6 +111,12 @@
     </html>
 
 - TAGS HTML
+
+    <!-- -->
+
+        As tags de comentário em HTML permitem que você adicione comentários ao código HTML, que não serão exibidos na página da web. As tags de comentário são úteis para explicar o que está acontecendo em uma parte específica do código, para desabilitar partes do código sem excluí-las permanentemente, ou para deixar mensagens para outros desenvolvedores.
+
+        Tudo o que estiver entre as tags de comentário não será exibido na página da web, mas poderá ser visto no código-fonte da página.
 
     <!DOCTYPE html>
 
@@ -224,6 +240,23 @@
 
         A tag <strong> em HTML é usada para destacar o texto em negrito. Isso indica aos leitores que o texto contido dentro dessas tags é importante ou precisa ser destacado por algum motivo.
 
+
+
+
+
+<div> </div>
+<nav> </nav>
+<article> </article>
+<section> </section>
+<aside> </aside>
+<figure> </figure>
+<figcaption> </figcaption>
+
+
+
+
+
+
 - O que é CSS
 
     CSS (Cascading Style Sheets) é uma linguagem de estilo utilizada para descrever a apresentação de documentos escritos em HTML. É usada para controlar a aparência de páginas da web, incluindo cores, fontes, layout, entre outros aspectos visuais.
@@ -259,9 +292,7 @@
 
     Esta tag diz ao navegador que o arquivo "style.css" é uma folha de estilo e que ele deve ser aplicado à página. Você pode incluir quantas folhas de estilo quiser em sua página, basta adicionar mais tags <link> com as referências adequadas.
 
-    Em seguida basta criar o arquico .css que será utilizado.
-
-    Dentro deste arquivo temos 
+    Em seguida basta criar o arquico .css que será utilizado e colocar dentro dele as regras desejadas.
 
 - Seletores CSS
 
@@ -270,28 +301,202 @@
     A estrutura básica de uma regra de estilo é a seguinte:
 
     seletor {
-    propriedade: valor;
+        propriedade: valor;
     }
 
-    Para declarar uma propriedade CSS com um seletor de elemento HTML, você precisa utilizar o nome do elemento como seletor. O seletor de classe é aplicado aos elementos HTML deste mesmo tipo. Exemplo:
+    Para declarar uma regra de estilo CSS com um seletor de elemento HTML, você precisa utilizar o nome do elemento como seletor. O seletor de classe é aplicado aos elementos HTML deste mesmo tipo. Exemplo:
 
-    p {
-    font-size: 16px;
+    nome-do-elemento-HTML {
+        propriedade: valor;
     }
 
-    Para declarar uma propriedade CSS com um seletor de classe, você precisa adicionar um ponto (.) antes do nome da classe no seletor. O seletor de classe é aplicado aos elementos HTML que possuem a classe especificada no atributo "class". Exemplo:
+    Para declarar uma regra de estilo CSS com um seletor de classe, você precisa adicionar um ponto (.) antes do nome da classe no seletor. O seletor de classe é aplicado aos elementos HTML que possuem a classe especificada no atributo "class". Exemplo:
 
     .nome-da-classe {
-    propriedade: valor;
+        propriedade: valor;
     }
 
-    Para declarar uma propriedade CSS com um seletor de ID, você precisa adicionar uma hashtag (#) antes do nome do ID no seletor. O seletor de ID é aplicado aos elementos HTML que possuem o mesmo ID especificado no atributo "id". Exemplo:
+    Para declarar uma regra de estilo CSS com um seletor de ID, você precisa adicionar uma hashtag (#) antes do nome do ID no seletor. O seletor de ID é aplicado aos elementos HTML que possuem o mesmo ID especificado no atributo "id". Exemplo:
 
     #id {
-    propriedade: valor;
+        propriedade: valor;
     }
+
+- Como nomear classes e IDs no CSS
+
+    Não existe um padrão único para nomear classes e IDs no CSS, mas uma boa prática é seguir a convenção BEM (Block, Element, Modifier).
+
+    A convenção BEM (Block, Element, Modifier) é uma metodologia de codificação utilizada para nomear classes em CSS. Ela tem como objetivo ajudar a criar uma estrutura organizada, legível e fácil de manter para o seu código CSS.
+
+    Aqui está como funciona o BEM:
+
+    Block: representa um componente independente e funcional em seu HTML, como um cabeçalho ou uma caixa de conteúdo. O nome do bloco é escrito normalmente, por exemplo, "header" ou "content-box".
+
+    Element: representa um elemento dentro do bloco, como um título ou um parágrafo. O nome do elemento é escrito com dois sinais de underline antes do nome do elemento, por exemplo, "header__title" ou "content-box__paragraph".
+
+    Modifier: representa uma variante ou estado alternativo do bloco ou elemento, como uma cor diferente ou uma orientação. O nome do modificador é escrito com dois hífens antes do modificador, por exemplo, "header--red" ou "content-box--large".
+
+    Ao seguir a convenção BEM, você pode criar classes CSS que são claras e significativas, além de serem fáceis de manter e entender. Além disso, ela permite que você trabalhe com o CSS de forma modular e reutilize componentes em diferentes partes de sua página.
+
+    Exemplo de como seria:
+
+    <header class="header header--red">
+    <h1 class="header__title">Hello World</h1>
+    </header>
+
+    <div class="content-box content-box--large">
+    <p class="content-box__paragraph">Lorem ipsum dolor sit amet.</p>
+    </div>
+
+    No CSS, você pode escrever regras que correspondem a cada classe:
+
+    .header {
+    background-color: white;
+    padding: 10px;
+    }
+
+    .header--red {
+    background-color: red;
+    }
+
+    .header__title {
+    font-size: 20px;
+    }
+
+    .content-box {
+    background-color: white;
+    padding: 10px;
+    }
+
+    .content-box--large {
+    width: 500px;
+    }
+
+    .content-box__paragraph {
+    font-size: 14px;
+    }
+
+- Box model
+
+    Em CSS, o termo "box model" é usado quando se fala em design e layout.
+
+    O modelo de caixa CSS é essencialmente uma caixa que envolve cada elemento HTML. Consiste em: margens, bordas, preenchimento e o conteúdo real. A imagem abaixo ilustra o modelo da caixa:
+
+    ____________________________
+    |          Margin           |
+    |  _______________________  |
+    |  |       Border        |  |  
+    |  |  ________________   |  |  
+    |  |  |    Padding    |  |  |  
+    |  |  |  ___________  |  |  |  
+    |  |  |  | Content |  |  |  |  
+    |  |  |  |_________|  |  |  |  
+    |  |  |_______________|  |  |  
+    |  |_____________________|  |
+    |___________________________|
+
+    Explicação das diferentes partes:
+
+    Content - O conteúdo da caixa, onde aparecem texto e imagens
+    Padding - Limpa uma área ao redor do conteúdo. O enchimento é transparente
+    Border - Uma borda que contorna o preenchimento e o conteúdo
+    Margin - Limpa uma área fora da borda. A margem é transparente
+
+    O box model nos permite adicionar uma borda ao redor dos elementos e definir o espaço entre os elementos. 
+
+- Reset CSS
+
+    Reset CSS é um conjunto de regras CSS que redefinem o estilo padrão dos navegadores para valores consistentes. O objetivo é garantir que o mesmo conteúdo HTML tenha o mesmo estilo em todos os navegadores, independentemente das diferenças de estilo padrão entre navegadores.
+
+    Sem o uso de reset CSS, o estilo padrão de cada navegador pode afetar o design de uma página da web de maneira negativa. Por exemplo, o tamanho de fonte padrão pode ser diferente entre navegadores, o que pode resultar em texto muito pequeno ou muito grande em alguns navegadores. O reset CSS resolve esse problema, definindo valores consistentes para as propriedades CSS mais comuns, como tamanho de fonte, margem, padding, etc.
+
+    Existem várias versões de reset CSS, como o "Reset CSS" de Eric Meyer e o "Normalize.css". A escolha de uma versão específica depende das necessidades de cada projeto. Além disso, é importante lembrar que o uso de reset CSS não é obrigatório, mas é uma boa prática que ajuda a garantir a consistência de estilo em diferentes navegadores.
+
+- Reset CSS (Eric Meyer)
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+
+    body {
+        line-height: 1;
+    }
+
+    ol, ul {
+        list-style: none;
+    }
+
+    blockquote, q {
+        quotes: none;
+    }
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+- Reset CSS (manual)
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+- Viewport
+
+    Em computação gráfica, a viewport é a porção de área visível de um plano e é utilizada como unidade de medida no CSS para criar páginas Web 100% responsivas. Em outras palavras, a viewport varia de dispositivo para dispositivo, por exemplo em computadores, tablets e celulares, cada tela possui dimensões diferentes e enquanto uma página não responsiva apresentaria os elementos desproporcionais, uma página responsiva utilizando viewport teria seus elementos adequados a cada proporção.
+
+- Flexbox
+
+    Flexbox é uma tecnologia de layout do CSS que permite ajustar a distribuição de itens em uma página de maneira flexível e responsiva. Ele fornece uma maneira de organizar e alinhar elementos de forma fácil e eficiente, independentemente do tamanho da tela ou da resolução do dispositivo.
+
+    Com o Flexbox, você pode especificar como os elementos filhos devem se adaptar e se distribuir dentro de um contêiner pai, definindo as propriedades de flexibilidade, alinhamento, ordem e direção. Isso significa que você pode criar layouts complexos sem ter que escrever muito código ou lidar com posicionamento absoluto ou flutuante.
+
+    Aqui estão algumas das principais vantagens do Flexbox:
+
+    Flexibilidade: com o Flexbox, você pode facilmente distribuir espaço e elementos em diferentes direções e proporções.
+
+    Alinhamento: você pode alinhar elementos em diferentes direções e ajustar o comportamento de preenchimento de espaço vazio.
+
+    Responsividade: o Flexbox permite que você ajuste o layout em diferentes tamanhos de tela e resoluções de dispositivos de forma simples e eficiente.
+
+    Facilidade de uso: o Flexbox é muito mais fácil de usar e entender do que outras tecnologias de layout, como o grid ou o table-cell.
 
 - TAGS CSS
 
+/* */
+@import url()
 background-color
 color
+width
+margin
+padding
+height
+box-sizing
+font-family
+font-size
+font-weight
+text-align
+border-radius
+text-decoration
+
+display
+align-items
+justify-content
+flex-direction
+gap
