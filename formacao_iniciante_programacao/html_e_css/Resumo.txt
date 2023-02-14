@@ -240,22 +240,55 @@
 
         A tag <strong> em HTML é usada para destacar o texto em negrito. Isso indica aos leitores que o texto contido dentro dessas tags é importante ou precisa ser destacado por algum motivo.
 
+    <div> </div>
 
+        A tag <div> é uma tag HTML que representa uma divisão ou seção em um documento HTML. É usada como um contêiner genérico para agrupar outros elementos HTML e aplicar estilos CSS a eles. A <div> é uma das tags mais amplamente utilizadas na web devido à sua flexibilidade e capacidade de organizar o conteúdo de uma página de maneira simples e eficiente.
 
+        A tag <div> é geralmente usada para dividir o conteúdo em diferentes seções ou para aplicar estilos a grupos de elementos HTML. Por exemplo, você pode usar uma <div> para agrupar elementos relacionados, como um cabeçalho, um menu de navegação e um rodapé, e aplicar estilos separadamente a cada um desses grupos.
 
+    <nav> </nav>
 
-<div> </div>
-<nav> </nav>
-<article> </article>
-<section> </section>
-<aside> </aside>
-<figure> </figure>
-<figcaption> </figcaption>
+        A tag <nav> é uma tag HTML5 que indica uma seção de navegação em um documento HTML. Ela é usada para agrupar um conjunto de links de navegação, como links de um menu de navegação, barra de navegação ou índice de conteúdo. Os links dentro de uma tag <nav> são geralmente destinados a navegar para diferentes seções da página ou para outras páginas no site.
 
+        A tag <nav> é uma das tags semânticas, o que significa que ela fornece significado adicional ao conteúdo que ela envolve. Isso ajuda os mecanismos de pesquisa a entender a estrutura do seu site e fornece informações adicionais a leitores de tela para melhorar a acessibilidade.
 
+    <article> </article>
 
+        A tag <article> é uma tag HTML5 que representa um conteúdo autônomo em um documento HTML. É usada para marcar um conteúdo que é significativo em si mesmo, como um blog post, uma notícia, uma revisão de produto ou uma publicação em um fórum. A tag <article> pode ser usada em uma página ou em várias páginas, dependendo do tamanho do conteúdo.
 
+        A tag <article> é uma das tags semânticas, o que significa que ela fornece significado adicional ao conteúdo que ela envolve. Isso ajuda os mecanismos de pesquisa a entender a estrutura do seu site e fornece informações adicionais a leitores de tela para melhorar a acessibilidade.
 
+    <section> </section>
+
+        A tag <section> é uma tag HTML5 que representa uma seção distinta de conteúdo em um documento HTML. É usada para agrupar conteúdo semelhante ou relacionado, como capítulos de um livro, seções de uma página ou itens de uma lista. Cada seção pode conter seu próprio título, conteúdo e elementos secundários.
+
+        A tag <section> é uma das tags semânticas, o que significa que ela fornece significado adicional ao conteúdo que ela envolve. Isso ajuda os mecanismos de pesquisa a entender a estrutura do seu site e fornece informações adicionais a leitores de tela para melhorar a acessibilidade.
+
+        Ao usar a tag <section>, é importante ter em mente que ela representa uma seção de conteúdo distinta, e não apenas uma divisão de layout. Portanto, ela deve ser usada com conteúdo semântico relevante, e não apenas como uma maneira de estilizar o layout da página.
+
+    <aside> </aside>
+
+        A tag <aside> é uma tag HTML5 que representa um conteúdo tangencial ou secundário em relação ao conteúdo principal de uma página. É usada para agrupar conteúdo que complementa o conteúdo principal, como notas de rodapé, citações, informações adicionais ou comentários. A tag <aside> pode ser usada dentro de uma tag <section> ou fora dela.
+
+        A tag <aside> é uma das tags semânticas, o que significa que ela fornece significado adicional ao conteúdo que ela envolve. Isso ajuda os mecanismos de pesquisa a entender a estrutura do seu site e fornece informações adicionais a leitores de tela para melhorar a acessibilidade.
+
+        Ao usar a tag <aside>, é importante ter em mente que o conteúdo dentro dela é secundário em relação ao conteúdo principal da página. Por isso, ele deve ser usado com moderação e de forma a não prejudicar a compreensão do conteúdo principal da página.
+
+    <figure> </figure>
+
+        A tag <figure> é uma tag HTML5 que representa uma figura ou grupo de elementos, como imagens, gráficos, tabelas ou códigos, que ilustram o conteúdo principal de uma página. A tag <figure> é usada para agrupar esses elementos de forma que possam ser referenciados como uma unidade.
+
+        A tag <figure> é uma das tags semânticas, o que significa que ela fornece significado adicional ao conteúdo que ela envolve. Isso ajuda os mecanismos de pesquisa a entender a estrutura do seu site e fornece informações adicionais a leitores de tela para melhorar a acessibilidade.
+
+        Ao usar a tag <figure>, é importante ter em mente que o conteúdo dentro dela é um elemento que ilustra o conteúdo principal da página, e não apenas uma divisão de layout. Portanto, ele deve ser usado com conteúdo semântico relevante, e não apenas como uma maneira de estilizar o layout da página.
+
+    <figcaption> </figcaption>
+
+        A tag <figcaption> é uma tag HTML5 que representa uma legenda para uma figura ou grupo de elementos contidos na tag <figure>. É usada para fornecer descrições adicionais ou contexto para uma figura ou grupo de elementos, como imagens, gráficos, tabelas ou códigos.
+
+        A tag <figcaption> é uma das tags semânticas, o que significa que ela fornece significado adicional ao conteúdo que ela envolve. Isso ajuda os mecanismos de pesquisa a entender a estrutura do seu site e fornece informações adicionais a leitores de tela para melhorar a acessibilidade.
+
+        Ao usar a tag <figcaption>, é importante ter em mente que ela representa uma legenda para uma figura ou grupo de elementos, e não apenas uma descrição geral do conteúdo da página. Portanto, ela deve ser usada com conteúdo semântico relevante, e não apenas como uma maneira de estilizar o layout da página.
 
 - O que é CSS
 
@@ -477,26 +510,183 @@
 
     Facilidade de uso: o Flexbox é muito mais fácil de usar e entender do que outras tecnologias de layout, como o grid ou o table-cell.
 
+- Variáveis em CSS
+
+    Variáveis em CSS são uma forma de armazenar valores que podem ser reutilizados em vários lugares no seu arquivo CSS. Isso torna o seu código mais fácil de manter, pois você pode alterar o valor de uma variável em um único lugar e ter o efeito em todo o seu arquivo CSS.
+
+    As variáveis em CSS são declaradas usando a sintaxe no começo do arquivo CSS:
+
+    :root {
+    --nome-da-variavel: valor;
+    }
+
+    E podem ser usadas em qualquer lugar no seu arquivo CSS usando a seguinte sintaxe:
+
+    elemento classe ou id {
+    propriedade: var(--nome-da-variavel);
+    }
+
+    Por exemplo, você pode definir uma variável para a cor principal do seu site e usá-la em vários lugares no seu arquivo CSS:
+
+    :root {
+    --cor-principal: #ff0000;
+    }
+
+    .header {
+    background-color: var(--cor-principal);
+    }
+
+- Unidades de medidas em CSS
+
+    Temos dois tipos de medidas em CSS, absoluta e relativa.
+
+    As unidades de medida absoluta são fixas e um comprimento expresso em qualquer um deles aparecerá exatamente com esse tamanho.
+
+    Unidades de medida absoluta não são recomendadas para uso na tela, porque os tamanhos de tela variam muito. No entanto, eles podem ser usados ​​se a mídia de saída for conhecida, como para layout de impressão.
+
+    Exemplos:
+
+    Unidade	    Descrição
+    cm	        centímetros
+    mm	        milímetros
+    in	        polegadas (1in = 96px = 2.54cm)
+    px  	    pixels (1px = 1/96th of 1in)
+    pt	        pontos (1pt = 1/72 of 1in)
+    pc	        paicas (1pc = 12 pt)
+
+    As unidades de medida relativa especificam um comprimento relativo a outra propriedade de comprimento. As unidades de medida relativa escalam melhor entre diferentes mídias de renderização.
+
+    Unidade	    Descrição
+    em          Relativo ao tamanho da fonte do elemento (2em significa 2 vezes o tamanho da fonte atual)
+    ex          Relativo à altura x da fonte atual (raramente usado)
+    ch          Relativo à largura do "0" (zero)
+    rem         Relativo ao tamanho da fonte do elemento raiz
+    vw          Relativo a 1% da largura da viewport*
+    vh          Relativo a 1% da altura da viewport*
+    vmin        Relativo a 1% da dimensão menor da viewport*
+    vmax        Relativo a 1% da dimensão maior da viewport*
+    %           Relativo ao elemento pai
+
+    Por padrão utilizamos para textos a unidade de medida "rem" e para imagens utilizamos a unidade de medida "%".
+
+- Unidade "rem"
+
+    A primeira unidade relativa bastante famosa no mundo CSS é o "em". Dificilmente você achará algum navegador que não tenha suporte para essa medida, que está presente desde os primórdios.
+
+    Esta unidade funciona mudando o tamanho dos elementos filhos de acordo com o tamanho da fonte (font-size) do elemento pai, porem isso tende a se complicar quando estamos falando de 5, 6, 7 divs aninhadas.
+
+    O REM vem como sucessor do EM e ambos compartilham a mesma lógica de funcionamento (font-size), porém a forma de implementação é diferente. Enquanto o em está diretamente relacionado ao tamanho da fonte do elemento pai, o rem está relacionado com o tamanho da fonte do elemento root (raiz), no caso, a tag.
+
+    O fato de que o rem se relaciona com o elemento raiz resolve aquele problema que tínhamos com diversas divs (elementos) aninhados, uma vez que não haverá essa "herança" de tamanhos.
+
+    Exemplificando, sabemos que a tag "html" é a tag raiz de todo documento HTML. Normalmente os browsers especificam o tamanho default da fonte do elemento root (raiz) da página HTML como 16px, desta forma, etm todo o documento HTML 1rem é équivalente a 16px.
+
+    Para fazer a conversao de "px" para "rem basta dividir a medida em px por 16 e teremos o resultado em rem. Porem isso complica um pouco a conversao e precisamos efetuar alguns calculos manuais pois estamos trabalhando com base 16.
+
+    Porem existe um truque, se alterarmos a base para 10 a conversão fica bem mais facil, desta forma, mudando o font-size do elemento html para 62,5% podemos fazer a conversão com facilidade, exemplo:
+
+    html {
+        font-size: 62,5%; /* Alteração da base 16 para a base 10 na convrsão */
+    }
+
+    h1 {
+        font-size: 1.2rem;  /* Equivalente a 12px, na base 16 seria 0.75rem */
+    }
+
+    p {
+        font-size: 2.4rem; /* Equivalente a 24px, na base 16 seria 1.5rem */
+    }
+
+    Sendo assim, para converter de px para rem em base 10 basta dividir a unidade em px por 10 e teremos a unidade em rem.
+
+- Responsividade
+
+    A responsividade em CSS é a capacidade de um site ou aplicação web se adaptar a diferentes tamanhos de tela e dispositivos. Isso significa que o layout de um site deve ser otimizado para funcionar corretamente em tela larga, como um desktop, bem como em dispositivos móveis, como smartphones e tablets.
+
+    A responsividade em CSS é alcançada através da utilização de media queries. As media queries permitem que você aplique regras CSS diferentes dependendo das propriedades de tela, como tamanho e orientação. Por exemplo, você pode usar uma media query para mudar o estilo do layout quando a largura da tela for menor que um determinado valor.
+
+    Além disso, é importante usar unidades de medida flexíveis, como porcentagem, rem ou viewport units (vw ou vh), ao invés de pixels fixos, para que os elementos possam se adaptar a diferentes tamanhos de tela.
+
+    A responsividade é importante para garantir uma experiência consistente e acessível para os usuários em diferentes dispositivos e tamanhos de tela. Isso também é crucial para o SEO, pois sites responsivos são favoráveis ​​ao ranking do Google.
+
+- Media queries
+
+    Media queries são uma parte do CSS que permite definir regras de estilo diferentes para diferentes dispositivos, tamanhos de tela ou outras propriedades da tela. Eles são usados para criar designs responsivos que se adaptam a diferentes tamanhos de tela e orientações.
+
+    A sintaxe básica de uma media query é a seguinte:
+
+    @media (condição) {
+    /* Regras de estilo */
+    }
+
+    A condição pode ser baseada em uma ampla variedade de propriedades da tela, incluindo largura, altura, resolução, orientação, entre outros. Alguns exemplos incluem:
+
+    @media (min-width: 600px) {
+    /* Regras de estilo para telas com largura mínima de 600px */
+    }
+
+    @media (max-width: 800px) {
+    /* Regras de estilo para telas com largura máxima de 800px */
+    }
+
+    @media (orientation: portrait) {
+    /* Regras de estilo para dispositivos em modo retrato */
+    }
+
+    As media queries permitem que você crie designs altamente adaptáveis ​​que ofereçam uma experiência consistente e ótima para todos os usuários, independentemente do dispositivo ou tamanho da tela que eles estão usando.
+
+    Elas devem ser configuradas sempre ao final do arquivo CSS.
+
 - TAGS CSS
 
-/* */
-@import url()
-background-color
-color
-width
-margin
-padding
-height
-box-sizing
-font-family
-font-size
-font-weight
-text-align
-border-radius
-text-decoration
+    /* */
 
-display
-align-items
-justify-content
-flex-direction
-gap
+        A propriedade /* */ em CSS é uma notação de comentário que permite que você adicione comentários ao seu arquivo CSS. Os comentários são ignorados pelo navegador e não afetam a forma como a página é renderizada. Eles são usados para fornecer informações sobre o código ou para desabilitar temporariamente uma parte do seu código.
+
+    @import url()
+
+        A propriedade @import é uma regra de CSS que permite importar arquivos externos em seu arquivo principal. Isso é útil quando você deseja reutilizar o mesmo conjunto de regras de estilo em várias páginas, deseja organizar seu código em arquivos separados para facilitar a manutenção ou carregar fontes externas por exemplo.
+
+    background-color
+
+        A propriedade background-color é usada para definir a cor de fundo de um elemento HTML. É possível especificar uma cor utilizando nomes de cores como "red" ou "blue", valores hexadecimais como "#ff0000" ou "#0000ff", ou valores RGB ou RGBA como "rgb(255,0,0)" ou "rgba(255,0,0,1.0)".
+
+        A propriedade background-color afeta apenas a cor de fundo de um elemento e não inclui quaisquer efeitos adicionais, como imagens de fundo ou bordas.
+
+    border
+
+        A propriedade border é usada para definir bordas ao redor de um elemento HTML. Ela é uma propriedade abreviada que permite especificar todas as características de uma borda em uma única linha, incluindo largura, estilo e cor.
+
+    border-radius
+
+        A propriedade border-radius é usada para definir arredondamentos nas bordas de um elemento HTML. Ela permite especificar quantos pixels ou porcentagem da largura/altura do elemento devem ser usados para criar arredondamentos nas bordas.
+
+    box-sizing
+
+        A propriedade box-sizing em CSS define como o tamanho de um elemento HTML é calculado. Em outras palavras, define como as larguras e alturas são aplicadas aos elementos, incluindo padding e bordas.
+
+        Existem três valores possíveis para box-sizing:
+
+        content-box: é o comportamento padrão e significa que o tamanho de um elemento é calculado apenas a partir do conteúdo dentro dele.
+        border-box: significa que o tamanho de um elemento inclui o seu conteúdo, padding e borda.
+        inherit: significa que o comportamento de box-sizing é herdado do elemento pai.
+
+    color
+
+        A propriedade color em CSS é utilizada para definir a cor de texto de um elemento HTML. É possível especificar a cor de texto de uma página HTML utilizando valores em RGB, HEX, HSL ou nomes pré-definidos de cores.
+
+o que é a propriedade font-family em css sem mostrar exemplo
+o que é a propriedade font-size em css sem mostrar exemplo
+o que é a propriedade font-weight em css sem mostrar exemplo
+o que é a propriedade height em css sem mostrar exemplo
+o que é a propriedade margin em css sem mostrar exemplo
+o que é a propriedade padding em css sem mostrar exemplo
+o que é a propriedade text-align em css sem mostrar exemplo
+o que é a propriedade text-decoration em css sem mostrar exemplo
+o que é a propriedade width em css sem mostrar exemplo
+
+o que é a propriedade display em css sem mostrar exemplo
+o que é a propriedade flex-direction em css sem mostrar exemplo
+o que é a propriedade justify-content em css sem mostrar exemplo
+o que é a propriedade gap em css sem mostrar exemplo
+o que é a propriedade align-items em css sem mostrar exemplo

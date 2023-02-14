@@ -1,0 +1,417 @@
+
+- Case sensitive
+
+	Javascript diferencia as letras minusculas de maiusculas, desta forma "soma" é diferente "Soma" ou "SOMA".
+
+- Comentários
+
+	Os comentários JavaScript podem ser usados para explicar o código JavaScript e torná-lo mais legível.
+
+	Os comentários do JavaScript também podem ser usados para impedir a execução, ao testar o código alternativo.
+
+	Os comentários de linha única começam com // , desta forma qualquer texto entre // e no final da linha será ignorado pelo JavaScript (não será executado).
+
+	Exemplo:
+
+	// Este é um comentário de linha
+
+	Os comentários de bloco começam com /* e finalizam com */ , desta forma qualquer texto entre /* e */ será ignorado pelo JavaScript (não será executado).
+
+	Exemplo:
+
+	/* Este
+	é
+	um
+	comentário de bloco
+	*/
+
+- Variáveis
+
+	As variáveis são contêineres para armazenar dados (armazenar valores de dados).
+
+	Os nomes das variáveis podem conter letras, dígitos, sublinhados e cifrões.
+
+	Temos 3 maneiras de declarar uma variável JavaScript:
+
+	Usando "var"
+	Usando "let"
+	Usando "const"
+
+	Qual utilizar?
+
+		Sempre declare variáveis JavaScript com "var", "let" ou "const".
+
+		A palavra-chave "var" é usada em todo o código JavaScript de 1995 a 2015.
+
+		As palavras-chave "let" e "const" foram adicionadas ao JavaScript em 2015.
+
+		Se você deseja que seu código seja executado em navegadores mais antigos, você deve usar "var".
+
+		Se você quer uma regra geral, sempre declare variáveis com "const".
+
+		Se você acha que o valor da variável pode mudar, use "let".
+
+	Detalhes das formas de declaração
+
+		Declaração com "var":
+
+			Variáveis deste tipo têm escopo global.
+			Variáveis deste tipo podem ter seu valor alterado.
+			Variáveis deste tipo podem ser redeclaradas.
+			Variáveis deste tipo não precisam ser inicializadas ao declarar.
+
+		Declaração com "let":
+
+			Variáveis deste tipo têm escopo de bloco.
+			Variáveis deste tipo podem ter seu valor alterado.
+			Variáveis deste tipo não podem ser redeclaradas.
+			Variáveis deste tipo não precisam ser inicializadas ao declarar.
+
+		Declaração com "const":
+
+			Variáveis deste tipo têm escopo de bloco.
+			Variáveis deste tipo não podem ter seu valor alterado.
+			Variáveis deste tipo não podem ser redeclaradas.
+			Variáveis deste tipo precisam ser inicializadas ao declarar.
+
+- Tipagem fraca
+
+	Tipagem fraca em JavaScript significa que o tipo de uma variável pode mudar durante a execução do código. Em linguagens de programação com tipagem forte, o tipo de uma variável é definido no momento da declaração e não pode ser alterado posteriormente. Em JavaScript, no entanto, você pode atribuir valores de diferentes tipos à mesma variável ao longo do tempo.
+
+	Por exemplo, você pode inicialmente atribuir uma string à variável, mas depois mudar o valor para um número ou um objeto. Isso é permitido em JavaScript devido à sua tipagem fraca.
+
+	A tipagem fraca pode ser uma característica conveniente em alguns casos, mas também pode levar a erros difíceis de detectar, pois o tipo de uma variável pode mudar inesperadamente. Além disso, a tipagem fraca pode tornar mais difícil para os desenvolvedores entenderem o comportamento do código.
+
+- Tipos de variáveis
+
+	Em JavaScript, existem seis tipos de variáveis:
+
+	Number: representa números, incluindo números inteiros e de ponto flutuante.
+	String: representa cadeias de caracteres, incluindo palavras, frases e caracteres únicos.
+	Boolean: representa valores lógicos verdadeiro ou falso.
+	Null: representa ausência de valor.
+	Undefined: representa uma variável não inicializada ou sem valor atribuído.
+	Object: representa objetos complexos, que podem conter propriedades e métodos.
+
+	Além disso, a partir do ECMAScript 6 (ES6), há também o tipo de variável "Symbol". Os símbolos são valores únicos que podem ser usados como identificadores para propriedades de objetos.
+
+- Estruturas condicionais
+
+	Muitas vezes, quando você escreve código, deseja executar diferentes ações para diferentes decisões.
+
+	Você pode usar estruturas condicionais em seu código para fazer isso.
+
+	Em JavaScript, temos as seguintes estruturas condicionais:
+
+	Use "if" para especificar um bloco de código a ser executado, se uma condição especificada for verdadeira, exemplo:
+
+		if (condição) {
+		  // Bloco a ser executado se condição for verdadeira
+		}
+
+	Use "if...else" para especificar um bloco de código a ser executado, se a mesma condição for falsa, exemplo:
+
+		if (condição) {
+		  // Bloco a ser executado se condição for verdadeira
+		} else {
+			// Bloco a ser executado se condição for falsa
+		}
+
+	Use "else...if" para especificar uma nova condição para testar, se a primeira condição for falsa, exemplo:
+
+		if (condição) {
+		  // Bloco a ser executado se condição acima for verdadeira
+		} else if (condição) {
+			// Bloco a ser executado se condição acima for verdadeira
+		} else if (condição) {
+			// Bloco a ser executado se condição acima for verdadeira
+		}
+		...
+		} else {
+			// Bloco a ser executado se todas as condições forem falsas
+		}
+
+	Use "switch" para especificar muitos blocos alternativos de código a serem executados, exemplo:
+
+		switch(variável ou expressão) {
+		  case <valor>:
+		    // Bloco a ser executado se o valor acima corresponder
+		    break;
+		  case <valor>:
+		    // Bloco a ser executado se o valor acima corresponder
+		    break;
+		   ...
+		  default:
+		    // Bloco a ser executado se nenhum valor acima corresponder
+		}
+
+- Operador de atribuição
+
+	O Operador de Atribuição "="" atribui um valor a uma variável, exemplo:
+
+	let x = 10;
+
+- Operadores aritméticos
+
+	+	adição
+	-	subtração
+	*	multiplicação
+	**	exponenciação
+	/	divisão
+	%	resto da divisão
+	++	incremento
+	--	decremento
+
+	Precedência dos operadores
+
+	* / %
+	+ -
+
+- Operadores de atribuição composto
+
+	Usados como forma abreviada de escrever que uma variável recebe o valor dela em uma operação onde ela esta envolvida.
+
+	Operador 		Exemplo de uso
+	+= 				a = a + b;
+	-= 				a = a - b;
+	*= 				a = a * b;
+	**= 			a = a ** b;
+	/= 				a = a / b;
+	%= 				a = a % b;
+
+- Operadores comparativos
+
+	Operador 		Significado
+	>  				maior
+	<  				menor
+	>= 				maior ou igual
+	<= 				menor ou igual
+	== 				valor igual
+	===				valor e tipo igual
+	!= 				valor diferente
+	!== 			valor e tipo diferente
+	?				ternario
+
+- Operadores lógicos
+
+	Operador 		Significado
+
+	&& 				E
+	|| 				OU
+	! 				NÃO
+
+- Funções
+
+	Uma função JavaScript é um bloco de código projetado para executar uma tarefa específica.
+
+	Uma função JavaScript é executada quando "algo" a invoca (a chama).
+
+	Declaração:
+
+	function <nome da função>(<parametros>...) {
+		<código a ser executado pela função>;
+		return <valor a ser retonado pela função caso necessario>;
+	}
+
+	Exemplo:
+
+	// Declaração de uam função para computar a soma de dois valores
+	function soma(p1, p2) {
+	  return p1 + p2;
+	}
+
+	// Execução da função
+	soma(1, 2);
+
+	Detalhes
+
+		Uma função JavaScript é definida com a palavra chave "function", seguida por um nome, seguido por parênteses ().
+
+		Os nomes das funções podem conter letras, dígitos, sublinhados e cifrões (mesmas regras das variáveis).
+
+		Os parênteses podem incluir nomes de parâmetros separados por vírgulas (parâmetro1, parâmetro2, ... ).
+
+		O código a ser executado, pela função, é colocado entre chaves {}.
+
+		Os parâmetros da função são listados entre parênteses () na definição da função.
+
+		Os argumentos da função são os valores recebidos pela função quando ela é invocada.
+
+		Dentro da função, os argumentos (os parâmetros) se comportam como variáveis locais.
+
+		Quando o JavaScript atinge uma instrução de "return", a função para de ser executada.
+
+		Se a função foi invocada a partir de uma instrução, o JavaScript "retornará" para executar o código após a instrução invocada.
+
+		As funções geralmente calculam um valor de retorno. O valor de retorno é "retornado" de volta ao "chamador".
+
+	Por que Funções?
+
+		Você pode reutilizar o código, defina o código uma vez e use-o várias vezes.
+
+		Você pode usar o mesmo código várias vezes com argumentos diferentes para produzir resultados diferentes.
+
+- Estruturas de repetição
+
+	Estruturas de repetição oferecem um jeito fácil e rápido de executar uma ação repetidas vezes.
+
+	Use "while" quando não se sabe quantas vezes vai repetir, teste no inicio, pode nunca ser executada, exemplo:
+
+		<declaração da variavel de controle>;
+
+		while (<teste da variável de controle>) {
+			// Código  a ser executado caso a condição seja satisfeita
+			...
+			// Alteração do valor da variável de controle se necessário
+		}
+
+	Use "for" quando se sabe a quantidade de vezes a ser executada, sempre é executada
+
+		for (<declaração da variável de controle>; <teste da variavel de controle>; <incremento ou decremento da variavel de controle>) {
+			// Código a ser executado quando a repetição for executada>
+		}
+
+	Use "do while" quando não se sabe quantas vezes vai repetir, teste no final, é executada ao menos uma vez
+
+		<declaração da variavel de controle>;
+
+		do {
+			// Código  a ser executado caso a condição seja satisfeita
+			...
+			// Alteração do valor da variável de controle se necessário
+		} while (<teste da variável de controle>);
+
+- Listas (array)
+
+	Uma lista, também chamada de Array, é um tipo de dado que nos permite armazenar e ler diversos valores em sequência. Esse é uma estrutura muito útil quando estamos lidando com diversos dados e não sabemos quantos serão ou não seria prático ter uma variável para cada um deles.
+
+	Declaração:
+
+	// Vazio
+	let listaVazia = [];
+
+	// Com itens
+	let listaNumero = [1, 2, 3, 4, 55, 66, 777];
+
+	O acesso dos itens para leitura ou modificação é feito por indice, começando pelo "0", exemplo:
+
+	listaNumero[0];
+	listaNumero[1];
+	listaNumero[2];
+
+	Propriedades e métodos de um array:
+
+	concat() - Junta arrays e retorna um array com os arrays unidos
+	constructor - Retorna a função que criou o protótipo do objeto Array
+	copyWithin() - Copia elementos do array dentro do array, de e para posições especificadas
+	entries() - Retorna um par chave/valor Array Objeto de iteração
+	every() - Verifica se todos os elementos em uma matriz passam em um teste
+	fill() - Preenche os elementos em uma matriz com um valor estático
+	filter() - Cria uma nova matriz com cada elemento em uma matriz que passa em um teste
+	find() - Retorna o valor do primeiro elemento em uma matriz que passa em um teste
+	findIndex() - Retorna o índice do primeiro elemento em uma matriz que passa em um teste
+	forEach() - Chama uma função para cada elemento do array
+	from() - Cria um array a partir de um objeto
+	includes() - Verifica se um array contém o elemento especificado
+	indexOf() - Pesquisa o array por um elemento e retorna sua posição
+	isArray() - Verifica se um objeto é um array
+	join() - Une todos os elementos de um array em uma string
+	keys() - Retorna um Array Iteration Object, contendo as chaves do array original
+	lastIndexOf() - Pesquisa o array por um elemento, começando no final, e retorna sua posição
+	length - Define ou retorna o número de elementos em uma matriz
+	map() - Cria um novo array com o resultado da chamada de uma função para cada elemento do array
+	pop() - Remove o último elemento de uma matriz e retorna esse elemento
+	prototype - Permite adicionar propriedades e métodos a um objeto Array
+	push() - Adiciona novos elementos ao final de uma matriz e retorna o novo comprimento
+	reduce() - Reduzir os valores de uma matriz para um único valor (indo da esquerda para a direita)
+	reduceRight() - Reduz os valores de um array para um único valor (indo da direita para a esquerda)
+	reverse() - Inverte a ordem dos elementos em um array
+	shift() - Remove o primeiro elemento de uma matriz e retorna esse elemento
+	slice() - Seleciona uma parte de um array e retorna o novo array
+	some() - Verifica se algum dos elementos em uma matriz passa em um teste
+	sort() - Ordena os elementos de um array
+	splice() - Adiciona/Remove elementos de um array
+	toString() - Converte um array em uma string e retorna o resultado
+	unshift() - Adiciona novos elementos ao início de uma matriz e retorna o novo comprimento
+	valueOf() - Retorna o valor primitivo de um array
+
+- Nome padrão do arquivo principal do JavaScript
+
+	Não existe um nome padrão para o arquivo principal do JavaScript. O nome do arquivo pode ser qualquer coisa, desde que tenha a extensão .js. Alguns desenvolvedores usam nomes como "main.js" ou "index.js" para o arquivo principal, mas esses nomes não são obrigatórios e a escolha final é deixada ao critério do desenvolvedor. O mais importante é que o nome do arquivo reflita de forma clara e significativa o conteúdo do arquivo e ajuda a organizar seu projeto de maneira eficiente.
+
+- Carregando um arquivo Javascript em uma página HTML
+
+	Você pode carregar um arquivo JavaScript em uma página HTML adicionando uma tag "script" ao código HTML. A tag "script" é usada para incluir scripts em uma página web e deve ser colocada antes do enerramento da tag "body".
+
+	A sintaxe para carregar um arquivo JavaScript em uma página HTML é a seguinte:
+
+	<script src="<caminho dop arquivo javascript"></script>
+
+- Caixas pop-up
+
+	O JavaScript possui três tipos de caixas pop-up: caixa de alerta, caixa de confirmação e caixa de prompt.
+
+	Uma caixa de alerta é frequentemente usada se você quiser garantir que as informações cheguem ao usuário. Quando uma caixa de alerta aparecer, o usuário terá que clicar em "OK" para prosseguir. Exemplo:
+
+	window.alert('<texto a ser exibido>');
+
+	Uma caixa de confirmação geralmente é usada se você deseja que o usuário verifique ou aceite algo. Quando uma caixa de confirmação aparecer, o usuário terá que clicar em "OK" ou "Cancelar" para prosseguir. Se o usuário clicar em "OK", a caixa retornará true . Se o usuário clicar em "Cancelar", a caixa retornará false. Exemplo:
+
+	window.confirm('<texto a ser exibido>');
+
+	Uma caixa de prompt geralmente é usada se você deseja que o usuário insira um valor antes de entrar em uma página. Quando uma caixa de prompt aparecer, o usuário terá que clicar em "OK" ou "Cancelar" para continuar depois de inserir um valor de entrada. Se o usuário clicar em "OK", a caixa retornará o valor de entrada. Se o usuário clicar em "Cancelar" a caixa retornará null. Exemplo:
+
+	window.prompt('<texto a ser exibido>', '<texto padrão>');
+
+- Elemento "document"
+
+	O objeto "document" é um dos objetos mais importantes do JavaScript e representa o documento HTML da página web atual. Ele fornece uma interface para manipular e acessar todos os elementos e conteúdo da página.
+
+- Seletores Javascript
+
+	Os seletores em JavaScript são mecanismos que permitem selecionar elementos HTML na página. Eles são usados para manipular o conteúdo da página, adicionar interações e aplicar estilos.
+
+	Alguns exemplos de seletores comuns incluem:
+
+	document.getElementById - Este seletor permite selecionar um elemento HTML específico com base em seu id, informando como parametro uma string com o valor.
+
+	document.getElementsByTagName - Este seletor permite selecionar todos os elementos HTML de uma determinada tag, informando como parametro uma string com o valor.
+
+	document.getElementsByClassName() - Este seletor permite selecionar todos os elementos HTML de uma determinada classe, informando como parametro uma string com o valor.
+
+	document.getElementsByName() - Este seletor permite selecionar todos os elementos HTML de um determinado nome, informando como parametro uma string com o valor.
+
+	document.querySelector() - Este seletor permite selecionar um elemento HTML com base em uma classe, elemento ou id, informando como valor o tipo "." para classe, "#" para o id ou somente o nome do elemento para buscar pelo elemento.
+
+	document.querySelectorAll() - Este seletor permite selecionar todos os elementos HTML com base em uma classe, elemento ou id, informando como valor o tipo "." para classe, "#" para o id ou somente o nome do elemento para buscvar pelo elemento.
+
+- Template String
+
+	As "template strings"são uma nova forma de definir strings em JavaScript. Elas oferecem uma sintaxe mais clara e concisa para definir strings e permitem a inserção de expressões dentro da string sem a necessidade de concatenar as strings manualmente.
+
+	As template strings são delimitadas por crases invertidas (``) ao invés de aspas simples ou duplas. Dentro das template strings, você pode incluir expressões dentro de chaves (${expression}) e elas serão avaliadas e substituídas pelo seu valor ao tempo de execução (interpolação de string).
+
+	Aqui está um exemplo de como usar template strings:
+
+	let nome = "João";
+	let idade = 30;
+	console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+	Saída: "Meu nome é João e tenho 30 anos."
+
+	Também são permitidos calculos, exemplo:
+
+	let price = 10;
+	let vat = 0.25;
+	let total = `Total: ${(price * (1 + vat))}`;
+
+	Como você pode ver, as template strings permitem a inserção de variáveis, aspas simples e duplas e expressões dentro da string de uma forma fácil e intuitiva. Além disso, as template strings também suportam quebras de linha e espaços na formatação, o que pode ser útil em certos cenários.
+
+- Eventos do teclado
+
+	Os "eventos do teclado" em JavaScript se referem a ações específicas que ocorrem quando o usuário pressiona ou solta uma tecla no teclado. Esses eventos podem ser detectados e manipulados com o JavaScript, o que permite que você adicione interações e funcionalidades personalizadas baseadas nas ações do usuário.
+
+	Alguns exemplos de eventos do teclado incluem:
+
+	"keydown": Este evento é disparado quando uma tecla é pressionada.
+	"keyup": Este evento é disparado quando uma tecla é liberada.
+	"keypress": Este evento é disparado quando uma tecla é pressionada e liberada, geralmente produzindo um caractere na tela.
