@@ -1,0 +1,190 @@
+
+- GIT
+
+	É um sistema de versionamento: você controla as modificações de um projeto por meio de versões chamadas "commits".
+
+	Um projeto controlado pelo Git é chamado de repositório de versionamento. Tipicamente uma cópia "oficial" do repositório fica salvo em um servidor (repositório remoto). Cada pessoa que trabalha no projeto pode fazer uma cópia do repositório para seu computador (repositório local). A pessoa então faz suas alterações no projeto (novos commits) e depois salva as alterações no servidor.
+
+	Operações principais:
+
+	CLONE  - Copia o repositório remoto para seu computador
+	PULL   - Atualiza seu repositório local em relação ao repositório remoto
+	COMMIT - Salva uma nova versão (tipicamente no seu repositório local)
+	PUSH   - Envia o repositório local para o repositório remoto
+
+	O Git pode ser usado por ou por terminal de comando, web ou por um aplicativo gráfico.
+
+- Github
+
+	É um serviço de hospedagem de repositórios Git remotos.
+
+	Caracteristicas:
+
+	Possui uma interface gráfica web: github.com
+	É uma plataforma social (usuários, página de perfil, seguidores, colaboração, etc.)
+	Maior serviço do mundo de hospedagem de projetos de código aberto
+	Modelo de cobrança: gratuito para projetos de código aberto, pago para projetos privados
+	Alternativas: BitBucket, GitLab, etc.
+
+- Instalação do GIT
+
+	Opções recomendadas:
+
+	Use Vim as Git's default editor
+	Use Git from the Windows Command Prompt
+	Use the OpenSSL library
+	Checkout Windows-style, commit Unity-style line endings
+	Use MinTTY
+	DESMARCAR: Enable Git Credential Manager
+
+	É recomendado configurar o Windows para exibir os arquivos ocultos e a extensão dos arquivos para facilitar o uso do Git.
+
+- Configurar usuário do GIT
+
+	Executar no terminal do GIT:
+
+	git config --list
+	git config --global user.name "<nome do usuário>"
+	git config --global user.email "<email do usuário>"
+	git config --list
+
+- Alterar nome padrão da branch
+
+	Executar no terminal do GIT:
+
+	git config --list
+	git config --global init.defaultBranch main
+	git config --list
+
+- Criar acesso ao Github via SSH
+
+	Executar no terminal do GIT:
+
+	eval `ssh-agent -s`
+	cd ~/
+	mkdir .ssh
+	cd ~/.ssh
+	ssh-keygen -t rsa -b 4096 -C "github@fernandoribeira.com.br"
+	Apertar tecla "ENTER" 3 vezes
+	ssh-add ~/.ssh/id_rsa
+
+	Copiar os dados da chave publica:
+
+	cat id_rsa.pub
+
+	Adicionar esta chave no painel de controle do Github, na parte de "SSH and GPG keys".
+
+- Criar um novo projeto / primeiro commit
+
+	Passos:
+
+	1. Crie um novo projeto no seu ambiente de desenvolvimento
+
+	2. Crie um novo repositório no Github
+
+	3. Abra um terminal GIT na pasta do seu projeto
+
+	4. Certifique-se de estar identificado no Git do seu computador (nome e email) executando os comandos de configuração de usuário
+	
+	5. Faça os comandos a seguir
+
+	- Inicie um novo repositório local na pasta do seu projeto
+	git init
+
+	-Associa seu repositório local ao repositório remoto, com o apelido de "origin"
+	ATENÇÃO: troque pelo caminho do seu repositório do Github
+	git remote add origin <URL SSH do meu projeto>
+
+	- Verifica status dos arquivos
+	git status
+
+	- Adiciona todos arquivos ao stage
+	git add .
+
+	- Verifica status dos arquivos
+	git status
+
+	- Salva uma nova versão do projeto
+	git commit -m "<mensagem de commit>"
+
+	- Envia o repositório local para o repositório remoto
+	ATENÇÃO: nas próximas vezes basta fazer: git push
+	git push -u origin main
+
+- Salvando uma nova versão
+
+	Passos:
+
+	- Verifica status dos arquivos
+	git status
+
+	- Adiciona todos arquivos ao stage
+	git add .
+
+	- Verifica status dos arquivos
+	git status
+
+	- Salva uma nova versão do projeto
+	git commit -m "<mensagem de commit>"
+
+	- Envia o repositório local para o repositório remoto
+	git push
+
+- Trabalhando (clonando) um projeto existente
+
+	Passos:
+
+	1 - Clonar o repositório do Github
+
+	git clone <URL SSH do projeto>
+
+	2 - Importar o projeto no programa editor
+
+	3 - Altere o que você precisar no projeto
+
+	4 - Commitar as mudanças feitas no projeto
+
+	git status
+	git add .
+	git commit -m "<mensagem de commit>"
+	git log --oneline
+
+	5 - Salvar projeto atualizado no seu Github
+
+	git push
+
+- Verificando o histórico de versões
+
+	Para log mais completo executar "git log"
+
+	Para log mais simples executar "git log --oneline"
+
+- A sequência de commits deve ser respeitada
+
+	Sempre execute o comando "git pull" para sincronizar seu repositorio local antes de editar o codigo e antes de executar um commit.
+
+	Caso seu repositorio local esteja diferente do remoto e voce tente efetuar um comando git push será apresentado erro.
+
+- Ir para a versão especifica em todos os arquivos
+
+git restore --source <código do commit> .
+
+- Ir para a versão especifica em um arquivo em especifico
+
+git restore --source <código do commit> <nome do arquivo>
+
+- Mostrando as branchs disponiveis
+
+git branch
+
+- Criando branch
+
+git checkout -b <nome da branch>
+
+- Mudando de branch
+
+git switch <nome da branch>
+
+- Efetuar merge
+
+git merge <nome da branch que quer unificar na branch atual>
