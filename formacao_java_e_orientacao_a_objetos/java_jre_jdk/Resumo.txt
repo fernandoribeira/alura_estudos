@@ -1,0 +1,410 @@
+
+- Java
+
+	É uma linguagem de programação, plataforma de desenvolvimento e execução de programas.
+
+	Criada pela Sun Microsystems no meio da década de 1990 e adquirida pela Oracle Corporation em 2010.
+
+	Desenhada para ser utilizada em todos os tipos de dispositivos, principalmente portáteis.
+
+	É uma linguagem orientada a objetos, segura, robusta e que domina o mercado a muitos anos.
+
+	Resolve problemas de linguagens antigas como ponteiros / gerenciamento de memória, portabilidade, utilização em dispositivos diversos e custo.
+
+- Versões do Java
+
+	LTS ("Long Term Support" ou "suporte de longo prazo") - são versões com maior tempo de updates, correções e suporte tecnico por parte do fabricante. Elas são lançadas com menor frequencia.
+
+	Non-LTS - são versões com menor tempo de updates, correções e suporte tecnico por parte do fabricante. Elas são lançadas com menor frequencia, normalemnte a cada ano.
+
+- Edições do Java
+
+    Java SE (Java Standard Edition): para programação desktop
+
+    Java EE (Java Enterprise Edition): para programação web
+
+    Java ME (Java Micro Edition): para programação de dispositivos embarcados
+
+    JavaFX: para programação de multimidia
+
+- Java Virtual Machine (JVM)
+
+	Java Virtual Machine ou Máquina Virtual Java é um programa que carrega e executa os aplicativos Java.
+
+- Kits Java
+
+	Java Runtime Environment (JRE): programa a ser instalado para execução de programas Java, possui a máquina virtual Java (JVM).
+
+	Java Development Kit (JDK): programa a ser instalado para desenvolvimento e execução de programas Java (JVM), possui a máquina virtual Java, as APIs (bibliotecas) de desenvolvimento e o compilador Java.
+
+	Estes kits são disponibilizados para diversos sistemas operacionais, permitindo assim a criação e execução de aplicativos Java nestes ambientes.
+
+- Codigo fonte
+
+	Código fonte é um conjunto de instruções escritas em uma linguagem de programação específica que um programador cria para desenvolver um software ou aplicativo. O código fonte é a forma em que os programas de computador são escritos originalmente antes de serem transformados em linguagem de máquina executável, que é o código binário compreendido pelos computadores.
+
+- Bytecode
+
+	O bytecode Java é um código intermediário que é gerado pelo compilador Java quando um programa é compilado a partir do código fonte. É uma forma de código de baixo nível que é projetado para ser executado em uma máquina virtual Java (JVM).
+
+	A JVM é um componente essencial da plataforma Java, que permite que programas escritos em Java sejam executados em diferentes sistemas operacionais e arquiteturas de computador, sem a necessidade de recompilar o código fonte. Quando um programa Java é compilado, o compilador transforma o código fonte em bytecode Java, que é uma sequência de instruções em uma linguagem intermediária.
+
+	O bytecode Java é portátil, o que significa que pode ser executado em qualquer sistema que tenha uma JVM instalada. Quando um programa Java é executado, a JVM converte o bytecode em código de máquina nativo para a plataforma em que está sendo executado. Isso permite que o mesmo programa Java seja executado em diferentes sistemas sem a necessidade de alterar o código fonte ou recompilá-lo para uma plataforma específica.
+
+	O uso do bytecode Java e da JVM torna a plataforma Java uma escolha popular para desenvolvimento de aplicativos e sistemas que precisam ser executados em diferentes ambientes e arquiteturas de computador. Além disso, a JVM possui recursos que auxiliam na execução segura e confiável de programas Java, incluindo gerenciamento de memória, verificação de tipos e segurança.
+
+- IDE
+
+	IDE significa "Integrated Development Environment" ou traduzindo "Ambiente de Desenvolvimento Integrado".
+
+	É um conjunto de softwares utilizado para a construção de programas, exemplos:
+
+	C/C++ - Code Blocks
+	Java -  Eclipse, NetBeans
+	C# - Microsoft Visual Studio
+
+	Funcionalidades de uma IDE:
+
+	Edição de código fonte (indentação, autocompletar, destaque de palavras, etc.)
+	Depuração e testes
+	Construção do produto final
+	Sugestão de modelos
+	Auxiliar em várias tarefas do seu projeto
+
+- Estrutura de uma aplicação Java
+
+	Uma aplicação Java basicamente é composta por classes.
+
+- Classe básica Java
+
+	public <nome da classe> {
+		public static void main(String[] args) {
+			<código da classe>
+		}
+	}
+
+- Case sensitive
+
+	Java é case sensitive (ou sensível a maiúsculas e minúsculas), esse é um termo utilizado para descrever um sistema, linguagem ou software que faz distinção entre letras maiúsculas e minúsculas. Em outras palavras, quando um sistema é case sensitive, ele reconhece as letras maiúsculas e minúsculas como caracteres diferentes e trata-as de maneira distinta.
+
+- Indentação
+
+	Indentação em programação é o processo de alinhar o código-fonte para torná-lo mais legível e organizado, colocando espaços em branco ou tabulações no início de cada linha de um bloco de código. A indentação é uma técnica usada por programadores para tornar o código mais fácil de entender, especialmente quando o código inclui blocos aninhados e outras estruturas de controle.
+
+	A indentação em programação é usada para indicar a estrutura lógica do código e mostrar visualmente onde um bloco de código começa e termina. 
+
+- Encerramento de instrução
+
+	Toda instrução em Java deve ser finalizada com ";" (ponto e virgula).
+
+- Palavras reservadas
+
+	Palavras reservadas em Java são palavras-chave que têm um significado especial na linguagem Java e são usadas para fins específicos, como definir a estrutura básica de um programa, controlar o fluxo de execução, declarar variáveis, definir classes e métodos, e assim por diante. Essas palavras-chave são reservadas pelo compilador Java e não podem ser usadas como nomes de variáveis, métodos ou classes.
+
+	Algumas das palavras reservadas em Java incluem:
+
+	abstract, assert, boolean, break, byte, case, catch, char, class, const, continue, default, do, double, else, enum, extends, final, finally, float, for, goto, if, implements, import, instanceof, int, interface, long, native, new, package, private, protected, public, return, short, static, strictfp, super, switch, synchronized, this, throw, throws, transient, try, void, volatile, while
+
+- Comentários
+
+	Comentários em programas Java são códigos dentro dos programas que não serão executados mas server para dar informações relativas ao código.
+
+	Exemplo:
+
+	// Comentario de uma linha
+
+	/*
+	 * Comentário 
+	 * de
+	 * bloco
+	 */
+
+	/**
+	 * Comentário 
+	 * de
+	 * bloco JavaDoc
+	 */
+
+- Convenções de nomes em Java
+
+	Lower Camel Case ("lastName" por exemplo):
+
+	pacotes
+	atributos
+	métodos
+	variáveis e parâmetros
+
+	Pascal Case ("UserAccount" por exemplo):
+
+	classes
+
+- Variáveis
+
+	Em programação, uma variável é uma porção de memória (RAM) utilizada para armazenar dados durante a execução dos programas.
+
+	Declaração sem atribuir valor:
+
+	<tipo> <nome>;
+
+	Declaração atribuindo valor:
+
+	<tipo> <nome> = <valor inicial>;
+
+	Regras para nomes de variáveis:
+
+	Não pode começar com dígito
+	Não pode ter espaço em branco
+	Não usar acentos
+	Use nomes que tenham significado / relação com o que a variável representa
+	Use o padrão "CamelCase", em específico o "lowerCamelCase" (de letra inicial minúscula)
+
+- Escopo
+
+	O escopo é a vida de uma variável em Java, tratando-se dos locais nos quais ela pode ser acessada. Em Java, o escopo de variáveis vai de acordo com o bloco onde ela foi declarada. A variável é criada no primeiro acesso a ela e destruída após o interpretador sair do bloco de execução ao qual ela pertence.
+
+	Um bloco é determinado por chaves { } .
+
+- Tipos primitivos em Java
+
+	São variáveis básicas da linguagem Java, elas guardam o valor dentro delas mesmo.
+
+	Descrição 								Tipo 		Tamanho 	Valores 										Valor padrão
+
+	tipos numéricos inteiros				byte 		8 bits 		-128 a 127 										0
+	tipos numéricos inteiros				short 		16 bits 	-32768 a 32767 									0
+	tipos numéricos inteiros				int 		32 bits 	-2147483648 a 2147483647 						0
+	tipos numéricos inteiros				long 		64 bits 	-9223372036854770000 a 9223372036854770000 		0L
+	tipos numéricos com ponto flutuante		float 		32 bits 	-1,4024E-37 a 3,4028E+38 						0.0f
+	tipos numéricos com ponto flutuante		double 		64 bits 	-4,94E-307 a 1,79E+308 							0.0
+	um caractere Unicode 					char 		16 bits 	'\u0000' a '\uFFFF' 							'\u0000'
+	valor verdade 							boolean 	1 bit 		false, true 									false
+
+- Inicialização de variaveis
+	
+	Por padrão as variaveis de métodos não são inicializadas, devem ser inicializadas manualmente antes do uso caso contrario será apresentado erro.
+
+	Por padrão as variaveis de classes (atributos)  são inicializadas automaticamente com valores padrão conforme tabela abaixo.
+
+	Tipo		Valor padrão
+
+	byte		0
+	short		0
+	int			0
+	long		0L
+	float		0.0f
+	double		0.0d
+	char		'\u0000'
+	String 		null
+	boolean		false
+
+- Escrevendo na tela
+
+	Sem quebra de linha:
+
+	System.out.print(<texto ou variável a ser exibido na tela>);
+
+	Com quebra de linha:
+
+	System.out.println(<texto ou variável a ser exibido na tela>);
+
+- Concatenação de texto
+
+	Para "print" e "println" utilizar o sinal de "+" para concatenação do texto.
+
+	Para "printf" não existe concatenação de texto pois a estrutura é diferente, a frase ja é formatada antes.
+
+- Operadores aritméticos
+
+	+	adição
+	-	subtração
+	*	multiplicação
+	/	divisão
+	%	resto da divisão
+
+	Precedência dos operadores
+
+	* / %
+	+ -
+
+- Agrupamento de expressões
+
+	Utilizamos parênteses ( ) para agrupamento de expressões aritméticas.
+
+- Separador decimal
+
+	Por padrão "print" e "println" utilizam o sistema americano que determina o "." como separador decimal.
+
+	Por padrão "printf" utiliza a localização do sistema operacional para determinar o separador decimal, no caso do Brasil a ",".
+
+	Caso queria alterar para o sistema americano de separador decimal com "." precisamos importar a classe "Locale" no início do programa:
+
+	import java.util.Locale;
+
+	E em seguida, dentro do método, declarar a configuração:
+
+	Locale.setDefault(Locale.US);
+
+- Casting
+
+	Conversão entre tipos de variáveis, temos dois tipos, implicita (automatica) e explicita (forçada).
+
+	É necessário quando o compilador não é capaz de "adivinhar" que o resultado de uma expressão deve ser de outro tipo.
+
+	Uso:
+
+	A conversão implicita (automatica) não precisa de intervenção alguma.
+
+	A conversão explicita (forçada) é feita colocando o tipo desejado em frente ao valor a ser convertido "(<tipo desejado>) <valor a ser convertido>".
+
+	Tabela de conversão implicita e explicita:
+
+	De / Para	byte 	  short 	 	char 	 	int 	 		long 	 		float 	 		double
+
+	byte 		N/A 	  implicito 	char 		implicito		implicito		implicito		implicito
+	short 		byte 	  N/A 			char 		implicito		implicito		implicito		implicito
+	char 		byte 	  short		 	N/A 		implicito		implicito		implicito		implicito
+	int 		byte 	  short		 	char 		N/A 			implicito		implicito		implicito
+	long 		byte 	  short		 	char 		int 			N/A 			implicito		implicito
+	float 		byte 	  short		 	char 		int 			long 			N/A 			implicito
+	double 		byte 	  short		 	char 		int 			long 			float 			N/A
+
+	O tipo de dado boolean é o único tipo primitivo que não suporta casting.
+
+- Operadores de atribuição acumulativa
+
+	Usados como forma abreviada de escrever que uma variável recebe o valor dela em uma operação onde ela esta envolvida.
+
+	Operador 		Exemplo de uso
+
+	+= 				a = a + b;
+	-= 				a = a - b;
+	*= 				a = a * b;
+	/= 				a = a / b;
+	%= 				a = a % b;
+
+- Operadores incremento e decremento
+
+	Os operadores de incremento e decremento em Java são usados para aumentar ou diminuir o valor de uma variável numérica em 1 unidade. Esses operadores são representados pelos símbolos ++ e --, respectivamente.
+
+	Existem duas formas de usar esses operadores em Java: a forma pré-fixada (ou pré-incremento/decremento) e a forma pós-fixada (ou pós-incremento/decremento).
+
+	O operador pré-fixado é colocado antes da variável, e incrementa ou decrementa o valor da variável antes que ela seja utilizada na expressão em que está inserida. Por exemplo:
+
+	int a = 5;
+	int b = ++a; // a é incrementado para 6 antes de ser atribuído a b
+
+	Neste caso, o valor de b será igual a 6, porque o valor de a foi incrementado antes de ser atribuído a b.
+
+	Já o operador pós-fixado é colocado depois da variável, e incrementa ou decrementa o valor da variável após ela ser utilizada na expressão em que está inserida. Por exemplo:
+
+	int a = 5;
+	int b = a++; // a é atribuído a b antes de ser incrementado para 6
+
+	Neste caso, o valor de b será igual a 5, porque o valor original de a foi atribuído a b antes de a ser incrementado para 6.
+
+	É importante lembrar que esses operadores só podem ser usados com variáveis numéricas (int, long, float, double, etc.), e não podem ser usados com variáveis booleanas ou de tipos de referência. Além disso, é preciso ter cuidado ao usá-los em expressões mais complexas, para evitar comportamentos inesperados.
+
+- Operadores comparativos
+
+	Operador 		Significado
+	
+	>  				maior
+	<  				menor
+	>= 				maior ou igual
+	<= 				menor ou igual
+	== 				igual
+	!= 				diferente
+
+- Operadores lógicos
+
+	Operador 		Significado
+
+	&& 				E
+	|| 				OU
+	! 				NÃO
+
+- Estruturas de seleção
+
+	if (simples)
+
+		if (<condição>) {
+			<comandos a serem executados caso a condição acima seja verdadeira>
+		}
+
+	if...else (composta)
+
+		if (<condição>) {
+			<comandos a serem executados caso a condição acima seja verdadeira>
+		} else {
+			<comandos a serem executados caso a condição acima seja falsa>
+		}
+
+	if...else else...if (aninhada)
+
+		if (<condição>) {
+			<comandos a serem executados caso a condição acima seja verdadeira>
+		} else if (<condição>) {
+			<comandos a serem executados caso a condição cima seja verdadeira>
+		} else if (<condição>) {
+			<comandos a serem executados caso a condição cima seja verdadeira>
+		}
+		...
+		} else {
+			<comandos a serem executados caso todas as condições acima sejam falsas>
+		}
+
+	switch (seleção específica)
+
+		switch (<variavel>) {
+			case <valor>:
+				<ações a executar caso o valor seja igual a variável>;
+				break;
+			case <valor>:
+				<ações a executar caso o valor seja igual a variável>;
+				break;
+			...
+			default:
+				<ações a executar caso nenhuma alternativa anterior seja válida>;
+		}
+
+	operador ternário ? (seleção dupla)
+
+		<variavel que irá receber o valor> = (<condição>) ? <valor se verdadeiro> : <valor se falso>;
+
+- Estruturas de repetição
+
+	while (usada quando não se sabe quantas vezes vai repetir, teste no inicio, pode nunca ser executada)
+
+		<declaração da variavel de controle>;
+
+		while (<teste da variável de controle>) {
+			<código  a ser executado caso a condição seja satisfeita>
+			...
+			<alteração do valor da variável de controle se necessário>
+		}
+
+	for (usada quando se sabe a quantidade de vezes a ser executada, sempre é executada)
+
+		for (<declaração da variável de controle>; <teste da variavel de controle>; <incremento ou decremento da variavel de controle>) {
+			<código a ser executado quando a repetição for executada>
+		}
+
+	do while (usada quando não se sabe quantas vezes vai repetir, teste no final, é executada ao menos uma vez)
+
+		<declaração da variavel de controle>;
+
+		do {
+			<código  a ser executado caso a condição seja satisfeita>
+			...
+			<alteração do valor da variável de controle se necessário>
+		} while (<teste da variável de controle>);
+
+- Break e Continue
+
+	Em Java, break e continue são palavras-chave que permitem alterar o fluxo de execução de loops.
+
+	A palavra-chave break é usada para interromper a execução do loop, saindo do loop antes que todas as iterações tenham sido executadas. Quando o break é encontrado, o controle do programa é transferido para a próxima instrução após o loop.
+
+	Já a palavra-chave continue é usada para pular a iteração atual do loop e passar para a próxima iteração. Quando o continue é encontrado, o controle do programa é transferido de volta para a condição de controle do loop.
+
+	O uso de break e continue pode tornar o código mais eficiente e legível em certas situações, mas é importante usá-los com cuidado para evitar comportamentos inesperados.
