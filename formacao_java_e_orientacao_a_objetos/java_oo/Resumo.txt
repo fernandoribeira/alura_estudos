@@ -1,0 +1,794 @@
+
+- Java
+
+	É uma linguagem de programação, plataforma de desenvolvimento e execução de programas.
+
+	Criada pela Sun Microsystems no meio da década de 1990 e adquirida pela Oracle Corporation em 2010.
+
+	Desenhada para ser utilizada em todos os tipos de dispositivos, principalmente portáteis.
+
+	É uma linguagem orientada a objetos, segura, robusta e que domina o mercado a muitos anos.
+
+	Resolve problemas de linguagens antigas como ponteiros / gerenciamento de memória, portabilidade, utilização em dispositivos diversos e custo.
+
+- Versões do Java
+
+	LTS ("Long Term Support" ou "suporte de longo prazo") - são versões com maior tempo de updates, correções e suporte tecnico por parte do fabricante. Elas são lançadas com menor frequencia.
+
+	Non-LTS - são versões com menor tempo de updates, correções e suporte tecnico por parte do fabricante. Elas são lançadas com menor frequencia, normalemnte a cada ano.
+
+- Edições do Java
+
+    Java SE (Java Standard Edition): para programação desktop
+
+    Java EE (Java Enterprise Edition): para programação web
+
+    Java ME (Java Micro Edition): para programação de dispositivos embarcados
+
+    JavaFX: para programação de multimidia
+
+- Java Virtual Machine (JVM)
+
+	Java Virtual Machine ou Máquina Virtual Java é um programa que carrega e executa os aplicativos Java.
+
+- Kits Java
+
+	Java Runtime Environment (JRE): programa a ser instalado para execução de programas Java, possui a máquina virtual Java (JVM).
+
+	Java Development Kit (JDK): programa a ser instalado para desenvolvimento e execução de programas Java (JVM), possui a máquina virtual Java, as APIs (bibliotecas) de desenvolvimento e o compilador Java.
+
+	Estes kits são disponibilizados para diversos sistemas operacionais, permitindo assim a criação e execução de aplicativos Java nestes ambientes.
+
+- Codigo fonte
+
+	Código fonte é um conjunto de instruções escritas em uma linguagem de programação específica que um programador cria para desenvolver um software ou aplicativo. O código fonte é a forma em que os programas de computador são escritos originalmente antes de serem transformados em linguagem de máquina executável, que é o código binário compreendido pelos computadores.
+
+- Bytecode
+
+	O bytecode Java é um código intermediário que é gerado pelo compilador Java quando um programa é compilado a partir do código fonte. É uma forma de código de baixo nível que é projetado para ser executado em uma máquina virtual Java (JVM).
+
+	A JVM é um componente essencial da plataforma Java, que permite que programas escritos em Java sejam executados em diferentes sistemas operacionais e arquiteturas de computador, sem a necessidade de recompilar o código fonte. Quando um programa Java é compilado, o compilador transforma o código fonte em bytecode Java, que é uma sequência de instruções em uma linguagem intermediária.
+
+	O bytecode Java é portátil, o que significa que pode ser executado em qualquer sistema que tenha uma JVM instalada. Quando um programa Java é executado, a JVM converte o bytecode em código de máquina nativo para a plataforma em que está sendo executado. Isso permite que o mesmo programa Java seja executado em diferentes sistemas sem a necessidade de alterar o código fonte ou recompilá-lo para uma plataforma específica.
+
+	O uso do bytecode Java e da JVM torna a plataforma Java uma escolha popular para desenvolvimento de aplicativos e sistemas que precisam ser executados em diferentes ambientes e arquiteturas de computador. Além disso, a JVM possui recursos que auxiliam na execução segura e confiável de programas Java, incluindo gerenciamento de memória, verificação de tipos e segurança.
+
+- IDE
+
+	IDE significa "Integrated Development Environment" ou traduzindo "Ambiente de Desenvolvimento Integrado".
+
+	É um conjunto de softwares utilizado para a construção de programas, exemplos:
+
+	C/C++ - Code Blocks
+	Java -  Eclipse, NetBeans
+	C# - Microsoft Visual Studio
+
+	Funcionalidades de uma IDE:
+
+	Edição de código fonte (indentação, autocompletar, destaque de palavras, etc.)
+	Depuração e testes
+	Construção do produto final
+	Sugestão de modelos
+	Auxiliar em várias tarefas do seu projeto
+
+- Estrutura de uma aplicação Java
+
+	Uma aplicação Java basicamente é composta por classes.
+
+- Entry point de uma aplicação Java
+
+	É a classe "entry-point" da aplicação, a primeira a ser iniciada ao executar um programa em Java.
+
+	Para isso ela possui o método "main".s
+
+- Classe básica Java
+
+	public <nome da classe> {
+		public static void main(String[] args) {
+			<código da classe>
+		}
+	}
+
+- Case sensitive
+
+	Java é case sensitive (ou sensível a maiúsculas e minúsculas), esse é um termo utilizado para descrever um sistema, linguagem ou software que faz distinção entre letras maiúsculas e minúsculas. Em outras palavras, quando um sistema é case sensitive, ele reconhece as letras maiúsculas e minúsculas como caracteres diferentes e trata-as de maneira distinta.
+
+- Indentação
+
+	Indentação em programação é o processo de alinhar o código-fonte para torná-lo mais legível e organizado, colocando espaços em branco ou tabulações no início de cada linha de um bloco de código. A indentação é uma técnica usada por programadores para tornar o código mais fácil de entender, especialmente quando o código inclui blocos aninhados e outras estruturas de controle.
+
+	A indentação em programação é usada para indicar a estrutura lógica do código e mostrar visualmente onde um bloco de código começa e termina. 
+
+- Encerramento de instrução
+
+	Toda instrução em Java deve ser finalizada com ";" (ponto e virgula).
+
+- Palavras reservadas
+
+	Palavras reservadas em Java são palavras-chave que têm um significado especial na linguagem Java e são usadas para fins específicos, como definir a estrutura básica de um programa, controlar o fluxo de execução, declarar variáveis, definir classes e métodos, e assim por diante. Essas palavras-chave são reservadas pelo compilador Java e não podem ser usadas como nomes de variáveis, métodos ou classes.
+
+	Algumas das palavras reservadas em Java incluem:
+
+	abstract, assert, boolean, break, byte, case, catch, char, class, const, continue, default, do, double, else, enum, extends, final, finally, float, for, goto, if, implements, import, instanceof, int, interface, long, native, new, package, private, protected, public, return, short, static, strictfp, super, switch, synchronized, this, throw, throws, transient, try, void, volatile, while
+
+- Comentários
+
+	Comentários em programas Java são códigos dentro dos programas que não serão executados mas server para dar informações relativas ao código.
+
+	Exemplo:
+
+	// Comentario de uma linha
+
+	/*
+	 * Comentário 
+	 * de
+	 * bloco
+	 */
+
+	/**
+	 * Comentário 
+	 * de
+	 * bloco JavaDoc
+	 */
+
+- Convenções de nomes em Java
+
+	Lower Camel Case ("lastName" por exemplo):
+
+	pacotes
+	atributos
+	métodos
+	variáveis e parâmetros
+
+	Pascal Case ("UserAccount" por exemplo):
+
+	classes
+
+- Variáveis
+
+	Em programação, uma variável é uma porção de memória (RAM) utilizada para armazenar dados durante a execução dos programas.
+
+	Declaração sem atribuir valor:
+
+	<tipo> <nome>;
+
+	Declaração atribuindo valor:
+
+	<tipo> <nome> = <valor inicial>;
+
+	Regras para nomes de variáveis:
+
+	Não pode começar com dígito
+	Não pode ter espaço em branco
+	Não usar acentos
+	Use nomes que tenham significado / relação com o que a variável representa
+	Use o padrão "CamelCase", em específico o "lowerCamelCase" (de letra inicial minúscula)
+
+- Escopo
+
+	O escopo é a vida de uma variável em Java, tratando-se dos locais nos quais ela pode ser acessada. Em Java, o escopo de variáveis vai de acordo com o bloco onde ela foi declarada. A variável é criada no primeiro acesso a ela e destruída após o interpretador sair do bloco de execução ao qual ela pertence.
+
+	Um bloco é determinado por chaves { } .
+
+- Tipos primitivos em Java
+
+	São variáveis básicas da linguagem Java, elas guardam o valor dentro delas mesmo.
+
+	Descrição 								Tipo 		Tamanho 	Valores 										Valor padrão
+
+	tipos numéricos inteiros				byte 		8 bits 		-128 a 127 										0
+	tipos numéricos inteiros				short 		16 bits 	-32768 a 32767 									0
+	tipos numéricos inteiros				int 		32 bits 	-2147483648 a 2147483647 						0
+	tipos numéricos inteiros				long 		64 bits 	-9223372036854770000 a 9223372036854770000 		0L
+	tipos numéricos com ponto flutuante		float 		32 bits 	-1,4024E-37 a 3,4028E+38 						0.0f
+	tipos numéricos com ponto flutuante		double 		64 bits 	-4,94E-307 a 1,79E+308 							0.0
+	um caractere Unicode 					char 		16 bits 	'\u0000' a '\uFFFF' 							'\u0000'
+	valor verdade 							boolean 	1 bit 		false, true 									false
+
+- Inicialização de variaveis
+	
+	Por padrão as variaveis de métodos não são inicializadas, devem ser inicializadas manualmente antes do uso caso contrario será apresentado erro.
+
+	Por padrão as variaveis de classes (atributos)  são inicializadas automaticamente com valores padrão conforme tabela abaixo.
+
+	Tipo		Valor padrão
+
+	byte		0
+	short		0
+	int			0
+	long		0L
+	float		0.0f
+	double		0.0d
+	char		'\u0000'
+	String 		null
+	boolean		false
+
+- Escrevendo na tela
+
+	Sem quebra de linha:
+
+	System.out.print(<texto ou variável a ser exibido na tela>);
+
+	Com quebra de linha:
+
+	System.out.println(<texto ou variável a ser exibido na tela>);
+
+- Concatenação de texto
+
+	Para "print" e "println" utilizar o sinal de "+" para concatenação do texto.
+
+	Para "printf" não existe concatenação de texto pois a estrutura é diferente, a frase ja é formatada antes.
+
+- Operadores aritméticos
+
+	+	adição
+	-	subtração
+	*	multiplicação
+	/	divisão
+	%	resto da divisão
+
+	Precedência dos operadores
+
+	* / %
+	+ -
+
+- Agrupamento de expressões
+
+	Utilizamos parênteses ( ) para agrupamento de expressões aritméticas.
+
+- Separador decimal
+
+	Por padrão "print" e "println" utilizam o sistema americano que determina o "." como separador decimal.
+
+	Por padrão "printf" utiliza a localização do sistema operacional para determinar o separador decimal, no caso do Brasil a ",".
+
+	Caso queria alterar para o sistema americano de separador decimal com "." precisamos importar a classe "Locale" no início do programa:
+
+	import java.util.Locale;
+
+	E em seguida, dentro do método, declarar a configuração:
+
+	Locale.setDefault(Locale.US);
+
+- Casting
+
+	Conversão entre tipos de variáveis, temos dois tipos, implicita (automatica) e explicita (forçada).
+
+	É necessário quando o compilador não é capaz de "adivinhar" que o resultado de uma expressão deve ser de outro tipo.
+
+	Uso:
+
+	A conversão implicita (automatica) não precisa de intervenção alguma.
+
+	A conversão explicita (forçada) é feita colocando o tipo desejado em frente ao valor a ser convertido "(<tipo desejado>) <valor a ser convertido>".
+
+	Tabela de conversão implicita e explicita:
+
+	De / Para	byte 	  short 	 	char 	 	int 	 		long 	 		float 	 		double
+
+	byte 		N/A 	  implicito 	char 		implicito		implicito		implicito		implicito
+	short 		byte 	  N/A 			char 		implicito		implicito		implicito		implicito
+	char 		byte 	  short		 	N/A 		implicito		implicito		implicito		implicito
+	int 		byte 	  short		 	char 		N/A 			implicito		implicito		implicito
+	long 		byte 	  short		 	char 		int 			N/A 			implicito		implicito
+	float 		byte 	  short		 	char 		int 			long 			N/A 			implicito
+	double 		byte 	  short		 	char 		int 			long 			float 			N/A
+
+	O tipo de dado boolean é o único tipo primitivo que não suporta casting.
+
+- Operadores de atribuição acumulativa
+
+	Usados como forma abreviada de escrever que uma variável recebe o valor dela em uma operação onde ela esta envolvida.
+
+	Operador 		Exemplo de uso
+
+	+= 				a = a + b;
+	-= 				a = a - b;
+	*= 				a = a * b;
+	/= 				a = a / b;
+	%= 				a = a % b;
+
+- Operadores incremento e decremento
+
+	Os operadores de incremento e decremento em Java são usados para aumentar ou diminuir o valor de uma variável numérica em 1 unidade. Esses operadores são representados pelos símbolos ++ e --, respectivamente.
+
+	Existem duas formas de usar esses operadores em Java: a forma pré-fixada (ou pré-incremento/decremento) e a forma pós-fixada (ou pós-incremento/decremento).
+
+	O operador pré-fixado é colocado antes da variável, e incrementa ou decrementa o valor da variável antes que ela seja utilizada na expressão em que está inserida. Por exemplo:
+
+	int a = 5;
+	int b = ++a; // a é incrementado para 6 antes de ser atribuído a b
+
+	Neste caso, o valor de b será igual a 6, porque o valor de a foi incrementado antes de ser atribuído a b.
+
+	Já o operador pós-fixado é colocado depois da variável, e incrementa ou decrementa o valor da variável após ela ser utilizada na expressão em que está inserida. Por exemplo:
+
+	int a = 5;
+	int b = a++; // a é atribuído a b antes de ser incrementado para 6
+
+	Neste caso, o valor de b será igual a 5, porque o valor original de a foi atribuído a b antes de a ser incrementado para 6.
+
+	É importante lembrar que esses operadores só podem ser usados com variáveis numéricas (int, long, float, double, etc.), e não podem ser usados com variáveis booleanas ou de tipos de referência. Além disso, é preciso ter cuidado ao usá-los em expressões mais complexas, para evitar comportamentos inesperados.
+
+- Operadores comparativos
+
+	Operador 		Significado
+	
+	>  				maior
+	<  				menor
+	>= 				maior ou igual
+	<= 				menor ou igual
+	== 				igual
+	!= 				diferente
+
+- Operadores lógicos
+
+	Operador 		Significado
+
+	&& 				E
+	|| 				OU
+	! 				NÃO
+
+- Estruturas de seleção
+
+	if (simples)
+
+		if (<condição>) {
+			<comandos a serem executados caso a condição acima seja verdadeira>
+		}
+
+	if...else (composta)
+
+		if (<condição>) {
+			<comandos a serem executados caso a condição acima seja verdadeira>
+		} else {
+			<comandos a serem executados caso a condição acima seja falsa>
+		}
+
+	if...else else...if (aninhada)
+
+		if (<condição>) {
+			<comandos a serem executados caso a condição acima seja verdadeira>
+		} else if (<condição>) {
+			<comandos a serem executados caso a condição cima seja verdadeira>
+		} else if (<condição>) {
+			<comandos a serem executados caso a condição cima seja verdadeira>
+		}
+		...
+		} else {
+			<comandos a serem executados caso todas as condições acima sejam falsas>
+		}
+
+	switch (seleção específica)
+
+		switch (<variavel>) {
+			case <valor>:
+				<ações a executar caso o valor seja igual a variável>;
+				break;
+			case <valor>:
+				<ações a executar caso o valor seja igual a variável>;
+				break;
+			...
+			default:
+				<ações a executar caso nenhuma alternativa anterior seja válida>;
+		}
+
+	operador ternário ? (seleção dupla)
+
+		<variavel que irá receber o valor> = (<condição>) ? <valor se verdadeiro> : <valor se falso>;
+
+- Estruturas de repetição
+
+	while (usada quando não se sabe quantas vezes vai repetir, teste no inicio, pode nunca ser executada)
+
+		<declaração da variavel de controle>;
+
+		while (<teste da variável de controle>) {
+			<código  a ser executado caso a condição seja satisfeita>
+			...
+			<alteração do valor da variável de controle se necessário>
+		}
+
+	for (usada quando se sabe a quantidade de vezes a ser executada, sempre é executada)
+
+		for (<declaração da variável de controle>; <teste da variavel de controle>; <incremento ou decremento da variavel de controle>) {
+			<código a ser executado quando a repetição for executada>
+		}
+
+	do while (usada quando não se sabe quantas vezes vai repetir, teste no final, é executada ao menos uma vez)
+
+		<declaração da variavel de controle>;
+
+		do {
+			<código  a ser executado caso a condição seja satisfeita>
+			...
+			<alteração do valor da variável de controle se necessário>
+		} while (<teste da variável de controle>);
+
+- Break e Continue
+
+	Em Java, break e continue são palavras-chave que permitem alterar o fluxo de execução de loops.
+
+	A palavra-chave break é usada para interromper a execução do loop, saindo do loop antes que todas as iterações tenham sido executadas. Quando o break é encontrado, o controle do programa é transferido para a próxima instrução após o loop.
+
+	Já a palavra-chave continue é usada para pular a iteração atual do loop e passar para a próxima iteração. Quando o continue é encontrado, o controle do programa é transferido de volta para a condição de controle do loop.
+
+	O uso de break e continue pode tornar o código mais eficiente e legível em certas situações, mas é importante usá-los com cuidado para evitar comportamentos inesperados.
+
+- Paradigmas de programação Procedural e Orientado ao Objeto
+
+	Os paradigmas de programação são abordagens diferentes para resolver problemas de programação. Dois dos paradigmas de programação mais comuns são o paradigma Procedural e o paradigma Orientado a Objeto.
+
+	O paradigma Procedural é uma abordagem que se concentra em dividir o programa em procedimentos (ou funções) que manipulam dados. A ênfase está na lógica do programa, e os dados são tratados como objetos secundários. Nesse paradigma, as funções geralmente são separadas do restante do código e podem ser reutilizadas em diferentes partes do programa. Além disso, os dados são frequentemente passados de uma função para outra por meio de variáveis globais ou parâmetros de função.
+
+	Já o paradigma Orientado a Objeto (OO) é uma abordagem que se concentra em modelar o mundo real em objetos que têm atributos (dados) e métodos (funções). Esses objetos interagem entre si para resolver problemas de programação. A ênfase está nos dados e em como eles são manipulados pelos métodos. Nesse paradigma, os objetos são definidos por meio de classes e instanciados em objetos. Cada objeto pode ter seus próprios dados, e os métodos são geralmente responsáveis por manipular esses dados. A OO é frequentemente usada para construir sistemas complexos, já que permite uma estrutura modular e reutilizável, com uma clara separação de responsabilidades entre os objetos.
+
+- Abstração
+
+	Abstração em programação é um conceito que visa simplificar um sistema complexo, isolando seus aspectos mais relevantes para o propósito do sistema, ignorando os aspectos menos importantes. Em outras palavras, a abstração é o processo de extrair as características mais importantes de um objeto do mundo real e transformá-las em um modelo ou representação abstrata em um sistema de software.
+
+- Classes
+
+	É um tipo estruturado que pode conter:
+
+	Atributos
+	Métodos
+
+	A classe também pode prover muitos outros recursos, tais como:
+
+	Construtores
+	Sobrecarga
+	Encapsulamento
+	Herança
+	Polimorfismo
+
+	Exemplos de classes:
+
+	Entidades: Produto, Cliente, Triangulo
+	Serviços: ProdutoService, ClienteService, EmailService, StorageService
+	Controladores: ProdutoController, ClienteController
+	Utilitários: Calculadora, Compactador
+	Outros (views, repositórios, gerenciadores, etc.)
+
+	Caracterisiticas:
+
+	Toda classe possui um nome
+	Possue visibilidade (exemplo: public, private, protected ou default)
+	Podem possuir membros (exemplo: atributos, métodos)
+
+- Objeto
+
+	Uma classe é como se fosse uma planta de uma casa, um  desenho, um projeto de algo. Não podemos utilizar uma planta de uma casa para morar, precisamos contruir a casa.
+
+	Desta forma um objeto é como se fosse a casa construida a partir da planta.
+
+	A classe tem a descrição do que o objeto possui e faz, mas é somente um projeto, para utilizarmos a classe criamos objetos baseados nela.
+
+- Atributos
+
+	Os atributos são as propriedades de uma classe, também são conhecidos como variáveis ou campos. Essas propriedades definem o estado de um objeto, fazendo com que esses valores possam sofrer alterações.
+
+	Eles são declarados como variaveis comuns porpém dentro da classe.
+
+	Exemplo:
+
+	int idade;
+
+- Métodos
+
+	Representam um processamento que possui um significado.
+
+	As principais vantagens: modularização, delegação e reaproveitamento de código.
+
+	Dados de entrada e saída:
+
+	Funções podem receber dados de entrada (parâmetros)
+	Funções podem ou não retornar uma saída
+
+	Estrutura:
+
+	<modificador de acesso> <propriedade de instanciação se necessário> <tipo de retorno> <nome do método>(<ipo do parâmetro> <nome do parâmetro>, ...)
+		<código do método>
+		<retorno do método caso exista>
+	}
+
+	Exemplo:
+
+	public static int max(int x, int y, int z) {
+
+		int maxNumber;
+
+		if (x > y && x > z) {
+			maxNumber = x;
+		} else if (y > x && y > z) {
+			maxNumber = y;
+		} else {
+			maxNumber = z;
+		}
+
+		return maxNumber;
+	}
+
+- Método "main"
+
+	É o primeiro método executado em um programa Java, considerado como o "entry-point" da aplicação.
+
+	Normalmente ele está na classe "Program".
+
+	Ele deve ser declarado sempre da mesma forma:
+
+	public static void main(String[] args) {
+		<código do método>
+	}
+
+- Declaração e instanciação de um objeto
+
+	Para criarmos um objeto temos dois passos, a declaração e a instanciação.
+
+	A declaração de um objeto é feito igual a uma variavel comum.
+
+	Exemplo:
+
+	<nome da classe> <nome do objeto>;
+
+	Triangulo t;
+
+	Ela cria na memória (stack) uma variável com conteúdo vazio.
+
+	Instanciar é o ato de criar o objeto na memória (heap)e inserir seu endereço dentro da variavel criada anteriormente.
+
+	Exemplo:
+
+	<nome do objeto> = new <nome da classe>(<parametros se necessario):
+
+	t = new Triangulo(2.00, 3.00, 5.00);
+
+	Uma variavel do tipo comum (primitiva) guarda dentro dela o valor propriamente dito, ja uma variavel do tipo objeto guarda um valor de endereço de memoria que redireciona a variavel (como um link ou ponteiro) ao local onde os dados efetivamente estao.
+
+- Referência "this"
+
+	É uma referencia para o proprio objeto.
+
+	Usos comuns:
+
+	Diferenciar atributos de variáveis locais
+	Passar o próprio objeto como argumento na chamada de um método ou construtor
+
+	Por exemplo, caso algum atributo tenha o mesmo nome de um parâmetro de método (normalmente no método construtor) podemos referenciar o atributo do objeto com a palavra "this" antes do atributo ao utilizar o mesmo.
+
+	Exemplo:
+
+	this.<nome do atributo>
+
+	this.quantidade = quantidade
+
+- Composição de objetos
+
+	A composição de objetos em Java é um conceito em que um objeto é composto de outros objetos, criando uma hierarquia de objetos. Isso significa que um objeto pode conter outros objetos como seus membros.
+
+- Modificadores de acesso
+
+	Temos quatro modificadores de acesso básicos da linguagem Java: public, private, protected e default.
+
+	Eles servem para tornar componentes da sua aplicação mais ou menos acessíveis por outras partes do seu programa.
+
+	Resumo dos modificadores:
+
+		public: o membro é acessado por todas classes (ao menos que ele resida em um módulo diferente que não exporte o pacote onde ele está)
+
+		private: o membro só pode ser acessado na própria classe
+
+		protected: o membro só pode ser acessado no mesmo pacote, bem como em subclasses de pacotes diferentes
+
+		(default): o membro só pode ser acessado nas classes do mesmo pacote		
+
+	Detalhes dos modificadores:
+
+	"public"
+
+	Não impõe restrições de acesso ao item, deixando-o visível para todo e qualquer classe. Esse modificador pode ser aplicado sobre todos os itens:
+
+	    Classes
+	    Classes internas
+	    Interfaces
+	    Interfaces internas
+	    Annotations
+	    Annotations internas
+	    Enum
+	    Enums internos
+	    Métodos
+	    Atributos
+
+	"private"
+
+	O modificador que mais restringe a visibilidade do item marcado deixando-o visível somente para a classe que o definiu. Em uma herança a restrição de acesso atinge também as classes filhas, impedindo-as de acessarem o item sob o modificador private. Esse modificador pode ser aplicado sobre os seguintes itens:
+
+	    Classes internas
+	    Interfaces internas
+	    Annotations internas
+	    Enums internos
+	    Métodos
+	    Atributos
+
+	"protected"
+
+	Restringe o acesso ao item sob o modificador deixando-o visível somente para as classes filhas da classe que possui o item e para classes que se encontram sob o mesmo pacote da classe que possui o item. Esse modificador pode ser aplicado sobre os itens:
+
+	    Classes internas
+	    Interfaces internas
+	    Annotations internas
+	    Enums internos
+	    Métodos
+	    Atributos
+
+	"default":
+
+	Restringe o acesso ao item sob o modificador deixando-o visível somente para as classes que se encontram sob o mesmo pacote da classe que possui o item. Em uma herança a restrição de acesso atinge também as classes filhas que não estejam no mesmo pacote, impedindo-as de acessarem o item sob o modificador default.
+
+	Para esse modificador não há uma palavra chave definida para o uso aqui. O modificador aqui é a omissão dos outros modificadores. Esse modificador pode ser aplicado sobre os seguintes itens:
+
+	    Classes
+	    Classes internas
+	    Interfaces internas
+	    Annotations  internas
+	    Enums internos
+	    Métodos
+	    Atributos
+
+    Visibilidade de um item com o modificador de acesso
+
+	Para testar a visibilidade de um item com o seu modificador de acesso há cinco cenários diferentes:
+
+    A partir da mesma classe
+    Qualquer classe no mesmo package
+    Qualquer classe filha no mesmo package
+    Qualquer classe filha em package diferente
+    Qualquer classe em package diferente
+
+    Para isso utilizamos a tabela abaixo:
+
+	Visibilidade 									public 		protected 		default 	private
+
+    A partir da mesma classe 						OK			OK 				OK 			OK
+    Qualquer classe no mesmo package 				OK			OK 				OK 			Não
+    Qualquer classe filha no mesmo package 			OK			OK 				OK 			Não
+    Qualquer classe filha em package diferente 		OK			OK 				Não 		Não
+    Qualquer classe em package diferente 			OK			Não 			Não 		Não
+
+- Encapsulamento
+
+	É um princípio que consiste em esconder detalhes de implementação de uma classe, expondo apenas operações seguras e que mantenham os objetos em um estado consistente.
+
+	O objeto deve sempre estar em um estado consistente, e a própria classe deve garantir isso.
+
+	Regra geral básica:
+
+	Um objeto NÃO deve expor nenhum atributo (atributos devem ter modificador de acesso private)
+	Os atributos devem ser acessados por meio de métodos get e set
+
+	Padrão para implementação de métodos getters e setters
+
+	O método get é utilizado para recuperar o valor do atributo, exemplo de declaração:
+
+	public <tipo de retorno> get<nome do atributo>() {
+		return <atributo>;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	O método set é utilizado para configurar o valor do atributo, exemplo de declaração:
+
+	public void set<nome do atributo>(<tipo do parametro> <parametro>) {
+		this.<nome do atributo> = <parametro>;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+- Construtores
+
+	É uma operação especial da classe, que executa no momento da instanciação do objeto.
+
+	Usos comuns:
+
+	Iniciar valores dos atributos
+	Permitir ou obrigar que o objeto receba dados / dependências no momento de sua instanciação (injeção de dependência)
+
+	Se um construtor customizado não for especificado, a classe disponibiliza o construtor vazio (default) que instacia o objeto com valores padrão de cada tipo.
+
+	Valores padrão:
+
+	Descrição 								Valor padrão
+
+	tipos numéricos inteiros				0
+	tipos numéricos com ponto flutuante		0.0
+	tipo char 			 					'\u0000' (null)
+	tipo boolean 							false
+	tipo object 							null
+
+	Também é possível especificar mais de um construtor na mesma classe (sobrecarga).
+
+	Declaração:
+
+	Construtor vazio (default)
+
+		Basta não declarar nenhum método construtor na classe e instaciar a mesma passando sem passar nenhum argumento entre os parenteses, por exemplo:
+
+		Product p = new Product();
+
+		Desta forma os atributos do objeto serão inicializados com o valor padrão para cada tipo.
+
+		Atenção, o construtor vazio so funciona se não existir nenhu outro construtor dentro da classe, caso exista algum construtor o mesmo deve ser utilziado e instanciar um objeto sem parametros resultara em erro.
+
+	Contrutor padrão
+
+		Para criarmos um contrutor padrão devemos criar um método dentro da classe que será instanciada, o método possuirá o nome da propria classe, seguindo a estrutura abaixo:
+
+		<public <nome da classe>(<parametros>) {
+			this.Nome do atributo interno da classe> = <parametro>...
+		}
+
+		public Product(String name, double price, int quantity) {
+			this.name = name;
+			this.price = price;
+			this.quantity = quantity;
+		}
+
+		Caso algum atributo necessite ser iniciado com valor especifico podemos colocar dentro do construtor tambem, por exemplo:
+
+		public Product(String name, double price, int quantity) {
+			this.name = name;
+			this.price = price;
+			this.quantity = 0;
+		}
+
+- Membros de instancia
+
+	Uma classe possui membros, esses membros são os atributos e os métodos.
+
+	Ao criar e instanciar um objeto cada um irá possuir uma cópia (instancia) dos membros, estes membros são chamados de "membro de intancia" ou "membros de objeto".
+
+	Cada objeto conhece somente os seus membros, membros de outros objetos (mesmo sendo da mesma classe) não são conhecidos.
+
+- Membros estaticos
+
+	Também chamados membros de classe em oposição a membros de instância.
+
+	São membros que fazem sentido independentemente de objetos. Não precisam de objeto para serem chamados. São chamados a partir do próprio nome da classe.
+
+	Exemplo:
+
+	Math.sqrt();
+
+	Não precisamos instanciar um objeto da classe Math para utiliza-la, basta chamamos seus métodos de forma direta.
+
+	Aplicações comuns:
+
+	Classes utilitárias
+	Declaração de constantes
+
+	Uma classe que possui somente membros estáticos, pode ser uma classe estática também. Esta classe não poderá ser instanciada.
+
+	Para declarar um mebro estatico basta inserir a palavra "static" em sua declaração.
+
+	Exemplo:
+
+	Atributos:
+
+	public static <tipo da variavel> <nome da variável> = <valor da variável>;
+
+	public static double pi = 3.14159;
+	
+	Métodos:
+
+	<modificador de acesso> static <tipo de retorno> <nome do método>(<ipo do parâmetro> <nome do parâmetro>, ...)
+		<código do método>
+		<retorno do método caso exista>
+	}
+
+	public static double volume(double radius) {
+		return (4.0 * PI * Math.pow(radius, 3)) / 3;
+	}
