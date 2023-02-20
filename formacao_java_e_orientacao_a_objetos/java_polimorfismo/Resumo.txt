@@ -79,7 +79,7 @@
 
 	É a classe "entry-point" da aplicação, a primeira a ser iniciada ao executar um programa em Java.
 
-	Para isso ela possui o método "main".s
+	Para isso ela possui o método "main".
 
 - Classe básica Java
 
@@ -217,8 +217,6 @@
 
 	Para "print" e "println" utilizar o sinal de "+" para concatenação do texto.
 
-	Para "printf" não existe concatenação de texto pois a estrutura é diferente, a frase ja é formatada antes.
-
 - Operadores aritméticos
 
 	+	adição
@@ -234,21 +232,11 @@
 
 - Agrupamento de expressões
 
-	Utilizamos parênteses ( ) para agrupamento de expressões aritméticas.
+	Utilizamos parênteses ( ) para agrupamento de expressões.
 
 - Separador decimal
 
 	Por padrão "print" e "println" utilizam o sistema americano que determina o "." como separador decimal.
-
-	Por padrão "printf" utiliza a localização do sistema operacional para determinar o separador decimal, no caso do Brasil a ",".
-
-	Caso queria alterar para o sistema americano de separador decimal com "." precisamos importar a classe "Locale" no início do programa:
-
-	import java.util.Locale;
-
-	E em seguida, dentro do método, declarar a configuração:
-
-	Locale.setDefault(Locale.US);
 
 - Casting
 
@@ -373,10 +361,6 @@
 				<ações a executar caso nenhuma alternativa anterior seja válida>;
 		}
 
-	operador ternário ? (seleção dupla)
-
-		<variavel que irá receber o valor> = (<condição>) ? <valor se verdadeiro> : <valor se falso>;
-
 - Estruturas de repetição
 
 	while (usada quando não se sabe quantas vezes vai repetir, teste no inicio, pode nunca ser executada)
@@ -463,6 +447,8 @@
 	Desta forma um objeto é como se fosse a casa construida a partir da planta.
 
 	A classe tem a descrição do que o objeto possui e faz, mas é somente um projeto, para utilizarmos a classe criamos objetos baseados nela.
+
+	Depois de criado um objeto nunca muda o seu tipo, porem o tipo de sua referencia pode mudar.
 
 - Atributos
 
@@ -791,5 +777,164 @@
 
 	public static double volume(double radius) {
 		return (4.0 * PI * Math.pow(radius, 3)) / 3;
+	}
+
+- Herança
+
+	É um tipo de associação que permite que uma classe herde todos atributos e métodos de outra classe, permitindo seu uso e eliminando a duplicidade de código.
+
+	Na UML a relação de herança é mostrada com uma seta fechada com preenchimento na cor branca.
+
+	Sintaxe de uso
+
+		Ao declarar a subclasse devemos inserir a palavra "extends" e o nome da superclasse a frente, por exemplo:
+
+		public class BusinessAccount extends Account {
+			...
+		}
+
+	Construtor
+
+		Construtores não são herdados.
+
+		Devemos criar um construtor que contemple os atributos da superclasse e da subclasse.
+
+		Na declaração do método inserimos todos os parametros.
+
+		No inicio do método chamamos o construtor da superclasse com a palavra "super" e em seguida passamos os parametros necessarios do construtor da superclasse.
+
+		Em seguida inicializamos os atributos da subclasse.
+
+		Exemplo:
+
+		public BusinessAccount(Integer number, String holder, Double balance, Double loanLimit) {
+			super(number, holder, balance);
+			this.loanLimit = loanLimit;
+		}
+
+	Definições importantes
+
+		A relação entre a subclasse e a superclasse é "é-um".
+
+		Quando olhamos o diagrama UML da subclasse para a superclasse falamos que é uma generalização, quando olhamos o diagrama UML da superclasse para a subclasse falamos que é uma especialização.
+
+		A classe que recebe a herança é chamada de subclasse e a classe que ofere a herança é a superclasse.
+
+		A aplicação da herança é considerada um extensão da classe original. 
+
+		Herança é uma associação entre classes (e não entre objetos).
+
+		O modificador "private" nos atributos da superclasse impede o acesso direto aos mesmos pela subclasse, temos duas formas de contornar essa situação, utilizando os métodos getters e setters da classe ou mudando o modificador para "protected".
+
+- Polimorfismo
+
+	Pilares da OOP:
+
+	Encapsulamento
+	Herança
+	Polimorfismo
+
+	Em Programação Orientada a Objetos, polimorfismo é recurso que permite que variáveis de um mesmo tipo mais genérico possam apontar para objetos de tipos específicos diferentes, tendo assim comportamentos diferentes conforme cada tipo específico.
+
+	Exemplo:
+
+	Account x = new Account(1020, "Alex", 1000.0); // Variavel do tipo Account instanciada com um tipo Account
+	Account y = new SavingsAccount(1023, "Maria", 1000.0, 0.01); // Variavel do tipo Account instanciada com um tipo SavingsAccount
+
+	x.withdraw(50.0); // Irá chamar o método do objeto Account
+	y.withdraw(50.0); // Irá chamar o método do objeto SavingsAccount
+
+	Importante entender que a associação do tipo específico com o tipo genérico é feita em tempo de execução (upcasting).
+
+- Polimorfismo (Upcasting e downcasting)
+
+	Upcasting e downcasting são a conversão entre objetos.
+
+	O uso comum do upcasting e downcasting é o polimorfismo.
+
+	Toda subclasse "é uma" superclasse, o contrario não se aplica.
+
+	Upcasting é a conversão de um ojeto da subclasse para a superclasse, ela é feita de forma implicita pois toda subclasse "é uma" superclasse.
+
+	Exemplo:
+
+		BusinessAccount bacc = new BusinessAccount(1002, "Maria", 0.0, 500.0);
+		Account acc = bacc;
+
+	Downcasting é a converção de um ojeto da superclasse para a subclasse, ela é feita de forma explicita porém so pode ser feita se a classe a ser convertida for compativel com a classe que irá receber a variável, pois nenhuma superclasse é uma subclasse, caso contrario sera exibido erro de execução "cannot be cast".
+
+	Exemplo:
+
+		* Permitido
+
+		Account acc = new BusinessAccount(1003, "Bob", 0.0, 200.0); // Variavel "Account" instanciada como "BusinessAccount", sendo compativel a conversão explicita
+		BusinessAccount bacc = (BusinessAccount) acc;
+
+		* Erro
+
+		Account acc = new Account(1003, "Bob", 0.0); // Variavel "Account" instanciada como "Account", não, sendo compativel a conversão explicita
+		BusinessAccount bacc = (BusinessAccount) acc;
+
+	Palavra "instanceof"
+
+		Antes de efetuar um downcasting e correr o risco de receber uma mensagem de erro podemos comparar se um objeto é compativel utilizando a palavra "instanceof" e uma estrutura "if".
+
+		Exemplo:
+
+		if (acc instanceof BusinessAccount) {
+			BusinessAccount bacc = (BusinessAccount) acc;
+			...
+		}
+
+- Sobreposição / sobrescrita de métodos
+
+	É a reimplementação de um método de uma superclasse na subclasse, com lógica diferente.
+
+	Para utilizar primeiramente inserimos a anotação "@Override", isso facilita a leitura e compreensão do código e avisa ao compilador que o método é uma sobreposição.
+
+	Em seguida basta copiar a assinatura do método original (declaração) e inserir a lógica desejada no mesmo.
+
+	O método "toString" é uma sobreposição por exemplo, ele sobrescreve o método "toString" da classe "Object", inserindo uma lógica diferente.
+
+	Exemplo:
+
+	@override
+	public String toString() {
+		return ...
+	}
+
+- Palavra "super" em sobreposição / sobrescrita de métodos
+
+	É possível chamar a implementação da superclasse na subclasse usando a palavra super, para isso, na sobreposição do método, inserir a palavra "super.<método a ser executado>", por exemplo:
+
+	@Override
+	public void withdraw(Double amount) {
+		super.withdraw(amount);
+		balance -= 2.0;
+	}
+
+- Sobrecarga de métodos
+
+	É um recurso que uma classe possui de oferecer mais de uma método com o mesmo nome, porém com diferentes listas de parâmetros.
+
+	Pode ser utilizado em métodos comuns e em construtores.
+
+	Segue exemplo com construtores:
+
+	// Construtor com valores default
+	public Product() {
+	}
+	
+	// Construtor recebendo os 3 parametros
+	public Product(String name, double price, int quantity) {
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
+	// Construtor recebendo 2 parametros e um com valor default
+	public Product(String name, double price) {
+		this.name = name;
+		this.price = price;
 	}
 
