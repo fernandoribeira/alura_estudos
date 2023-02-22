@@ -62,7 +62,7 @@
 
 - Código fonte
 
-	Código fonte é um conjunto de instruções escritas em uma linguagem de programação específica que um programador cria para desenvolver um software ou aplicativo. O código fonte é a forma em que os programas de computador são escritos originalmente antes de serem transformados em linguagem de máquina executável, que é o código binário compreendido pelos computadores.
+	É aquele escrito pelo programador em linguagem de programação na construção dos programas.
 
 - Modos de construção de programas
 
@@ -87,16 +87,6 @@
 	cria o código fonte > passa pelo pré-compilador (análise léxica e análise sintática) > que cria o código Bytecode > passa pela máquina virtual (que faz a geração de código sob demanda) > que é executado pelo S.O.
 
 	Exemplos de linguagem: Java, C#
-
-- Bytecode
-
-	O bytecode Java é um código intermediário que é gerado pelo compilador Java quando um programa é compilado a partir do código fonte. É uma forma de código de baixo nível que é projetado para ser executado em uma máquina virtual Java (JVM).
-
-	A JVM é um componente essencial da plataforma Java, que permite que programas escritos em Java sejam executados em diferentes sistemas operacionais e arquiteturas de computador, sem a necessidade de recompilar o código fonte. Quando um programa Java é compilado, o compilador transforma o código fonte em bytecode Java, que é uma sequência de instruções em uma linguagem intermediária.
-
-	O bytecode Java é portátil, o que significa que pode ser executado em qualquer sistema que tenha uma JVM instalada. Quando um programa Java é executado, a JVM converte o bytecode em código de máquina nativo para a plataforma em que está sendo executado. Isso permite que o mesmo programa Java seja executado em diferentes sistemas sem a necessidade de alterar o código fonte ou recompilá-lo para uma plataforma específica.
-
-	O uso do bytecode Java e da JVM torna a plataforma Java uma escolha popular para desenvolvimento de aplicativos e sistemas que precisam ser executados em diferentes ambientes e arquiteturas de computador. Além disso, a JVM possui recursos que auxiliam na execução segura e confiável de programas Java, incluindo gerenciamento de memória, verificação de tipos e segurança.
 
 - Vantagens e desvantagens dos modos de construção de programas
 
@@ -169,48 +159,6 @@
 
 	O agrupamento lógico de "module's" relacionadas se chama "application".
 
-- Classe básica Java
-
-	public <nome da classe> {
-		public static void main(String[] args) {
-			<código da classe>
-		}
-	}
-
-- Entry point de uma aplicação Java
-
-	É a classe "entry-point" da aplicação, a primeira a ser iniciada ao executar um programa em Java.
-
-	Para isso ela possui o método "main".
-
-- Case sensitive
-
-	Java é case sensitive (ou sensível a maiúsculas e minúsculas), esse é um termo utilizado para descrever um sistema, linguagem ou software que faz distinção entre letras maiúsculas e minúsculas. Em outras palavras, quando um sistema é case sensitive, ele reconhece as letras maiúsculas e minúsculas como caracteres diferentes e trata-as de maneira distinta.
-
-- Indentação
-
-	Indentação em programação é o processo de alinhar o código-fonte para torná-lo mais legível e organizado, colocando espaços em branco ou tabulações no início de cada linha de um bloco de código. A indentação é uma técnica usada por programadores para tornar o código mais fácil de entender, especialmente quando o código inclui blocos aninhados e outras estruturas de controle.
-
-	A indentação em programação é usada para indicar a estrutura lógica do código e mostrar visualmente onde um bloco de código começa e termina. 
-
-- Encerramento de instrução
-
-	Toda instrução em Java deve ser finalizada com ";" (ponto e virgula).
-
-- Palavras reservadas
-
-	Palavras reservadas em Java são palavras-chave que têm um significado especial na linguagem Java e são usadas para fins específicos, como definir a estrutura básica de um programa, controlar o fluxo de execução, declarar variáveis, definir classes e métodos, e assim por diante. Essas palavras-chave são reservadas pelo compilador Java e não podem ser usadas como nomes de variáveis, métodos ou classes.
-
-	Algumas das palavras reservadas em Java incluem:
-
-	abstract, assert, boolean, break, byte, case, catch, char, class, const, continue, default, do, double, else, enum, extends, final, finally, float, for, goto, if, implements, import, instanceof, int, interface, long, native, new, package, private, protected, public, return, short, static, strictfp, super, switch, synchronized, this, throw, throws, transient, try, void, volatile, while
-
-- Escopo
-
-	O escopo é a vida de uma variável em Java, tratando-se dos locais nos quais ela pode ser acessada. Em Java, o escopo de variáveis vai de acordo com o bloco onde ela foi declarada. A variável é criada no primeiro acesso a ela e destruída após o interpretador sair do bloco de execução ao qual ela pertence.
-
-	Um bloco é determinado por chaves { } .
-
 - Convenções de nomes em Java
 
 	Lower Camel Case ("lastName" por exemplo):
@@ -273,24 +221,6 @@
 	um caractere Unicode 					char 		16 bits 	'\u0000' a '\uFFFF' 							'\u0000'
 	valor verdade 							boolean 	1 bit 		false, true 									false
 
-- Inicialização de variaveis
-	
-	Por padrão as variaveis de métodos não são inicializadas, devem ser inicializadas manualmente antes do uso caso contrario será apresentado erro.
-
-	Por padrão as variaveis de classes (atributos)  são inicializadas automaticamente com valores padrão conforme tabela abaixo.
-
-	Tipo		Valor padrão
-
-	byte		0
-	short		0
-	int			0
-	long		0L
-	float		0.0f
-	double		0.0d
-	char		'\u0000'
-	String 		null
-	boolean		false
-
 - Escrevendo na tela
 
 	Sem quebra de linha:
@@ -340,10 +270,6 @@
 
 	Locale.setDefault(Locale.US);
 
-- Agrupamento de expressões
-
-	Utilizamos parênteses ( ) para agrupamento de expressões.
-
 - Operadores aritméticos
 
 	+	adição
@@ -372,28 +298,6 @@
 	*= 				a = a * b;
 	/= 				a = a / b;
 	%= 				a = a % b;
-
-- Operadores incremento e decremento
-
-	Os operadores de incremento e decremento em Java são usados para aumentar ou diminuir o valor de uma variável numérica em 1 unidade. Esses operadores são representados pelos símbolos ++ e --, respectivamente.
-
-	Existem duas formas de usar esses operadores em Java: a forma pré-fixada (ou pré-incremento/decremento) e a forma pós-fixada (ou pós-incremento/decremento).
-
-	O operador pré-fixado é colocado antes da variável, e incrementa ou decrementa o valor da variável antes que ela seja utilizada na expressão em que está inserida. Por exemplo:
-
-	int a = 5;
-	int b = ++a; // a é incrementado para 6 antes de ser atribuído a b
-
-	Neste caso, o valor de b será igual a 6, porque o valor de a foi incrementado antes de ser atribuído a b.
-
-	Já o operador pós-fixado é colocado depois da variável, e incrementa ou decrementa o valor da variável após ela ser utilizada na expressão em que está inserida. Por exemplo:
-
-	int a = 5;
-	int b = a++; // a é atribuído a b antes de ser incrementado para 6
-
-	Neste caso, o valor de b será igual a 5, porque o valor original de a foi atribuído a b antes de a ser incrementado para 6.
-
-	É importante lembrar que esses operadores só podem ser usados com variáveis numéricas (int, long, float, double, etc.), e não podem ser usados com variáveis booleanas ou de tipos de referência. Além disso, é preciso ter cuidado ao usá-los em expressões mais complexas, para evitar comportamentos inesperados.
 
 - Casting
 
@@ -567,16 +471,6 @@
 			<alteração do valor da variável de controle se necessário>
 		} while (<teste da variável de controle>);
 
-- Break e Continue
-
-	Em Java, break e continue são palavras-chave que permitem alterar o fluxo de execução de loops.
-
-	A palavra-chave break é usada para interromper a execução do loop, saindo do loop antes que todas as iterações tenham sido executadas. Quando o break é encontrado, o controle do programa é transferido para a próxima instrução após o loop.
-
-	Já a palavra-chave continue é usada para pular a iteração atual do loop e passar para a próxima iteração. Quando o continue é encontrado, o controle do programa é transferido de volta para a condição de controle do loop.
-
-	O uso de break e continue pode tornar o código mais eficiente e legível em certas situações, mas é importante usá-los com cuidado para evitar comportamentos inesperados.
-
 - Operadores bitwise (bit a bit)
 
 	Operador 			Significado
@@ -597,18 +491,6 @@
 	indexOf(<string>) - retorna a primeira posição onde a String foi encontrada
 	lastIndexOf(<string>) - retorna a última posição onde a String foi encontrada
 	split(<separador>) - cria um vetor com as substrings criadas pelo separador
-
-- Paradigmas de programação Procedural e Orientado ao Objeto
-
-	Os paradigmas de programação são abordagens diferentes para resolver problemas de programação. Dois dos paradigmas de programação mais comuns são o paradigma Procedural e o paradigma Orientado a Objeto.
-
-	O paradigma Procedural é uma abordagem que se concentra em dividir o programa em procedimentos (ou funções) que manipulam dados. A ênfase está na lógica do programa, e os dados são tratados como objetos secundários. Nesse paradigma, as funções geralmente são separadas do restante do código e podem ser reutilizadas em diferentes partes do programa. Além disso, os dados são frequentemente passados de uma função para outra por meio de variáveis globais ou parâmetros de função.
-
-	Já o paradigma Orientado a Objeto (OO) é uma abordagem que se concentra em modelar o mundo real em objetos que têm atributos (dados) e métodos (funções). Esses objetos interagem entre si para resolver problemas de programação. A ênfase está nos dados e em como eles são manipulados pelos métodos. Nesse paradigma, os objetos são definidos por meio de classes e instanciados em objetos. Cada objeto pode ter seus próprios dados, e os métodos são geralmente responsáveis por manipular esses dados. A OO é frequentemente usada para construir sistemas complexos, já que permite uma estrutura modular e reutilizável, com uma clara separação de responsabilidades entre os objetos.
-
-- Abstração
-
-	Abstração em programação é um conceito que visa simplificar um sistema complexo, isolando seus aspectos mais relevantes para o propósito do sistema, ignorando os aspectos menos importantes. Em outras palavras, a abstração é o processo de extrair as características mais importantes de um objeto do mundo real e transformá-las em um modelo ou representação abstrata em um sistema de software.
 
 - Classes
 
@@ -679,18 +561,6 @@
 			return r;
 		}
 		
-	}
-
-- Método "main"
-
-	É o primeiro método executado em um programa Java, considerado como o "entry-point" da aplicação.
-
-	Normalmente ele está na classe "Program".
-
-	Ele deve ser declarado sempre da mesma forma:
-
-	public static void main(String[] args) {
-		<código do método>
 	}
 
 - Pacotes (package)
@@ -1282,15 +1152,6 @@
 
 	A desalocação por escopo é feita assim que o escopo onde a variável foi criada é encerrado, pode ser um método, uma estrutura de repetição ou de seleção. Funciona para tipos valor (primitivos).
 
-
-
-
-
-
-
-
-
-
 - Vetor (array)
 
 	Vetor (array) é o nome dado a arranjos unidimensionais.
@@ -1763,8 +1624,6 @@
 			contracts.remove(contract);
 		}
 
-	Quando queremos utilizar so reutilização de codigo utilizamos composição.
-
 - Classe "StringBuilder"
 
 	Essa classe permite criar e manipular dados de Strings dinamicamente, ou seja, podem criar variáveis de String modificáveis.
@@ -1837,8 +1696,6 @@
 		Herança é uma associação entre classes (e não entre objetos).
 
 		O modificador "private" nos atributos da superclasse impede o acesso direto aos mesmos pela subclasse, temo sduas formas de contornar essa situação, utilizando os métodos geters e setters da classe ou mudando o modificador para "protected".
-
-		Quando queremos ter reutilização de código e polimorfismo utilizamos herança.
 
 - Upcasting e downcasting
 
@@ -1913,13 +1770,13 @@
 
 		public final class <nome da classe> {
 		...
-		}
+		})
 
 	Para métodos a palavra "final" define que aquele método não pode ser sobrescrito, a palavra eve ser inserida logo após o modificador de acesso, segue exemplo da declaração:
 
 		public final void <nome do método>() {
 		...
-		}
+		})
 
 	Uso da palavra "final"
 
@@ -1989,19 +1846,24 @@
 
 - Exceções
 
-	Uma exceção é qualquer condição de erro ou comportamento inesperado encontrado por um programa em execução.
+	Uma exceção é qualquer condição de erro ou comportamento inesperado / esperado encontrado por um programa em execução.
 
 	Em Java, uma exceção é um objeto herdado da classe, segue hierarquia básica:
 
 		java.lang.Throwable
 		    java.lang.Exception
-		    java.lang.RuntimeException
+		    	java.lang.RuntimeException
 
-	Erros da classe "java.lang.Exception" o compilador obriga a tratar ou propagar.
+	Erros da classe "java.lang.Exception" o compilador obriga a tratar ou propagar (exception "checked") pois são verificadas pelo compilador.
 
-	Erros da classe "java.lang.RuntimeException" compilador não obriga a tratar ou propagar.
+	Erros da classe "java.lang.RuntimeException" o compilador não obriga a tratar ou propagar (exception "unchecked").
 
 	Quando lançada, uma exceção é propagada na pilha de chamadas de métodos em execução, até que seja capturada (tratada) ou o programa seja encerrado.
+
+	Temos também uma hierarquia relacionada a erros que são lançados normalmente pela JVM, então não precisamos estudar a mesma.
+
+	java.lang.Throwable
+		    java.lang.Error
 
 	Por que exceções?
 
@@ -2101,6 +1963,12 @@
 			...
 		}
 
+		Podemps fazer uma multi propagação na mesma linha separando as exceções por virgula, exemplo:
+
+		public void updateDates(Date checkIn, Date checkOut) throws DomainException, RuntimeException {
+			...
+		}
+
 	Cláusula "throw"
 
 		Lança uma exceção, finalizando o método e devolvendo a exceção ao método que o chamou, por exemplo:
@@ -2176,22 +2044,48 @@
 
 		Desta forma evitamos criar um bloco finally que pode lançar exceções, por exemplo:
 
-		} finally {
-			
-			try {
-			
-				if (br != null) {
-					br.close();
+			} finally {
+				
+				try {
+				
+					if (br != null) {
+						br.close();
+					}
+					if (fr != null) {
+						fr.close();
+					}
+				
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
-				if (fr != null) {
-					fr.close();
-				}
-			
-			} catch (IOException e) {
-				e.printStackTrace();
+				
 			}
+
+		Podemos usar qualquer classe no "try-with-resources" apenas implementando a interface "AutoCloseable", ela obriga a ser declarado o método "close()" para fechar os recursos abertos, exemplo:
+
+			@Override
+			public void close() {
+				System.out.println("Fechando conexao");
+			}
+
+	Capturando multiplas exceções com apenas um bloco
+
+		Podemos uitlizar o Java Multi-Catch para isso, criamos apenas um bloco catch e inserimos todas as execeções que podem ser lançadas separadando as mesma pelo operador lógico OU (|).
+
+		Exemplo:
+
+			try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			
-		}
+				String line = br.readLine();
+				
+				while (line != null) {
+					System.out.println(line);
+					line = br.readLine();
+				}
+				
+			} catch (IOException | NullPointerException | ArithmeticException e) {
+				System.out.println(e.getMessage());
+			}
 
 - Trabalhando com arquivos e pastas
 
@@ -2444,8 +2338,6 @@
 	}
 
 	Devemos utilizar interfaces para criar sistemas com baixo acoplamento e flexíveis.
-
-	Quando queremos utilizar so polimorfismo utilizamos interfaces.
 
 - Inversão de controle
 
