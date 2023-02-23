@@ -131,4 +131,14 @@ public abstract class Conta {
 		return Conta.total;
 	}
 
+	/**
+	 * Método toString
+	 */
+	@Override
+	public String toString() {
+		return "Agencia= " + agencia + ", numero= " + numero;
+	}
+	
+	
+
 }

@@ -33,7 +33,6 @@
 
 - Linguagem de programação
 
-
 	É um conjunto de regras léxicas (ortografia) e sintáticas (gramática) para se escrever programas.
 
 	Léxica diz respeito à correção das palavras "isoladas" (ortografia).
@@ -181,10 +180,34 @@
 	// Comentario de uma linha
 
 	/*
-	* Comentário 
-	* de
-	* bloco
-	*/
+	 * Comentário 
+	 * de
+	 * bloco
+	 */
+
+- Comentários / Documentação Javadoc
+
+	Comentários Javadoc são comentários que documentam o código especifica.
+
+	Exemplo:
+
+	/**
+	 * 
+	 * @author Fernando
+	 *
+	 */
+
+	Podemos gerar comentários, de varios itens, declaração de classes, métodos construtores, métodos comuns, para isso basta criar o comentário em cima d item que deseja documentar.
+
+	Para dar detalhes utilizamos anotações com "@", segue a lista:
+
+	@author (classes e interfaces)
+	@version (classes e interfaces)
+	@param (metodos e construtores)
+	@return (metodos)
+	@throws (exceçoes)
+
+	Para gerar a documentação no Eclipse bast air no menu "Project" > "Generate Javadoc" e seguir os passos.
 
 - Variáveis
 
@@ -374,7 +397,7 @@
 
 	Math.PI
 
-	Existem diversas outras funções já prontas, basta verificar a documentação da classe "java.lan.Math".
+	Existem diversas outras funções já prontas, basta verificar a documentação da classe "java.lang.Math".
 
 - Operadores comparativos
 
@@ -479,7 +502,49 @@
 	| 					Operação "OU" bit a bit
 	^ 					Operação "OU-exclusivo" bit a bit
 
+- Pacote "java.lang"
+
+	O pacote java.lang contém as classes que constituem recursos básicos da linguagem, necessários à execução de qualquer programa Java, ele é automaticamente importado pelo Java, dispensando a importação mnaual pelo usuário.
+
+	Entre as classes desse pacote destacam-se:
+
+	Object: expressa o conjunto de funcionalidades comuns a todos os objetos Java
+	String e StringBuffer: permite a representação e a manipulação de strings, fixos ou modificáveis
+	Math: contém a definição de métodos para cálculo de funções matemáticas
+	Boolean, Character, Byte, Short, Integer, Long, Float, Double: classes wrappers, permitindo a manipulação de valores dos tipos literais da linguagem como se fossem objetos
+	System, Runtime e Process: são classes que permitem interação da aplicação com o ambiente de execução
+	Thread, Runnable, ThreadGroup: classes que dão suporte à execução de múltiplas linhas de execução
+	Throwable, Error e Exception: classes que permitem a definição e manipulação de situações de erros e condições inesperadas de execução
+
+- Classe System
+
+	Explicando o comando "System.out.print()":
+
+	"System" - é uma classe do pacote java.lang, de acesso publico
+	"out" - é um atributo, publico, estatico, de uma referencia
+	"print" - é um método, publico, não estatico, com sobrecargas e que não dispara nenhuma exceção do tipo checked
+
+- Classe String
+
+	String é uma classe em Java do pacote "java.lang", elas são utilziadas para guardar palavras / textos.
+
+	Variáveis do tipo String guardam referências a objetos, e não um valor, como acontece com os tipos primitivos.
+
+	Variáveis do tipo String são imutáveis, ao alterar um String na verdade é gerada uma nova e a referencia alterada.
+
+	Podemos criar uma String:
+
+	Utilizando o new (que não é utilizado devido a problemas de otimização e a não atende ro padrão):
+
+	String <nome da variavel> = new String("<valor da variavel>");
+
+	E utilizando o padrão "object literal" similar a declaração de uma variavel de tipo primitivo (padrão utilizado):
+
+	String <nome da variavel> = "<valor da variavel>";
+
 - Funções para String
+
+	Um objeto String possui muitos métodos já disponiveis para utilização, entre eles:
 
 	toLowerCase() - passa a String para lowercase
 	toUpperCase() - passa a String para uppercase
@@ -569,13 +634,19 @@
 
 	Usualmente, são colocadas em um package classes relacionadas, construídas com um propósito comum para promover a reutilização de código.
 
-	Deve ser declarado a primeira linha da classe.
+	Deve ser declarado na primeira linha da classe.
 
 	Exemplo:
 
 		package <nome do pacote>;
 
 		package entities;
+
+	É utilização do como padrão de nome o seguinte formato:
+
+		<FQN (Full Qualified Name) invertido da empresa>.<nome do projeto>.<demais packages do projeto>
+
+		br.com.fernandoribeira.bytebank.model
 
 	Sugestão de pacotes
 
@@ -590,15 +661,15 @@
 
 	A instrução "import" da linguagem Java tem como objetivo disponibilizar em uma classe, de um determinado pacote, o acesso a demais classes que estejam em pacotes diferentes.
 
-	Para isso basta inserir a dealcração "import" após a declaração "package" da classe, exemplo:
+	Para isso basta inserir a declaração "import" após a declaração "package" da classe, exemplo:
 
-	import <caminho fqdn da classe>;
+	import <caminho fqn da classe>;
 
 	import java.util.Locale;
 
 - Modificadores de acesso
 
-	Temos quatro modificadores de acesso básicos da linguagem Java: public, private, protected e default.
+	Temos quatro modificadores de acesso básicos da linguagem Java: public, private, protected e default (package private).
 
 	Eles servem para tornar componentes da sua aplicação mais ou menos acessíveis por outras partes do seu programa.
 
@@ -610,7 +681,7 @@
 
 		protected: o membro só pode ser acessado no mesmo pacote, bem como em subclasses de pacotes diferentes
 
-		(default): o membro só pode ser acessado nas classes do mesmo pacote		
+		default (package private): o membro só pode ser acessado nas classes do mesmo pacote		
 
 	Detalhes dos modificadores:
 
@@ -651,7 +722,7 @@
 	    Métodos
 	    Atributos
 
-	"default":
+	"default (package private)"
 
 	Restringe o acesso ao item sob o modificador deixando-o visível somente para as classes que se encontram sob o mesmo pacote da classe que possui o item. Em uma herança a restrição de acesso atinge também as classes filhas que não estejam no mesmo pacote, impedindo-as de acessarem o item sob o modificador default.
 
@@ -888,7 +959,9 @@
 
 - Classe "Object"
 
-	Toda classe em Java é uma subclasse da classe "Object".
+	Object é a raiz da hierarquia de classes do Java, a superclasse de todas as classes, direta ou indiretamente.
+
+	Sendo a base para todas as classes, Object define alguns comportamentos comuns que todos objetos devem ter.
 
 	Object possui os seguintes métodos:
 
@@ -2338,6 +2411,48 @@
 	}
 
 	Devemos utilizar interfaces para criar sistemas com baixo acoplamento e flexíveis.
+
+- Gerando arquivo JAR (exportando projeto)
+
+	Para enviar nosso projeto para outras pessoas utilizarem precisamos exportar o projeto no formato JAR.
+
+	Exemplo:
+
+	Clicar com o botão direito em cima do projeto a ser exportado e escolher a opção "Export"
+	No tipo a ser exportado escolha "Java" > "JAR File"
+	Marque somente a pasta "src"
+	Não marque a opção de exportar source files
+	Escolha o local
+	Clique em Finish
+
+- Importando JAR
+
+	Para importar um arquivo JAR gerado por outra pessoa devemos seguir os passos abaixo:
+
+	Criar uma pasta "lib" no projeto
+	Copiar o aqruivo JAR dentro desta pasta
+	Clicar com o botão direito em cima deste arquivo e selecionar a opção "Build path" > "Add to Build path"
+	o JAR sera carregado na pasta "Referenced Libraries" e suas classes poderão ser utilizadas
+
+- Gerando arquivo JAR executavel
+
+	Para tornar nosso projeto executavel para outras pessoas utilizarem precisamos exportar o projeto no formato JAR marcando qual a classe qu epossui o método main.
+
+	Exemplo:
+
+	Clicar com o botão direito em cima do projeto a ser exportado e escolher a opção "Export"
+	No tipo a ser exportado escolha "Java" > "JAR File"
+	Marque somente a pasta "src"
+	Não marque a opção de exportar source files
+	Escolha o local
+	Clique em Next
+	Clique em Next
+	No campo "Main class" selecione sua classe que possui o método main
+	Clique em Finish
+
+	Para executar o programa basta executar o comando abaixo:
+
+	java -jar <nome do arquivo .jar>
 
 - Inversão de controle
 

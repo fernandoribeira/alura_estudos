@@ -33,7 +33,6 @@
 
 - Linguagem de programação
 
-
 	É um conjunto de regras léxicas (ortografia) e sintáticas (gramática) para se escrever programas.
 
 	Léxica diz respeito à correção das palavras "isoladas" (ortografia).
@@ -398,7 +397,7 @@
 
 	Math.PI
 
-	Existem diversas outras funções já prontas, basta verificar a documentação da classe "java.lan.Math".
+	Existem diversas outras funções já prontas, basta verificar a documentação da classe "java.lang.Math".
 
 - Operadores comparativos
 
@@ -516,6 +515,14 @@
 	System, Runtime e Process: são classes que permitem interação da aplicação com o ambiente de execução
 	Thread, Runnable, ThreadGroup: classes que dão suporte à execução de múltiplas linhas de execução
 	Throwable, Error e Exception: classes que permitem a definição e manipulação de situações de erros e condições inesperadas de execução
+
+- Classe System
+
+	Explicando o comando "System.out.print()":
+
+	"System" - é uma classe do pacote java.lang, de acesso publico
+	"out" - é um atributo, publico, estatico, de uma referencia
+	"print" - é um método, publico, não estatico, com sobrecargas e que não dispara nenhuma exceção do tipo checked
 
 - Classe String
 
@@ -952,7 +959,9 @@
 
 - Classe "Object"
 
-	Toda classe em Java é uma subclasse da classe "Object".
+	Object é a raiz da hierarquia de classes do Java, a superclasse de todas as classes, direta ou indiretamente.
+
+	Sendo a base para todas as classes, Object define alguns comportamentos comuns que todos objetos devem ter.
 
 	Object possui os seguintes métodos:
 
