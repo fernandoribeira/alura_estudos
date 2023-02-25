@@ -1,12 +1,14 @@
 package br.com.bytebank.banco.model;
 
+import java.util.Objects;
+
 /**
  * Classe Conta
  * @
  * @author Fernando
  *
  */
-public abstract class Conta {
+public abstract class Conta extends Object implements Comparable<Conta> {
 
 	protected double saldo;
 	private int agencia;
@@ -138,7 +140,36 @@ public abstract class Conta {
 	public String toString() {
 		return "Agencia= " + agencia + ", numero= " + numero;
 	}
-	
-	
 
+	/**
+	 * Método hashCode
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(agencia, numero);
+	}
+
+	/**
+	 * Método equals
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Conta other = (Conta) obj;
+		return agencia == other.agencia && numero == other.numero;
+	}
+	
+	/**
+	 * Método compareTo
+	 */
+	@Override
+	public int compareTo(Conta outra) {
+		return Double.compare(this.getSaldo(), outra.getSaldo());
+	}
+	
 }

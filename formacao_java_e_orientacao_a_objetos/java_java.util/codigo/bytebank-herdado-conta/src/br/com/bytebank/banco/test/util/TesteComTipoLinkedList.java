@@ -1,13 +1,13 @@
 package br.com.bytebank.banco.test.util;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 import br.com.bytebank.banco.model.ContaCorrente;
 
-public class TesteComTipoArrayList {
+public class TesteComTipoLinkedList {
 	public static void main(String[] args) {
 		
-		ArrayList<ContaCorrente> lista = new ArrayList<ContaCorrente>();
+		LinkedList<ContaCorrente> lista = new LinkedList<ContaCorrente>();
 		
 		ContaCorrente cc1 = new ContaCorrente(1, 1);
 		ContaCorrente cc2 = new ContaCorrente(1, 2);

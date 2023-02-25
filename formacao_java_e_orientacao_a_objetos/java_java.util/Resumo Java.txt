@@ -1333,7 +1333,7 @@
 		char					Character
 		boolean					Boolean
 
-		Uso comum: campos de entidades em sistemas de informação, pois tipos referência (classes) aceitam valor null e usufruem dos recursos OO.
+		Uso comum: campos de entidades em sistemas de informação, pois tipos referência (classes) aceitam valor null e usufruem dos recursos OO. Inserção em listas pois elas não aceitam numeros primitivos.
 
 		Atributos de classes devem ser declarados como Wrapper classes para boa prática, exemplo:
 
@@ -1347,6 +1347,48 @@
 
 		Integer x = 10;
 		int y = x * 2;
+
+		As classes wrappers possuem dois construtores, um recebendo um valor primitivo (ou variavel) outro que recebe uma String, eles nao devem ser declarado com "new" e sim com um método estatico da classe, exemplo:
+
+		Integer idade = Integer(25);
+		Integer idade = Integer(variavelPrimitiva);
+		Integer idade = Integer(variavelString);
+
+		A wrapper classe possuem diversas métodos de instancia, exemplos da classe Integer porem poode ser aplciados as outras classes:
+
+		byteValue() - Retorna o valor deste Integer como um byte após uma conversão primitiva de estreitamento.
+		compareTo(Integer anotherInteger) - Compara dois objetos Integer numericamente.
+		doubleValue() - Retorna o valor deste Integer como um duplo após uma conversão primitiva de alargamento.
+		equals(Object obj) - Compara este objeto com o objeto especificado.
+		floatValue() - Retorna o valor deste Integer como um float após uma conversão primitiva de alargamento.
+		hashCode() - Retorna um código hash para este Integer.
+		intValue() - Retorna o valor deste Integer como um int.
+		longValue() - Retorna o valor deste Integer como um longo após uma conversão primitiva de alargamento.
+		shortValue() - Retorna o valor deste Integer como um curto após uma conversão primitiva de estreitamento.
+		toString() - Retorna um objeto String representando o valor deste Integer.
+
+		A wrapper classe possuem diversas métodos de classe, exemplos da classe Integer porem poode ser aplciados as outras classes:
+
+		compare(int x, int y) - Compara dois valores int numericamente.
+		max(int a, int b) - Retorna o maior de dois valores int como se chamasse Math.max.
+		min(int a, int b) - Retorna o menor de dois valores int como se chamasse Math.min.
+		parseInt(String s) - Analisa o argumento de string como um inteiro decimal com sinal.
+		valueOf(int i) - Retorna uma instância Integer representando o valor int especificado.
+		valueOf(String s) - Retorna um objeto Integer contendo o valor da String especificada.
+
+		A wrapper classe possuem diversas propriedades, exemplo:
+
+		.MIN_VALUE - retorna o valor minimo permitido
+		.MAX_VALUE - retorna o valor maximo permitido
+		.BYTES - retorna a quantidade de bytes que o objeto ocupa
+
+		As classes wrappers seguem esta estrutura e herança e interfaces:
+
+		java.lang.Object
+			java.lang.Number
+				java.lang.Integer
+
+		All Implemented Interfaces: Serializable, Comparable<Integer>
 
 - Laço "for each"
 
@@ -1368,15 +1410,52 @@
 		System.out.println(nome);
 	}
 
+	Temos tambem a opção especifica com lambda para listas, exemplo:
+
+	lista.forEach((conta) -> System.out.println(conta.getNumero()));
+
+	Esta é uma forma muito mais concisa para iterar em uma lista.
+
+- Pacote "java.util"
+
+	O pacote java.util contém as interfaces e classes que fornecem listas a serem utilizadas no Java assim como classe de data e entrada de dados.
+
+	Entre as interfaces desse pacote destacam-se:
+
+	Collection<E> - A interface raiz na hierarquia da coleção
+	Comparator<T> - Uma função de comparação, que impõe uma ordenação total em alguma coleção de objetos
+	Iterator<E> - Um iterador sobre uma coleção
+	List<E> - Uma coleção ordenada (também conhecida como sequência)
+	Map<K,V> - Um objeto que mapeia chaves para valores
+	Observer - Uma classe pode implementar a interface Observer quando deseja ser informada sobre alterações em objetos observáveis
+	Set<E> - Uma coleção que não contém elementos duplicados
+
+	Entre as classes desse pacote destacam-se:
+
+	ArrayList<E> - Implementação de array redimensionável da interface List.
+	Arrays - Esta classe contém vários métodos para manipular arrays (como classificação e pesquisa).
+	Base64 - Esta classe consiste exclusivamente em métodos estáticos para obter codificadores e decodificadores para o esquema de codificação Base64.
+	Calendar - A classe Calendar é uma classe abstrata que fornece métodos para converter entre um instante específico no tempo e um conjunto de campos de calendário como YEAR, MONTH, DAY_OF_MONTH, HOUR e assim por diante, e para manipular os campos de calendário, como obter a data da próxima semana.
+	Collections - Esta classe consiste exclusivamente em métodos estáticos que operam ou retornam coleções.
+	Currency - Representa uma moeda.
+	Date - A classe Date representa um instante específico no tempo, com precisão de milissegundos.
+	HashMap<K,V> - Implementação baseada em tabela hash da interface Map.
+	HashSet<E> - Esta classe implementa a interface Set, apoiada por uma tabela de hash (na verdade, uma instância de HashMap).
+	LinkedList<E> - Implementação de lista duplamente vinculada das interfaces List e Deque.
+	Random - Uma instância dessa classe é usada para gerar um fluxo de números pseudo-aleatórios.
+	Scanner - Um scanner de texto simples que pode analisar tipos primitivos e strings usando expressões regulares.
+	Vector<E> - A classe Vector implementa uma matriz expansível de objetos.
+
 - Listas
 
 	Lista é uma estrutura de dados:
 
-		Homogênea (dados do mesmo tipo)
-		Ordenada (elementos acessados por meio de posições)
+		Homogênea (elementos do mesmo tipo)
+		Ordenada (elementos ficam um apos o outro)
 		Inicia vazia, e seus elementos são alocados sob demanda (dinamica)
-		Cada elemento ocupa um "nó" (ou nodo) da lista
+		Cada elemento ocupa um "nó" da lista
 		Não aceita tipos primitivos, somente classes
+		Aceita elementos duplicados (inserir o mesmo elemento mais de uma vez)
 
 	Seu tipo é o "List".
 
@@ -1386,14 +1465,41 @@
 
 		AbstractList, AbstractSequentialList, ArrayList, AttributeList, CopyOnWriteArrayList, FilteredList, LinkedList, ListBinding, ListExpression, ListProperty, ListPropertyBase, ModifiableObservableListBase, ObservableListBase, ReadOnlyListProperty, ReadOnlyListPropertyBase, ReadOnlyListWrapper, RoleList, RoleUnresolvedList, SimpleListProperty, SortedList, Stack, TransformationList, Vector
 
+	As mais utilizadas são ArrayList, LinkedList e Vector.
+
+	Dependendo da implementação temos vantagens e desvantagens, por exemplo:
+
+	ArrayList
+
+	Funcionamento:
+		Lista baseada internamente em um array
 	Vantagens:
-
 		Tamanho variável
-		Facilidade para se realizar inserções e deleções
-
+		Facilidade para encontrar um elemento por sua posição
 	Desvantagens:
+		Dificuldade para se realizar inserções e deleções
 
-		Não tem acesso sequencial aos elementos
+	LinkedList
+
+	Funcionamento:
+		Lista dupla encadeada, cada elemento tem dois campos que falam qual é o elemento anterior e qual é o proximo
+	Vantagens:
+		Tamanho variável
+		Facilidade para se realizar inserções e deleções em qualquer nó
+	Desvantagens:
+		Para encontrar um elemento tem que percorrer toda a lista
+
+	Vector
+
+	Funcionamento:
+		Lista baseada internamente em um array
+		Thread safe
+	Vantagens:
+		Tamanho variável
+		Facilidade para encontrar um elemento por sua posição
+	Desvantagens:
+		Dificuldade para se realizar inserções e deleções
+		Custo de performance devido ao thread safe
 
 	Declaração:
 
@@ -1415,13 +1521,19 @@
 
 	Métodos:
 
-		size() - mostra o tamanho da lista
-		add(<elemento>) - adicionar elemento na ultima posição
+		add(<elemento>) - adicionar elemento no final da lista
 		add(<posição>, <elemento>) - adicionar elemento na posição desejada
-		remove(<elemento ou posição>) - remover elemento da lista
+		clear() - limpa a lista
+		contains(<elemento>) - returna true se o elemento esta na lista
+		equals(<elemento>) - compara objeto com a lista
 		get(<posição>) - obter o elemento da posição
+		hashCode() - retorna o hashcode da lista
 		indexOf(<elemento>) - busca o primeiro elemento na lista com o valor desejado
-		indexOf(<elemento>) - busca o ultimo elemento na lista com o valor desejado
+		isEmpty() - returna true se a lista estiver vazia
+		lastIndexOf(<elemento>) - busca o ultimo elemento na lista com o valor desejado
+		remove(<elemento ou posição>) - remover elemento da lista
+		size() - mostra o tamanho da lista
+		toArray() - retorna um Array com todos os elementos da lista
 
 - Matrizes
 
@@ -2964,21 +3076,21 @@
 
 	É utilizado o método "compareTo" da interface "Comparable", se classe não possuir esta implementação será apresentado erro.
 
-- Comparator
+- Comparator<T>
 
-	Uma ordenação de lista pode ser feita pelo método estatico "Collections.sort(<lista a ser ordenada>);" , porém par aisso devemos implementar a interface "Comparable" nas classes a serem ordenadas.
+	Uma ordenação de lista pode ser feita pelo método estatico "Collections.sort(<lista a ser ordenada>);" , porém para isso devemos implementar a interface "Comparable" nas classes a serem ordenadas.
 
 	Implementar uma interface "Comparable" em uma classe não é recomendado, pois para alterar os parametros de comparação deveremos alterar uma classe ja fechada para alterações, dificultando o processo e gerando possiveis falhas.
 
-	Como solução podemos criar uma classe de comparação que implementa a interface "Comparator" removendo assim a lógica de comparação da classe, mantendo-a fechada.
+	Como solução podemos criar uma classe de comparação que implementa a interface "Comparator<T>" removendo assim a lógica de comparação da classe, mantendo-a fechada.
 
-	Para ordenar a lista podemos então utilizar o método "<lista a ser ordenada>.sort(<comparator>)" do proprio objeto da lista, esse método recebe como argumento um objeto Comparator.
+	Para ordenar a lista podemos então utilizar o método "<lista a ser ordenada>.sort(<comparator>)" do proprio objeto da lista, esse método recebe como argumento um objeto Comparator<T>.
 
-	Temos diversas formas de utilizar o Comparator.
+	Temos diversas formas de utilizar o Comparator<T>.
 
-	Comparator objeto de classe separada:
+	Comparator<T> objeto de classe separada:
 
-		Para isso criamos uma classe separada que implementa a classe Comparator e sobrescreve o método "compare", exemplo abaixo:
+		Para isso criamos uma classe separada que implementa a classe Comparator<T> e sobrescreve o método "compare", exemplo abaixo:
 
 			package application;
 
@@ -2995,11 +3107,11 @@
 
 			}
 
-		Em seguida chamamos o método "sort" da lista a ser ordenada passando um objeto da nossa classe Comparator como argumento, exemplo abaixo:
+		Em seguida chamamos o método "sort" da lista a ser ordenada passando um objeto da nossa classe Comparator<T> como argumento, exemplo abaixo:
 
 			list.sort(new MyComparator());
 
-	Comparator objeto de classe anônima:
+	Comparator<T> objeto de classe anônima:
 
 		Ao invés de criarmos uma classe "normal" podemos criar uma classe anônima para otimizar código, exemplo abaixo:
 
@@ -3010,13 +3122,13 @@
 				}
 			};
 
-		Ela traz a implementação do Comparator direto na declaração da variável.
+		Ela traz a implementação do Comparator<T> direto na declaração da variável.
 
-		Em seguida chamamos o método "sort" da lista a ser ordenada passando o objeto da nossa classe anônima Comparator como argumento, exemplo abaixo:
+		Em seguida chamamos o método "sort" da lista a ser ordenada passando o objeto da nossa classe anônima Comparator<T> como argumento, exemplo abaixo:
 
 			list.sort(comp);
 
-	Comparator objeto de expressão lambda com chaves:
+	Comparator<T> objeto de expressão lambda com chaves:
 
 		Para maior otimização, ao invés de utilizar uma classe anônima podemos utilizar um método anônimo no formato de expressão lambda (com chaves), exemplo abaixo:
 
@@ -3026,21 +3138,21 @@
 
 		No campo dos parênteses temos os argumentos, em seguida temos a flecha (arrow), a abertura de chaves, e por fim o que será executado no método, com a chave de fechamento.
 
-		Em seguida chamamos o método "sort" da lista a ser ordenada passando o objeto da nossa classe anônima Comparator como argumento, exemplo abaixo:
+		Em seguida chamamos o método "sort" da lista a ser ordenada passando o objeto da nossa classe anônima Comparator<T> como argumento, exemplo abaixo:
 
 			list.sort(comp);
 
-	Comparator objeto de expressão lambda sem chaves:
+	Comparator<T> objeto de expressão lambda sem chaves:
 
 		Similar a expressão lambda com chaves, mas para maior otimização ainda, quando temos uma expressão lambda de somente uma linha podemos descartar as chaves de abertura e fechamento e a palavra return, exemplo abaixo:
 
 			Comparator<Product> comp = (p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
 
-		Em seguida chamamos o método "sort" da lista a ser ordenada passando o objeto da nossa classe anônima Comparator como argumento, exemplo abaixo:
+		Em seguida chamamos o método "sort" da lista a ser ordenada passando o objeto da nossa classe anônima Comparator<T> como argumento, exemplo abaixo:
 
 			list.sort(comp);
 
-	Comparator expressão lambda "direto no argumento":
+	Comparator<T> expressão lambda "direto no argumento":
 
 		Por fim podemos otimizar de forma maior evitando a declaração da variável e inserindo a expressão lambda direto como argumento do método sorte, exemplo abaixo:
 
@@ -3080,13 +3192,83 @@
 
 	Expressividade / código conciso - código simples, em uma linha somente, bem claro.
 
+- Classe anonima
+
+	Quando criamos uma classe sem atributuos com somente um método para que seja instanciado e utilziado este método chamamos este objeto de "function object".
+
+	Esta nao é uma boa pratica no ponto de vista OO.
+
+	Exemplo:
+
+		// Declaração da classe
+		class NumeroDaContaComparator implements Comparator<Conta> {
+			@Override
+			public int compare(Conta c1, Conta c2) {
+				return Integer.compare(c1.getNumero(), c2.getNumero());
+			}
+		}
+
+		// Uso da classe
+		NumeroDaContaComparator comparator = new NumeroDaContaComparator(); 
+	    lista.sort(comparator);
+
+	O ideal seria utilizarmos uma classe anonima neste caso.
+
+	Ela descarta a criação da classe, cria um objeto da interface e coloca o método dentro do parametro.
+
+	Exemplo:
+
+		lista.sort(new Comparator<Conta>() {
+        	@Override
+        	public int compare(Conta c1, Conta c2) {
+        		return Integer.compare(c1.getNumero(), c2.getNumero());
+        	}
+        });
+
+    Podemos tambem criar a função anonima como uma variavel e passar ela como parametro, exemplo:
+
+    Comparator<Conta> variavel = new Comparator<Conta>() {
+    	@Override
+    	public int compare(Conta c1, Conta c2) {
+    		return Integer.compare(c1.getNumero(), c2.getNumero());
+    	}
+    };
+
+    lista.sort(variavel);
+
+    Porem esta é uma forma muito verbosa, para resolver este problema foram criadas as expressoes lambda.
+
 - Expressões lambda
 
 	Em programação funcional, expressão lambda corresponde a uma função anônima de primeira classe.
 
+	Para determinar uma expressao lambda utilziamos a seta -> .
+
+	Em sua estrutura temos:
+
+	(<parametros sem a classe>) -> <codigo a ser executado>
+
+	Esta expressa lambda é passada como parametro de um método, encaposulando o codigo da função.
+
 	Exemplo:
 
-	list.sort((p1, p2) -> p1.getPrice().compareTo(p2.getPrice()));
+		(c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero())
+
+		Uso aplicado como parametro:
+
+		lista.sort((c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()));
+
+	Tambem podemos criar uma expressão lambda, atribuir a uma variavel e passar esta variavel como parametro.
+
+	Exemplo:
+
+		Comparator<Conta> variavel = (Conta c1, Conta c2) -> {
+	    		return Integer.compare(c1.getNumero(), c2.getNumero());
+	    };
+
+	    lista.sort(variavel);
+
+
 
 - Interface funcional
 
