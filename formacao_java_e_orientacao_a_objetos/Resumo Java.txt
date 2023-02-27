@@ -2317,6 +2317,130 @@
 				System.out.println(e.getMessage());
 			}
 
+- Pacote "java.io"
+
+	Para trabalhar com fluxo de dados (entrada e saida) entre console, arquivos ou rede utilizamos classes do pacote "java.io".
+
+	Console ->                                                                  -> Console
+                                   _________________________
+	Arquivo -> Fluxo de entrada -> |       Aplicação        | -> Fluxo de saida -> Arquivo
+                                   | (desktop, web, mobile) |
+	Rede    ->                     |________________________|                   -> Rede
+
+	Fluxo básico de leitura de arquivo:
+
+		Criando fluxo concreto com arquivo (formato binario) -> Transformando os dados binarios para caracteres -> Efetuando leitura linha por linha
+
+		// Codigo com classes especificas
+		FileInputStream fis = new FileInputStream("arquivo.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		InputStreamReader isr = new InputStreamReader(fis);       // Transformando os dados binarios para caracteres
+		BufferedReader br = new BufferedReader(isr);              // Efetuando leitura linha por linha
+
+		// Codigo com classes genericas
+		InputStream is = new FileInputStream("arquivo.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		Reader r = new InputStreamReader(is);                // Transformando os dados binarios para caracteres
+		br = new BufferedReader(r);                          // Efetuando leitura linha por linha
+
+	Métodos:
+
+		br.readLine(); // Le uma linha do arquivo
+		br.close();    // Fecha todos os recursos abertos 
+
+	Exempo de código:
+
+		FileInputStream fis = new FileInputStream("lorem.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		InputStreamReader isr = new InputStreamReader(fis);     // Transformando os dados binarios para caracteres
+		BufferedReader br = new BufferedReader(isr);            // Efetuando leitura linha por linha
+		
+		String linha = br.readLine();
+		
+		System.out.println(linha);
+		
+		while (linha != null) {
+			System.out.println(linha);
+			linha = br.readLine();
+		}
+		
+		br.close();
+		
+		System.out.println();
+		
+		// Codigo com classes genericas
+		InputStream is = new FileInputStream("lorem.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		Reader r = new InputStreamReader(is);              // Transformando os dados binarios para caracteres
+		br = new BufferedReader(r);                        // Efetuando leitura linha por linha
+		
+		linha = br.readLine();
+		
+		System.out.println(linha);
+		
+		while (linha != null) {
+			System.out.println(linha);
+			linha = br.readLine();
+		}
+		
+		br.close();
+
+	Fluxo básico de gravação de arquivo:
+
+		Criando fluxo concreto com arquivo (formato binario) -> Transformando os dados caracteres para binarios -> Efetuando gravação linha por linha
+
+		// Codigo com classes especificas
+		FileOutputStream fos = new FileOutputStream("arquivo.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		OutputStreamWriter osw = new OutputStreamWriter(fos);       // Transformando os dados caracteres para binarios
+		BufferedWriter bw = new BufferedWriter(osw);                // Efetuando gravação linha por linha
+
+		// Codigo com classes genericas
+		OutputStream os = new FileOutputStream("arquivo.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		Writer w = new OutputStreamWriter(os);                 // Transformando os dados caracteres para binarios
+		bw = new BufferedWriter(w);                            // Efetuando gravação linha por linha
+
+	Métodos:
+
+		bw.write(<string>); // Grava a string no arquivo
+		bw.newLine();       // Quebra a linha
+		bw.close();         // Fecha todos os recursos abertos 
+
+	Exempo de código:
+
+		// Codigo com classes especificas
+		FileOutputStream fos = new FileOutputStream("lorem.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		OutputStreamWriter osw = new OutputStreamWriter(fos);     // Transformando os dados caracteres para binarios
+		BufferedWriter bw = new BufferedWriter(osw);              // Efetuando gravação linha por linha
+		
+		bw.write(<String>);
+		bw.newLine();
+		bw.newLine();
+		bw.write(<String>);
+		bw.newLine();
+		
+		bw.close();
+		
+		// Codigo com classes genericas
+		OutputStream os = new FileOutputStream("lorem.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		Writer w = new OutputStreamWriter(os);               // Transformando os dados caracteres para binarios
+		bw = new BufferedWriter(w);                          // Efetuando gravação linha por linha
+		
+		bw.write(<String>);
+		bw.newLine();
+		bw.newLine();
+		bw.write(<String>);
+		bw.newLine();
+		
+		bw.close();	
+
+	Uma das razões para utilizarmos as classes genericas é o polimorfismo, que nos permite alterar a entrada e saida de dados, para console, arquivo ou rede com apenas a mudança de uma linha de código.
+
+	Exemplo:
+
+	Entrada por arquivo - InputStream is = new FileInputStream("lorem.txt");
+	Entrada pelo console - InputStream is = System.in;
+	Entrada pela rede - InputStream is = new Socket().getInputStream();
+
+	Saida por arquivo - OutputStream os = new FileOutputStream("lorem.txt");
+	Saida pelo console - OutputStream os = System.out;
+	Saida pela rede - OutputStream os = new Socket().getOutputStream();
+
 - Trabalhando com arquivos e pastas
 
 	Para trabalhar com pastas e arquivos utilizamos a classe "File" que é uma abstração de uma pasta ou arquivo.
@@ -2392,6 +2516,20 @@
 				
 			}
 
+		Lendo os dados no arquivo (com a classe Scanner, muito mais simples):
+
+			Para trabalhar com a leitura de arquivos de forma muito mais simples utilziamos a classe Scanner.
+
+			Utilizamos o método "sc.nextLine()" da classe Scanner para ler uma linha do arquivo.
+
+			Exemplo:
+
+			Scanner sc = new Scanner(new File("contas.csv"));	
+			while (sc.hasNextLine()) {
+				System.out.println(sc.nextLine());
+			}			
+			sc.close();
+
 		Gravando os dados no arquivo (com a classe BufferedWriter e FileWriter, alta performance):
 
 			Para trabalhar com a gravação de arquivos com uma performance maior utilizamos as classes FileWriter (stream de gravação de arquivo) e BufferedWriter (implementação de gravação de stream de arquivo com melhor performance).
@@ -2466,6 +2604,21 @@
 				}
 				
 			}
+
+		Gravando os dados no arquivo (com a classe PrintWriter, muito mais simples):
+
+			Para trabalhar com a gravação de arquivos de forma muito mais simples utilziamos a classe PrintWriter.
+
+			Utilizamos o método "println(<String>)" da classe PrintStream para gravar uma linha do arquivo.
+
+			Utilizamos o método "println()" da classe PrintStream para quebrar uma linha do arquivo.
+
+			Exemplo:
+
+			PrintWriter ps = new PrintWriter(<caminho do arquivo>);		
+			ps.println(<String>);
+			ps.println();
+			ps.close();
 
 	Gravação e leitura de pastas
 
