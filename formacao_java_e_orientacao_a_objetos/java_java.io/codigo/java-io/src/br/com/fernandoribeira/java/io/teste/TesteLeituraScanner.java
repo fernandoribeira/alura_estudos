@@ -17,6 +17,7 @@ public class TesteLeituraScanner {
 			String linha = sc.nextLine();
 			Scanner linhaScanner = new Scanner(linha);
 			linhaScanner.useDelimiter(",");
+			linhaScanner.useLocale(Locale.US);
 			
 			String tipo = linhaScanner.next();
 			Integer agencia = linhaScanner.nextInt();
@@ -24,7 +25,7 @@ public class TesteLeituraScanner {
 			String titular = linhaScanner.next();
 			Double saldo = linhaScanner.nextDouble();
 			
-			System.out.printf("Tipo %s, Agencia %d, Conta %d, Titular %s, Saldo %.2f%n",
+			System.out.printf(new Locale("pt", "BR"),"%s - %04d-%08d, %20s: %05.2f%n",
 					tipo, agencia, conta, titular, saldo);
 			
 			linhaScanner.close();

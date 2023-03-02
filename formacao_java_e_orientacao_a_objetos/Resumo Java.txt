@@ -557,6 +557,16 @@
 	lastIndexOf(<string>) - retorna a última posição onde a String foi encontrada
 	split(<separador>) - cria um vetor com as substrings criadas pelo separador
 
+- Lidando com caracteres
+
+	Unicode - Unicode é um padrão que permite aos computadores representar e manipular, de forma consistente, texto de qualquer sistema de escrita existente. Este padrão consiste de quase 138 mil caracteres.
+
+	Tabela Unicode - É a tabela que formaliza o padrão Unicode.
+
+	Code point - É o código Unicode de um caractere especifico, os valores dos code points são escritos em hexadecimal e com o prefixo U+ (indicando que aquele não é apenas um valor numérico qualquer, e sim um code point definido pelo Unicode.
+
+	Encodings - Um encoding é uma técnica que define regras para armazenar os code points dos caracteres que compõem as strings na memória do computador. Existem vários deles, cada encoding utiliza uma técnica distinta para lidar com os códigos Unicode. Cada sistema operacional utiliza um enconding diferente mas podemos alterar via aplicação tambem.
+
 - Classes
 
 	É um tipo estruturado que pode conter:
@@ -2791,6 +2801,8 @@
 	carRental = new CarRental(pickupDate, returnDate, new Vehicle(carModel));
 
 	Estamos injetando uma dependencia no construtor com "new Vehicle(carModel)".
+
+	Não podemos deixar uma propria classe instanciar suas dependecias, eles devem ser recebidas via construtor.
 
 - Herdar vs cumprir contrato
 
