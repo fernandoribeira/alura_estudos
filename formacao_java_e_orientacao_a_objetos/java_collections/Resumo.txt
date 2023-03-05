@@ -1,0 +1,235 @@
+- O que são listas
+
+	Uma lista é uma coleção de elementos ordenados que podem ser acessados por meio de um índice numérico. As listas são implementadas pela interface "List", que faz parte da API da linguagem Java.
+
+	As listas em Java podem ser usadas para armazenar objetos de qualquer tipo e podem ser expandidas ou reduzidas dinamicamente à medida que os elementos são adicionados ou removidos.
+
+	Caracteristicas:
+
+	Homogênea (elementos do mesmo tipo)
+	Ordenada (elementos ficam um apos o outro)
+	Inicia vazia, e seus elementos são alocados sob demanda (dinamica)
+	Cada elemento ocupa um "nó" da lista
+	Não aceita tipos primitivos, somente classes
+	Aceita elementos duplicados (inserir o mesmo elemento mais de uma vez)
+
+- Implementações de listas
+
+	A interface "List" é uma das interfaces da API do Java que define um tipo de coleção de elementos ordenados que podem ser acessados através de um índice numérico. A interface "List" estende a interface "Collection" e adiciona operações que são específicas para o trabalho com listas.
+
+	A interface List define um conjunto de métodos para acessar, adicionar, remover e pesquisar elementos em uma lista.
+
+	O uso da interface List permite que os desenvolvedores escrevam código que possa trabalhar com qualquer implementação de lista, tornando o código mais flexível e portável.
+
+	Esta interface pode ser declarada (boa pratica de polimorfismo) porem não pode ser instanciada, devemos instanciar uma de suas implementações.
+
+	Existem várias implementações de listas disponíveis para uso, cada uma com suas próprias características e vantagens. Algumas das implementações de listas mais comuns são:
+
+	ArrayList: É uma implementação de lista baseada em um array, o que significa que os elementos são armazenados em uma matriz interna que é redimensionada automaticamente conforme necessário. É uma boa escolha quando há uma necessidade frequente de acessar os elementos em uma posição específica.
+
+	LinkedList: É uma implementação de lista encadeada, onde cada elemento é armazenado em um objeto separado que contém referências para o elemento anterior e seguinte. É uma boa escolha quando há uma necessidade frequente de adicionar ou remover elementos em posições aleatórias da lista.
+
+	Vector: É uma implementação de lista que é semelhante ao ArrayList, mas é sincronizada para uso em threads, o que significa que várias threads podem acessar a lista simultaneamente sem problemas de concorrência.
+
+	Stack: É uma implementação de lista que segue o conceito de LIFO (Last In, First Out) e é usada para implementar pilhas.
+
+	Queue: É uma implementação de lista que segue o conceito de FIFO (First In, First Out) e é usada para implementar filas.
+
+	Cada implementação de lista tem suas próprias características e vantagens, e a escolha de qual usar dependerá do cenário de uso específico.
+
+- Como declarar uma lista
+
+	implementação da lista<tipo que será guardado na lista> nome da lista = new implementação da lista<>();
+
+	Exemplo:
+
+	ArrayList<String> aulas = new ArrayList<>();
+	LinkedList<Contas> contas = new LinkedList<>();
+
+- Métodos em listas
+
+	A interface "List" define um conjunto de métodos para acessar, adicionar, remover, pesquisar elementos, etc; em uma lista. Exemplos:
+
+	add(<elemento>) - adicionar elemento no final da lista
+	add(<posição>, <elemento>) - adicionar elemento na posição desejada
+	clear() - limpa a lista
+	clone() - clona a lista
+	contains(<elemento>) - returna true se o elemento esta na lista
+	equals(<elemento>) - compara objeto com a lista
+	forEach(<Consumer>) - forma de percorrer a lista executando uma ação
+	get(<posição>) - obter o elemento da posição
+	hashCode() - retorna o hashcode da lista
+	indexOf(<elemento>) - busca o primeiro elemento na lista com o valor desejado
+	isEmpty() - returna true se a lista estiver vazia
+	lastIndexOf(<elemento>) - busca o ultimo elemento na lista com o valor desejado
+	remove(<elemento ou posição>) - remover elemento da lista
+	removerAll(<Collection>) - remover todos os itens da lista na coleção especificada
+	removerIF(<Predicate>) - remover todos os itens da lista que satisfaçam um Predicate
+	size() - mostra o tamanho da lista
+	sort(<Comparator>) - ordena a lista conforma um Comparator
+	toArray() - retorna um Array com todos os elementos da lista
+
+- Método "toString" em listas
+
+	Por padrão o método "toString" de uma lista segue o comportamento do tipo de objeto da lista.
+
+	Por exemplo, caso seja uma lista de "String" ao chamar o método "toString" os itens da lista seriam exibidos desta forma:
+
+	[Modelando a classe aula, Conhecendo mais de listas, Trabalhando com Cursos e Sets]
+
+	Por exemplo, caso seja uma lista de "Aulas" ao chamar o método "toString" os itens da lista seriam exibidos desta forma:
+
+	[br.com.fernandoribeira.Aula@77afea7d, br.com.fernandoribeira.Aula@532760d8, br.com.fernandoribeira.Aula@2ff5659e, br.com.fernandoribeira.Aula@161cd475]
+
+	A razão disto é que a classe String ja tem um método "toString" criado, ja a classe "Aulas" não tem o método "toString" criado, exibindo seus onjetos no formato padrão do Java.
+
+	Para resolver esta questão precisamos declarar um método "toString" na classe desejada.
+
+- Percorrendo uma lista
+
+	Existem 3 formas de percorremos uma lista, "for", "enhanced for" e "foreach", seguem exemplos para uma lista de "String":
+
+	// Percorrendo listas com "for"
+	for (int i = 0; i < aulas.size(); i++) {
+		System.out.println(aulas.get(i));
+	}
+
+	// Percorrendo listas com "enhanced for"
+	for (String aula : aulas) {
+		System.out.println(aula);
+	}
+
+	// Percorrendo listas com "foreach" (expressão lambda)
+	aulas.forEach(aula -> System.out.println(aula));
+
+- Classe "Collections"
+
+	A classe "Collections" é uma classe utilitária que fornece vários métodos estáticos para trabalhar com coleções de objetos. A classe "Collections" faz parte do pacote "java.util" e fornece uma ampla variedade de métodos para realizar operações comuns em coleções, como classificação, pesquisa, filtragem, conversão e modificação.
+
+	A classe Collections fornece métodos estáticos para trabalhar com várias implementações de coleções, incluindo List, Set e Map. Alguns exemplos de métodos fornecidos pela classe Collections incluem:
+
+	sort(<lista>) - ordena os elementos de uma lista em ordem crescente de acordo com a ordem natural dos elementos
+	reverse(<lista>): inverte a ordem dos elementos de uma lista
+	shuffle(<lista>): embaralha aleatoriamente os elementos de uma lista
+
+- Ordenando listas
+
+	Ordenando com o método "sort" da propria lista:
+
+		O método "sort" da propria lista utiliza um objeto do tipo "Comparator<T>" para fazer a ordenação, podemos implementar de 4 formas:
+
+		Classe externa com o método "Comparator<T>"
+
+			Criamos uma classe separada que implementa a interface "Comparator<T>" e declaramos o método "compare", exemplo abaixo:
+
+			class Comparador implements Comparator<String> {
+				@Override
+				public int compare(String aula1, String aula2) {
+					return aula1.compareTo(aula2);
+				}
+			}
+
+			Depois criamos um objeto e passamos como parametro para o método "sort" da lista, exemplo:
+
+			aulas.sort(new Comparador());
+
+		Classe anonima com o método "Comparator<T>"
+
+			Criamos uma variavel de classe anonima que implementa a interface "Comparator<T>" e declaramos o método "compare", exemplo abaixo:
+
+			Comparator<String> comparador = new Comparator<String>() {
+				@Override
+				public int compare(String aula1, String aula2) {
+					return aula1.compareTo(aula2);
+				}
+			};
+
+			Depois passamos esta variavel como parametro para o método "sort" da lista, exemplo:
+
+			aulas.sort(new Comparador());
+
+		Expressão lambda via variavel
+
+			Criamos uma variavel de expressão lambda que implementa a interface "Comparator<T>", exemplo abaixo:
+
+			Comparator<String> comparador = (String a1, String a2) -> {
+				return a1.compareTo(a2);
+			};
+
+			Depois passamos esta variavel como parametro para o método "sort" da lista, exemplo:
+
+			aulas.sort(new Comparador());
+
+		Expressão lambda direto no método
+
+			Passamos uma expressão lambada direto como parametro do método "sort" da lista, exemplo:
+
+			aulas.sort((String a1, String a2) -> a1.compareTo(a2));
+
+	Ordenando com o método estatico "sort" da classe "Collections":
+
+		Para ordenar uma lista com o método estatico "sort" da classe "Collections" precisamos que a classe que compoe a lista implemente a interface "Comparable<T>" e consequentemente seu método "compareTo". Podemos implementar de 4 formas:
+
+		Tipos "comuns"
+
+			Em tipos do Java como "String", "Integer", etc; já temos esta interface / método implementados então basta utilizarmos o método "sort" para que a lista seja ordenada, exemplo:
+
+			Collections.sort(aulas);
+
+		Tipos criados pelo usuario (comparação padrão)
+
+			Caso o tipo da lista seja uma classe criada pelo usuário, precisamos implementar a interface "Comparable<T>" nesta classe e consequentemente seu método "compareTo", exemplo:
+
+			public class Aula implements Comparable<Aula>{
+				...
+				@Override
+				public int compareTo(Aula outraAula) {
+					return this.getTitulo().compareTo(outraAula.getTitulo());
+				}
+			}
+
+			Depois utilizamos o método estatico "sort" da classe "Collections" passando a variavel da lista como argumento para que a ordenação seja feita, exemplo:
+
+			Collections.sort(aulas);
+
+			O método "compareTo" devolve um valor "-1" caso o item comparado seja menor, devolve o valor "0" caso seja igual e devolve o valor "1" caso seja maior conforme a comparação feita.
+
+			Por padrão é utilizado o método "compareTo" entre os dois objetos comparados para retornar este valor.
+
+			Sempre que for feita uma ordenação este método padrão "compareTo" do objeto será chamado.
+
+		Tipos criados pelo usuario (comparação diferente) com classe anonima
+
+			As vezes o método "compareTo" padrão da classe não atende nossa necessidade, podemos então criar um objeto "Comparator<T>" com uma classe anonima conforme nossa necessiade de comparação e passamos como parametro para o método "sort".
+
+			Comparator<Aula> comparadorTempo = new Comparator<Aula>() {
+				@Override
+				public int compare(Aula aula, Aula outraAula) {
+					return aula.getTempo().compareTo(outraAula.getTempo());
+				}
+			};
+
+			Depois utilizamos o método estatico "sort" da classe "Collections" passando a lista e a variavel criada como argumento para que a ordenação seja feita, exemplo:
+
+			Collections.sort(aulas, comparadorTempo);
+
+		Tipos criados pelo usuario (comparação diferente) com o método estatico "comparing" da classe "Comparator"
+
+			As vezes o método "compareTo" padrão da classe não atende nossa necessidade, podemos então executar o método estatico "comparing" da classe "Comparator" para efetuar a comparação.
+
+			aulas.sort(Comparator.comparing(Aula::getTempo));
+
+			Em Java, o símbolo "::" é chamado de operador de referência de método. Ele é usado para referenciar um método de uma classe ou instância sem chamar o método imediatamente.
+
+			Existem dois tipos principais de referências de método em Java: referências a métodos estáticos e referências a métodos de instância.
+
+			Para referenciar um método estático, você pode usar a sintaxe de referência de método "::" seguida do nome da classe e do nome do método, como neste exemplo:
+
+			MyClass::staticMethodName
+
+			Para referenciar um método de instância, você pode usar a sintaxe de referência de método "::" seguida do nome do objeto e do nome do método, como neste exemplo:
+
+			myObject::instanceMethodName
+
+			As referências de método são frequentemente usadas em programação funcional em Java para passar um método como argumento para outro método, como em expressões lambda e streams. Isso pode ajudar a tornar o código mais conciso e legível.
+

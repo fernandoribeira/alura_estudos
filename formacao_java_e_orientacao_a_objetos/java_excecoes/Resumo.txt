@@ -1,0 +1,341 @@
+- Pilha de execução
+
+	A Pilha de Execução (ou Stack) é uma estrutura de dados que armazena informações sobre as chamadas de método em um programa.
+
+	Quando um método é chamado em Java, a Pilha de Execução é usada para armazenar informações sobre o método atualmente em execução, como os valores dos parâmetros do método, endereço de retorno (onde a execução deve continuar após o término do método atual) e outras informações relevantes. À medida que cada novo método é chamado, novos quadros de pilha (ou frames) são adicionados ao topo da Pilha de Execução.
+
+	Conforme os métodos são executados e concluídos, os quadros de pilha são removidos da Pilha de Execução em ordem inversa, começando com o método mais recente que foi chamado. Isso significa que a execução do programa retorna à função que chamou o método atual, e assim por diante, até que a pilha esteja vazia e a execução do programa termine.
+
+	A Pilha de Execução em Java é importante para garantir que o programa seja executado de forma eficiente e sem erros de memória, pois cada quadro de pilha é alocado e desalocado automaticamente pelo compilador Java. Além disso, a Pilha de Execução é usada em recursos como rastreamento de pilha e depuração de código, que ajudam os desenvolvedores a identificar e corrigir erros em seus programas.
+
+- Exceções
+
+	Exceções são eventos que ocorrem durante a execução de um programa que interrompem o fluxo normal de execução. Esses eventos podem ser causados por erros no código, condições imprevistas ou problemas de comunicação com outros sistemas.
+
+	Quando uma exceção ocorre, é lançado um objeto que contém informações sobre o erro, como o tipo de exceção, a mensagem de erro e o local onde ocorreu o erro. Esses objetos são chamados de exceções ou objetos de exceção.
+
+	Quando lançada, uma exceção é propagada na pilha de chamadas de execução até que seja capturada (tratada) ou o programa seja encerrado.
+
+- Stacktrace
+
+	O stacktrace (ou rastreamento de pilha) é uma saída de texto que mostra a sequência de chamadas de método que levaram a uma exceção. Ele contém informações sobre cada método na pilha de execução no momento em que a exceção foi lançada, incluindo o nome do método, a classe em que o método está definido e a linha de código em que a exceção ocorreu.
+
+	O stacktrace é uma ferramenta valiosa para depurar problemas em um programa, pois fornece informações sobre o caminho que o programa percorreu antes de encontrar o erro. Isso pode ajudar os desenvolvedores a identificar a causa raiz do problema e corrigi-lo.
+
+	O stacktrace é geralmente impresso no console ou em um arquivo de log quando uma exceção é lançada e não é capturada pelo programa. O stacktrace pode ser lido de baixo para cima, começando com o método mais recente na pilha de execução e terminando com o método que iniciou a execução do programa. Cada linha do stacktrace mostra o nome do método, a classe em que o método está definido e o número da linha de código onde a exceção ocorreu.
+
+- Tratamento de exceções
+
+	O tratamento de exceções em Java é um mecanismo que permite que os desenvolvedores lidem com erros que ocorrem durante a execução de um programa. Quando uma exceção é lançada, o programa interrompe seu fluxo normal de execução e tenta encontrar um bloco de código que possa lidar com a exceção.
+
+	O tratamento de exceções é importante para garantir que os programas Java possam lidar com erros e condições imprevistas de forma elegante e segura. Sem o tratamento adequado de exceções, os programas podem falhar de forma inesperada e deixar o sistema em um estado instável.
+
+	Ao ser lançada uma exceção ela mostra a pilha de chamada de métodos e encerra o programa, por exemplo:
+
+	java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 3
+	at application.Program.method2(Program.java:33)
+	at application.Program.method1(Program.java:19)
+	at application.Program.main(Program.java:11)
+
+	Vemos na sequencia inversa os métodos chamados que implicaram em erro:
+
+	at application.Program.method2(Program.java:33)
+	at application.Program.method1(Program.java:19)
+	at application.Program.main(Program.java:11)
+
+- Vantagens do tratamento de exceções
+
+	Delega a lógica do erro para a classe responsável por conhecer as regras que podem ocasionar o erro.
+
+	Trata de forma organizada (inclusive hierárquica) exceções de tipos diferentes.
+
+	A exceção pode carregar dados quaisquer.
+
+	Construtores podem ter tratamento de exceções.
+
+	Possibilidade de auxílio do compilador (Exception).
+
+	Código mais simples, não há aninhamento de condicionais, a qualquer momento que uma exceção for disparada, a execução é interrompida e cai no bloco catch correspondente.
+
+	É possível capturar inclusive outras exceções de sistema.
+
+- Classe "Throwable"
+
+	A classe Throwable é a classe raiz da hierarquia de exceções em Java. Todas as exceções, tanto as exceções verificadas (checked exceptions) quanto as exceções não verificadas (unchecked exceptions), são subclasses de Throwable.
+
+	A classe Throwable possui vários métodos que podem ser usados para lidar com exceções, incluindo:
+
+	getMessage() - retorna a mensagem de erro associada com a exceção.
+	printStackTrace() - imprime a pilha de chamadas de método que levou à exceção, juntamente com a mensagem de erro.
+	getCause() - retorna a causa da exceção, se houver.
+	getLocalizedMessage() - retorna uma mensagem localizada para a exceção.
+
+	As subclasses de Throwable incluem as seguintes categorias de exceções:
+
+	Exceções verificadas (checked exceptions)
+	Exceções não verificadas (unchecked exceptions)
+	Erros (errors)
+
+	A classe Throwable e suas subclasses são usadas para gerenciar exceções em Java e fornecer informações úteis para depuração e tratamento de erros.
+
+- Hierarquia de exceções
+
+	Em Java, as exceções são organizadas em uma hierarquia de classes de exceção, que é dividida em três categorias principais: Throwable, Exception e Error.
+
+	A classe Throwable é a classe raiz da hierarquia de exceções e possui duas subclasses diretas: Exception e Error.
+
+	Detalhes:
+
+	Throwable - é a classe raiz da hierarquia de exceções em Java e possui duas subclasses diretas: Exception e Error.
+
+	Exception - é uma subclasse de Throwable e representa exceções que podem ser tratadas pelo programa, ou seja, exceções verificadas (checked exceptions) e exceções não verificadas (unchecked exceptions) que podem ser tratadas com o uso de blocos try-catch ou a cláusula "throws".
+
+	Error - é uma subclasse de Throwable e representa exceções que geralmente são fatais para a aplicação, como falhas de memória e problemas de carregamento de classes.
+
+	A hierarquia de exceções em Java é organizada da seguinte forma:
+
+	         Throwable
+	          /      \
+	     Exception   Error
+	    /    |   \
+	Checked  | Unchecked
+	         |
+	  RuntimeException
+
+	O conhecimento da hierarquia de exceções em Java é importante para entender como lidar com exceções em seu código e fornecer tratamento adequado para as exceções que podem ocorrer durante a execução do programa.
+
+- Exceções "checked exceptions" e "unchecked exceptions"
+
+	As exceções Checked são aquelas no qual você é obrigado a tratá-la, seja com um bloco try-catch ou mesmo com um throws (relançando a mesma para outro local). Por outro lado, quando você tem exceções do tipo Unchecked não é obrigatório o tratamento da mesma, você pode tratar apenas se quiser, se sentir que é necessário para o bom funcionamento da sua aplicação.
+
+	Checked exceptions são utilizadas para erros recuperáveis enquanto que Unchecked exceptions são utilizadas para erros irrecuperáveis. Significa dizer que quando você sabe que seu erro pode ser tratado, você utiliza Checked Exceptions, caso contrário utilize Unchecked Exceptions.
+
+	Erros da classe "java.lang.Exception" o compilador obriga a tratar ou propagar (exception "checked") pois são verificadas pelo compilador.
+
+	Erros da classe "java.lang.RuntimeException" o compilador não obriga a tratar ou propagar (exception "unchecked").
+
+- Bloco "Try / Catch"
+
+	O bloco try-catch é um mecanismo que permite que os desenvolvedores capturem e lidem com exceções que podem ocorrer durante a execução de um programa. O bloco try contém o código que pode lançar uma exceção, e o bloco catch contém o código que será executado se a exceção for lançada.
+
+	O bloco try é seguido pelo bloco catch, que especifica o tipo de exceção que o bloco pode capturar. Se uma exceção for lançada dentro do bloco try, o programa tentará encontrar um bloco catch correspondente que possa lidar com a exceção. Se um bloco catch correspondente for encontrado, o código dentro do bloco catch será executado. Se nenhum bloco catch correspondente for encontrado, a exceção será propagada para o código que chamou o método atual.
+
+	Devemos ter somente um bloco "try" porem podemos ter diversos blocos "catch" associados, cada um capturando uma exceção diferente.
+
+	A sintaxe básica do bloco try-catch em Java é a seguinte:
+
+	try {
+		<codigo que pode disparar uma exceção>
+	}
+	catch (<tipo da exceção> e) {
+		<tratativa da exceção>
+	}
+	catch (<tipo da exceção> e) {
+		<tratativa da exceção>
+	}
+	catch (<tipo da exceção> e) {
+		<tratativa da exceção>
+	}
+	...
+
+	Exemplo:
+
+	try {
+		conta.saca(100);
+	} catch (ArithmeticException e) {
+		System.out.println("Erro! ArithmeticException: " + e.getMessage());
+	} catch (NullPointerException e) {
+		System.out.println("Erro! NullPointerException: " + e.getMessage());
+	}
+
+	A variavel "e" (normalmente exceções são declaradas desta forma) possue alguns métodos que podem auxiliar na verificação do erro, exemplos:
+
+	Caso a exceção seja capturada, se quisermos podemos ver esta pilha de chamada de métodos, basta chamar o método abaixo na variável que capturou a exceção:
+
+	e.printStackTrace();
+
+	Caso a exceção seja capturada, se quisermos podemos ver esta a mensagem de erro, basta chamar o método abaixo na variável que capturou a exceção:
+
+	e.getMessage();
+
+- Multi-Catch
+
+	O multi-catch é um recurso que permite que um bloco catch capture várias exceções diferentes. Antes do multi-catch, era necessário ter um bloco catch separado para cada tipo de exceção que se desejava tratar.
+
+	Com o multi-catch, é possível especificar uma lista separada por "|" de exceções que podem ser tratadas pelo mesmo bloco catch. Isso torna o código mais conciso e fácil de ler, pois elimina a necessidade de repetir o mesmo código em vários blocos catch diferentes.
+
+	A sintaxe do multi-catch em Java é a seguinte:
+
+	...
+	} catch (IOException | NullPointerException | ArithmeticException e) {
+		System.out.println(e.getMessage());
+	}
+	...
+
+	No exemplo acima, o bloco catch captura as exceções "IOException | NullPointerException | ArithmeticException", se uma dessas exceções for lançada no bloco try, o código dentro do bloco catch será executado.
+
+	O multi-catch é útil para simplificar o código em situações em que vários tipos de exceções podem ser tratados da mesma maneira. No entanto, é importante lembrar que o multi-catch pode tornar o código menos legível se for usado excessivamente, portanto, deve ser usado com moderação.
+
+- Bloco "Finally"
+
+	O bloco finally é um bloco opcional que pode ser usado junto com o bloco try-catch. O bloco finally é executado independentemente de ter ocorrido ou não uma exceção dentro do bloco try. Isso significa que o código dentro do bloco finally sempre será executado, independentemente de ter ocorrido uma exceção ou não.
+
+	A sintaxe básica do bloco try-catch-finally em Java é a seguinte:
+
+	try {
+		<codigo que pode disparar uma exceção>
+	}
+	catch (<tipo da exceção> e) {
+		<tratativa da exceção>
+	}
+	catch (<tipo da exceção> e) {
+		<tratativa da exceção>
+	}
+	catch (<tipo da exceção> e) {
+		<tratativa da exceção>
+	}
+	...
+	finally {
+		<código a ser executado independente do resultado das condições anteriores>
+	}
+
+	O bloco finally é opcional, mas é útil em situações em que é necessário garantir que determinadas ações sejam executadas, independentemente de ter ocorrido uma exceção ou não. Por exemplo, se um programa abriu um arquivo no bloco try, é necessário garantir que o arquivo seja fechado, independentemente de ter ocorrido uma exceção durante a leitura ou gravação.
+
+	O código dentro do bloco finally é executado após o bloco try ou bloco catch terem terminado. Se uma exceção tiver sido lançada dentro do bloco try e não tiver sido capturada por um bloco catch correspondente, o código dentro do bloco finally ainda será executado antes de a exceção ser propagada para o código que chamou o método atual.
+
+- Try-with-resources
+
+	"Try-with-resources" é um recurso que permite que um bloco try seja usado com recursos que devem ser fechados depois que o bloco try terminar. Esses recursos são objetos que implementam a interface java.lang.AutoCloseable ou java.io.Closeable. Exemplos comuns de recursos que precisam ser fechados incluem conexões de banco de dados, arquivos abertos, sockets de rede e fluxos de entrada/saída.
+
+	O recurso "try-with-resources" é uma forma mais simples e segura de lidar com recursos do que a abordagem tradicional de fechar manualmente os recursos no bloco finally. Com o "try-with-resources", o Java cuida do fechamento automático do recurso assim que o bloco try terminar, mesmo que ocorra uma exceção.
+
+	A sintaxe básica do "try-with-resources" em Java é a seguinte:
+
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+					
+			String line = br.readLine();
+			
+			while (line != null) {
+				System.out.println(line);
+				line = br.readLine();
+			}
+			
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+
+	Desta forma evitamos criar um bloco finally que pode lançar exceções, por exemplo:
+
+		} finally {
+			
+			try {
+			
+				if (br != null) {
+					br.close();
+				}
+				if (fr != null) {
+					fr.close();
+				}
+			
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+
+	O bloco try é seguido pela declaração de um ou mais recursos que devem ser fechados depois que o bloco try terminar. Esses recursos são criados dentro dos parênteses e separados por ponto e vírgula. O código dentro do bloco try pode usar os recursos normalmente. Depois que o bloco try terminar, os recursos serão automaticamente fechados, mesmo que ocorra uma exceção.
+
+	Se ocorrer uma exceção dentro do bloco try, o Java fechará os recursos na ordem inversa em que foram abertos, ou seja, o último recurso aberto será o primeiro a ser fechado. Qualquer exceção lançada pelo método close() de um recurso será adicionada como uma exceção suprimida à exceção original que foi lançada no bloco try.
+
+	O "try-with-resources" é uma forma simples e segura de lidar com recursos que precisam ser fechados, pois elimina a necessidade de escrever código repetitivo para fechar manualmente os recursos no bloco finally.
+
+	Podemos usar qualquer classe no "try-with-resources" apenas implementando a interface "AutoCloseable", ela obriga a ser declarado o método "close()" para fechar os recursos abertos, exemplo:
+
+		@Override
+		public void close() {
+			System.out.println("Fechando conexao");
+		}
+
+- Cláusula "Throw"
+
+	A cláusula "throw" é usada para lançar uma exceção em tempo de execução. Quando ocorre uma condição de erro ou exceção, o programador pode usar a cláusula "throw" para lançar um objeto de exceção, que pode ser capturado e tratado posteriormente pelo bloco try-catch ou pode ser propagado para métodos chamadores usando a cláusula "throws".
+
+	Exemplo:
+
+	throw new <tipo da exceção>("<mensagem de erro>");
+
+	Onde "tipo da exceção" é o nome da classe que representa o tipo de exceção a ser lançada e "mensagem de erro" é uma descrição opcional do erro que ocorreu.
+
+	Por exemplo, a seguinte cláusula "throw" lança uma exceção do tipo ArithmeticException se o denominador for zero:
+
+	if (denominador == 0) {
+	    throw new ArithmeticException("Denominador não pode ser zero.");
+	}
+
+	Em resumo, a cláusula "throw" é usada para sinalizar que um erro ou exceção ocorreu em um programa Java e lançar um objeto de exceção para lidar com a situação.
+
+- Clausula "Throws"
+
+	A cláusula "throws" é usada para declarar que um método pode lançar uma ou mais exceções verificadas (checked exceptions) que não serão tratadas dentro do método. A cláusula "throws" é usada na definição de um método, após a lista de parâmetros e antes do corpo do método.
+
+	Ela propaga a exceção ao invés de tratá-la.
+
+	Exemplo:
+
+	<declaração do método> throws <exceção que pode ser lançada {
+		...
+	}
+
+	public void updateDates(Date checkIn, Date checkOut) throws DomainException {
+		...
+	}
+
+	Podemos fazer uma multi-propagação na mesma linha separando as exceções por virgula, exemplo:
+
+	public void updateDates(Date checkIn, Date checkOut) throws DomainException, RuntimeException {
+		...
+	}
+
+	Quando um método com a cláusula "throws" é chamado, o compilador verifica se o método pode lançar a exceção declarada e exige que o chamador trate ou declare a exceção (ou exceções) no seu próprio código.
+
+- Criando exceção personalizada
+
+	É possível criar nossas próprias exceções personalizadas estendendo uma classe de exceção existente, como "Exception" ou "RuntimeException". Para criar uma exceção personalizada, você deve seguir os seguintes passos:
+
+	Criar uma classe que estenda Exception ou RuntimeException, declaramos o "serialVersionUID", e definimos um construtor para a sua exceção, que pode receber uma mensagem de erro para ser exibida quando a exceção é lançada, exemplo:
+
+	public class MinhaExcecao extends Exception {
+
+		private static final long serialVersionUID = 1L;
+
+	    public MinhaExcecao(String mensagem) {
+	        super(mensagem);
+	    }
+
+	}
+
+	Para lançar sua exceção personalizada quando necessário, basta usar a palavra-chave "throw", exemplo:
+
+	public void meuMetodo() throws MinhaExcecao {
+
+	    if (condicaoDeErro) {
+	        throw new MinhaExcecao("Mensagem de erro personalizada");
+	    }
+
+	}
+
+	Por fim tratar a exceção personalizada em um bloco catch de acordo com a sua necessidade, exemplo:
+
+	try {
+	    meuMetodo();
+	} catch (MinhaExcecao e) {
+	    System.out.println("Exceção personalizada lançada: " + e.getMessage());
+	}
+
+	É recomendável seguir as melhores práticas de nomenclatura de exceções, como usar o sufixo "Exception" no nome da sua classe de exceção personalizada para diferenciá-la de outras classes.
+
+	Ao criar suas próprias exceções personalizadas, você pode fornecer mensagens de erro personalizadas e informações adicionais sobre o erro que ocorreu para ajudar na depuração e no tratamento de exceções.
+
+	Estendendo a classe "java.lang.Exception" o compilador obriga a tratar ou propagar (exception "checked") pois são verificadas pelo compilador.
+
+	Estendendo a classe "java.lang.RuntimeException" o compilador não obriga a tratar ou propagar (exception "unchecked").

@@ -1,0 +1,211 @@
+- Herança
+
+	Herança é um conceito fundamental na programação orientada a objetos (POO) em Java, que permite criar novas classes a partir de classes existentes, aproveitando e estendendo seu comportamento. A classe original é chamada de "classe pai" ou "superclasse" e a nova classe é chamada de "classe filha" ou "subclasse".
+
+	Ao criar uma nova classe filha, ela herda todos os membros (atributos e métodos) da classe pai e pode adicionar novos membros ou modificar os existentes. Isso permite que as classes filhas compartilhem o mesmo comportamento básico da classe pai, mas adicionem suas próprias características exclusivas.
+
+	A herança é implementada em Java usando a palavra-chave "extends" na definição da classe filha.
+
+	Quais problemas resolve
+
+		A herança em Java pode resolver vários problemas comuns na programação orientada a objetos, incluindo:
+
+		Reutilização de código: A herança permite que as classes filhas herdem membros (atributos e métodos) de suas classes pai, permitindo a reutilização de código. Isso ajuda a evitar a duplicação de código e torna o código mais modular.
+
+		Extensibilidade: A herança permite que as classes filhas adicionem novos membros ou modifiquem os membros existentes de suas classes pai, permitindo a extensibilidade do código. Isso significa que podemos estender o comportamento de uma classe existente sem precisar modificar a classe original.
+
+		Polimorfismo: A herança permite que as classes filhas sejam tratadas como suas classes pai, permitindo o polimorfismo. Isso significa que podemos criar código genérico que funciona com vários tipos de objetos, sem precisar se preocupar com o tipo específico de cada objeto.
+
+		Encapsulamento: A herança permite que as classes filhas acessem membros protegidos de suas classes pai, permitindo o encapsulamento. Isso significa que podemos restringir o acesso a membros específicos de uma classe, enquanto permitimos que as classes filhas acessem esses membros protegidos.
+
+	Reutilização de código
+
+		Reutilização de código é um conceito importante na programação orientada a objetos e refere-se à capacidade de reutilizar o código existente em novos programas ou módulos, evitando a duplicação de código e economizando tempo e recursos de desenvolvimento.
+
+		A herança é uma forma de reutilização de código.
+
+	Sintaxe de uso
+
+		Ao declarar a subclasse devemos inserir a palavra "extends" e o nome da superclasse a frente, por exemplo:
+
+		public class BusinessAccount extends Account {
+			...
+		}
+
+	Construtor
+
+		Devemos criar um construtor que contemple os atributos da superclasse e da subclasse pois os construtores são algo único a cada classe, portanto não são herdados.
+
+		Na declaração do método inserimos todos os parametros.
+
+		No inicio do método chamamos o construtor da superclasse com a palavra "super" e em seguida passamos os parametros necessarios do construtor da superclasse.
+
+		Em seguida inicializamos os atributos da subclasse.
+
+		Exemplo:
+
+		public BusinessAccount(Integer number, String holder, Double balance, Double loanLimit) {
+			super(number, holder, balance);
+			this.loanLimit = loanLimit;
+		}
+
+		Um fato importante e que deve ser sempre lembrado, os construtores são algo único a cada classe, portanto não são herdados. Porém, é possível invocar os construtores de uma superclasse através da subclasse. Vale lembrar que, para uma aplicação funcionar corretamente, algumas variáveis devem ser iniciadas.
+
+	Definições importantes
+
+		A relação entre a subclasse e a superclasse é "é-um".
+
+		A classe que recebe a herança é chamada de subclasse e a classe que ofere a herança é a superclasse.
+
+		Quando olhamos da subclasse para a superclasse falamos que é uma generalização, quando olhamos da superclasse para a subclasse falamos que é uma especialização.
+
+		A aplicação da herança é considerada um extensão da classe original. 
+
+		Herança é uma associação entre classes (e não entre objetos).
+
+		O modificador "private" nos atributos da superclasse impede o acesso direto aos mesmos pela subclasse, temos duas formas de contornar essa situação, utilizando os métodos geters e setters da classe ou mudando o modificador para "protected" para os atributos na superclasse.
+
+- Palavra "super" em sobreposição / sobrescrita de métodos
+
+	É possível chamar a implementação da superclasse na subclasse usando a palavra super, para isso, na sobreposição do método, inserir a palavra "super.<método a ser executado>", por exemplo:
+
+	@Override
+	public void withdraw(Double amount) {
+		super.withdraw(amount);
+		balance -= 2.0;
+	}
+
+- Sobreposição / sobrescrita de métodos
+
+	É a reimplementação de um método de uma superclasse na subclasse com uma lógica diferente.
+
+	Para utilizar primeiramente inserimos a anotação "@Override", isso facilita a leitura e compreensão do código e avisa ao compilador que o método é uma sobreposição.
+
+	Em seguida basta copiar a assinatura do método original (declaração) e inserir a lógica desejada no mesmo.
+
+	O método "toString" é uma sobreposição por exemplo, ele sobrescreve o método "toString" da classe "Object", inserindo uma lógica diferente.
+
+	Exemplo:
+
+	@override
+	public String toString() {
+		return ...
+	}
+
+- Polimorfismo
+
+	Polimorfismo é um dos principais conceitos da programação orientada a objetos em Java. Ele se refere à capacidade de um objeto ser tratado de diferentes formas, dependendo do contexto de uso. Em outras palavras, o polimorfismo permite que um objeto de uma classe filha seja tratado como um objeto da classe pai, ou vice-versa.
+
+	Existem dois tipos de polimorfismo em Java:
+
+	Polimorfismo de sobrecarga: permite que um mesmo nome de método seja usado com diferentes tipos de parâmetros. Isso permite que a mesma operação seja aplicada a diferentes tipos de objetos. Por exemplo, a classe Math em Java tem vários métodos com o mesmo nome, como abs() e pow(), que são aplicados a diferentes tipos de parâmetros.
+
+	Polimorfismo de sobreposição: permite que um método na classe filha substitua um método na classe pai, desde que tenha a mesma assinatura de método. Isso permite que a classe filha adicione ou modifique o comportamento do método da classe pai. Por exemplo, a classe Animal pode ter um método emitirSom(), que é sobreposto por métodos específicos em classes filhas como Cachorro, Gato e Pássaro, para emitir os sons característicos desses animais.
+
+	O polimorfismo em Java é implementado usando interfaces e classes abstratas, que definem os métodos que devem ser implementados pelas classes filhas. Isso permite que as classes filhas implementem os métodos de forma diferente, de acordo com as suas necessidades específicas. O polimorfismo é uma técnica poderosa para criar código modular, flexível e reutilizável em Java.
+
+	Um detalhe importante, objetos não mudam de tipo, a referência pode mudar, e aí entra o polimorfismo. Desta forma o polimorfismo permite usar referências mais genéricas para a comunicação com um objeto e o uso de referências mais genéricas permite desacoplar sistemas.
+
+	Exemplo:
+
+	Account x = new Account(1020, "Alex", 1000.0);               // Variavel do tipo Account instanciada com um tipo Account
+	Account y = new SavingsAccount(1023, "Maria", 1000.0, 0.01); // Variavel do tipo Account instanciada com um tipo SavingsAccount
+
+	x.withdraw(50.0); // Irá chamar o método do objeto Account
+	y.withdraw(50.0); // Irá chamar o método do objeto SavingsAccount
+
+	Importante entender que a associação do tipo específico com o tipo genérico é feita em tempo de execução podendo gerar exceções.
+
+- Classes abstratas
+
+	São classes que não podem ser instanciadas.
+
+	É uma forma de garantir herança total, somente subclasses não abstratas podem ser instanciadas, mas nunca a superclasse abstrata.
+
+	Sintaxe:
+
+	Basta acrescentarmos a palavra "abstract" na declaração da classe após o modificador de acesso, exemplo:
+
+		public abstract class <nome da classe> {
+			...
+		}
+
+	Principais usos de classes abstratas:
+
+	Reuso de código (herança)
+
+	Polimorfismo, a superclasse classe genérica nos permite tratar de forma fácil e uniforme todos os tipos de objetos, inclusive com polimorfismo se for o caso. Por exemplo, você pode colocar todos tipos de objetos em uma mesma coleção.
+
+- Métodos abstratos
+
+	São métodos que não possuem implementação, somente sua assinatura (declaração).
+
+	Métodos precisam ser abstratos quando a classe é genérica demais para conter sua implementação.
+
+	Se uma classe possuir pelo menos um método abstrato, então esta classe também é abstrata.
+
+	Sintaxe:
+
+	Basta acrescentarmos a palavra "abstract" na declaração do método após o modificador de acesso e removermos as chaves que delimitam o corpo do kmétodo, exemplo:
+
+	public abstract void <nome do método>();
+
+- Interface
+
+	Interfaces em Java são um tipo de contrato que define um conjunto de métodos abstratos e constantes que uma classe concreta deve implementar. Em outras palavras, uma interface em Java é uma especificação de um conjunto de operações que uma classe pode realizar.
+
+	As interfaces são usadas em Java para permitir a implementação de "múltiplas heranças", ou seja, para permitir que uma classe herde comportamentos de mais de uma classe. Isso é útil porque a linguagem Java não permite que uma classe herde de mais de uma classe diretamente.
+
+	Na interface são declarados somente o cabeçalho dos métodos, a implementação fica a cargo das classes que a implementam.
+
+	Por exemplo:
+
+	interface <nome da interface> {
+		...
+		<tipo de retorno> <nome do método>();
+		...
+	}
+
+	interface Shape {
+		double area();
+		double perimeter();
+	}
+
+	Devemos utilizar interfaces para criar sistemas com baixo acoplamento e flexíveis.
+
+- Herança vs Interfaces
+
+	Aspectos em comum entre herança e interfaces:
+
+	Relação "é-um"
+	Generalização/especialização
+	Polimorfismo
+
+	Diferença fundamental:
+
+	Herança > reuso
+	Interface > contrato a ser cumprido
+
+- Classes abastratas vs Interfaces
+
+	As classes abstratas e interfaces em Java são ambos mecanismos para permitir a abstração e a polimorfismo em um sistema orientado a objetos. No entanto, há algumas diferenças importantes entre eles:
+
+	Uma classe abstrata é uma classe que não pode ser instanciada diretamente e que pode conter métodos abstratos (sem implementação) e métodos concretos (com implementação). Já uma interface é uma especificação de um conjunto de métodos e constantes que uma classe deve implementar, mas não pode conter métodos concretos, apenas métodos abstratos e constantes.
+
+	Uma classe pode estender apenas uma classe abstrata, mas pode implementar várias interfaces. Isso significa que as interfaces são usadas para permitir que uma classe tenha comportamentos de várias fontes, enquanto as classes abstratas são usadas para definir comportamentos comuns entre classes relacionadas.
+
+	As classes abstratas podem ter construtores, enquanto as interfaces não podem.
+
+	As classes abstratas podem ter variáveis de instância, enquanto as interfaces não podem.
+
+	As classes abstratas são usadas para fornecer uma implementação base para as subclasses, enquanto as interfaces são usadas para definir um contrato que as classes devem seguir.
+
+	Em resumo, as classes abstratas são usadas para definir comportamentos comuns e fornecer implementações base para as subclasses, enquanto as interfaces são usadas para definir um contrato que as classes devem seguir e permitir a implementação de múltiplas heranças.
+
+- Herança multipla
+
+	A herança múltipla pode gerar o problema do diamante que é uma ambiguidade causada pela existência do mesmo método em mais de uma superclasse.
+
+	Desta forma herança múltipla não é permitida na maioria das linguagens.
+
+	Herança múltipla não é permitida na linguagem Java.
