@@ -1,0 +1,812 @@
+- Pacote "java.io"
+
+	O pacote java.io é um pacote padrão da linguagem de programação Java que fornece classes para manipulação de entrada e saída (I/O). Ele contém classes para trabalhar com fluxos de dados, arquivos, entrada e saída de bytes e caracteres, além de outras classes úteis para I/O em Java.
+
+	Algumas das classes mais comuns do pacote java.io incluem:
+
+	InputStream e OutputStream: classes abstratas para leitura e escrita de fluxos de bytes.
+
+	Reader e Writer: classes abstratas para leitura e escrita de fluxos de caracteres.
+
+	File: classe para manipulação de arquivos no sistema de arquivos.
+
+	BufferedReader e BufferedWriter: classes para leitura e escrita de caracteres em buffers.
+
+	DataInputStream e DataOutputStream: classes para leitura e escrita de tipos primitivos de dados.
+
+	ObjectInputStream e ObjectOutputStream: classes para leitura e escrita de objetos Java serializados.
+
+	O pacote java.io é amplamente utilizado em aplicativos Java para realizar operações de entrada e saída, como leitura e gravação de arquivos, leitura de dados de entrada do usuário e comunicação com outros dispositivos ou sistemas.
+
+- Fluxo de dados
+
+	Em Java, um fluxo de dados (ou stream) é um fluxo de dados sequencial de bytes ou caracteres que é usado para ler ou gravar dados em um programa. Os fluxos de dados são geralmente usados para ler dados de uma fonte externa (como um arquivo em disco ou um socket de rede) ou gravar dados em uma saída externa (como um arquivo em disco ou uma conexão de rede).
+
+	Os fluxos de dados são especialmente úteis quando se trabalha com grandes quantidades de dados que não podem ser armazenadas inteiramente na memória. Em vez disso, os dados são lidos ou gravados em blocos, o que ajuda a economizar memória e tornar o programa mais eficiente.
+
+	Console ->                                                                  -> Console
+                                   _________________________
+	Arquivo -> Fluxo de entrada -> |       Aplicação        | -> Fluxo de saida -> Arquivo
+                                   | (desktop, web, mobile) |
+	Rede    ->                     |________________________|                   -> Rede
+
+- Fluxos de entrada e saída
+
+	Os fluxos de dados são implementados como classes Java no pacote java.io e podem ser divididos em duas categorias principais:
+
+	Fluxos de entrada (InputStreams): utilizados para ler dados a partir de uma fonte externa. Alguns exemplos de classes de fluxo de entrada incluem FileInputStream, ObjectInputStream e ByteArrayInputStream.
+
+	Fluxos de saída (OutputStreams): utilizados para gravar dados em uma saída externa. Alguns exemplos de classes de fluxo de saída incluem FileOutputStream, ObjectOutputStream e ByteArrayOutputStream.
+
+- Hierarquia de classes usadas para leitura de arquivos
+
+	Object
+		InputStream
+			FileInputStream
+		Reader
+			InputStreamReader
+				FileReader
+			BufferedReader
+		
+- Detalhe de classes usadas para leitura de arquivos
+
+	InputStream
+
+		A classe InputStream é uma classe abstrata do pacote java.io em Java que serve como superclasse para todas as classes de fluxo de entrada de dados em Java. Ela fornece uma série de métodos abstratos para ler bytes e dados de entrada de vários tipos de fontes, como arquivos, sockets de rede, sequências de bytes e outros tipos de fluxo de entrada.
+
+	FileInputStream
+
+		A classe FileInputStream é uma classe do pacote java.io em Java que é usada para criar um fluxo de entrada que lê dados de um arquivo no sistema de arquivos. Essa classe estende a classe abstrata InputStream e, portanto, herda todos os métodos da classe InputStream.
+
+		A classe FileInputStream é útil para ler dados binários de um arquivo, como imagens, vídeos, arquivos de áudio e outros arquivos que não são de texto simples. Ela também pode ser usada para ler dados de texto, mas nesse caso é necessário converter os bytes lidos em caracteres usando um objeto InputStreamReader.
+
+		Para usar a classe FileInputStream, é necessário instanciar um objeto dessa classe e passar o nome do arquivo que se deseja ler como argumento para o construtor.
+
+	Reader
+
+		A classe Reader é uma classe abstrata do pacote java.io em Java que serve como superclasse para todas as classes de fluxo de caracteres de entrada em Java. Ela fornece uma série de métodos abstratos para ler caracteres e dados de entrada de vários tipos de fontes, como arquivos, strings e outros tipos de fluxo de entrada de caracteres.
+
+		Algumas das classes que estendem a classe Reader incluem FileReader, StringReader, InputStreamReader e BufferedReader. Todas essas classes fornecem a capacidade de ler caracteres de entrada de várias fontes, mas cada uma é otimizada para um tipo específico de entrada.
+
+	InputStreamReader
+
+		A classe InputStreamReader em Java é uma classe de fluxo de caracteres que converte bytes em caracteres de acordo com uma codificação de caracteres específica. Ela estende a classe abstrata Reader e é frequentemente usada em conjunto com outras classes de fluxo de entrada, como FileInputStream, para ler dados de entrada de um arquivo ou de outro tipo de fluxo de entrada.
+
+		A classe InputStreamReader possui vários construtores, mas o mais comum é aquele que recebe um objeto InputStream como argumento. Esse construtor permite a criação de um fluxo de caracteres que lê bytes de um fluxo de entrada e os converte em caracteres de acordo com uma codificação de caracteres especificada.
+
+	FileReader
+
+		A classe FileReader em Java é uma classe de fluxo de caracteres que permite a leitura de caracteres de um arquivo de texto. Ela estende a classe InputStreamReader, que por sua vez estende a classe abstrata Reader.
+
+		A classe FileReader lê caracteres de um arquivo de texto em um sistema específico de codificação de caracteres (que pode ser especificado ao criar uma instância do objeto FileReader) e os retorna como uma sequência de caracteres Java. Ela fornece uma série de métodos para ler caracteres de um arquivo de texto, incluindo a leitura de um único caractere ou de um bloco de caracteres.
+
+	BufferedReader
+		
+		A classe BufferedReader em Java é uma classe que permite a leitura de caracteres de um fluxo de entrada de caracteres, como um arquivo de texto ou um objeto InputStreamReader, de maneira mais eficiente e conveniente. Ela estende a classe Reader e fornece vários métodos que facilitam a leitura de caracteres de um fluxo de entrada.
+
+		Ao contrário da classe FileReader, que lê caracteres diretamente de um arquivo de texto, a classe BufferedReader lê caracteres de um fluxo de entrada de caracteres que pode ser um arquivo de texto ou um objeto InputStreamReader. Ao usar um objeto BufferedReader, o fluxo de entrada é lido em blocos, o que melhora a eficiência da leitura.
+
+		A classe BufferedReader fornece um método chamado readLine(), que lê uma linha completa do fluxo de entrada e a retorna como uma string. Esse método é muito útil para a leitura de arquivos de texto que contêm linhas de texto separadas por quebras de linha.
+
+- Leitura de arquivos
+
+	Fluxo básico de leitura de arquivo:
+
+		Criando fluxo concreto com arquivo (formato binario) -> Transformando os dados binarios para caracteres -> Efetuando leitura linha por linha
+
+		// Codigo com classes especificas
+		FileInputStream fis = new FileInputStream("arquivo.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		InputStreamReader isr = new InputStreamReader(fis);       // Transformando os dados binarios para caracteres
+		BufferedReader br = new BufferedReader(isr);              // Efetuando leitura linha por linha
+
+		// Codigo com classes genericas
+		InputStream is = new FileInputStream("arquivo.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		Reader r = new InputStreamReader(is);                // Transformando os dados binarios para caracteres
+		BufferedReader br = new BufferedReader(r);           // Efetuando leitura linha por linha
+
+	Métodos:
+
+		br.readLine(); // Le uma linha do arquivo
+		br.close();    // Fecha todos os recursos abertos 
+
+	Exempo de código:
+
+		// Codigo com classes especificas
+		FileInputStream fis = new FileInputStream("lorem.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		InputStreamReader isr = new InputStreamReader(fis);     // Transformando os dados binarios para caracteres
+		BufferedReader br = new BufferedReader(isr);            // Efetuando leitura linha por linha
+		
+		String linha = br.readLine();
+		while (linha != null) {
+			System.out.println(linha);
+			linha = br.readLine();
+		}
+		
+		br.close();
+		
+		// Codigo com classes genericas
+		InputStream is = new FileInputStream("lorem.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		Reader r = new InputStreamReader(is);              // Transformando os dados binarios para caracteres
+		BufferedReader br = new BufferedReader(r);         // Efetuando leitura linha por linha
+		
+		linha = br.readLine();
+		while (linha != null) {
+			System.out.println(linha);
+			linha = br.readLine();
+		}
+		
+		br.close();
+
+	Exemplo de código com dois objetos:
+
+		FileReader fr = new FileReader("lorem.txt");
+		BufferedReader br = new BufferedReader(fr);
+		
+		String linha = br.readLine();
+		while (linha != null) {
+			System.out.println(linha);
+			linha = br.readLine();
+		}
+		
+		br.close();
+
+	Exemplo de código com somente um objeto:
+
+		BufferedReader br = new BufferedReader(new FileReader("lorem.txt"));
+		
+		String linha = br.readLine();
+		while (linha != null) {
+			System.out.println(linha);
+			linha = br.readLine();
+		}
+		
+		br.close();
+
+- Hierarquia de classes usadas para gravação de arquivos
+
+	Object
+		OutputStream
+			FileOutputStream
+		Writer
+			OutputStreamWriter
+				FileWriter
+			BufferedWriter
+			PrintWriter
+
+- Detalhe de classes usadas para gravação de arquivos
+
+	OutputStream
+
+		A classe OutputStream em Java é uma classe abstrata que representa um fluxo de saída de bytes. Ela é a classe base para várias outras classes de fluxo de saída, como FileOutputStream, BufferedOutputStream e DataOutputStream, entre outras.
+
+		A classe OutputStream define um conjunto de métodos abstratos que devem ser implementados pelas subclasses para permitir a gravação de bytes em um fluxo de saída. 
+
+	FileOutputStream
+
+		A classe FileOutputStream em Java é uma classe que representa um fluxo de saída de bytes para um arquivo. Ela estende a classe abstrata OutputStream e fornece métodos para gravar bytes em um arquivo.
+
+		Ao criar um objeto FileOutputStream, deve-se especificar o nome do arquivo que será usado como destino para os dados de saída. 
+
+	Writer
+
+		A classe Writer em Java é uma classe abstrata que representa um fluxo de saída de caracteres. Ela é a classe base para várias outras classes de fluxo de saída de caracteres, como FileWriter, BufferedWriter e PrintWriter, entre outras.
+
+	OutputStreamWriter
+
+		A classe OutputStreamWriter em Java é uma classe que converte um fluxo de saída de bytes em um fluxo de saída de caracteres. Ela é usada para gravar caracteres em um fluxo de saída que é codificado em bytes.
+
+		O construtor da classe OutputStreamWriter recebe um objeto OutputStream como parâmetro e um objeto Charset, que especifica a codificação a ser usada.
+
+	FileWriter
+
+		A classe FileWriter em Java é uma classe que permite escrever dados em um arquivo de texto. Ela permite escrever caracteres em um fluxo de saída e gravá-los em um arquivo, criando o arquivo se ele não existir ou sobrescrevendo-o se já existir.
+
+		A classe FileWriter é uma subclasse da classe Writer e, portanto, ela herda todos os métodos da classe Writer. 
+
+	BufferedWriter
+
+		A classe BufferedWriter em Java é uma classe que fornece um buffer de caracteres para permitir a gravação eficiente de caracteres em um fluxo de saída. Ela é usada em conjunto com outras classes de fluxo de saída de caracteres, como FileWriter e OutputStreamWriter, para fornecer um buffer para os dados antes de gravá-los no fluxo de saída.
+
+		Quando um objeto BufferedWriter é criado, ele é associado a outro objeto de fluxo de saída de caracteres. Ao escrever caracteres em um objeto BufferedWriter, eles são armazenados em um buffer interno. O buffer é gravado no objeto de fluxo de saída de caracteres somente quando o buffer está cheio ou quando o método flush() é chamado explicitamente.
+
+		O uso de um objeto BufferedWriter pode melhorar significativamente o desempenho da gravação de caracteres em um fluxo de saída, especialmente quando muitos caracteres precisam ser gravados em sequência. Sem um buffer, cada caractere seria gravado individualmente no fluxo de saída, o que pode ser um processo lento e ineficiente.
+
+	PrintWriter
+
+		A classe PrintWriter em Java é uma classe de fluxo de saída que permite escrever dados em um arquivo ou em um fluxo de saída de caracteres em formato de texto. Ela é utilizada para imprimir dados em arquivos, sockets ou em qualquer outro lugar que possa ser tratado como um fluxo de saída de caracteres.
+
+		A classe PrintWriter é uma classe de alto nível que utiliza objetos da classe Writer para gravar dados em um arquivo ou em um fluxo de saída. Ela fornece vários métodos que permitem escrever dados em diferentes formatos, como texto, números, objetos e arrays. 
+
+		Além disso, a classe PrintWriter também oferece suporte para a escrita em arquivos de texto com diferentes caracteres de codificação, como UTF-8, ASCII, ISO-8859-1, entre outros. A codificação padrão é o sistema operacional padrão do arquivo.
+
+- Gravação de arquivos
+
+	Fluxo básico de gravação de arquivo:
+
+		Criando fluxo concreto com arquivo (formato binario) -> Transformando os dados caracteres para binarios -> Efetuando gravação linha por linha
+
+		// Codigo com classes especificas
+		FileOutputStream fos = new FileOutputStream("arquivo.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		OutputStreamWriter osw = new OutputStreamWriter(fos);       // Transformando os dados caracteres para binarios
+		BufferedWriter bw = new BufferedWriter(osw);                // Efetuando gravação linha por linha
+
+		// Codigo com classes genericas
+		OutputStream os = new FileOutputStream("arquivo.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		Writer w = new OutputStreamWriter(os);                 // Transformando os dados caracteres para binarios
+		BufferedWriter bw = new BufferedWriter(w);             // Efetuando gravação linha por linha
+
+	Métodos:
+
+		bw.write(<string>); // Grava a string no arquivo
+		bw.newLine();       // Quebra a linha
+		bw.close();         // Fecha todos os recursos abertos 
+
+	Exempo de código:
+
+		// Codigo com classes especificas
+		FileOutputStream fos = new FileOutputStream("lorem.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		OutputStreamWriter osw = new OutputStreamWriter(fos);     // Transformando os dados caracteres para binarios
+		BufferedWriter bw = new BufferedWriter(osw);              // Efetuando gravação linha por linha
+		
+		bw.write(<String>);
+		bw.newLine();
+		
+		bw.close();
+		
+		// Codigo com classes genericas
+		OutputStream os = new FileOutputStream("lorem.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		Writer w = new OutputStreamWriter(os);               // Transformando os dados caracteres para binarios
+		bw = new BufferedWriter(w);                          // Efetuando gravação linha por linha
+		
+		bw.write(<String>);
+		bw.newLine();
+		
+		bw.close();	
+
+- Polimorfismo em I/O
+
+	Uma das razões para utilizarmos as classes genericas é o polimorfismo, que nos permite alterar a entrada e saida de dados, para console, arquivo ou rede com apenas a mudança de uma linha de código.
+
+	Exemplo:
+
+	Entrada por arquivo  - InputStream is = new FileInputStream("lorem.txt");
+	Entrada pelo console - InputStream is = System.in;
+	Entrada pela rede    - InputStream is = new Socket().getInputStream();
+
+	Saida por arquivo  - OutputStream os = new FileOutputStream("lorem.txt");
+	Saida pelo console - OutputStream os = System.out;
+	Saida pela rede    - OutputStream os = new Socket().getOutputStream();
+
+	Exemplo de código:
+
+		Socket s = new Socket(); // Criando socket de rede
+		
+		// Ler do arquivo FileInputStream
+		// Ler do console System.in
+		// Ler da rede Socket
+		InputStream is;
+		is = new FileInputStream("lorem.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		is = System.in;                        // Criando fluxo concreto com console (formato binario)
+		is = s.getInputStream();               // Criando fluxo concreto com rede (formato binario)
+		
+		Reader isr = new InputStreamReader(is); 	 // Transformando os dados binarios para caracteres
+		BufferedReader br = new BufferedReader(isr); // Efetuando leitura linha por linha	
+		
+		// Saida no arquivo
+		// Saida no console
+		// Saida na rede
+		OutputStream os;
+		os = new FileOutputStream("lorem.txt"); // Criando fluxo concreto com arquivo (formato binario)
+		os = System.out;                        // Criando fluxo concreto com console (formato binario)
+		os = s.getOutputStream();               // Criando fluxo concreto com rede (formato binario)
+		
+		Writer osw = new OutputStreamWriter(os);     // Transformando os dados caracteres para binarios
+		BufferedWriter bw = new BufferedWriter(osw); // Efetuando gravação linha por linha
+		
+		String linha = br.readLine();
+		
+		while (linha != null && !linha.isEmpty()) {
+			bw.write(linha);
+			bw.newLine();
+			bw.flush();
+			linha = br.readLine();
+		}
+		
+		br.close();
+		bw.close();
+
+- Outras formas de se ler e gravar arquivos
+
+	Existem diversas formas para se ler e gravar arquivos, seguem algumas:
+
+	Lendo os dados do arquivo (com a classe BufferedReader e FileReader, alta performance):
+
+		Para trabalhar com a leitura de arquivos com uma performance maior utilizamos as classes FileReader (stream de leitura de arquivo) e BufferedReader (implementação de leitura de stream de arquivo com melhor performance).
+
+		Utilizamos o método "readLine()" da classe BufferedReader para ler uma linha do arquivo.
+
+		Como fazer:
+
+		Criar um objeto String com o caminho do arquivo.
+
+		Criar um objeto FileReader como "null".
+
+		Criar um objeto BufferedReader como "null".
+
+		Abrir um bloco "try".
+
+		Instanciar o FiledReader passando como parametro a variavel String com o caminho do arquivo.
+
+		Instanciar o BufferedReader passando como parametro o FileReader.
+
+		Criar uma variavel String para ler a primeira linha do arquivo com o método "readLine()" da classe BufferedReader.
+
+		Criar uma estrutura de repetição "while" para ler as linhas do arquivo.
+
+		Dentro da estrutura utilizar o método "readLine()" da classe BufferedReader para ler a proxima linha do arquivo.
+
+		Capturar a exceção IOException.
+
+		Criar um bloco finally.
+
+		Fechar os objetos FileReader e BufferdeReader para liberar o arquivo, porem dentro de outro bloco "try" pois podem lançar exceções.
+
+		Exemplo:
+
+		String path = "C:\\Temp\\in.txt";
+		FileReader fr = null;
+		BufferedReader br = null;
+		
+		try {
+			
+			fr = new FileReader(path);
+			br = new BufferedReader(fr);
+			
+			String line = br.readLine();
+			
+			while (line != null) {
+				System.out.println(line);
+				line = br.readLine();
+			}
+			
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			
+			try {
+			
+				if (br != null) {
+					br.close();
+				}
+				if (fr != null) {
+					fr.close();
+				}
+			
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+
+	Lendo os dados no arquivo (com a classe Scanner, muito mais simples):
+
+		Para trabalhar com a leitura de arquivos de forma muito mais simples utilizamos a classe Scanner.
+
+		Utilizamos o método "sc.nextLine()" da classe Scanner para ler uma linha do arquivo.
+
+		Exemplo:
+
+		Scanner sc = new Scanner(new File("contas.csv"));	
+		while (sc.hasNextLine()) {
+			System.out.println(sc.nextLine());
+		}			
+		sc.close();
+
+	Gravando os dados no arquivo (com a classe BufferedWriter e FileWriter, alta performance):
+
+		Para trabalhar com a gravação de arquivos com uma performance maior utilizamos as classes FileWriter (stream de gravação de arquivo) e BufferedWriter (implementação de gravação de stream de arquivo com melhor performance).
+
+		Utilizamos o método "writeLine()" da classe BufferedWriter para gravar uma linha do arquivo.
+
+		Temos duas opções de instanciação de um FileWriter:
+
+		Cria/recria o arquivo: new FileWriter(<caminho do arquivo>)
+		Acrescenta dados ao arquivo existente: new FileWriter(<caminho do arquivo>, true)
+
+		Como fazer:
+
+		Criar um objeto array de String com os dado a serem gravados.
+
+		Criar um objeto String com o caminho do arquivo que receberá os dados.
+
+		Criar um objeto FileWriter como "null".
+
+		Criar um objeto BufferedWriter como "null".
+
+		Abrir um bloco "try".
+
+		Instanciar o FiledWriter passando como parametro a variavel String com o caminho do arquivo.
+
+		Instanciar o BufferedWriter passando como parametro o FileReader.
+
+		Criar uma estrutura de repetição "for" para ler as linhas do do objeto String criado com os dados.
+
+		Dentro da estrutura gravar a linha lida no arquivo com o método "writeLine()" da classe BufferedWriter.
+
+		A gravação não efetua quebra de linha, sendo necessaria efetuar manualmente com o método "newLine()" da classe BufferedWriter.
+
+		Capturar a exceção IOException.
+
+		Criar um bloco finally.
+
+		Fechar os objetos FileWriter e BufferdeWriter para liberar o arquivo, porem dentro de outro bloco "try" pois podem lançar exceções.
+
+		Exemplo:
+
+		String[] lines = new String[] {"Bom dia", "Boa tarde", "Boa noite"};
+		String path = "C:\\temp\\out.txt";
+		FileWriter fw = null;
+		BufferedWriter bw = null;
+		
+		try {
+			
+			fw = new FileWriter(path, true);
+			bw = new BufferedWriter(fw);
+			
+			for (String line : lines) {
+				bw.write(line);
+				bw.newLine();
+			}
+			
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		} finally {
+			
+			try {
+			
+				if (bw != null) {
+					bw.close();
+				}
+				if (fw != null) {
+					fw.close();
+				}
+			
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
+		}
+
+	Gravando os dados no arquivo (com a classe PrintWriter, muito mais simples):
+
+		Para trabalhar com a gravação de arquivos de forma muito mais simples utilziamos a classe PrintWriter.
+
+		Utilizamos o método "println(<String>)" da classe PrintStream para gravar uma linha do arquivo.
+
+		Utilizamos o método "println()" da classe PrintStream para quebrar uma linha do arquivo.
+
+		Exemplo:
+
+		PrintWriter ps = new PrintWriter(<caminho do arquivo>);		
+		ps.println(<String>);
+		ps.println();
+		ps.close();
+
+- Trabalhando com arquivos e pastas
+
+	Para trabalhar com pastas e arquivos utilizamos a classe "File" que é uma abstração de uma pasta ou arquivo.
+
+	Listar pastas / arquivos
+
+		Para listar pastas e arquivos utilizamos a classe "File" que é uma abstração de uma pasta, especificamente seu método "listFiles()".
+
+		Para mostrar as pastas passamos o parametro "File::isDirectory" ao método.
+
+		Para mostrar os arquivos passamos o parametro "File::isFile" ao método.
+
+		Para mostrar os arquivos e pastas basta não passar nenhum parametro ao método.
+
+		Exemplo:
+
+			Scanner sc = new Scanner(System.in);
+	
+			System.out.print("Enter a folder path: ");
+			String folderPath = sc.nextLine();
+			
+			File path = new File(folderPath);
+			
+			File[] folders = path.listFiles(File::isDirectory);
+			System.out.println("Folders:");
+			for (File folder : folders) {
+				System.out.println(folder);
+			}
+
+			File[] files = path.listFiles(File::isFile);
+			System.out.println("Files:");
+			for (File file : files) {
+				System.out.println(file);
+			}
+			
+			File[] filesAndFolders = path.listFiles();
+			System.out.println("Files and folders:");
+			for (File item : filesAndFolders) {
+				System.out.println(item);
+			}
+
+	Criar pastas e arquivos
+
+		Para criar pastas e arquivos utilizamos a classe "File" que é uma abstração de uma pasta ou arquivo.
+
+		Para criação de arquivo utilizamos o método "createNewFile()" da classe BufferedWriter.
+
+		Para criação de arquivo utilizamos o método "mkdir()" da classe BufferedWriter.
+
+		Exemplos:
+
+		//Criando arquivo
+		String fileName = "NovoArquivo.txt";
+		File novoArquivo = new File(folderPath + "\\" + fileName);
+		try {
+			if (novoArquivo.createNewFile()) {
+				System.out.println("Arquivo criado com sucesso!");
+			} else {
+				System.out.println("Erro na criação do arquivo...");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	
+		// Criando pasta
+		String folderName = "NovaPasta";
+		File novaPasta = new File(folderPath + "\\" + folderName);
+		if (novaPasta.mkdir()) {
+			System.out.println("Pasta criada com sucesso!");
+		} else {
+			System.out.println("Erro na criação da pasta...");
+		}
+
+		A pasta ou arquivo será criado somente se não existir nenhum destes itens com o mesmo nome, caso existam eles não são criados, snedo assim não ocorre sobrescrita.
+
+	Métodos para arquivos
+
+		Caso seja instanciado um arquivo com a classe File podemso usar os métodos abaixo para coletar informações.
+
+		getName() - retorna o nome do arquivo
+		getParent() - retorna a pasta onde esta o arquivo
+		getPath() - retorna o caminho completo do arquivo
+
+- Classe "Scanner"
+
+	A classe Scanner em Java é uma classe que permite ler dados de entrada em diferentes formatos, como números, strings e outros tipos de dados, de uma variedade de fontes, incluindo arquivos, fluxos de entrada e entradas do usuário. Ela é uma classe útil para ler dados formatados de forma simples e eficiente.
+
+	Além disso, a classe Scanner também oferece suporte para a leitura de dados em diferentes formatos, usando o método format(). Este método é semelhante ao printf() em C e permite a leitura de dados em diferentes formatos, como números com pontos decimais, números com sinais de mais e menos, entre outros.
+
+	A classe Scanner é uma classe de alto nível que utiliza objetos da classe InputStream como fonte de entrada. Ela fornece vários métodos que permitem ler dados em diferentes formatos, como inteiros, pontos flutuantes, booleanos, strings e outros tipos de dados. Alguns dos métodos mais comuns da classe Scanner incluem:
+
+	sc.next(); 						Entrada de valor texto sem espaço
+	sc.nextLine(); 					Entrada de valor texto de diversas palavras (com espaço)
+	sc.next().charAt(0); 			Entrada de valor char
+	sc.nextLong(); 					Entrada de valor long
+	sc.nextInt(); 					Entrada de valor int
+	sc.nextByte(); 					Entrada de valor byte
+	sc.nextShort(); 				Entrada de valor short
+	sc.nextDouble(); 				Entrada de valor double
+	sc.nextFloat(); 				Entrada de valor float
+	sc.nextBoolean(); 				Entrada de valor boolean
+
+	Para utilizar precisamos importar a classe "Scanner" no inicio do programa:
+
+	import java.util.Scanner;
+
+	Declarar um objeto Scanner padrão:
+
+	Scanner sc = new Scanner(System.in);
+
+	E depois utilizar os métodos disponiveis.
+
+	Ao término do uso do objeto Scanner o mesmo deve ser fechado:
+
+	sc.close();
+
+	Atenção!
+
+	Quando você usa um comando de leitura diferente do "nextLine()" e dá alguma quebra de linha, essa quebra de linha fica "pendente" na entrada padrão.
+
+	Se você então fizer um "nextLine()" aquela quebra de linha pendente será absorvida pelo "nextLine()" e o programa apresentara erro ou algum comportamento estranho.
+
+	Solução: Faça um "nextLine()" extra antes de fazer o "nextLine()" de seu interesse.
+
+- Utilizando delimitador com a classe Scanner
+
+	Podemos ler de um arquivo e separar as palavras por delimitadores de forma mais facil com a classe Scanner, exemplo:
+
+	Scanner sc = new Scanner(new File("contas.csv"));
+			
+	while (sc.hasNextLine()) {
+		
+		String linha = sc.nextLine();
+		Scanner linhaScanner = new Scanner(linha);
+		linhaScanner.useDelimiter(",");
+		linhaScanner.useLocale(Locale.US);
+		
+		String tipo = linhaScanner.next();
+		Integer agencia = linhaScanner.nextInt();
+		Integer conta = linhaScanner.nextInt();
+		String titular = linhaScanner.next();
+		Double saldo = linhaScanner.nextDouble();
+		
+		System.out.printf(new Locale("pt", "BR"),"%s - %04d-%08d, %20s: %05.2f%n",
+				tipo, agencia, conta, titular, saldo);
+		
+		linhaScanner.close();
+	}
+
+- Lidando com caracteres
+
+	Unicode - Unicode é um padrão que permite aos computadores representar e manipular, de forma consistente, texto de qualquer sistema de escrita existente. Este padrão consiste de quase 138 mil caracteres.
+
+	Tabela Unicode - É a tabela que formaliza o padrão Unicode.
+
+	Codepoint - É o código Unicode de um caractere especifico, os valores dos code points são escritos em hexadecimal e com o prefixo U+ (indicando que aquele não é apenas um valor numérico qualquer, e sim um code point definido pelo Unicode.
+
+	Encodings - Um encoding é uma técnica que define regras para armazenar os code points dos caracteres que compõem as strings na memória do computador. Existem vários deles, cada encoding utiliza uma técnica distinta para lidar com os códigos Unicode. Cada sistema operacional utiliza um enconding diferente mas podemos alterar via aplicação tambem.
+
+- Mostrando o codepoint de um caractere
+
+	Para isso utilizamso o método "codePointAt(0)".
+
+	Exemplo:
+
+	String s = "Ç";
+	System.out.println(s.codePointAt(0));
+
+- Mostrando o charset utilizado
+
+	Para isso criamos uma variavel "charset" com o valor atual do sistema, em seguida kostramos seu nome.
+
+	Exemplo:
+
+	Charset charset = Charset.defaultCharset();
+	System.out.println(charset.displayName());
+
+- Mostrando  a quantidade de bytes utilizados em um caractere
+
+	Para isso criamos um array de bytes e pegamos a quantidade de bytes de uma variavel, em seguida mostramos seu tamanho.
+
+	Exemplo:
+
+	Byte[] bytes = variavelString.getBytes();
+	System.out.print(bytes.length);
+
+- Definindo a codificação de uma String
+
+	Para isso passamos como parametro da nova string a codificação, devemos instanciar da forma padrão neste caso.
+
+	Exemplo:
+
+	String nova = new String(variavelString, "UTF-16");
+
+- Serialização / Desserialização de objetos
+
+	Serialização de objetos em Java é o processo de converter um objeto em uma sequência de bytes que podem ser facilmente armazenados em um arquivo, enviados pela rede ou armazenados na memória. Essa sequência de bytes contém informações sobre o estado do objeto, como seus campos e valores, bem como informações sobre sua classe, como seu nome e sua estrutura.
+
+	Quando um objeto é desserializado, ele é convertido de volta em um objeto Java. Isso é útil quando se deseja transferir objetos entre diferentes processos Java, entre diferentes máquinas ou quando se deseja armazenar objetos em um banco de dados, por exemplo.
+
+	Isto é possível graças a duas classes:
+
+	java.io.ObjectOutputStream = Objeto -> Bits e Bytes
+	java.io.ObjectInputStream = Bits e Bytes -> Objeto
+	
+	A primeira para transformar o objeto em um fluxo de bits e bytes, e a segunda para fazer o caminho inverso.
+
+	A serialização / desserialização funciona em cascata e também com herança.
+
+	A serialização de objetos em Java é uma técnica poderosa e flexível que permite a transferência de dados entre sistemas de forma fácil e segura. Ela é amplamente utilizada em muitos tipos de aplicativos, desde jogos e aplicativos móveis até sistemas de gerenciamento de bancos de dados e aplicativos empresariais.
+
+	É raro usar a serialização na "unha", mas é um conhecimento importante, pois será utilizado por outras bibliotecas.
+
+- Como utilizar a serialização de objetos
+
+	Para serializar um objeto em Java, é necessário que a classe do objeto implemente a interface Serializable. Esta interface não contém nenhum método, é usada apenas para marcar a classe como "serializável". Ao marcar a classe dessa forma, o Java garante que o objeto pode ser serializado e desserializado de forma confiável.
+
+	Uma vez que a classe é marcada como serializável, o objeto pode ser serializado usando uma variedade de classes e métodos Java, como ObjectOutputStream, ByteArrayOutputStream e FileOutputStream. Esses objetos permitem que os desenvolvedores escrevam os bytes serializados para um arquivo, fluxo de rede ou memória.
+
+	Contudo, como podemos observar, esta interface Serializable não possui nenhum método. Por isso, é chamada de interface de marcação, ela só marca os objetos, sem definir um "contrato formal". Quando o Java introduziu isto, não havia outra forma de marcação.
+
+- Atributo "serialVersionUID"
+
+	Em Java, o "Default Serial Version ID" é um número que é gerado automaticamente pelo compilador Java se uma classe serializável não tiver um ID de versão serial explícito definido.
+
+	O ID de versão serial é um identificador único para uma classe serializável que é usado para verificar se a versão do objeto que está sendo desserializada é compatível com a versão do objeto original. Se as versões não forem compatíveis, uma exceção será lançada durante o processo de desserialização.
+
+	Quando um ID de versão serial explícito não é definido, o compilador Java usa o Default Serial Version ID para identificar a versão da classe. O valor padrão é gerado com base no nome da classe, na lista de membros da classe e em outras informações, como os modificadores de acesso. No entanto, essa abordagem pode gerar diferentes IDs de versão serial para a mesma classe em diferentes plataformas, o que pode causar problemas de incompatibilidade.
+
+	Para evitar esse problema, é recomendado que os desenvolvedores definam explicitamente o ID de versão serial em suas classes serializáveis. Isso pode ser feito adicionando um campo estático chamado "serialVersionUID" à classe e definindo um valor numérico único. Isso garante que o ID de versão serial seja consistente em diferentes plataformas e evita problemas de incompatibilidade durante a desserialização.
+
+	Em resumo, o Default Serial Version ID é um número gerado automaticamente pelo compilador Java para identificar a versão de uma classe serializável. No entanto, é recomendável que os desenvolvedores definam explicitamente o ID de versão serial para evitar problemas de incompatibilidade durante a desserialização.
+
+	Devemos declarar conforme padrão abaixo:
+
+	private static final long serialVersionUID = <número da versão>L;
+
+- Palavra-chave "transient"
+
+	Em Java, a palavra-chave "transient" é usada em uma classe serializável para indicar que um campo específico não deve ser incluído no processo de serialização.
+
+	Quando uma classe é serializada em Java, todos os seus campos são serializados, a menos que sejam marcados como "transient". Isso é útil quando há campos que não devem ser armazenados, como campos temporários ou sensíveis à segurança.
+
+	Ao marcar um campo como "transient", o Java ignora o campo durante o processo de serialização e desserialização. Isso significa que, quando um objeto é desserializado, o valor do campo marcado como "transient" será definido como o valor padrão para seu tipo (por exemplo, zero para tipos numéricos ou nulo para tipos de referência).
+
+	Exemplo:
+
+	import java.io.Serializable;
+
+	public class MinhaClasse implements Serializable {
+
+		private static final long serialVersionUID = 1L;
+
+	    private String nome;
+	    private transient int idade; // Campo marcado como "transient"
+
+	    public MinhaClasse(String nome, int idade) {
+	        this.nome = nome;
+	        this.idade = idade;
+	    }
+
+	    // outros métodos da classe
+	}
+
+	Neste exemplo, a classe MinhaClasse é serializável e possui dois campos: um campo de tipo String chamado nome e um campo de tipo int chamado idade, que foi marcado como "transient". Isso significa que, quando um objeto MinhaClasse é serializado, o campo nome será incluído no processo de serialização, mas o campo idade será ignorado.
+
+- Serializando um objeto
+
+	Utilizamos um objeto "ObjectOutputStream" para serializar um objeto qualquer passando como alvo um objeto "FileOutputStream" (arquivo) que será gravado.
+
+	Em seguida fazemos a serialização com o método "writeObject".
+
+	Exemplo:
+
+	public class TesteSerializacao {
+		public static void main(String[] args) throws FileNotFoundException, IOException {
+			
+			String nome = "Fernando";
+			
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("objeto.bin"));
+			oos.writeObject(nome);
+
+			oos.close();
+		}
+	}
+
+- Desserializando um objeto
+
+	Para desserializar um objeto fazemos o caminho inverso.
+
+	Utilizamos um objeto "ObjectInputStream" para desserializar um objeto qualquer passando como alvo um objeto "FileInputStream" (arquivo) que sera lido.
+
+	Em seguida fazemos a desserialização com o método "readObject" fazendo um casting para o tipo desejado.
+
+	Exemplo:
+
+	public class TesteDesserializacao {
+		public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
+			
+			String nome;
+			
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("objeto.bin"));
+			nome = (String) ois.readObject();
+			ois.close();
+			
+			System.out.println(nome);
+		}
+	}
+
+- Herança em Serialização de objetos
+
+	A serialização / desserialização funciona em cascata e também com herança.
+
+	Classes herdam a implementação "Serializable", porem elas devem declarar o atributo "serialVersionUID".
+
+- Objetos com agregação
+
+	Para que a serialização funcione o objeto e todos os outros objetos que compoem o mesmo devem implementar a interface Serializable, caso contrario sera apresentada falha.
