@@ -1,10 +1,10 @@
-package br.com.fernandoribeira;
+package br.com.fernandoribeira.teste;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class TesteOrdenandoComparator05 {
+public class TesteOrdenandoComparator01 {
 	public static void main(String[] args) {
 		
 		// Declarando aulas
@@ -20,12 +20,19 @@ public class TesteOrdenandoComparator05 {
 		aulas.add(aula2);
 		aulas.add(aula3);
 		
-		// Ordenando aulas com "Comparator" em expressão lambada direto no método "sort"
+		// Ordenando aulas com "Comparator" em classe separada
 		System.out.print("Antes de ordenar: ");
 		System.out.println(aulas);
-		aulas.sort((String a1, String a2) -> a1.compareTo(a2));		
+		aulas.sort(new Comparador01());
 		System.out.print("Depois de ordenar: ");
 		System.out.println(aulas);
 		
+	}
+}
+
+class Comparador01 implements Comparator<String> {
+	@Override
+	public int compare(String aula1, String aula2) {
+		return aula1.compareTo(aula2);
 	}
 }

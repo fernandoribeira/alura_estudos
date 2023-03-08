@@ -1,4 +1,4 @@
-package br.com.fernandoribeira;
+package br.com.fernandoribeira.teste;
 
 import java.util.ArrayList;
 import java.util.Collections;

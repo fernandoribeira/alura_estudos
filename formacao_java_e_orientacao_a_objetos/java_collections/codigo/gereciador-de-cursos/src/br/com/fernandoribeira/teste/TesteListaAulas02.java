@@ -1,8 +1,10 @@
-package br.com.fernandoribeira;
+package br.com.fernandoribeira.teste;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+
+import br.com.fernandoribeira.model.Aula;
 
 public class TesteListaAulas02 {
 	public static void main(String[] args) {

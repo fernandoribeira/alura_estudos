@@ -46,6 +46,13 @@
 	ArrayList<String> aulas = new ArrayList<>();
 	LinkedList<Contas> contas = new LinkedList<>();
 
+	Porem a boa pratica (e o polimorfismo) nos recomendam a declarar um tipo "List" e em seguida instanciar o tipo de lista desejada.
+
+	Exemplo:
+
+	List<String> aulas = new ArrayList<>();
+	List<Contas> contas = new LinkedList<>()
+
 - Métodos em listas
 
 	A interface "List" define um conjunto de métodos para acessar, adicionar, remover, pesquisar elementos, etc; em uma lista. Exemplos:
@@ -232,4 +239,283 @@
 			myObject::instanceMethodName
 
 			As referências de método são frequentemente usadas em programação funcional em Java para passar um método como argumento para outro método, como em expressões lambda e streams. Isso pode ajudar a tornar o código mais conciso e legível.
+
+- Relacionamentos com listas
+
+	É muito comum as classes utilizarem listas como atributos porem diferentes de atributos "comuns" devemos trabalhar de forma diferente com estas listas.
+
+	Delaração da lista
+
+	A declaração é feita como um atributo qualquer utilizando a interface "List" (polimorfismo), por exemplo:
+
+		public class Curso {
+
+			private String nome;
+			private String instrutor;
+			private List<Aula> aulas;
+			...
+
+	Construtor
+
+	Este é um ponto importante, normalmente não recebemos uma lista no construtor, na maioria das vezes instanciamos a lista (do tipo especifico) dentro do construtor e deixamos vazia, exemplo:
+
+			public Curso(String nome, String instrutor) {
+				this.nome = nome;
+				this.instrutor = instrutor;
+				this.aulas = new ArrayList<Aula>();
+			}
+
+	Método get
+
+	Como uma boa pratica não devolvemos a lista padrão e sim uma copia "imutavel" desta forma não deixamos ninguem alterar a lista sem utilizar métodos criados especificicamente para cada ação, uma boa pratica é apenas a propria classe ter acesso direto aos seus atributos.
+
+	Para isso utilziamos um método estatico da classe "Collections", o "unmodifiableList", que devolve uma coipa "read-only" da lista, exemplo:
+
+			public List<Aula> getAulas() {
+				return Collections.unmodifiableList(aulas);
+			}
+
+	Alteração
+
+	Devemos criar métodos especificos que fazem a alteração da lista utilizando a lógica de validação necessária, exemplo:
+
+		public void adiciona(Aula aula) {
+			...lógica de validação...
+			this.aulas.add(aula);
+		}
+
+		public void remove(Aula aula) {
+			...lógica de validação...
+			this.aulas.remove(aula);
+		}
+
+	Ordenação
+
+	Não podemos ordenar uma lista "unmodifiableList", para isso temos de fazer um "clone" desta lista e trabalhar em cima do mesmo, para isso utilizamos os construtores das implementações de listas, eles podem receber uma lista diretamente e gerar uma copia, exemplo:
+
+		List<Aula> aulasImutaveis = new ArrayList<Aula>(aulas);
+		Collections.sort(aulasImutaveis);
+		System.out.println(aulasImutaveis);
+
+	Retornando valores complexos
+
+	Sempre devemos evitar efetuar um "foreach" em uma lista no método "main", o ideal é criar um "get" especifico que retorna a informação necessária, exemplo:
+
+		public Integer getTempoTotal() {
+			Integer tempoTotal = 0;
+			for (Aula aula : aulas) {
+				tempoTotal += aula.getTempo();
+			}
+			return tempoTotal;
+		}
+
+	Este método devolve o tempo total das aulas.
+
+- O que são conjuntos
+
+	Um conjunto é uma coleção de elementos NÃO ordenados e que NÃO podem ser acessados por meio de um índice numérico. Os conjuntos são implementados pela interface "Set", que faz parte da API da linguagem Java.
+
+	Os conjuntos em Java podem ser usadas para armazenar objetos de qualquer tipo e podem ser expandidas ou reduzidas dinamicamente à medida que os elementos são adicionados ou removidos.
+
+	Caracteristicas:
+
+	Homogênea (elementos do mesmo tipo)
+	Não ordenada
+	Inicia vazia, e seus elementos são alocados sob demanda (dinamica)
+	Elementos NÃO são acessiveis por indice / posição
+	Não aceita tipos primitivos, somente classes
+	NÃO aceita elementos duplicados (inserir o mesmo elemento mais de uma vez)
+	Maior velocidade/performance na adição/remoção/localização de itens
+	Oferece operações eficientes de conjunto: interseção, união, diferença
+
+- Implementações de conjuntos
+
+	A interface "Set" é uma das interfaces da API do Java que define um tipo de coleção de elementos não ordenados e que não podem ser acessados através de um índice numérico. A interface "Set" estende a interface "Collection" e adiciona operações que são específicas para o trabalho com conjuntos.
+
+	A interface Set define um conjunto de métodos para acessar, adicionar, remover e pesquisar elementos em um conjunto.
+
+	O uso da interface Set permite que os desenvolvedores escrevam código que possa trabalhar com qualquer implementação de conjuntos, tornando o código mais flexível e portável.
+
+	Esta interface pode ser declarada (boa pratica de polimorfismo) porem não pode ser instanciada, devemos instanciar uma de suas implementações.
+
+	Existem várias implementações de conjuntos disponíveis para uso, cada uma com suas próprias características e vantagens. Algumas das implementações de conuntos mais comuns são:
+
+	HashSet: implementa um conjunto usando uma tabela hash, o que significa que os elementos são armazenados em ordem não ordenada. O tempo de acesso aos elementos é constante, o que torna o HashSet uma escolha eficiente para grandes conjuntos.
+
+	TreeSet: implementa um conjunto usando uma árvore binária, o que significa que os elementos são armazenados em ordem ordenada. O TreeSet é eficiente para conjuntos menores, mas o tempo de acesso aos elementos é logarítmico.
+
+	LinkedHashSet: implementa um conjunto que mantém a ordem de inserção dos elementos. O LinkedHashSet usa uma tabela hash para acesso rápido aos elementos e uma lista encadeada para manter a ordem de inserção.
+
+	EnumSet: implementa um conjunto especializado para enumerações, o que significa que ele é otimizado para trabalhar com constantes enumeradas.
+
+	CopyOnWriteArraySet: implementa um conjunto thread-safe usando um array para armazenar os elementos. O CopyOnWriteArraySet é uma boa escolha para conjuntos que são lidos com mais frequência do que escritos.
+
+	Cada implementação de conjuntos tem suas próprias características e vantagens, e a escolha de qual usar dependerá do cenário de uso específico.
+
+- Como declarar um conjunto
+
+	implementação do conjunto<tipo que será guardado no conjunto> nome do conjunto = new implementação da do conjunt<>();
+
+	Exemplo:
+
+	HashSet<String> aulas = new HashSet<>();
+	TreeSet<Contas> contas = new TreeSet<>();
+
+	Porem a boa pratica (e o polimorfismo) nos recomendam a declarar um tipo "Set" e em seguida instanciar o tipo de conjunto desejado.
+
+	Exemplo:
+
+	Set<String> aulas = new HashSet<>();
+	Set<Contas> contas = new TreeSet<>()
+
+- Métodos em conjuntos
+
+	A interface "Set" define um conjunto de métodos para acessar, adicionar, remover, pesquisar elementos, etc; em uma conjunto. Exemplos:
+
+	add(<elemento>) - adicionar elemento no final da lista
+	clear() - limpa a lista
+	contains(<elemento>) - returna true se o elemento esta na lista
+	equals(<elemento>) - compara objeto com a lista
+	forEach(<Consumer>) - forma de percorrer a lista executando uma ação
+	hashCode() - retorna o hashcode da lista
+	isEmpty() - returna true se a lista estiver vazia
+	remove(<elemento) - remover elemento da lista
+	removerAll(<Collection>) - remover todos os itens da lista na coleção especificada
+	removerIf(<Predicate>) - remover todos os itens da lista que satisfaçam um Predicate
+	size() - mostra o tamanho da lista
+	toArray() - retorna um Array com todos os elementos da lista
+
+- Método "toString" em conjuntos
+
+	Por padrão o método "toString" de um conjunto segue o comportamento do tipo de objeto da lista.
+
+	Por exemplo, caso seja um conjunto de "String" ao chamar o método "toString" os itens da lista seriam exibidos desta forma:
+
+	[Modelando a classe aula, Conhecendo mais de listas, Trabalhando com Cursos e Sets]
+
+	Por exemplo, caso seja um conjunto de "Aulas" ao chamar o método "toString" os conjunto da lista seriam exibidos desta forma:
+
+	[br.com.fernandoribeira.Aula@77afea7d, br.com.fernandoribeira.Aula@532760d8, br.com.fernandoribeira.Aula@2ff5659e, br.com.fernandoribeira.Aula@161cd475]
+
+	A razão disto é que a classe String ja tem um método "toString" criado, ja a classe "Aulas" não tem o método "toString" criado, exibindo seus onjetos no formato padrão do Java.
+
+	Para resolver esta questão precisamos declarar um método "toString" na classe desejada.
+
+- Percorrendo um conjunto
+
+	Existem 2 formas de percorremos um conjunto, "enhanced for" e "foreach", o "for" padrão não existe pois depende de um index para exibir o objeto, seguem exemplos para um conjunto de "String":
+
+	// Percorrendo conjunto com "enhanced for"
+	for (String aula : aulas) {
+		System.out.println(aula);
+	}
+
+	// Percorrendo conjunto com "foreach" (expressão lambda)
+	aulas.forEach(aula -> System.out.println(aula));
+
+- Relacionamentos com conjuntos
+
+	É muito comum as classes utilizarem conjuntos como atributos porem diferentes de atributos "comuns" devemos trabalhar de forma diferente com estes conjuntos.
+
+	Delaração do conjunto
+
+	A declaração é feita como um atributo qualquer utilizando a interface "Set" (polimorfismo), por exemplo:
+
+		public class Curso {
+
+			private String nome;
+			private String instrutor;
+			private Set<Aula> aulas;
+			...
+
+	Construtor
+
+	Este é um ponto importante, normalmente não recebemos um conjunto no construtor, na maioria das vezes instanciamos o conjunto (do tipo especifico) dentro do construtor e deixamos vazio, exemplo:
+
+			public Curso(String nome, String instrutor) {
+				this.nome = nome;
+				this.instrutor = instrutor;
+				this.aulas = new HashSet<Aula>();
+			}
+
+	Método get
+
+	Como uma boa pratica não devolvemos o conjunto padrão e sim uma copia "imutavel" desta forma não deixamos ninguem alterar o conjunto sem utilizar métodos criados especificicamente para cada ação, uma boa pratica é apenas a propria classe ter acesso direto aos seus atributos.
+
+	Para isso utilziamos um método estatico da classe "Collections", o "unmodifiableSet", que devolve uma copia "read-only" do conjunto, exemplo:
+
+			public Set<Aula> getAulas() {
+				return Collections.unmodifiableSet(aulas);
+			}
+
+	Alteração
+
+	Devemos criar métodos especificos que fazem a alteração do conjunto utilizando a lógica de validação necessária, exemplo:
+
+		public void adiciona(Aula aula) {
+			...lógica de validação...
+			this.aulas.add(aula);
+		}
+
+		public void remove(Aula aula) {
+			...lógica de validação...
+			this.aulas.remove(aula);
+		}
+
+	Ordenação
+
+	Não podemos ordenar conjuntos devido a sua estrutura.
+
+- Como HashSet testa igualdade?
+
+	Se hashCode e equals estiverem implementados: Primeiro hashCode. Se der igual, usa equals para confirmar.
+	Se hashCode e equals NÃO estiverem implementados: Compara as referências (ponteiros) dos objetos.
+
+	Como TreeSet testa igualdade?
+
+	É utilizado o método "compareTo" da interface "Comparable", se classe não possuir esta implementação será apresentado erro.
+
+- Map<K,V>
+
+	O Map<K,V> é uma interface genérica que possue diversas implementações para uso, ele representa um conjunto de elementos de pares chave / valor.
+
+	Detalhes:
+
+	Não admite repetições do objeto chave
+	Os elementos são indexados pelo objeto chave (não possuem posição)
+	Acesso, inserção e remoção de elementos são rápidos
+
+	Principais implementações:
+
+	HashMap - mais rápido (operações O(1) em tabela hash) e não ordenado
+	TreeMap - mais lento (operações O(log(n)) em árvore rubro-negra) e ordenado pelo compareTo do objeto (ou Comparator)
+	LinkedHashMap - velocidade intermediária e elementos na ordem em que são adicionados
+
+	Declaração:
+
+	Map<<tipo da chave>, <tipo do valor>> <nome do conjunto>  = new <tipo do Map<>();
+
+	Map<Integer, String> name = new HashMap<>();
+	Map<Integer, Integer> salary = new TreehMap<>();
+	Map<Integer, Product> product = new LinkedHashMap<>();
+
+	Métodos importantes:
+
+	put(key, value) - adiciona objeto ao conjunto
+	remove(key) - remove objeto do conjunto
+	containsKey(key) - verifica se o conjunto contém o objeto baseado em equals e hashCode, se equals e hashCode não existir, é usada comparação de ponteiros
+	get(key) - retirna um objeto do conjunto
+	clear() - esvazia  o conjunto
+	size() - mostra o tamanho do conjunto
+	keySet() - retorna um Set<key>
+	values() - retorna um Collection<value>
+
+	Como HashSet testa igualdade?
+
+	Se hashCode e equals estiverem implementados: Primeiro hashCode. Se der igual, usa equals para confirmar.
+	Se hashCode e equals NÃO estiverem implementados: Compara as referências (ponteiros) dos objetos.
+
+	Como TreeSet testa igualdade?
+
+	É utilizado o método "compareTo" da interface "Comparable", se classe não possuir esta implementação será apresentado erro.
 
