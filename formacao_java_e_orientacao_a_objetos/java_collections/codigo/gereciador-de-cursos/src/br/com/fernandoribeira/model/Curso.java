@@ -2,8 +2,11 @@ package br.com.fernandoribeira.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 public class Curso {
@@ -12,12 +15,14 @@ public class Curso {
 	private String instrutor;
 	private List<Aula> aulas;
 	private Set<Aluno> alunos;
+	private Map<Integer, Aluno> matriculaParaAluno;
 	
 	public Curso(String nome, String instrutor) {
 		this.nome = nome;
 		this.instrutor = instrutor;
 		this.aulas = new ArrayList<Aula>();
 		this.alunos = new HashSet<>();
+		this.matriculaParaAluno = new HashMap<>();
 	}
 
 	public String getNome() {
@@ -50,6 +55,7 @@ public class Curso {
 	
 	public void matriculaAluno(Aluno aluno) {
 		alunos.add(aluno);
+		matriculaParaAluno.put(aluno.getNumeroMatricula(), aluno);
 	}	
 
 	@Override
@@ -65,6 +71,17 @@ public class Curso {
 		sb.append("Aulas:\n");
 		sb.append(aulas);	
 		return sb.toString();
+	}
+
+	public Boolean estaMatriculado(Aluno aluno) {
+		return this.alunos.contains(aluno);
+	}
+
+	public Aluno buscaMatriculado(int numero) {
+		if (!matriculaParaAluno.containsKey(numero)) {
+			throw new NoSuchElementException("aluno não encontrado!");
+		}
+		return matriculaParaAluno.get(numero);
 	}
 	
 }

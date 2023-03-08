@@ -403,7 +403,14 @@
 
 - Percorrendo um conjunto
 
-	Existem 2 formas de percorremos um conjunto, "enhanced for" e "foreach", o "for" padrão não existe pois depende de um index para exibir o objeto, seguem exemplos para um conjunto de "String":
+	Existem 3 formas de percorremos um conjunto, "iterator", "enhanced for" e "foreach", o "for" padrão não existe pois depende de um index para exibir o objeto, seguem exemplos para um conjunto de "String":
+
+	// Percorrendo conjunto com "iterator"
+	Iterator<Aula> iterador = aulas.iterator();
+	while(iterador.hasNext()) {
+		System.out.println(iterador.next());
+	}
+
 
 	// Percorrendo conjunto com "enhanced for"
 	for (String aula : aulas) {
@@ -466,6 +473,63 @@
 
 	Não podemos ordenar conjuntos devido a sua estrutura.
 
+- HashCode e Equals
+
+	São operações da classe Object utilizadas para comparar se um objeto é igual a outro.
+
+	equals: lento, resposta 100%
+	hashCode: rápido, porém resposta positiva não é 100%
+
+	Tipos comuns (String, Date, Integer, Double, etc.) já possuem a implementação para essas operações. Classes personalizadas precisam sobrepô-las.
+
+	Equals - compara se o objeto é igual a outro, retornando true ou false.
+
+	HashCode - retorna um número inteiro representando um código gerado a partir das informações do objeto, se o hashCode de dois objetos for diferente, então os dois objetos são diferentes, se o hascode for igual dos dois objetos o ideal é validar em seguida com o equal.
+
+	Implementação:
+
+	Todas as IDEs possuem um template de implementação dos métodos equals e hashcode, porem segue abaixo um exemplo:
+
+		Hashcode
+
+		@Override
+		public int hashCode() {
+			return Objects.hash(<variavel ou variaveis que serão analisadas>);
+		}
+
+		@Override
+		public int hashCode() {
+			return Objects.hash(email, name);
+		}
+
+		Equals
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			<tipo> other = (<tipo>) obj;
+			return Objects.equals(<variavel ou variaveis que serão analisadas>) && Objects.equals(<variavel ou variaveis que serão analisadas>);
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Client other = (Client) obj;
+			return Objects.equals(email, other.email) && Objects.equals(name, other.name);
+		}
+
+	ATENÇÃO, sempre que implementar equals é "obrigatorio" a implementação do hashcode.
+
 - Como HashSet testa igualdade?
 
 	Se hashCode e equals estiverem implementados: Primeiro hashCode. Se der igual, usa equals para confirmar.
@@ -475,47 +539,167 @@
 
 	É utilizado o método "compareTo" da interface "Comparable", se classe não possuir esta implementação será apresentado erro.
 
-- Map<K,V>
+- O que são mapas
 
-	O Map<K,V> é uma interface genérica que possue diversas implementações para uso, ele representa um conjunto de elementos de pares chave / valor.
+	Map é uma interface que representa uma estrutura de dados de mapeamento chave-valor. Ele é usado para armazenar pares de valores.
 
-	Detalhes:
+	As chaves são únicas e os valores podem ser duplicados. É semelhante a um dicionário, onde as chaves são as palavras e os valores são as definições.
 
-	Não admite repetições do objeto chave
-	Os elementos são indexados pelo objeto chave (não possuem posição)
-	Acesso, inserção e remoção de elementos são rápidos
+	Caracteristicas:
 
-	Principais implementações:
+	Armazenamento de pares chave-valor: O Map armazena pares de valores, onde cada valor é acessado por meio de uma chave exclusiva.
+	Chaves únicas: As chaves em um Map são únicas, ou seja, não podem haver duas chaves iguais.
+	Valores duplicados: O Map permite que valores duplicados sejam armazenados.
+	Iteração sobre os elementos: É possível iterar sobre os elementos em um Map usando vários métodos.
+	Implementações diferentes: Existem várias implementações de Map em Java, cada uma com características diferentes e adequada para diferentes casos de uso.
+	Sem garantia de ordem: Em algumas implementações de Map, a ordem dos elementos não é garantida. Em outras implementações, a ordem pode ser determinada por meio de um critério específico.
 
-	HashMap - mais rápido (operações O(1) em tabela hash) e não ordenado
-	TreeMap - mais lento (operações O(log(n)) em árvore rubro-negra) e ordenado pelo compareTo do objeto (ou Comparator)
-	LinkedHashMap - velocidade intermediária e elementos na ordem em que são adicionados
+- Implementações de mapas
 
-	Declaração:
+	A interface "Map" é uma das interfaces da API do Java que define um tipo de coleção de elementos chave / valor.
 
-	Map<<tipo da chave>, <tipo do valor>> <nome do conjunto>  = new <tipo do Map<>();
+	A interface Map define um conjunto de métodos para acessar, adicionar, remover e pesquisar elementos em um mapa.
 
-	Map<Integer, String> name = new HashMap<>();
-	Map<Integer, Integer> salary = new TreehMap<>();
-	Map<Integer, Product> product = new LinkedHashMap<>();
+	O uso da interface Map permite que os desenvolvedores escrevam código que possa trabalhar com qualquer implementação de mapas, tornando o código mais flexível e portável.
 
-	Métodos importantes:
+	Esta interface pode ser declarada (boa pratica de polimorfismo) porem não pode ser instanciada, devemos instanciar uma de suas implementações.
 
-	put(key, value) - adiciona objeto ao conjunto
-	remove(key) - remove objeto do conjunto
-	containsKey(key) - verifica se o conjunto contém o objeto baseado em equals e hashCode, se equals e hashCode não existir, é usada comparação de ponteiros
-	get(key) - retirna um objeto do conjunto
-	clear() - esvazia  o conjunto
-	size() - mostra o tamanho do conjunto
-	keySet() - retorna um Set<key>
-	values() - retorna um Collection<value>
+	Existem várias implementações de mapas disponíveis para uso, cada uma com suas próprias características e vantagens. Algumas das implementações de listas mais comuns são:
 
-	Como HashSet testa igualdade?
+	HashMap: É uma implementação de Map baseada em uma tabela hash. Os elementos são armazenados aleatoriamente e a ordem dos elementos não é garantida. As operações de inserção, remoção e busca são rápidas em média, mas podem ser mais lentas em casos raros em que ocorrem colisões de hash.
 
-	Se hashCode e equals estiverem implementados: Primeiro hashCode. Se der igual, usa equals para confirmar.
-	Se hashCode e equals NÃO estiverem implementados: Compara as referências (ponteiros) dos objetos.
+	TreeMap: É uma implementação de Map baseada em uma árvore balanceada. Os elementos são armazenados em ordem de classificação das chaves. As operações de inserção, remoção e busca têm um tempo de execução logarítmico, o que significa que são mais lentas do que o HashMap em média, mas garantem uma ordem determinística dos elementos.
 
-	Como TreeSet testa igualdade?
+	LinkedHashMap: É uma implementação de Map que mantém a ordem de inserção dos elementos. Os elementos são armazenados em uma tabela hash, mas também em uma lista vinculada para manter a ordem. As operações de inserção, remoção e busca têm um tempo de execução semelhante ao HashMap.
 
-	É utilizado o método "compareTo" da interface "Comparable", se classe não possuir esta implementação será apresentado erro.
+	ConcurrentHashMap: É uma implementação de Map otimizada para concorrência. Ela permite que várias threads acessem o Map ao mesmo tempo, sem que ocorram problemas de concorrência. É baseado em uma estrutura de dados de tabela hash, semelhante ao HashMap.
 
+	EnumMap: É uma implementação de Map que é usada exclusivamente para chaves de enumeração. É altamente otimizado e tem um desempenho melhor do que outras implementações de Map para chaves de enumeração.
+
+	WeakHashMap: É uma implementação de Map em que as chaves são referenciadas fracamente. Isso significa que as chaves que não são mais referenciadas por nenhum outro objeto podem ser removidas automaticamente pelo coletor de lixo Java.
+
+	Cada implementação de mapa tem suas próprias características e vantagens, e a escolha de qual usar dependerá do cenário de uso específico.
+
+- Como declarar um mapa
+
+	implementação do mapa<tipo da chave que será guardado no mapa, tipo do valor que será guardado no mapa> nome do mapa = new implementação da do mapa<>();
+
+	Exemplo:
+
+	HashMap<Integer, String> aulas = new HashMap<>();
+	LinkedHashMap<Integer, String> aulas = new LinkedHashMap<>();
+
+	Porem a boa pratica (e o polimorfismo) nos recomendam a declarar um tipo "Map" e em seguida instanciar o tipo de lista desejada.
+
+	Exemplo:
+
+	Map<Integer, String> aulas = new HashMap<>();
+	Map<Integer, String> aulas = new LinkedHashMap<>();
+
+- Métodos em mapas
+
+	A interface "Map" define um conjunto de métodos para acessar, adicionar, remover, pesquisar elementos, etc; em um mapa. Exemplos:
+
+	clear(): Remove todos os pares chave-valor do Map
+	containsKey(<chave>): Verifica se o Map contém a chave especificada e retorna true se a chave estiver presente, ou false se não estiver
+	containsValue(<valor>): Verifica se o Map contém o valor especificado e retorna true se o valor estiver presente, ou false se não estiver
+	entrySet(): Retorna um conjunto de todos os pares chave-valor presentes no Map como objetos Entry
+	get(<chave>): Retorna o valor associado à chave especificada no Map. Se a chave não existir, retorna null
+	getOrDefault(<chave>): Retorna o valor associado à chave especificada no Map. Se a chave não existir, retorna o valor padrão definido
+	isEmpty(): Verifica se o Map está vazio e retorna true se estiver vazio, ou false se contiver elementos
+	keySet(): Retorna um conjunto de todas as chaves presentes no Map
+	put(<chave>, <valor>): Insere um novo par chave-valor no Map ou atualiza o valor de uma chave existente
+	remove(<chave>): Remove o par chave-valor correspondente à chave especificada do Map
+	size(): Retorna o número de pares chave-valor armazenados no Map
+	values(): Retorna uma coleção de todos os valores presentes no Map
+
+- Método "toString" em mapas
+
+	Por padrão o método "toString" de um map segue o comportamento do tipo de objeto de mapas.
+
+	Por exemplo, caso seja um mapa de "Integer, String" ao chamar o método "toString" os itens da lista seriam exibidos desta forma:
+
+	{1=Fernando, 2=Bolacha, 3=Minhoca, 4=Gabriel, 5=Caminhao}
+
+	Por exemplo, caso seja um conjunto de "Aulas" ao chamar o método "toString" os conjunto da lista seriam exibidos desta forma:
+
+	{1=br.com.fernandoribeira.Aula@77afea7d, 2=br.com.fernandoribeira.Aula@532760d8, 3=br.com.fernandoribeira.Aula@2ff5659e, 4=br.com.fernandoribeira.Aula@161cd475}
+
+	A razão disto é que a classe String ja tem um método "toString" criado, ja a classe "Aulas" não tem o método "toString" criado, exibindo seus onjetos no formato padrão do Java.
+
+	Para resolver esta questão precisamos declarar um método "toString" na classe desejada.
+
+- Percorrendo um mapa
+
+	Existem 2 formas de percorremos um conjunto, "enhanced for" e "foreach", o "for" padrão não existe pois depende de um index para exibir o objeto, seguem exemplos para um conjunto de "String":
+
+	// Percorrendo mapa com "foreach" (chaves)
+	for (Integer key : nomes.keySet()) {
+	    System.out.println("Chave: " + key);
+	}
+	
+	// Percorrendo mapa com "foreach" (valores)
+	for (String value : nomes.values()) {
+	    System.out.println("Valor: " + value);
+	}
+	
+	// Percorrendo mapa com "foreach" (chave-valor)
+	for (Map.Entry<Integer, String> entry : nomes.entrySet()) {
+	    System.out.println("Chave: " + entry.getKey() + ", Valor: " + entry.getValue());
+	}
+	
+	// Percorrendo mapa com "foreach" (expressão lambda, chaves)
+	nomes.keySet().forEach(key -> System.out.println("Chave: " + key));
+	
+	// Percorrendo mapa com "foreach" (expressão lambda, valores)
+	nomes.values().forEach(value -> System.out.println("Valor: " + value));
+
+	// Percorrendo mapa com "foreach" (expressão lambda, chave-valor)
+	nomes.forEach((key, value) -> System.out.println("Chave: " + key + ", Valor: " + value));
+
+- Relacionamentos com mapas
+
+	É muito comum as classes utilizarem mapas como atributos porem diferentes de atributos "comuns" devemos trabalhar de forma diferente com estes mapas.
+
+	Delaração do mapa
+
+	A declaração é feita como um atributo qualquer utilizando a interface "Map" (polimorfismo), por exemplo:
+
+		public class Pessoa {
+			
+			private String nome;
+			private Integer idade;
+			private Map<Integer,String> comidasPreferidas;
+			...
+
+	Construtor
+
+	Este é um ponto importante, normalmente não recebemos um mapa no construtor, na maioria das vezes instanciamos o mapa (do tipo especifico) dentro do construtor e deixamos vazio, exemplo:
+
+			public Pessoa(String nome, Integer idade) {
+				this.nome = nome;
+				this.idade = idade;
+				this.comidasPreferidas= new HashMap<>();
+			}
+
+	Método get
+
+	Como uma boa pratica não devolvemos o mapa padrão e sim uma copia "imutavel" desta forma não deixamos ninguem alterar o mapa sem utilizar métodos criados especificicamente para cada ação, uma boa pratica é apenas a propria classe ter acesso direto aos seus atributos.
+
+	Para isso utilziamos um método estatico da classe "Collections", o "unmodifiableMap", que devolve uma coipa "read-only" do mapa, exemplo:
+
+			public Map<Integer, String> getComidasPreferidas() {
+				return Collections.unmodifiableMap(comidasPreferidas);
+			}
+
+	Alteração
+
+	Devemos criar métodos especificos que fazem a alteração do mapa utilizando a lógica de validação necessária, exemplo:
+
+			public void adicionaComidaPreferida(Integer chave, String valor) {
+				this.comidasPreferidas.put(chave, valor);
+			}
+
+	Ordenação
+
+	Não podemos ordenar um mapa devido a sua estrutura.
