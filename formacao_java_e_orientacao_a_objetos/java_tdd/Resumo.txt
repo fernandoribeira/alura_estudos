@@ -54,6 +54,56 @@
 
 	Redução de custos: Embora os testes automatizados possam ser mais caros em termos de tempo e recursos na fase inicial de desenvolvimento, eles podem ajudar a reduzir os custos de longo prazo, evitando erros e bugs caros que podem surgir após o lançamento do software.
 
+- Vantagens de criar o codigo primeiro e o teste depois
+
+	Criar o código primeiro e o teste depois é uma abordagem comum de desenvolvimento de software que tem algumas vantagens, tais como:
+
+	Clareza do objetivo: criando o código primeiro, o desenvolvedor pode ter uma ideia clara do que o código deve fazer e quais são os seus requisitos antes de começar a escrever os testes. Isso pode ajudar a evitar testes desnecessários ou redundantes e garantir que os testes se concentrem nos requisitos críticos do código.
+
+	Flexibilidade: escrever os testes depois de criar o código permite ao desenvolvedor ajustar os testes conforme necessário para garantir que eles cubram todos os requisitos do código. Isso também pode ajudar a identificar quaisquer erros ou lacunas no código que possam ter sido perdidos sem os testes.
+
+	Menor tempo de desenvolvimento: a abordagem de criar o código primeiro pode ajudar a reduzir o tempo de desenvolvimento, permitindo que o desenvolvedor se concentre em escrever o código com mais rapidez e sem interrupções constantes para criar e executar testes.
+
+	Melhor cobertura de teste: escrever os testes depois de criar o código pode ajudar a garantir que todos os caminhos possíveis do código sejam testados, incluindo casos de uso que podem não ter sido considerados inicialmente.
+
+	No entanto, é importante lembrar que a abordagem de criar o código primeiro e o teste depois não é adequada para todos os projetos ou situações. Em alguns casos, pode ser necessário escrever os testes primeiro, especialmente em projetos onde a qualidade do código é crítica ou onde a conformidade com padrões ou requisitos externos é exigida.
+
+- Vantagens de criar o teste primeiro e o codigo depois
+
+	Criar o teste primeiro e o código depois é uma abordagem de desenvolvimento de software conhecida como Test-Driven Development (TDD), que tem várias vantagens, tais como:
+
+	Melhor design: escrever os testes antes de escrever o código pode ajudar a garantir que o código seja bem projetado e modular. Isso ocorre porque os testes se concentram em como o código deve funcionar e quais são os seus requisitos, em vez de como o código deve ser implementado. Isso pode levar a um código mais limpo e organizado.
+
+	Maior cobertura de teste: escrever os testes primeiro pode ajudar a garantir que todos os requisitos do código sejam testados, inclusive aqueles que podem ser perdidos se o código for escrito primeiro e os testes depois.
+
+	Detecção mais rápida de erros: escrever os testes primeiro pode ajudar a detectar erros mais cedo no processo de desenvolvimento, reduzindo a necessidade de depurar o código posteriormente.
+
+	Maior confiança no código: escrever os testes primeiro pode ajudar a garantir que o código esteja funcionando corretamente desde o início. Isso pode aumentar a confiança no código e reduzir a necessidade de realizar testes manuais demorados.
+
+	Melhor colaboração em equipe: escrever os testes primeiro pode ajudar a promover uma melhor colaboração em equipe, permitindo que os desenvolvedores trabalhem juntos para definir os requisitos e garantir que o código esteja funcionando corretamente.
+
+	No entanto, a abordagem de criar o teste primeiro e o código depois pode ser mais demorada do que a abordagem de criar o código primeiro. Além disso, pode exigir um planejamento cuidadoso e uma compreensão clara dos requisitos do código antes de começar a escrever os testes.
+
+- Cenários de teste
+
+	Cenários de teste em Java (ou em testes de software em geral) são conjuntos de passos ou condições específicas que descrevem um caso de uso ou um fluxo de trabalho que precisa ser testado. Eles descrevem como um sistema deve se comportar em determinadas circunstâncias e permitem que os testadores verifiquem se o software está funcionando corretamente de acordo com as expectativas do usuário.
+
+	Os cenários de teste são usados para testar as funcionalidades do software e podem ser escritos em diferentes níveis de detalhes, dependendo da complexidade do sistema e dos requisitos de teste. Por exemplo, um cenário de teste simples pode envolver apenas um único passo para verificar se um campo de entrada aceita dados de entrada válidos, enquanto um cenário mais complexo pode envolver vários passos para testar todo o fluxo de trabalho de um aplicativo.
+
+	Para criar cenários de teste eficazes, é importante definir claramente o objetivo do teste, especificar todas as condições de entrada e saída necessárias e garantir que o cenário seja repetível e fácil de executar. Isso pode incluir a criação de dados de teste de amostra, a preparação do ambiente de teste e a documentação de todos os passos do cenário.
+
+	Os cenários de teste são geralmente escritos em conjunto com casos de teste, que descrevem como os testes serão executados. Eles são uma parte importante do processo de teste de software, ajudando a garantir que o software atenda aos requisitos do usuário e que esteja funcionando corretamente antes de ser liberado para uso.
+
+- Casos de teste
+
+	Casos de teste em Java (e em testes de software em geral) são conjuntos específicos de condições e passos que são usados para testar um determinado aspecto ou funcionalidade de um sistema ou aplicativo. Eles são usados para verificar se o software está funcionando corretamente e se atende aos requisitos do usuário.
+
+	Cada caso de teste é projetado para testar um cenário específico e pode incluir várias etapas, incluindo a preparação do ambiente de teste, a entrada de dados e a verificação dos resultados. Os casos de teste também podem incluir informações sobre as condições de teste, como o ambiente de teste, a configuração do sistema e os dados de entrada.
+
+	Os casos de teste geralmente são escritos em conjunto com os requisitos do sistema e com os cenários de teste. Eles são usados pelos testadores para garantir que todas as funcionalidades do sistema sejam testadas e que o software esteja funcionando corretamente. Além disso, os casos de teste também são usados para medir a cobertura de teste, o que ajuda a identificar áreas do software que não foram testadas adequadamente.
+
+	Ao escrever casos de teste, é importante garantir que eles sejam precisos, completos e fáceis de entender e executar. Eles também devem ser atualizados regularmente para garantir que o software esteja sendo testado de forma adequada e que as alterações no sistema sejam adequadamente testadas.
+
 - TDD
 
 	TDD (Test-Driven Development) é uma prática de desenvolvimento de software que se concentra na escrita de testes automatizados antes da implementação do código de produção. Essa abordagem envolve três etapas principais: escrever um teste automatizado que falha, implementar o código que faz o teste passar e refatorar o código para melhorá-lo.
@@ -94,32 +144,253 @@
 
 - Adicionando JUnit no projeto manualmente
 
-	A biblioteca JUnit é bem antiga, muito conhecida e muito utilizada, desta forma para inserir a emsma em um projeto manualmente basta inserir a anotação @Teste, será soliictada  aimportaçãod o JUnit, basta escolher a versão desejada.
+	A biblioteca JUnit é bem antiga, muito conhecida e muito utilizada, desta forma para inserir a mesma em um projeto manualmente basta declarar um método de teste, será solicitada a importação do JUnit automaticamente, basta escolher a versão desejada.
 
 - Adicionando JUnit no projeto de forma "automatica"
 
-	Normalmente é utilziado o Maven como getor de dependencias, desta forma voe pode adicionar o JUit de forma automatica ao seu projeto.
+	Normalmente é utilizado o Maven como gestor de dependencias, desta forma voe pode adicionar o JUnit de forma automatica ao seu projeto.
+
+- Quais métodos de testes criar
+
+	Devemos testar somente classes com regras de negocios, classes com regras de validação ou classes que possivelmente sofrerão muitas modificações, classes de dominio de modelo não precisam ser testadas.
+
+- Padrão de local e nome de uma classe de teste
+
+	Classes de testes normalmente ficam em um pacote espeficico para as classes de teste, em um projeto Maven por exemplo elas ficam em "/srv/test/java".
+
+	Elas são nomeadas com omesmo nome da classe que irão testar porem ao final acrescentamos "Test", por exemplo, uma classe "Conta" teria uma classe de teste com o nome "ContaTest".
+
+- Padrão de nome de um método de teste
+
+	Os métodos de teste devem receber nomes que deixem de forma explicita o que se espera deles, por exemplo:
+
+	"void bonusDeveriaSerZeroParaFuncionarioComSalarioMuitoAlto() {..."
+
+	Desta forma fica facil identificar o que ele faz e assim efetuar as validações necessarias.
+
+	Não tem problema o nome ser muito extenso pois estes métodos não serão chamados manualmente e sim pelo JUnit.
+
+- Anotações
+
+	Em Java, anotações (também conhecidas como "annotations") são uma forma de adicionar metadados ao código fonte. Elas são uma forma de associar informações adicionais com classes, métodos, variáveis ou outros elementos do código Java.
+
+	As anotações em Java são identificadas por um símbolo de arroba (@) seguido pelo nome da anotação. Elas podem incluir parâmetros opcionais que fornecem mais detalhes ou especificações sobre a anotação. As anotações são lidas em tempo de compilação ou em tempo de execução, dependendo de como foram projetadas.
+
+	As anotações em Java são amplamente usadas em frameworks e bibliotecas para definir comportamentos, configurar opções e executar tarefas específicas, sem a necessidade de escrever código adicional. Elas também são usadas para documentar o código, fornecendo informações sobre o propósito e o comportamento esperado de uma classe ou método.
+
+	Temos diversas anotações que são utilizadas em teste, seguem as principais:
+
+	@Test - Indica que o método abaixo é um método de teste
+
+	@BeforeEach - Indica que o método abaixo deve ser executado antes de cada método de teste
+
+	@AfterEach - Indica que o método abaixo deve ser executado após cada método de teste
+
+	@BeforeAll - Indica que o método abaixo deve ser executado antes de tudo (1 vez somente) na classe de teste
+
+	@AfterAll - Indica que o método abaixo deve ser executado ao final de tudo (1 vez somente) na classe de teste
 
 - Criando uma classe de teste
 
+	A classe de teste é uma classe normal, a unica diferença é que utilziamos algumas anotações em alguns métodos que determinam algumas ações.
 
+	Para determinar uma classe de teste criamos ela normalemnte, criamos um método e colocamos a anotação "@Test" para determinar que este e um  método de teste, por exemplo:
+
+		public class CalculadoraTest {
+
+			@Test
+			public void deveriaSomarDoisNumerosPositivos() {
+				...
+			}
+			
+		}
 
 - Executando o teste da classe
-- Padrão de nome de uma classe de teste
-- Padrão de nome de um método de teste
-- Quais métodos de testes criar
-- Anotação @Test
-- Anotação @BeforeEach
-- Anotação @AfterEach
-- Anotação @BeforeAll
-- Anotação @AfterAll
+
+	Basicamente o teste é a comparação entre um valor pré-determinado com o valor que o método a ser testado retorna, caso os valores sejam iguais o teste passou, caso os valores sejam diferentes o teste não passou.
+
+	Utilizaremos o exemplo abaixo, esta é uma classe comum que será testada:
+
+		public class Calculadora {
+		
+			public Integer soma(Integer n1, Integer n2) {
+				return n1 + n2; 
+			}
+			
+		}
+
+	Inicialmente criamos a classe de teste "CalculadoraTest", nela criamos o método de teste "deveriaSomarDoisNumerosPositivos", este método tem uma descrição clara do que esperamos dele, colocamos então a anotação @Test em cima do mesmo:
+
+		public class CalculadoraTest {
+
+			@Test
+			public void deveriaSomarDoisNumerosPositivos() {
+				Calculadora calc = new Calculadora();
+				int soma = calc.soma(3, 7);
+				Assert.assertEquals(10, soma);
+			}
+			
+		}
+
+	O teste em si é feito com o método estatico "assertEquals" (da classe Assert), como primeiro parametro informamos o valor esperado, o segundo parametro é o valor gerado pelo método e que será comparado.
+
 - Classe Assert
+
+	A classe Assert em Java é uma classe utilitária que fornece métodos estáticos para ajudar na criação de afirmações (assertions) em código Java.
+
+	As afirmações (assertions) são usadas para verificar suposições sobre o estado do programa em tempo de execução. Elas podem ajudar a detectar erros e falhas no programa de forma rápida, tornando mais fácil a identificação e correção de problemas.
+
+	A classe Assert contém vários métodos estáticos, como "assertTrue()", "assertFalse()", "assertEquals()", "assertNotNull()", entre outros, que permitem criar afirmações que verificam condições específicas em tempo de execução. Se a condição não for verdadeira, um erro será gerado e a execução do programa será interrompida.
+
+	É importante destacar que o uso de afirmações (assertions) em Java é uma prática recomendada, mas elas não devem ser usadas como uma forma de tratamento de erros em tempo de execução. Elas devem ser usadas para verificar suposições sobre o estado do programa que devem ser verdadeiras em tempo de execução, como pré-condições e pós-condições de métodos.
+
 - Import estatico da classe Assert
-- Vantagens de criar o codigo primeiro e o teste depois
-- Vantagens de criar o teste primeiro e o codigo depois
-- Cenários
+
+	O import estático da classe Assert em Java é usado para importar os métodos estáticos da classe Assert diretamente no código, sem precisar usar o nome completo da classe toda vez que se deseja utilizar um método.
+
+	O import estático é feito usando a palavra-chave "import static", seguida do nome completo da classe e do método estático que se deseja importar. Por exemplo:
+
+	import static org.junit.Assert.assertEquals;
+
+	Este comando importa o método estático assertEquals da classe Assert do framework JUnit. Com isso, é possível usar o método assertEquals diretamente no código, sem precisar escrever o nome completo da classe, como no exemplo abaixo:
+
+	// Codigo antes do import estatico
+	Assert.assertEquals(2, soma);
+
+	// Codigo depois do import estatico
+	assertEquals(2, soma);
+
+	O uso do import estático pode tornar o código mais legível e fácil de entender, especialmente quando se usa muitos métodos estáticos de uma mesma classe em um código. No entanto, é importante usá-lo com moderação e apenas quando for necessário, para evitar possíveis conflitos de nomes e confusão no código.
+
+- Exemplo de teste
+
+	Classe a ser testada:
+
+		public class ReajusteService {
+
+			public void concederReajuste(Funcionario funcionario, Desempenho desempenho) {
+				String porcentagemReajuste = "0.00";
+				if (desempenho == Desempenho.A_DESEJAR) {
+					porcentagemReajuste = "0.03";
+				}
+				if (desempenho == Desempenho.BOM) {
+					porcentagemReajuste = "0.15";
+				}
+				if (desempenho == Desempenho.OTIMO) {
+					porcentagemReajuste = "0.20";
+				}
+				BigDecimal reajuste = funcionario.getSalario().multiply(new BigDecimal(porcentagemReajuste));
+				funcionario.reajustarSalario(reajuste);
+			}
+
+		}
+
+	Métodos de testes criados para cada cenário diferente:
+
+		@Test
+		public void reajusteDeveriaSerDeTresPorcentoQuandoDesempenhoForADesejar() {
+			ReajusteService service = new ReajusteService();
+			Funcionario funcionario = new Funcionario("Fernando", LocalDate.now(), new BigDecimal("100.00"));
+			service.concederReajuste(funcionario, Desempenho.A_DESEJAR);
+			assertEquals(new BigDecimal("103.00"), funcionario .getSalario());
+		}
+		
+		@Test
+		public void reajusteDeveriaSerDeQuinzePorcentoQuandoDesempenhoForBom() {
+			ReajusteService service = new ReajusteService();
+			Funcionario funcionario = new Funcionario("Fernando", LocalDate.now(), new BigDecimal("100.00"));
+			service.concederReajuste(funcionario, Desempenho.BOM);
+			assertEquals(new BigDecimal("115.00"), funcionario .getSalario());
+		}
+		
+		@Test
+		public void reajusteDeveriaSerDeVintePorcentoQuandoDesempenhoForOtimo() {
+			ReajusteService service = new ReajusteService();
+			Funcionario funcionario = new Funcionario("Fernando", LocalDate.now(), new BigDecimal("100.00"));
+			service.concederReajuste(funcionario, Desempenho.OTIMO);
+			assertEquals(new BigDecimal("120.00"), funcionario .getSalario());
+		}
+
 - Refatoração
+
+	Existe uma boa pratica de refatoração do nosso código, isso ja é conhecido, porem devemos refatorar tambem os codigos das classes de testes a fim de que os mesmos fiquem melhores, segue exemplo de refatoração dos metodos de teste anteriores:
+
+		private ReajusteService service;
+		private Funcionario funcionario;
+		
+		@BeforeEach
+		public void inicializar() {
+			this.service = new ReajusteService();
+			this.funcionario = new Funcionario("Fernando", LocalDate.now(), new BigDecimal("100.00"));
+		}
+
+		@Test
+		public void reajusteDeveriaSerDeTresPorcentoQuandoDesempenhoForADesejar() {
+			service.concederReajuste(funcionario, Desempenho.A_DESEJAR);
+			assertEquals(new BigDecimal("103.00"), funcionario .getSalario());
+		}
+		
+		@Test
+		public void reajusteDeveriaSerDeQuinzePorcentoQuandoDesempenhoForBom() {
+			service.concederReajuste(funcionario, Desempenho.BOM);
+			assertEquals(new BigDecimal("115.00"), funcionario .getSalario());
+		}
+		
+		@Test
+		public void reajusteDeveriaSerDeVintePorcentoQuandoDesempenhoForOtimo() {
+			service.concederReajuste(funcionario, Desempenho.OTIMO);
+			assertEquals(new BigDecimal("120.00"), funcionario .getSalario());
+		}
+
+	Neste caso o proposito era evitar codigo duolciado, entao extraimos parte do codigo como atributos da classe e inicializamso os mesmos antes de cada execução de método utilziando a anotação @BeforeEach.
+
 - Testando lançamento de "exception"
+
+	Normalmente os métodos retornam valores / objetos que podem ser comparados porem as vezes um método pode retornar uma exception, a qual tambem podemos comparar.
+
+	Exemplo de método qu epode lançar uma exception:
+
+		public BigDecimal calcularBonus(Funcionario funcionario) {
+			BigDecimal valor = funcionario.getSalario().multiply(new BigDecimal("0.1"));
+			if (valor.compareTo(new BigDecimal("1000")) > 0) {
+				throw new IllegalArgumentException("Funcionario com salario maior do que $10000 nao pode receber bonus");
+			}
+			return valor.setScale(2, RoundingMode.HALF_UP);
+		}
+
+	Podemos receber esta exception de duas formas, utilizando "assertThrows" com uma expressão lambda ou com um bloco "try-catch".
+
+	Exemplo de um método de teste utilizando "assertThrows":
+
+		assertThrows(IllegalArgumentException.class, () -> service.calcularBonus(new Funcionario("Fernando", LocalDate.now(), new BigDecimal("25000"))));
+
+	Como parametros passamos a exception esperada com a extensão ".class" e depois passamos depois uma expressão lambda com o método que pode lançar a exceção.
+
+	Exemplo de um método de teste utilizando um bloco "try-catch":
+
+		try {
+			service.calcularBonus(new Funcionario("Fernando", LocalDate.now(), new BigDecimal("25000")));
+			fail("Não lançou a exceção!");
+		} catch (Exception e) {
+			assertEquals("Funcionario com salario maior do que $10000 nao pode receber bonus", e.getMessage());
+		}
+
+	Dentro do bloco "try" executamos o método a ser testado, em seguida ja lançamos uma falha caso o teste passe com sucesso (o que nao era esperado).
+
+	No bloco "catch" capturamos a exceção e comparamos o valor (assertEquals) do texto esperado da exception (esta entre aspas duplas) com o resultado de e.getMessage().
+
+	Entao alem de verificar se foilançada a exception ainda é comparado o texto que ela passou.
+
 - Lançando erro manualmente
+
+	Para lançar um erro em um teste utilzaimso o método "fail(<mensagem de erro>)".
+
+	Ele dispara uma falha e ja aborta o teste do método em especifico.
+
+	Exemplo:
+
+	fail("Não lançou a exceção!");
+
 - Teste de métodos privados
-- Testar somemte classes com regras de negocios, classes com regras de validação ou classes que possivelmente sofrerão muitas modificações, classes de dominio de modelo não precisam ser testadas
+
+	Métodos privados já são testados quando os métodos que utilziam eles são testados, njão precisamos criar testes especificos para métodos privados.
