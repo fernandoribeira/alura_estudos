@@ -1,0 +1,125 @@
+- Testes manuais
+
+	Os testes manuais em Java referem-se ao processo de teste de software que envolve a execução de testes de forma manual, onde um testador humano interage diretamente com o sistema para identificar e verificar bugs, falhas, erros e comportamentos inesperados.
+
+	Durante os testes manuais, um testador humano segue um conjunto de instruções de teste, geralmente descritas em um documento de caso de teste ou plano de teste, para validar se o sistema está funcionando conforme o esperado e se atende aos requisitos definidos. O testador pode inserir dados em formulários, clicar em botões, navegar em menus, entre outras interações.
+
+	Os testes manuais são importantes para validar a usabilidade do sistema, avaliar a experiência do usuário e testar cenários que podem ser difíceis de automatizar, como testes de usabilidade e testes exploratórios. No entanto, os testes manuais são mais suscetíveis a erros humanos e podem ser mais demorados e trabalhosos do que os testes automatizados.
+
+- Testes automatizados
+
+	Os testes automatizados em Java referem-se ao processo de teste de software que envolve a execução de testes de forma automatizada, onde o software é programado para executar os testes em vez de um testador humano interagir diretamente com o sistema.
+
+	Durante os testes automatizados, um conjunto de testes é escrito em Java utilizando frameworks de testes como JUnit, TestNG ou Cucumber, entre outros. Esses testes são então executados automaticamente pelo software de teste, que verifica se o sistema está funcionando conforme o esperado e se atende aos requisitos definidos. Os testes automatizados geralmente são executados por meio de ferramentas de automação de testes, como Selenium WebDriver ou Appium, que simulam as interações do usuário com o sistema.
+
+	Os testes automatizados são importantes para garantir a qualidade do software, aumentar a eficiência do processo de teste e permitir a execução rápida e repetida dos testes. Eles são especialmente úteis para testes de regressão, onde o software é testado novamente após uma mudança no código para garantir que a alteração não tenha causado novos problemas.
+
+	Embora os testes automatizados sejam mais rápidos e menos suscetíveis a erros humanos do que os testes manuais, eles não podem substituir completamente os testes manuais. Os testes manuais são importantes para avaliar a usabilidade e a experiência do usuário e para testar cenários que podem ser difíceis de automatizar.
+
+- Problemas dos testes manuais
+
+	Os testes manuais em Java têm algumas limitações e problemas, que incluem:
+
+	Erros humanos: Os testes manuais são executados por um testador humano, o que significa que há sempre a possibilidade de erros humanos, como esquecer de executar um teste ou executá-lo incorretamente. Além disso, os testadores podem ter diferentes níveis de habilidade e experiência, o que pode afetar a qualidade dos testes.
+
+	Ineficiência e demora: Os testes manuais são geralmente mais demorados e trabalhosos do que os testes automatizados, o que pode levar a um processo de teste ineficiente e demorado. Além disso, os testadores precisam repetir os mesmos testes várias vezes, o que pode ser tedioso e propenso a erros.
+
+	Dificuldade em cobrir todos os cenários: É difícil para um testador humano cobrir todos os cenários possíveis durante os testes manuais, o que pode levar a bugs e falhas não detectados.
+
+	Custo: Os testes manuais são geralmente mais caros do que os testes automatizados, pois exigem mais recursos humanos e tempo de trabalho.
+
+	Falta de escalabilidade: Os testes manuais podem ser difíceis de escalar para grandes projetos ou sistemas complexos, pois podem exigir um grande número de testadores humanos para executar os testes.
+
+	Dificuldade em reproduzir bugs: É difícil para os testadores reproduzirem bugs de forma consistente durante os testes manuais, o que pode dificultar a identificação da causa raiz do problema.
+
+	Falta de documentação: Os testes manuais podem ser menos documentados do que os testes automatizados, o que pode tornar difícil rastrear e gerenciar o processo de teste ao longo do tempo.
+
+- Beneficios dos testes automatizados
+
+	Os testes automatizados em Java oferecem uma série de benefícios em relação aos testes manuais, incluindo:
+
+	Eficiência e rapidez: Os testes automatizados podem ser executados rapidamente e com eficiência, permitindo que o processo de teste seja mais rápido e eficaz em comparação com os testes manuais.
+
+	Consistência: Os testes automatizados executam os mesmos testes com precisão e consistência a cada execução, eliminando a possibilidade de erros humanos e aumentando a confiabilidade dos testes.
+
+	Cobertura abrangente: Os testes automatizados podem cobrir um grande número de cenários, permitindo que os testadores verifiquem todas as funcionalidades do sistema de forma abrangente e eficiente.
+
+	Escalabilidade: Os testes automatizados podem ser facilmente escalados para grandes projetos ou sistemas complexos, permitindo que o processo de teste seja gerenciado de forma mais eficiente e eficaz.
+
+	Identificação rápida de problemas: Os testes automatizados podem identificar rapidamente problemas e falhas no software, permitindo que as equipes de desenvolvimento e testes trabalhem juntas para resolver os problemas de forma eficiente.
+
+	Documentação: Os testes automatizados geram documentação precisa e detalhada de cada teste, permitindo que as equipes de desenvolvimento e testes rastreiem o progresso do teste e identifiquem áreas que precisam de atenção adicional.
+
+	Melhor qualidade do software: Os testes automatizados garantem que o software seja testado de forma abrangente e consistente, o que resulta em um software de maior qualidade e mais confiável para os usuários.
+
+	Redução de custos: Embora os testes automatizados possam ser mais caros em termos de tempo e recursos na fase inicial de desenvolvimento, eles podem ajudar a reduzir os custos de longo prazo, evitando erros e bugs caros que podem surgir após o lançamento do software.
+
+- TDD
+
+	TDD (Test-Driven Development) é uma prática de desenvolvimento de software que se concentra na escrita de testes automatizados antes da implementação do código de produção. Essa abordagem envolve três etapas principais: escrever um teste automatizado que falha, implementar o código que faz o teste passar e refatorar o código para melhorá-lo.
+
+	O objetivo principal do TDD é garantir que o código seja testado de forma abrangente e consistente desde o início do processo de desenvolvimento. Ao escrever testes automatizados antes de implementar o código de produção, os desenvolvedores podem garantir que o código faça o que se espera dele e que não haja regressão de funcionalidades já implementadas.
+
+	Alguns dos benefícios do TDD incluem:
+
+	Melhoria da qualidade do código: Como os testes automatizados são escritos antes da implementação do código, os desenvolvedores podem se concentrar em escrever código de alta qualidade que atenda aos requisitos dos testes.
+
+	Redução de erros: Como os testes são executados automaticamente após cada alteração de código, o TDD pode ajudar a identificar erros e bugs mais cedo no processo de desenvolvimento, tornando-os mais fáceis e menos dispendiosos de corrigir.
+
+	Maior eficiência: Ao escrever testes automatizados primeiro, os desenvolvedores podem economizar tempo e esforço a longo prazo, evitando a necessidade de depurar e corrigir erros de software mais tarde no processo de desenvolvimento.
+
+	Facilitação da manutenção do código: O TDD pode tornar a manutenção do código mais fácil, pois os testes automatizados garantem que as mudanças no código não afetem inadvertidamente outras partes do sistema.
+
+	Melhoria da colaboração da equipe: O TDD incentiva a colaboração entre desenvolvedores e equipes de teste, pois os testes automatizados são uma parte integrante do processo de desenvolvimento.
+
+- JUnit
+
+	JUnit é um framework de teste unitário para a linguagem de programação Java. Ele é usado por desenvolvedores Java para escrever testes automatizados para seus aplicativos, a fim de garantir que cada parte do código funcione corretamente e atenda aos requisitos especificados.
+
+	O JUnit é baseado em anotações Java, que são marcadores colocados acima de métodos específicos que indicam que o método é um teste. O framework fornece uma série de asserções, que são declarações que afirmam que uma determinada condição é verdadeira, e os resultados dos testes podem ser verificados automaticamente.
+
+	O JUnit é amplamente utilizado em projetos Java e é uma das ferramentas mais populares para teste unitário. Ele é simples de usar, possui uma grande variedade de recursos e é amplamente suportado pela comunidade Java.
+
+	Os benefícios do uso do JUnit incluem:
+
+	Melhoria da qualidade do software: O JUnit permite que os desenvolvedores testem seus aplicativos em um nível granular, identificando erros e bugs no código antes que eles se tornem problemas maiores.
+
+	Facilitação da manutenção do software: Com testes automatizados, os desenvolvedores podem modificar o código com confiança, sabendo que não estão afetando inadvertidamente outras partes do aplicativo.
+
+	Economia de tempo e recursos: O JUnit permite que os desenvolvedores automatizem testes repetitivos, economizando tempo e recursos em comparação com testes manuais.
+
+	Documentação do software: Os testes JUnit fornecem documentação automática do código e da funcionalidade do software, permitindo que outros membros da equipe entendam melhor como o código funciona e como ele pode ser modificado ou melhorado.
+
+	Facilitação da colaboração da equipe: O JUnit é amplamente usado e suportado pela comunidade Java, o que significa que os desenvolvedores podem compartilhar facilmente seus testes com outros membros da equipe.
+
+- Adicionando JUnit no projeto manualmente
+
+	A biblioteca JUnit é bem antiga, muito conhecida e muito utilizada, desta forma para inserir a emsma em um projeto manualmente basta inserir a anotação @Teste, será soliictada  aimportaçãod o JUnit, basta escolher a versão desejada.
+
+- Adicionando JUnit no projeto de forma "automatica"
+
+	Normalmente é utilziado o Maven como getor de dependencias, desta forma voe pode adicionar o JUit de forma automatica ao seu projeto.
+
+- Criando uma classe de teste
+
+
+
+- Executando o teste da classe
+- Padrão de nome de uma classe de teste
+- Padrão de nome de um método de teste
+- Quais métodos de testes criar
+- Anotação @Test
+- Anotação @BeforeEach
+- Anotação @AfterEach
+- Anotação @BeforeAll
+- Anotação @AfterAll
+- Classe Assert
+- Import estatico da classe Assert
+- Vantagens de criar o codigo primeiro e o teste depois
+- Vantagens de criar o teste primeiro e o codigo depois
+- Cenários
+- Refatoração
+- Testando lançamento de "exception"
+- Lançando erro manualmente
+- Teste de métodos privados
+- Testar somemte classes com regras de negocios, classes com regras de validação ou classes que possivelmente sofrerão muitas modificações, classes de dominio de modelo não precisam ser testadas
