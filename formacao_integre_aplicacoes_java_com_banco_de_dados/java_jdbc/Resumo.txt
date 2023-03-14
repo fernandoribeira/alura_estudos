@@ -1,0 +1,123 @@
+- O que é JDBC
+
+	Java JDBC (Java Database Connectivity) é uma API (Application Programming Interface) que permite a um programa Java se conectar a um banco de dados relacional, como o MySQL, Oracle, PostgreSQL, SQL Server, entre outros.
+
+	Essa API oferece um conjunto de classes e interfaces que permitem aos desenvolvedores Java escreverem códigos que interagem com bancos de dados, realizando operações como consulta, inserção, atualização e exclusão de dados.
+
+	O JDBC funciona como uma ponte entre um programa Java e um banco de dados, permitindo que o programa envie comandos SQL para o banco de dados e receba resultados de volta. Com o uso do JDBC, os desenvolvedores podem criar aplicativos Java que acessam dados de forma eficiente e segura.
+
+	A API é composta pelos pacotes java.sql e javax.sql, incluídos no JavaSE. Por meio das classes e interfaces fornecidas por esses dois pacotes, as pessoas podem desenvolver softwares que acessem qualquer fonte de dados, desde bancos relacionais até planilhas.
+
+- Componentes JDBC
+
+	A API JDBC é composta por dois componentes centrais. Em primeiro lugar, podemos falar dos pacotes (Java.sql e Javax.sql) que contêm as classes e interfaces que padronizam a comunicação da aplicação Java com uma base de dados
+
+	Outro item importante são os drivers, verdadeiros responsáveis pela conexão e interação com um banco específico. Um driver JDBC é uma classe que implementa a interface java.sql.Driver. Muitos drivers são totalmente desenvolvidos com o uso de Java, o que colabora para serem carregados de maneira dinâmica.
+
+	Os drivers também podem ser escritos de forma nativa, acessando outras bibliotecas ou outros drivers de sistema que permitam acesso a uma base de dados determinada.
+
+- Driver JDBC
+
+	Um driver JDBC é um software que permite que um programa Java se conecte a um banco de dados relacional usando a API Java JDBC. Cada banco de dados tem um driver JDBC específico que deve ser carregado pelo programa Java para que ele possa se comunicar com o banco de dados.
+
+	O driver JDBC age como uma ponte entre o programa Java e o banco de dados, traduzindo as chamadas JDBC do programa Java em comandos SQL que o banco de dados possa entender. Cada driver JDBC é desenvolvido pelo fornecedor do banco de dados e é otimizado para fornecer acesso rápido e seguro ao banco de dados.
+
+	Existem quatro tipos de drivers JDBC:
+
+	Tipo 1: Ponte JDBC-ODBC
+	É o tipo mais simples mas restrito à plataforma Windows. Utiliza CBDO para conectar-se com o banco de dados, convertendo métodos JDBC em chamadas às funções do ODBC. Esta ponte é normalmente usada quando não há um driver puro-Java (tipo 4) para determinado banco de dados, pois seu uso é desencorajado devido à dependência de plataforma.
+
+	Tipo 2: Driver API-Nativo
+	O driver API-Nativo traduz as chamadas JDBC para as chamadas da API cliente do banco de dados usado. Como a Ponte JDBC-ODBC, pode precisar de software extra instalado na máquina cliente.
+
+	Tipo 3: Driver Nativo
+	Traduz a chamada JDBC para um protocolo de rede independente do banco de dados utilizado, que é traduzido para o protocolo do banco de dados por um servidor. Por utilizar um protocolo independente, pode conectar as aplicações clientes Java a vários bancos de dados diferentes. É o modelo mais flexível e pode ser visto como um driver intermediário, pois também atua como Middleware.
+
+	Tipo 4: Driver de Protocolo de Rede
+	Converte as chamadas JDBC diretamente no protocolo do banco de dados utilizado. Implementado em Java, normalmente é independente de plataforma e escrito pelos próprios desenvolvedores. É o tipo mais recomendado para ser usado.
+
+- Elementos JDBC
+
+	Os elementos do Java JDBC são classes e interfaces que compõem a API. Aqui estão os principais elementos do Java JDBC:
+
+	Driver JDBC: cada banco de dados tem um driver JDBC específico que deve ser carregado para que o Java possa se comunicar com o banco de dados. Os drivers JDBC são fornecidos pelos fabricantes de banco de dados e implementam a interface java.sql.Driver.
+
+	Interface Connection: a classe Connection é usada para estabelecer uma conexão com um banco de dados e representa uma conexão física com o banco de dados. A conexão pode ser usada para criar objetos Statement ou PreparedStatement para enviar comandos SQL para o banco de dados.
+
+	Interface Statement: a classe Statement é usada para enviar comandos SQL simples para um banco de dados. A classe Statement tem vários métodos, como executeQuery() para executar uma consulta e retornar um conjunto de resultados, executeUpdate() para executar um comando de atualização e execute() para executar um comando SQL genérico.
+
+	Interface PreparedStatement: a classe PreparedStatement é usada para enviar comandos SQL parametrizados para um banco de dados. A classe PreparedStatement tem métodos como setString(), setInt() e setDouble() para definir os valores dos parâmetros.
+
+	Interface ResultSet: a classe ResultSet é usada para armazenar os resultados de uma consulta ao banco de dados. A classe ResultSet tem métodos como next() para percorrer as linhas dos resultados e métodos como getString(), getInt() e getDouble() para obter os valores das colunas.
+
+	Classe DriverManager: a classe DriverManager é usada para obter uma conexão com um banco de dados. O método getConnection() da classe DriverManager é usado para criar uma conexão com o banco de dados.
+
+	Esses são alguns dos elementos mais importantes do Java JDBC. Eles são usados em conjunto para permitir que os desenvolvedores Java interajam com bancos de dados relacionais a partir de seus programas.
+
+- Conectando / desconectando de um banco de dados
+
+- ConnectionFactory
+
+- Statement
+
+- Listando dados
+
+- Inserindo dados
+
+- Apagando dados
+
+- Comandos SQL
+
+# Mostrando databases
+
+	SHOW DATABASES;
+
+	Exemplo:
+
+	mysql> SHOW DATABASES;
+
+# Criar database
+
+	CREATE DATABASE <nome da database>;
+
+	Exemplo:
+
+	mysql> CREATE DATABASE loja_virtual;
+
+# Selecionar database
+
+	USE <nome da database>;
+
+	Exemplo:
+
+	mysql> USE loja_virtual;
+
+# Criar tabela
+
+	CREATE TABLE <nome da tabela> (<nome do campo> <tipo do campo>, ..., PRIMARY KEY (<chave primaria>)) Engine = InnoDB;
+
+	Exemplo:
+
+	mysql> CREATE TABLE produto (
+	    -> id INT AUTO_INCREMENT,
+	    -> nome VARCHAR(50) NOT NULL,
+	    -> descricao VARCHAR(250),
+	    -> PRIMARY KEY (id))
+	    -> Engine = InnoDB;
+
+* Selecionar dados na tabela
+
+	SELECT <colunas> FROM <nome da tabela>;
+
+	Exemplo:
+
+	mysql> SELECT * FROM produto;
+
+* Inserindo dados na tabela
+
+	INSERT INTO <nome da tabela> (<campo>, ...) VALUES ('<valores>', ...);
+
+	Exemplo:
+
+	mysql> INSERT INTO produto (nome, descricao) VALUES ('Notebook', 'Notebook Samsung');
+
