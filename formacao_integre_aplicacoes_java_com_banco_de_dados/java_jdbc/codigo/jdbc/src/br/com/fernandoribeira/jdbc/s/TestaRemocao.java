@@ -1,8 +1,10 @@
-package br.com.fernandoribeira.jdbc;
+package br.com.fernandoribeira.jdbc.s;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import br.com.fernandoribeira.jdbc.util.ConnectionFactory;
 
 public class TestaRemocao {
 	public static void main(String[] args) throws SQLException {
@@ -15,6 +17,9 @@ public class TestaRemocao {
 		Integer linhasModificadas = s.getUpdateCount();
 		
 		System.out.println("Quantidade de linhas modificadas: " + linhasModificadas);
+		
+		s.close();
+		conn.close();
 		
 	}
 }

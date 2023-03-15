@@ -1,4 +1,4 @@
-package br.com.fernandoribeira.jdbc;
+package br.com.fernandoribeira.jdbc.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

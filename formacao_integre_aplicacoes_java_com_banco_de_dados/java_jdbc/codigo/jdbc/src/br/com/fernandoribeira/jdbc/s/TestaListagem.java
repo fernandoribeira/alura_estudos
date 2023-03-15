@@ -1,9 +1,11 @@
-package br.com.fernandoribeira.jdbc;
+package br.com.fernandoribeira.jdbc.s;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import br.com.fernandoribeira.jdbc.util.ConnectionFactory;
 
 public class TestaListagem {
 	public static void main(String[] args) throws SQLException {
@@ -22,6 +24,8 @@ public class TestaListagem {
 			System.out.printf("%d - %s - %s%n", id, nome, descricao);
 		}
 		
+		rs.close();
+		s.close();
 		conn.close();
 		
 	}

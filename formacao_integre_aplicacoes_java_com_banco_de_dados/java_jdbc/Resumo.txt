@@ -54,17 +54,39 @@
 
 	Esses são alguns dos elementos mais importantes do Java JDBC. Eles são usados em conjunto para permitir que os desenvolvedores Java interajam com bancos de dados relacionais a partir de seus programas.
 
+- Configurar driver do MySQL no Eclipse
+
+	É necessário baixar o " MySQL Java Connector" em "https://dev.mysql.com/downloads/connector/j/".
+
+	Baixar a versão ".zip" "Plataform Independent".
+
+	Extrair o arquivo compactado e copiar o arquivo "mysql-connector-java-<versão>.jar" em uma pasta qualquer do Eclipse.
+
+	Criar uma "User Library" no Eclipse:
+
+	Window -> Preferences -> Java -> Build path -> User Libraries
+	Dê o nome da "User Library" de "MySQL Connector"
+	Add external JARs -> localize o arquivo jar e insira
+
+	Ao criar um novo projeto no Eclipse, na segunda tela (Java Settings), clicar na aba "Libraries", clicar no "Modulepath", clicar em "Add library", selecionar "User Library" e adicionar nossa biblioteca criada.
+
 - Conectando / desconectando de um banco de dados
 
 - ConnectionFactory
 
 - Statement
 
+- PreparedStatement
+
 - Listando dados
 
 - Inserindo dados
 
 - Apagando dados
+
+- Controle e transações
+
+- SQL Injection
 
 - Comandos SQL
 
