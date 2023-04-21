@@ -1,0 +1,504 @@
+- Algoritmo
+
+	Sequência finita de instruções para se resolver um problema, aplicando-se a diversas áreas de conhecimento.
+
+- Automação
+
+	Consiste em utilizar uma máquina para executar o procedimento desejado de forma automática ou semiautomática.
+
+- Computador
+
+	Um computador é composto por:
+
+	Hardware - parte física (as peças)
+	Software - parte lógica (os programas)
+
+- Programa de computador
+
+	Programas de computador são algoritmos executados pelo computador.
+
+	O computador é uma máquina que automatiza a execução de algoritmos.
+
+	Porém funciona apenas para algoritmos computacionais como processamento de dados e cálculos.
+
+- O que é preciso para se fazer um programa de computador
+
+	Vamos precisar de:
+
+	Uma linguagem de programação
+	Uma IDE (Integrated Development Environment ou Ambiente de Desenvolvimento Integrado)
+	Um compilador
+	Um gerador de código ou máquina virtual
+
+- Linguagem de programação
+
+	É um conjunto de regras léxicas (ortografia) e sintáticas (gramática) para se escrever programas.
+
+	Léxica diz respeito à correção das palavras "isoladas" (ortografia).
+
+	Sintática diz respeito à correção das sentenças (gramática).
+
+	Exemplos de linguagens de programação: C, Pascal, C++, Java, C#, Python, Ruby, PHP, JavaScript, etc.
+
+- IDE
+
+	IDE significa "Integrated Development Environment" ou traduzindo "Ambiente de Desenvolvimento Integrado".
+
+	É um conjunto de softwares utilizado para a construção de programas, exemplos:
+
+	C/C++ - Code Blocks
+	Java -  Eclipse, NetBeans
+	C# - Microsoft Visual Studio
+
+	Funcionalidades de uma IDE:
+
+	Edição de código fonte (endentação, autocompletar, destaque de palavras, etc.)
+	Depuração e testes
+	Construção do produto final
+	Sugestão de modelos
+	Auxiliar em várias tarefas do seu projeto
+
+- Código fonte
+
+	É aquele escrito pelo programador em linguagem de programação na construção dos programas.
+
+- Modos de construção de programas
+
+	Compilação
+	Interpretação
+	Abordagem híbrida
+
+- Compilação
+
+	cria o código fonte > passa pelo compilador (análise léxica e análise sintática) > que cria o código objeto > passa pelo gerador de código > que cria o código executavel específico > que é executado pelo S.O.
+
+	Exemplos de linguagem: C, C++
+
+- Interpretação
+
+	cria o código fonte > passa pelo interpretador (que faz a geração de código sob demanda) > que é executado pelo S.O.
+
+	Exemplos de linguagem: PHP, JavaScript
+
+- Abordagem híbrida
+
+	cria o código fonte > passa pelo pré-compilador (análise léxica e análise sintática) > que cria o código Bytecode > passa pela máquina virtual (que faz a geração de código sob demanda) > que é executado pelo S.O.
+
+	Exemplos de linguagem: Java, C#
+
+- Vantagens e desvantagens dos modos de construção de programas
+
+	Compilação
+
+	Vantagens: alta velocidade de execução do programa, auxilio do compilador na checagem do programa
+	Desvantagens: necessidade de compilar para cada S.O., precisa ser recompilado caso seja alterado
+
+	Interpretação
+
+	Vantagens: não precisa compilar para cada S.O.
+	Desvantagens: baixa velocidade de execução do programa, não temos auxilio do compilador na checagem do programa
+
+	Abordagem híbrida
+
+	Vantagens: não precisa compilar para cada S.O., auxilio do compilador na checagem do programa
+	Desvantagens: média velocidade de execução do programa, precisa ser recompilado caso seja alterado
+
+- Três operações básicas de programação
+
+	Entrada de dados: normalmemnte feita pelo teclado ou mouse
+
+	Processamento de dados: feita pelo processador
+
+	Saída de dados: normalmente feito pelo monitor
+
+- Java
+
+	É uma linguagem de programação, plataforma de desenvolvimento e execução de programas.
+
+	Criada pela Sun Microsystems no meio da década de 1990 e adquirida pela Oracle Corporation em 2010.
+
+	Desenhada para ser utilizada em todos os tipos de dispositivos, principalmente portáteis.
+
+	É uma linguagem orientada a objetos, segura, robusta e que domina o mercado a muitos anos.
+
+	Resolve problemas de linguagens antigas como ponteiros / gerenciamento de memória, portabilidade, utilização em dispositivos diversos e custo.
+
+	Java utiliza a abordagem híbrida.
+
+- Bytecode
+
+	Bytecode em Java é um código intermediário gerado pelo compilador Java que é projetado para ser executado por uma máquina virtual Java (JVM). 
+
+	Quando um programa Java é compilado, ele é traduzido em bytecode que é armazenado em arquivos com extensão ".class". Esses arquivos de bytecode podem ser distribuídos e executados em qualquer sistema operacional que tenha uma JVM compatível instalada. 
+
+	O bytecode é uma representação de baixo nível do código Java original, que é uma linguagem de programação de alto nível. Ele é projetado para ser interpretado rapidamente pela JVM, permitindo que o código Java seja executado em qualquer plataforma. Além disso, o bytecode é otimizado para ser compacto, o que permite que o código seja transferido pela rede de maneira mais eficiente.
+
+- Versões do Java
+
+	LTS ("Long Term Support" ou "suporte de longo prazo") - são versões com maior tempo de updates, correções e suporte tecnico por parte do fabricante. Elas são lançadas com menor frequencia.
+
+	Non-LTS - são versões com menor tempo de updates, correções e suporte tecnico por parte do fabricante. Elas são lançadas com menor frequencia, normalemnte a cada ano.
+
+- Edições do Java
+
+    Java SE (Java Standard Edition): para programação desktop
+
+    Java EE (Java Enterprise Edition): para programação web
+
+    Java ME (Java Micro Edition): para programação de dispositivos embarcados
+
+    JavaFX: para programação de multimidia
+
+- Kits Java
+
+	Java Runtime Environment (JRE): programa a ser instalado para execução de programas Java, possui a máquina virtual Java (JVM).
+
+	Java Development Kit (JDK): programa a ser instalado para desenvolvimento e execução de programas Java (JVM), possui a máquina virtual Java, as APIs (bibliotecas) de desenvolvimento e o compilador Java.
+
+	Estes kits são disponibilizados para diversos sistemas operacionais, permitindo assim a criação e execução de aplicativos Java nestes ambientes.
+
+- Convenções de nomes em Java
+
+	Lower Camel Case ("lastName" por exemplo):
+
+	pacotes
+	atributos
+	métodos
+	variáveis e parâmetros
+
+	Pascal Case ("UserAccount" por exemplo):
+
+	classes
+
+- Comentários
+
+	Comentários em programas Java são códigos dentro dos programas que não serão executados mas server para dar informações relativas ao código.
+
+	Exemplo:
+
+	// Comentario de uma linha
+
+	/*
+	 * Comentário 
+	 * de
+	 * bloco
+	 */
+
+- Comentários / Documentação Javadoc
+
+	Comentários Javadoc são comentários que documentam o código especifica.
+
+	Exemplo:
+
+	/**
+	 * 
+	 * @author Fernando
+	 *
+	 */
+
+	Podemos gerar comentários, de varios itens, declaração de classes, métodos construtores, métodos comuns, para isso basta criar o comentário em cima do item que deseja documentar.
+
+	Para dar detalhes utilizamos anotações com "@", segue a lista:
+
+	@author (classes e interfaces)
+	@version (classes e interfaces)
+	@param (metodos e construtores)
+	@return (metodos)
+	@throws (exceçoes)
+
+	Para gerar a documentação no Eclipse basta ir no menu "Project" > "Generate Javadoc" e seguir os passos.
+
+- Variáveis
+
+	Em programação, uma variável é uma porção de memória (RAM) utilizada para armazenar dados durante a execução dos programas.
+
+- Tipos primitivos
+
+	São variáveis básicas da linguagem Java, elas guardam o valor dentro delas mesmo.
+
+	Descrição 								Tipo 		Tamanho 	Valores 										Valor padrão
+
+	tipos numéricos inteiros				byte 		8 bits 		-128 a 127 										0
+	tipos numéricos inteiros				short 		16 bits 	-32768 a 32767 									0
+	tipos numéricos inteiros				int 		32 bits 	-2147483648 a 2147483647 						0
+	tipos numéricos inteiros				long 		64 bits 	-9223372036854770000 a 9223372036854770000 		0L
+	tipos numéricos com ponto flutuante		float 		32 bits 	-1,4024E-37 a 3,4028E+38 						0.0f
+	tipos numéricos com ponto flutuante		double 		64 bits 	-4,94E-307 a 1,79E+308 							0.0
+	um caractere Unicode 					char 		16 bits 	'\u0000' a '\uFFFF' 							'\u0000'
+	valor verdade 							boolean 	1 bit 		false, true 									false
+- Tipos referência
+
+	São variáveis que armazenam referências a objetos (endereços de memória). As variáveis de referência são usadas para manipular objetos em Java, como strings, arrays, classes personalizadas e outros objetos criados pelo programador.
+
+	Temos objetos tipos referência da API Java ou criados pelo programados.
+
+- Declaração de variáveis
+
+	Tipo primitivo
+
+		Declaração sem atribuir valor:
+
+		<tipo> <nome>;
+
+		Declaração atribuindo valor:
+
+		<tipo> <nome> = <valor inicial>;
+
+	Tipo referencia
+
+		Declaração sem atribuir valor:
+
+		<tipo> <nome>;
+
+		Declaração atribuindo valor:
+
+		<tipo> <nome> = new <tipo>(<valor inicial>);
+
+	Regras para nomes de variáveis:
+
+	Não pode começar com dígito
+	Não pode ter espaço em branco
+	Não usar acentos
+	Use nomes que tenham significado / relação com o que a variável representa
+	Use o padrão "CamelCase", em específico o "lowerCamelCase" (de letra inicial minúscula)
+
+- Escrevendo na tela
+
+	Sem quebra de linha:
+
+	System.out.print(<texto ou variável a ser exibido na tela>);
+
+	Com quebra de linha:
+
+	System.out.println(<texto ou variável a ser exibido na tela>);
+
+	Com formatação:
+
+	System.out.printf(<marcadores>, <variáveis>);
+
+	Marcadores:
+
+	Especificador 	Formato
+
+	%s 				String
+	%d 				Tipos inteiros
+	%f 				Tipos de ponto flutuante
+	%b 				Booleanos
+	%c 				Caracteres
+	%n 				Quebra de linha
+
+	Controle de casas decimais para tipo de ponto flutuante:
+
+	Utilizar "%.<quantidade de casas desejadas>f"
+
+- Concatenação de texto
+
+	Para "print" e "println" utilizar o sinal de "+" para concatenação do texto.
+
+	Para "printf" não existe concatenação de texto pois a estrutura é diferente, a frase ja é formatada antes.
+
+- Separador decimal
+
+	Por padrão "print" e "println" utilizam o sistema americano que determina o "." como separador decimal.
+
+	Por padrão "printf" utiliza a localização do sistema operacional para determinar o separador decimal, no caso do Brasil a ",".
+
+	Caso queria alterar para o sistema americano de separador decimal com "." precisamos importar a classe "Locale" no início do programa:
+
+	import java.util.Locale;
+
+	E em seguida, dentro do método, declarar a configuração:
+
+	Locale.setDefault(Locale.US);
+
+- Operadores aritméticos
+
+	+	adição
+	-	subtração
+	*	multiplicação
+	/	divisão
+	%	resto da divisão
+
+	Precedência dos operadores
+
+	* / %
+	+ -
+
+	Agrupamento de expressões
+
+	Utilizamos parênteses ( ) para agrupamento de expressões aritméticas.
+
+- Operadores de atribuição acumulativa
+
+	Usados como forma abreviada de escrever que uma variável recebe o valor dela em uma operação onde ela esta envolvida.
+
+	Operador 		Exemplo de uso
+
+	+= 				a = a + b;
+	-= 				a = a - b;
+	*= 				a = a * b;
+	/= 				a = a / b;
+	%= 				a = a % b;
+
+- Operadores comparativos
+
+	Operador 		Significado
+	
+	>  				maior
+	<  				menor
+	>= 				maior ou igual
+	<= 				menor ou igual
+	== 				igual
+	!= 				diferente
+
+- Operadores lógicos
+
+	Operador 		Significado
+
+	&& 				E
+	|| 				OU
+	! 				NÃO
+
+- Operadores de incremento e decremento
+
+	Os operadores "++" e "--" são chamados de operadores de incremento e decremento, respectivamente. Esses operadores são usados para incrementar ou decrementar o valor de uma variável numérica em uma unidade.
+
+	O operador "++" é usado para incrementar o valor de uma variável numérica em uma unidade.
+
+	O operador "--" é usado para decrementar o valor de uma variável numérica em uma unidade. 
+
+	É importante notar que os operadores de incremento e decremento têm duas formas: pré-incremento e pós-incremento.
+
+	No pré-incremento, o valor da variável é incrementado antes que a expressão seja avaliada. No pós-incremento, o valor da variável é incrementado após a expressão ser avaliada.
+
+- Casting
+
+	Conversão entre tipos de variáveis, temos dois tipos, implicita (automatica) e explicita (forçada).
+
+	É necessário quando o compilador não é capaz de "adivinhar" que o resultado de uma expressão deve ser de outro tipo.
+
+	Uso:
+
+	A conversão implcita (automatica) não precisa de intervenção alguma.
+
+	A conversão explicita (forçada) é feita colocando o tipo desejado em frente ao valor a ser convertido "(<tipo desejado>) <valor a ser convertido>".
+
+	Tabela de conversão implicita e explicita:
+
+	De / Para	byte 	  short 	 	char 	 	int 	 		long 	 		float 	 		double
+
+	byte 		N/A 	  implicito 	char 		implicito		implicito		implicito		implicito
+	short 		byte 	  N/A 			char 		implicito		implicito		implicito		implicito
+	char 		byte 	  short		 	N/A 		implicito		implicito		implicito		implicito
+	int 		byte 	  short		 	char 		N/A 			implicito		implicito		implicito
+	long 		byte 	  short		 	char 		int 			N/A 			implicito		implicito
+	float 		byte 	  short		 	char 		int 			long 			N/A 			implicito
+	double 		byte 	  short		 	char 		int 			long 			float 			N/A
+
+	O tipo de dado boolean é o único tipo primitivo que não suporta casting.
+
+- Estruturas de seleção
+
+	if (simples)
+
+		if (<condição>) {
+			<comandos a serem executados caso a condição acima seja verdadeira>
+		}
+
+	if...else (composta)
+
+		if (<condição>) {
+			<comandos a serem executados caso a condição acima seja verdadeira>
+		} else {
+			<comandos a serem executados caso a condição acima seja falsa>
+		}
+
+	if...else if...else (aninhada)
+
+		if (<condição>) {
+			<comandos a serem executados caso a condição acima seja verdadeira>
+		} else if (<condição>) {
+			<comandos a serem executados caso a condição cima seja verdadeira>
+		} else if (<condição>) {
+			<comandos a serem executados caso a condição cima seja verdadeira>
+		}
+		...
+		} else {
+			<comandos a serem executados caso todas as condições acima sejam falsas>
+		}
+
+	switch (seleção específica)
+
+		switch (<variavel>) {
+			case <valor>:
+				<ações a executar caso o valor seja igual a variável>;
+				break;
+			case <valor>:
+				<ações a executar caso o valor seja igual a variável>;
+				break;
+			...
+			default:
+				<ações a executar caso nenhuma alternativa anterior seja válida>;
+		}
+
+	operador ternário ? (seleção dupla)
+
+	(<condição>) ? <valor se verdadeiro> : <valor se falso>;
+
+- Estruturas de repetição
+
+	while (usada quando não se sabe quantas vezes vai repetir, teste no inicio, pode nunca ser executada)
+
+		<declaração da variavel de controle>;
+
+		while (<teste da variável de controle>) {
+			<código  a ser executado caso a condição seja satisfeita>
+			...
+			<alteração do valor da variável de controle se necessário>
+		}
+
+	for (usada quando se sabe a quantidade de vezes a ser executada, sempre é executada)
+
+		for (<declaração da variável de controle>; <teste da variavel de controle>; <incremento ou decremento da variavel de controle>) {
+			<código a ser executado quando a repetição for executada>
+		}
+
+	do while (usada quando não se sabe quantas vezes vai repetir, teste no final, é executada ao menos uma vez)
+
+		<declaração da variavel de controle>;
+
+		do {
+			<código  a ser executado caso a condição seja satisfeita>
+			...
+			<alteração do valor da variável de controle se necessário>
+		} while (<teste da variável de controle>);
+
+- Classe String
+
+	String é uma classe em Java do pacote "java.lang", elas são utilizadas para guardar palavras / textos.
+
+	Variáveis do tipo String guardam referências a objetos, e não um valor, como acontece com os tipos primitivos.
+
+	Variáveis do tipo String são imutáveis, ao alterar um String na verdade é gerada uma nova e a referencia alterada.
+
+	Podemos criar uma String:
+
+	Utilizando o new (que não é utilizado devido a problemas de otimização e a não atender o padrão):
+
+	String <nome da variavel> = new String("<valor da variavel>");
+
+	E utilizando o padrão "object literal" similar a declaração de uma variavel de tipo primitivo (padrão utilizado):
+
+	String <nome da variavel> = "<valor da variavel>";
+
+- Escopo de variáveis
+
+	O escopo de uma variável se refere à parte do programa onde a variável é acessível e pode ser usada. Uma variável em Java só pode ser usada dentro do seu escopo, que é definido pelo bloco de código onde ela foi declarada.
+
+	O escopo de uma variável em Java é determinado pelas chaves "{" e "}" que delimitam um bloco de código. Uma variável declarada dentro de um bloco de código é acessível somente dentro desse bloco, ou seja, o escopo da variável se limita ao bloco de código onde ela foi declarada. Quando o bloco de código termina, a variável deixa de existir.
+
+- Break e Continue
+
+	A palavra-chave "break" é usada para sair imediatamente de um loop. Quando o programa encontra a palavra-chave "break" dentro de um loop, ele sai do loop e continua a executar o código imediatamente após o loop. 
+
+	A palavra-chave "continue" é usada para pular a execução de uma iteração do loop e continuar com a próxima iteração. Quando o programa encontra a palavra-chave "continue" dentro de um loop, ele interrompe a execução atual da iteração e passa para a próxima iteração. 

@@ -148,7 +148,7 @@
 
 - Adicionando JUnit no projeto de forma "automatica"
 
-	Normalmente é utilizado o Maven como gestor de dependencias, desta forma voe pode adicionar o JUnit de forma automatica ao seu projeto.
+	Normalmente é utilizado o Maven como gestor de dependencias, desta forma voce pode adicionar o JUnit de forma automatica ao seu projeto.
 
 - Quais métodos de testes criar
 
@@ -158,7 +158,7 @@
 
 	Classes de testes normalmente ficam em um pacote espeficico para as classes de teste, em um projeto Maven por exemplo elas ficam em "/srv/test/java".
 
-	Elas são nomeadas com omesmo nome da classe que irão testar porem ao final acrescentamos "Test", por exemplo, uma classe "Conta" teria uma classe de teste com o nome "ContaTest".
+	Elas são nomeadas com o mesmo nome da classe que irão testar porem ao final acrescentamos "Test", por exemplo, uma classe "Conta" teria uma classe de teste com o nome "ContaTest".
 
 - Padrão de nome de um método de teste
 
@@ -192,9 +192,9 @@
 
 - Criando uma classe de teste
 
-	A classe de teste é uma classe normal, a unica diferença é que utilziamos algumas anotações em alguns métodos que determinam algumas ações.
+	A classe de teste é uma classe normal, a unica diferença é que utilizamos algumas anotações em alguns métodos que determinam algumas ações.
 
-	Para determinar uma classe de teste criamos ela normalemnte, criamos um método e colocamos a anotação "@Test" para determinar que este e um  método de teste, por exemplo:
+	Para determinar uma classe de teste criamos ela normalmente, criamos um método e colocamos a anotação "@Test" para determinar que este e um  método de teste, por exemplo:
 
 		public class CalculadoraTest {
 
@@ -342,13 +342,13 @@
 			assertEquals(new BigDecimal("120.00"), funcionario .getSalario());
 		}
 
-	Neste caso o proposito era evitar codigo duolciado, entao extraimos parte do codigo como atributos da classe e inicializamso os mesmos antes de cada execução de método utilziando a anotação @BeforeEach.
+	Neste caso o proposito era evitar codigo duplicado, entao extraimos parte do codigo como atributos da classe e inicializamos os mesmos antes de cada execução de método utilizando a anotação @BeforeEach.
 
 - Testando lançamento de "exception"
 
 	Normalmente os métodos retornam valores / objetos que podem ser comparados porem as vezes um método pode retornar uma exception, a qual tambem podemos comparar.
 
-	Exemplo de método qu epode lançar uma exception:
+	Exemplo de método que pode lançar uma exception:
 
 		public BigDecimal calcularBonus(Funcionario funcionario) {
 			BigDecimal valor = funcionario.getSalario().multiply(new BigDecimal("0.1"));
@@ -393,4 +393,4 @@
 
 - Teste de métodos privados
 
-	Métodos privados já são testados quando os métodos que utilziam eles são testados, njão precisamos criar testes especificos para métodos privados.
+	Métodos privados já são testados quando os métodos que utilizam eles são testados, njão precisamos criar testes especificos para métodos privados.

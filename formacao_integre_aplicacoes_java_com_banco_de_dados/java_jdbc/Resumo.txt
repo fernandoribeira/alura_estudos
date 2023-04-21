@@ -78,6 +78,8 @@
 
 - PreparedStatement
 
+- SQL Injection
+
 - Listando dados
 
 - Inserindo dados
@@ -86,7 +88,11 @@
 
 - Controle e transações
 
-- SQL Injection
+
+
+
+
+
 
 - Comandos SQL
 

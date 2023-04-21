@@ -1,0 +1,520 @@
+- Paradigmas de programação
+
+	Paradigmas de programação são diferentes abordagens ou estilos de programação que fornecem uma estrutura conceitual para resolver problemas de programação. Cada paradigma oferece uma maneira diferente de pensar sobre como escrever programas, com diferentes regras, técnicas e padrões para a organização de código.
+
+	Existem vários paradigmas de programação, cada um com suas próprias características e objetivos.
+
+- Paradigma procedural vs orientado a objetos
+
+	O paradigma procedural e o paradigma orientado a objetos são duas das abordagens mais comuns na programação.
+
+	A programação procedural é uma abordagem que enfatiza a criação de funções ou rotinas para realizar tarefas específicas. A programação procedural é baseada em uma sequência de comandos executados passo a passo para alcançar um resultado. Os dados são armazenados em variáveis, e as funções são usadas para manipular esses dados. Em outras palavras, a programação procedural é uma abordagem que se concentra nas ações a serem executadas.
+
+	Por outro lado, a programação orientada a objetos (OO) é uma abordagem que enfatiza a criação de objetos que têm comportamento e dados. Em vez de funções, a programação orientada a objetos usa classes e objetos para representar entidades e suas interações. As classes são usadas para definir os atributos e métodos que os objetos possuem. Em outras palavras, a programação orientada a objetos é uma abordagem que se concentra na criação de objetos que possuem propriedades e podem realizar ações.
+
+	Ambas as abordagens têm suas vantagens e desvantagens, e a escolha entre elas depende do problema específico que está sendo resolvido. A programação orientada a objetos é frequentemente usada para criar aplicativos grandes e complexos, enquanto a programação procedural é frequentemente usada para aplicativos menores e mais simples.
+
+- Orientação a Objetos
+
+	Orientação a objetos é um paradigma de programação que enfatiza a representação de entidades do mundo real como objetos com características (atributos) e comportamentos (métodos). A ideia é modelar o mundo real em termos de objetos que interagem entre si, criando assim uma abstração que facilita a resolução de problemas computacionais.
+
+	Na programação orientada a objetos, cada objeto é uma instância de uma classe, que define suas características e comportamentos. As características são representadas por meio de variáveis, também chamadas de atributos, enquanto os comportamentos são representados por meio de métodos, que são funções que operam sobre essas variáveis. As classes são utilizadas para organizar os objetos em grupos lógicos e reutilizáveis, permitindo que os programadores criem aplicativos mais complexos e estruturados.
+
+	A programação orientada a objetos é baseada em quatro conceitos principais: encapsulamento, herança, polimorfismo e abstração. O encapsulamento refere-se à proteção dos dados de um objeto, tornando-os acessíveis somente por meio de métodos. A herança é um mecanismo que permite que uma classe herde atributos e métodos de outra classe. O polimorfismo permite que objetos de diferentes classes possam responder ao mesmo método. E a abstração é a habilidade de representar um objeto do mundo real de forma simplificada.
+
+	A programação orientada a objetos é amplamente utilizada em linguagens de programação modernas, incluindo Java, C++, Python e Ruby.
+
+- Classes
+
+	É um tipo estruturado que pode conter:
+
+	Atributos
+	Métodos
+
+	A classe também pode prover muitos outros recursos, tais como:
+
+	Construtores
+	Sobrecarga
+	Encapsulamento
+	Herança
+	Polimorfismo
+
+	Exemplos de classes:
+
+	Entidades: Produto, Cliente, Triangulo
+	Serviços: ProdutoService, ClienteService, EmailService, StorageService
+	Controladores: ProdutoController, ClienteController
+	Utilitários: Calculadora, Compactador
+	Outros (views, repositórios, gerenciadores, etc.)
+
+	Caracterisiticas:
+
+	Toda classe possui um nome
+	Possue visibilidade (exemplo: public, private, protected ou default)
+	Podem possuir membros (exemplo: atributos, métodos)
+
+- Classe principal (Program)
+
+	É a classe "entry-point" da aplicação, a primeira a ser iniciada ao executar um programa em Java.
+
+	Para isso ela possui o método "main".
+
+- Estrutura básica de uma classe
+
+	<pacote que a classe faz parte>;
+
+	<importação de pacotes necessários>;
+
+	<declaração da classe> {
+		
+		<declaração de atributos>...
+
+		<declaração de métodos>...
+
+	}
+
+	Exemplo:
+
+	package entities;
+
+	import java.util.Locale;
+
+	public class Triangle {
+
+		public double a;
+		public double b;
+		public double c;
+		
+		public double area() {
+			
+			double p = (a + b + c) / 2.0;
+			double r = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+			
+			return r;
+		}
+		
+	}
+
+- Pacotes (package)
+
+	Um pacote ou "package" na tecnologia Java nada mais é do que um conjunto de classes localizadas na mesma estrutura hierárquica de diretórios.
+
+	Usualmente, são colocadas em um package classes relacionadas, construídas com um propósito comum para promover a reutilização de código.
+
+	Deve ser declarado a primeira linha da classe.
+
+	Exemplo:
+
+		package <nome do pacote>;
+
+		package entities;
+
+	Sugestão de pacotes
+
+		application
+		model
+			entities
+			enums
+			exceptions
+			services
+
+- Declaração import
+
+	A instrução "import" da linguagem Java tem como objetivo disponibilizar em uma classe, de um determinado pacote, o acesso a demais classes que estejam em pacotes diferentes.
+
+	Para isso basta inserir a dealcração "import" após a declaração "package" da classe, exemplo:
+
+	import <caminho fqdn da classe>;
+
+	import java.util.Locale;
+
+- Modificadores de acesso
+
+	Temos quatro modificadores de acesso básicos da linguagem Java: public, private, protected e default.
+
+	Eles servem para tornar componentes da sua aplicação mais ou menos acessíveis por outras partes do seu programa.
+
+	Resumo dos modificadores:
+
+		public: o membro é acessado por todas classes (ao menos que ele resida em um módulo diferente que não exporte o pacote onde ele está)
+
+		private: o membro só pode ser acessado na própria classe
+
+		protected: o membro só pode ser acessado no mesmo pacote, bem como em subclasses de pacotes diferentes
+
+		(default): o membro só pode ser acessado nas classes do mesmo pacote		
+
+	Detalhes dos modificadores:
+
+	"public"
+
+	Não impõe restrições de acesso ao item, deixando-o visível para todo e qualquer classe. Esse modificador pode ser aplicado sobre todos os itens:
+
+	    Classes
+	    Classes internas
+	    Interfaces
+	    Interfaces internas
+	    Annotations
+	    Annotations internas
+	    Enum
+	    Enums internos
+	    Métodos
+	    Atributos
+
+	"private"
+
+	O modificador que mais restringe a visibilidade do item marcado deixando-o visível somente para a classe que o definiu. Em uma herança a restrição de acesso atinge também as classes filhas, impedindo-as de acessarem o item sob o modificador private. Esse modificador pode ser aplicado sobre os seguintes itens:
+
+	    Classes internas
+	    Interfaces internas
+	    Annotations internas
+	    Enums internos
+	    Métodos
+	    Atributos
+
+	"protected"
+
+	Restringe o acesso ao item sob o modificador deixando-o visível somente para as classes filhas da classe que possui o item e para classes que se encontram sob o mesmo pacote da classe que possui o item. Esse modificador pode ser aplicado sobre os itens:
+
+	    Classes internas
+	    Interfaces internas
+	    Annotations internas
+	    Enums internos
+	    Métodos
+	    Atributos
+
+	"default":
+
+	Restringe o acesso ao item sob o modificador deixando-o visível somente para as classes que se encontram sob o mesmo pacote da classe que possui o item. Em uma herança a restrição de acesso atinge também as classes filhas que não estejam no mesmo pacote, impedindo-as de acessarem o item sob o modificador default.
+
+	Para esse modificador não há uma palavra chave definida para o uso aqui. O modificador aqui é a omissão dos outros modificadores. Esse modificador pode ser aplicado sobre os seguintes itens:
+
+	    Classes
+	    Classes internas
+	    Interfaces internas
+	    Annotations  internas
+	    Enums internos
+	    Métodos
+	    Atributos
+
+    Visibilidade de um item com o modificador de acesso
+
+	Para testar a visibilidade de um item com o seu modificador de acesso há cinco cenários diferentes:
+
+    A partir da mesma classe
+    Qualquer classe no mesmo package
+    Qualquer classe filha no mesmo package
+    Qualquer classe filha em package diferente
+    Qualquer classe em package diferente
+
+    Para isso utilizamos a tabela abaixo:
+
+	Visibilidade 									public 		protected 		default 	private
+
+    A partir da mesma classe 						OK			OK 				OK 			OK
+    Qualquer classe no mesmo package 				OK			OK 				OK 			Não
+    Qualquer classe filha no mesmo package 			OK			OK 				OK 			Não
+    Qualquer classe filha em package diferente 		OK			OK 				Não 		Não
+    Qualquer classe em package diferente 			OK			Não 			Não 		Não
+
+- Atributos
+
+	Os atributos são as propriedades de uma classe, também são conhecidos como variáveis ou campos. Essas propriedades definem o estado de um objeto, fazendo com que esses valores possam sofrer alterações.
+
+	Eles são declarados como variaveis comuns porpém dentro da classe.
+
+	Exemplo:
+
+	int idade;
+
+- Referência "this"
+
+	É uma referencia para o proprio objeto.
+
+	Usos comuns:
+
+	Diferenciar atributos de variáveis locais
+	Passar o próprio objeto como argumento na chamada de um método ou construtor
+
+	Por exemplo, caso algum atributo tenha o mesmo nome de um parâmetro de método  (normalmente no método construtor) podemos referenciar o atributo do objeto com a palavra "this" antes do atributo ao utilizar o mesmo.
+
+	Exemplo:
+
+	this.<nome do atributo>
+
+	this.quantidade = quantidade;
+
+- Métodos
+
+	Representam um processamento que possui um significado.
+
+	As principais vantagens: modularização, delegação e reaproveitamento de código.
+
+	Dados de entrada e saída:
+
+	Funções podem receber dados de entrada (parâmetros)
+	Funções podem ou não retornar uma saída
+
+	Estrutura:
+
+	<modificador de acesso> <propriedade de instanciação se necessário> <tipo de retorno> <nome do método>(<ipo do parâmetro> <nome do parâmetro>, ...)
+		<código do método>
+		<retorno do método caso exista>
+	}
+
+	Exemplo:
+
+	public static int max(int x, int y, int z) {
+
+		int maxNumber;
+
+		if (x > y && x > z) {
+			maxNumber = x;
+		} else if (y > x && y > z) {
+			maxNumber = y;
+		} else {
+			maxNumber = z;
+		}
+
+		return maxNumber;
+	}
+
+- Método "main"
+
+	É o primeiro método executado em um programa Java, considerado como o "entry-point" da aplicação.
+
+	Normalmente ele está na classe "Program".
+
+	Ele deve ser declarado sempre da mesma forma:
+
+	public static void main(String[] args) {
+		<código do método>
+	}
+
+- Objeto
+
+	Uma classe é como se fosse uma planta de uma casa, um  desenho, um projeto de algo. Não podemos utilizar uma planta de uma casa para morar, precisamos contruir a casa.
+
+	Desta forma um objeto é como se fosse a casa construida a partir da planta.
+
+	A classe tem a descrição do que o objeto possui e faz, mas é somente um projeto, para utilizarmos a classe criamos onjetos baseados nela.
+
+- Declaração e instanciação de um objeto
+
+	Para criarmos um objeto temos dois passos, a declaração e a instanciação.
+
+	A declaração de um objeto é feito igual a uma variavel comum.
+
+	Exemplo:
+
+	<nome da classe> <nome do objeto>;
+
+	Triangulo t;
+
+	Ela cria na memória uma variável com conteúdo vazio.
+
+	Instanciar é o ato de criar o objeto na memória e inserir seu endereço dentro da variavel criada anteriormente.
+
+	Exemplo:
+
+	<nome do objeto> = new <nome da classe>(<paramentros se necessario):
+
+	t = new Triangulo(2.00, 3.00, 5.00);
+
+	Uma variavel do tipo comum (primitiva) guarda dentro dela o valor propriamente dito, ja uma variavel do tipo objeto guarda um valor de enderço de memoria que redireciona a variavel (como um link ou ponteiro) ao local onde os dados efetivamente estao.
+
+- Membros de instancia
+
+	Uma classe possui membros, esses membros são os atributos e os métodos.
+
+	Ao criar e instanciar um objeto cada um irá possuir uma cópia (instancia) dos membros, estes membros são chamados de "membro de intancia" ou "membros de objeto".
+
+	Cada objeto conhece somente os seus membros, membros de outros objetos (mesmo sendo da mesma classe) não são conhecidos.
+
+- Membros estaticos
+
+	Também chamados membros de classe em oposição a membros de instância.
+
+	São membros que fazem sentido independentemente de objetos. Não precisam de objeto para serem chamados. São chamados a partir do próprio nome da classe.
+
+	Exemplo:
+
+	Math.sqrt
+
+	Não precisamos instanciar um objeto da classe Math para utiliza-la, basta chamamos seus métodos de forma direta.
+
+	Aplicações comuns:
+
+	Classes utilitárias
+	Declaração de constantes
+
+	Uma classe que possui somente membros estáticos, pode ser uma classe estática também. Esta classe não poderá ser instanciada.
+
+	Para declarar um mebro estatico basta inserir a palavra "static" em sua declaração.
+
+	Exemplo:
+
+	Atributos:
+
+	public static <tipo da variavel> <nome da variável> = <valor da variável>;
+
+	public static double pi = 3.14159;
+	
+	Métodos:
+
+	<modificador de acesso> static <tipo de retorno> <nome do método>(<ipo do parâmetro> <nome do parâmetro>, ...)
+		<código do método>
+		<retorno do método caso exista>
+	}
+
+	public static double volume(double radius) {
+		return (4.0 * PI * Math.pow(radius, 3)) / 3;
+	}
+
+- Constantes
+
+	Uma constante é um tipo especial de variável cujo valor, uma vez definido no código, não pode mais ser alterado durante a execução do programa.
+
+	Declaramos uma constante em Java usando a palavra-chave final.
+	
+	Exemplo:
+
+	public static final double PI = 3.14159;
+
+	Declarar sempre uma constante usando apenas letras maiúsculas, e em caso de palavras compostas, separá-las com um underline (_).
+
+- Construtores
+
+	É uma operação especial da classe, que executa no momento da instanciação do objeto.
+
+	Usos comuns:
+
+	Iniciar valores dos atributos
+	Permitir ou obrigar que o objeto receba dados / dependências no momento de sua instanciação (injeção de dependência)
+
+	Se um construtor customizado não for especificado, a classe disponibiliza o construtor vazio (default) que instacia o objeto com valores padrão de cada tipo.
+
+	Valores padrão:
+
+	Descrição 								Valor padrão
+
+	tipos numéricos inteiros				0
+	tipos numéricos com ponto flutuante		0.0
+	tipo char 			 					'\u0000' (null)
+	tipo boolean 							false
+	tipo object 							null
+
+	Também é possível especificar mais de um construtor na mesma classe (sobrecarga).
+
+	Declaração:
+
+	Construtor vazio (default)
+
+		Basta não declarar nenhum método construtor na classe e instaciar a mesma passando sem passar nenhum argumento entre os parenteses, por exemplo:
+
+		Product p = new Product();
+
+		Desta forma os atributos do objeto serão inicializados com o valor padrão para cada tipo.
+
+		Atenção, o construtor vazio so funciona se não existir nenhu outro construtor dentro da classe, caso exista algum construtor o mesmo deve ser utilziado e instanciar um objeto sem parametros resultara em erro.
+
+	Contrutor padrão
+
+		Para criarmos um contrutor padrão devemos criar um método dentro da classe que será instanciada, o método possuirá o nome da propria classe, seguindo a estrutura abaixo:
+
+		<public <nome da classe>(<parametros>) {
+			this.Nome do atributo interno da classe> = <parametro>...
+		}
+
+		public Product(String name, double price, int quantity) {
+			this.name = name;
+			this.price = price;
+			this.quantity = quantity;
+		}
+
+		Caso algum atributo necessite ser iniciado com valor especifico podemos colocar dentro do construtor tambem, por exemplo:
+
+		public Product(String name, double price, int quantity) {
+			this.name = name;
+			this.price = price;
+			this.quantity = 0;
+		}
+
+- Encapsulamento
+
+	É um princípio que consiste em esconder detalhes de implementação de uma classe, expondo apenas operações seguras e que mantenham os objetos em um estado consistente.
+
+	O objeto deve sempre estar em um estado consistente, e a própria classe deve garantir isso.
+
+	Regra geral básica:
+
+	Um objeto NÃO deve expor nenhum atributo (atributos devem ter modificador de acesso private)
+	Os atributos devem ser acessados por meio de métodos get e set
+
+- Padrão para implementação de métodos getters e setters
+
+	O método get é utilizado para recuperar o valor do atributo, exemplo de declaração:
+
+	public <tipo de retorno> get<nome do atributo>() {
+		return <atributo>;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	O método set é utilizado para configurar o valor do atributo, exemplo de declaração:
+
+	public void set<nome do atributo>(<tipo do parametro> <parametro>) {
+		this.<nome do atributo> = <parametro>;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+- Área de memória Heap e Stack
+
+	O sistema operacional ao carregar um programa na memória  disponibiliza ao programa um espaço de endereçamento, esse espaço é a memória disponível para aquele programa.
+
+	O Heap, ou área de alocação dinâmica, é um espaço reservado para variáveis e dados criados durante a execução do programa. Vamos dizer que o Heap é a memória global do programa.
+
+	O Stack é uma área da memória que aloca dados, variáveis ou ponteiros quando uma função é chamada e desalocada quando a função termina. Podemos dizer então que representa a memória local àquela função. 
+
+- Variáveis tipos valor (primitivos) vs tipos referência (classes)
+
+	Variáveis tipos valor (primitivos) são criados na área Stack, são como se fossem caixas que guardam exatamente o valor que for atribuido a variável, por exemplo, se atribuirmos o valor 1 a variável teremos o valor 1 dentro da caixa.
+
+	Variáveis Tipos referência (classes) são criados inicialmente na área Stack, são como se fossem caixas assim como os tipos primitivos, mas diferente deles as caixas não guardam os valores atribuidos a variável e sim um valor de memória que aponta para um local na área Heap. Neste local da area Heap teremos uma caixa que irá guardar os valores do objeto. Funcionando como um ponteiro.
+
+	Tabela comparativa:
+
+	Classe																					Tipo Primitivo
+
+	Vantagem: usufrui de todos recursos OO 													Vantagem: é mais simples e mais performático
+	Variáveis são ponteiros 																Variáveis são caixas
+	Objetos precisam ser instanciados ou apontar para um objeto já existente. 				Não instancia. Uma vez declarados, estão prontos para uso.
+	Aceita valor null 																		Não aceita valor null
+	Y = X; "Y passa a apontar para onde X aponta" 											Y = X; "Y recebe uma cópia de X"
+	Objetos instanciados no heap 															Variaveis são criadas no stack
+	Objetos não utilizados são desalocados em um momento próximo pelo garbage collector 	Variaveis são desalocados imediatamente quando seu escopo de execução é finalizado
+
+- Inicialização de variáveis
+
+	Variáveis de método não são inicializadas automaticamente com um valor padrão.
+
+	Já as variáveis de instância, são inicializadas com um valor padrão.
+
+	Se uma variável de método não for inicializada explicitamente pelo programador, ela terá um valor indefinido e um erro de compilação será gerado.
+
+- Valor padrão de variáveis
+
+	Para variáveis numéricas inteiras (byte, short, int, long), o valor padrão é 0
+	Para variáveis numéricas de ponto flutuante (float, double), o valor padrão é 0.0
+	Para variáveis booleanas, o valor padrão é "false".
+	Para variáveis de caracteres (char), o valor padrão é o caractere nulo '\u0000'.
+	Para variáveis de referência (como Strings e objetos personalizados), o valor padrão é "null".
+
+- Composição de Objetos
+
+	Composição de objetos é um conceito da programação orientada a objetos que permite a criação de objetos complexos a partir da combinação de objetos mais simples. Em outras palavras, um objeto pode ser construído a partir de outros objetos, os quais são considerados seus componentes.

@@ -13,7 +13,7 @@ public class TestaRemocao {
 		Connection conn = cf.devolveConexao();
 		
 		Statement s = conn.createStatement();
-		s.execute("DELETE FROM produto WHERE id > 2");
+		s.execute("DELETE FROM produto WHERE id > 1");
 		Integer linhasModificadas = s.getUpdateCount();
 		
 		System.out.println("Quantidade de linhas modificadas: " + linhasModificadas);

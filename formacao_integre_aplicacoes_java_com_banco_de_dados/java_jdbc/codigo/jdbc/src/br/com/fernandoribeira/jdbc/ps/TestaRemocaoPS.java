@@ -12,7 +12,7 @@ public class TestaRemocaoPS {
 		ConnectionFactory cf = new ConnectionFactory();
 		Connection conn = cf.devolveConexao();
 		
-		String sql = "DELETE FROM produto WHERE id > 2";
+		String sql = "DELETE FROM produto WHERE id > 1";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.execute();
